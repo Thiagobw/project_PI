@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styleInitialPage.css">
-    <title>Document</title>
+    <title>Home Page - LA Imports</title>
 </head>
 <body>
 
