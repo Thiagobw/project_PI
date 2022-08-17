@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <link rel="stylesheet" href="css/styleHome.css">
+
+    <title>Home - LA_Imports</title>
+</head>
+<body>
+
+<header>
+    <?php
+    include "../view/navHome.php";
+    ?>
+</header>
+
+<!-- modal Account -->
+<?php
+include "../view/modalAccount.php";
+include "../view/modalCreateAccount.php";
+?>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12">
+            <!-- space -->
+        </div>
+    </div>
+</div>
+
+<!-- Scroll bar and table -->
+<div class="container-fluid">
+    <div class="row center">
+        <div class="col-12 col-sm-8">
+            <div class="shadow-lg tbl center">
+                <table class="table table-bordered table-hover table-responsive-lg">
+                    <thead>
+                        <tr class="">
+                            <th class="table-dark text-center title-tbl" colspan="4"> Informações de estoque </th>
+                        </tr>
+                        <tr>
+                          <th scope="col"> Codigo </th>
+                          <th scope="col"> Produto </th>
+                          <th scope="col"> Quantidade </th>
+                          <th scope="col"> Situação </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td><li class="nav nav-item"><a class="nameLink" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#modalInformation">Balenciaga Triple S</a></li></td>
+                            <td><span>20</span> Unidades</td>
+                            <td>Em estoque</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Nike Sb Dunk Low</td>
+                            <td><span>03</span> Unidades</td>
+                            <td>Baixo estoque</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Adidas Yezzy Boost 350 V2</td>
+                            <td><span>0</span> Unidades</td>
+                            <td>Esgotado</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Nike Air Jordan High 1 Tie Dye</td>
+                            <td><span>100</span> Unidades</td>
+                            <td>Em estoque</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- modal - product information -->
+<div id="modalInformation" class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h2 class="modal-title">Informações do produto</h2>
+                <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"><img class="img-fluid" src="img/icons/Icon_close.png" alt="" height="22" width="22"></button>
+            </div>
+
+            <div class="modal-body">
+                <div class="row center">
+                    <div class="col-7">
+                        <img class="img-fluid w-100" src="img/products/tenis 1.jpg" alt="">
+                    </div>
+                </div>
+                <div class="row center">
+                <div class="col-8">
+                        <h3 class="text-center mt-2" contenteditable="true">Nike Air Jordan High 1 Tie Dye</h3>
+                        <p class="text-center mt-2">Codigo: <span>N4D0L0B0B0J</span></p>
+                    </div>
+                </div>
+
+                <div class="row mt-1" style="border-top: 0.05px solid #e9ecef;">
+                    <div class="col-12 mt-3">
+                        <p class="price">R$ <span contenteditable="true">400,00</span></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer"></div>
+        </div>
+    </div>
+</div>
+
+
+<!-- products -->
+<main class="mt-1">
+    <div class="container-fluid center">
+        <div class="col-12 col-sm-11 col-md-11 col-lg-10 col-xl-11">
+        <div class="row justify-content-around">
+
+            <div class="col-11 col-sm-6 col-md-6 col-lg-4 col-xl-3 bg-prod mt-4">
+                <div class="row">
+                    <div class="col-12 col-sm-11 col-xl-10 bg-white prod">
+                        <div class="row center mb-2 mt-2">
+                            <img class="img-fluid img" src="img/products/tenis 1.jpg" alt="">
+                        </div>
+
+                        <div class="col-12 dividing-line"></div>
+
+                        <div class="row mt-3">
+                            <div class="col-12 ">
+                                <p class="text-center">Nike Air Jordan High 1 Tie Dye - unissex</p>
+                                <p class="text-center price">R$ <span>400,00</span></p>
+                            </div>
+                        </div>
+                        <div class="row center mb-2">
+                            <div class="col-12 btn-group center">
+                                <a class="btn btnADD" href=""><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-11 col-sm-6 col-md-6 col-lg-4 col-xl-3 bg-prod mt-4">
+                <div class="row">
+                    <div class="col-12 col-sm-11 col-xl-10 bg-white prod">
+                        <div class="row center mb-2 mt-2">
+                            <img class="img-fluid img" src="img/products/tenis 1.jpg" alt="">
+                        </div>
+
+                        <div class="col-12 dividing-line"></div>
+
+                        <div class="row mt-3">
+                            <div class="col-12 ">
+                                <p class="text-center">Nike Air Jordan High 1 Tie Dye - unissex</p>
+                                <p class="text-center price">R$ <span>400,00</span></p>
+                            </div>
+                        </div>
+                        <div class="row center mb-2">
+                            <div class="col-12 btn-group center">
+                                <a class="btn btnADD" href=""><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-11 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2 bg-prod">
+                <div class="row">
+                    <div class="col-12 col-sm-11 col-xl-10 bg-white prod mt-4">
+                        <div class="row center mb-2 mt-2">
+                            <img class="img-fluid img" src="img/products/tenis 1.jpg" alt="">
+                        </div>
+
+                        <div class="col-12 dividing-line"></div>
+
+                        <div class="row mt-3">
+                            <div class="col-12 ">
+                                <p class="text-center">Nike Air Jordan High 1 Tie Dye - unissex</p>
+                                <p class="text-center price">R$ <span>400,00</span></p>
+                            </div>
+                        </div>
+                        <div class="row center mb-2">
+                            <div class="col-12 btn-group center">
+                                <a class="btn btnADD" href=""><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-11 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2 bg-prod">
+                <div class="row">
+                    <div class="col-12 col-sm-11 col-xl-10 bg-white prod mt-4">
+                        <div class="row center mb-2 mt-2">
+                            <img class="img-fluid img" src="img/products/tenis 1.jpg" alt="">
+                        </div>
+
+                        <div class="col-12 dividing-line"></div>
+
+                        <div class="row mt-3">
+                            <div class="col-12 ">
+                                <p class="text-center">Nike Air Jordan High 1 Tie Dye - unissex</p>
+                                <p class="text-center price">R$ <span>400,00</span></p>
+                            </div>
+                        </div>
+                        <div class="row center mb-2">
+                            <div class="col-12 btn-group center">
+                                <a class="btn btnADD" href=""><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+            
+        </div>
+    </div>
+</main>
+
+<!-- product pagination -->
+<footer class="container-fluid mt-4 mb-1">
+    <div class="col-12 center">
+        <nav aria-label="Page navigation example" style="border: none !important;">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item activated" onclick="activate(this)"><a class="page-link" href="#">1</a></li>
+                <li class="page-item" onclick="activate(this)"><a class="page-link" href="#">2</a></li>
+                <li class="page-item" onclick="activate(this)"><a class="page-link" href="#">3</a></li>
+                <li class="page-item" onclick="activate(this)"><a class="page-link" href="#">4</a></li>
+                <li class="page-item" onclick="activate(this)"><a class="page-link" href="#">5</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://kit.fontawesome.com/d368f48e5f.js" crossorigin="anonymous"></script>
+
+<script>
+    const activate = (element) => {
+        let itens = document.getElementsByClassName("page-item");
+        for (i = 0; i<itens.length; i++) {
+            itens[i].classList.remove("activated");
+        }
+        element.classList.add("activated");
+    }
+</script>
+</body>
+</html>

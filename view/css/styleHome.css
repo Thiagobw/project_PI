@@ -1,0 +1,186 @@
+/*reset*/
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+/*gerais*/
+body {
+    background-color: #dfdce3;
+}
+
+.center {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+/*custon size*/
+.w-90 {
+    width: 90% !important;
+}
+.w-95 {
+    width: 95% !important;
+}
+.w-80 {
+    width: 80% !important;
+}
+.h-90 {
+    height: 90% !important;
+}
+.h-80 {
+    height: 80% !important;
+}
+
+
+/*navbar*/
+header{
+    height: 70px;
+}
+nav {
+    border-bottom: 3px solid #ff0000;
+}
+
+.pesquisa {
+    border: 1px solid #818081;
+    background-color: #ced4da;
+    border-radius: 1.1rem;
+}
+
+.pesquisa input::placeholder {
+    color: #000000;
+}
+
+.pesquisa input {
+    border: none !important;
+    border-radius: 1.1rem 0 0 1.1rem !important;
+    background-color: #ced4da !important;
+}
+.pesquisa input:focus {
+    border: 1.5px solid #11c827 !important;
+    box-shadow: none !important;
+}
+
+.pesquisa button {
+    background-color: #ced4da !important;
+    border-bottom: none !important;
+    border-top: none !important;
+    border-right: none !important;
+    border-left: 1.5px solid #818081 !important;
+    padding: .4rem 1.3rem .4rem !important;
+    border-radius: 0 1.1rem 1.1rem 0;
+}
+
+.pesquisa button:focus {
+    box-shadow: 0 0 0 0.2rem rgba(26, 204, 20, 0.25) !important;
+    border: 1.5px solid #11c827 !important;
+}
+
+.cart, .menu-cad {
+    color: #ff0000 !important;
+    font-size: 16.5px;
+    letter-spacing: 1px;
+}
+
+.cart:hover, .menu-cad:hover {
+    background-color: rgba(0, 0, 0, 0.029);
+    font-size: 16.7px;
+}
+
+.menu-cad::after {
+    color: black !important;
+}
+
+.menu-options::after {
+    content: none !important;
+}
+
+.menu-options:hover {
+    background-color: rgba(0, 0, 0, 0.029);
+}
+
+
+/* product table */
+.tbl {
+    width: 100%;
+    height: 300px;
+    overflow-y: scroll;
+    border-radius: 5px;
+}
+
+.title-tbl:hover {
+    background-color: #212529 !important;
+}
+
+.nameLink {
+    text-decoration: none !important;
+    color: #212529;
+}
+
+
+/*products*/
+.bg-prod {
+    background-color: none !important;
+}
+.prod {
+    padding: 0 !important;
+    
+}
+.img {
+    border: 0.3px solid #818081;
+    width: 87% !important;
+}
+
+.dividing-line {
+    height: 0.05px;
+    background-color: rgba(0, 0, 0, 0.156);
+}
+.btnADD {
+    border: 0.5px solid #ff0000 !important;
+    color: #ff0000 !important;
+    font-size: 16.5px !important;
+}
+.btnADD:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25) !important;
+}
+
+
+/*modal product*/
+.price {
+    font-size: x-large;
+    color: #11c827;
+}
+
+/*modal account*/
+.input-user {
+    padding: 0.25rem 0.5rem 0.25rem 2.7rem !important;
+}
+label {
+    position: absolute;
+    top: 4px;
+    left: 28px;
+    font-size: 22px;
+}
+.btn-log {
+    font-size: 17px !important;
+    border: 1px solid #9b9a9b;
+}
+
+/*pagination*/
+.page-link {
+    color: #ff0000 !important;
+}
+.page-item.activated .page-link {
+    z-index: 1 !important;
+    color: #fff !important;
+    background-color: #ff0000 !important;
+    border-color: #ff0000 !important;
+  }
+.page-link:focus {
+    z-index: 1 !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25) !important;
+}
