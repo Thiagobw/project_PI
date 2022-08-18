@@ -4,7 +4,7 @@
   <div class="container-fluid">
     <!-- Navbar brand, logo -->
     <a class="navbar-brand ml-4" href="#">
-      <img class="img-fluid" src="img/imgteste2.png" height="30" alt=""/>
+      <img class="img-fluid w-10" src="../view/img/img logo.jpg" alt=""/>
     </a>
     
     <!-- button responsive -->

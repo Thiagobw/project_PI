@@ -27,6 +27,9 @@ body {
 .w-80 {
     width: 80% !important;
 }
+.w-10 {
+    width: 12% !important;
+}
 .h-90 {
     height: 90% !important;
 }
@@ -37,7 +40,7 @@ body {
 
 /*navbar*/
 header{
-    height: 70px;
+    height: 97px;
     background-color: none;
 }
 
