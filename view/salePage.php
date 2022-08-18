@@ -19,10 +19,10 @@
     ?>
 </header>
 
-<!-- modal Account -->
+<!-- pop-ups Account -->
 <?php
-include "../view/modalAccount.php";
-include "../view/modalCreateAccount.php";
+include "../view/pop-ups/pop-upAccount.php";
+include "../view/pop-ups/pop-upCreateAccount.php";
 ?>
 
 <div class="container mt-5">
