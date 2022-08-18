@@ -1,4 +1,4 @@
-<div id="modalCreateAccount" class="modal fade">
+<div id="pop-upCreateAccount" class="modal fade">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
 
