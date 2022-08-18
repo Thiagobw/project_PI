@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/styleInitialPage.css">
+    <link rel="stylesheet" href="css/styleHomePage.css">
     <title>Home Page - LA Imports</title>
 </head>
 <body>
@@ -18,6 +18,8 @@
     include "../view/pop-ups/pop-upCreateAccount.php";
     ?>
 </header>
+
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

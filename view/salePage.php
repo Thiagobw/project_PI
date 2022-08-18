@@ -7,7 +7,7 @@
     
     <link rel="stylesheet" href="css/bootstrap.css">
 
-    <link rel="stylesheet" href="css/styleHome.css">
+    <link rel="stylesheet" href="css/styleSalePage.css">
 
     <title>produtos - LA_Imports</title>
 </head>
