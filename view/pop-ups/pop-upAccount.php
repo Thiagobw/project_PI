@@ -28,7 +28,7 @@
             </div>
 
             <div class="modal-footer center">
-            <span class=""><p> Caso não tenha uma conta, cadastre-se clicando <a href="" data-bs-toggle="modal" data-bs-target="#modalCreateAccount">aqui</a>.</p></span>
+            <span class=""><p> Caso não tenha uma conta, cadastre-se clicando <a href="" data-bs-toggle="modal" data-bs-target="#pop-upCreateAccount">aqui</a>.</p></span>
             </div>
         </div>
     </div>

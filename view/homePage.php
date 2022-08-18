@@ -22,9 +22,12 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 banner">
-            <img class="w-75" src="" alt="">
-            benner <br>
-            banner <br>
+            <div class="row">
+                <div class="col-4 text-center">
+                <h5 class="text-white title-banner mt-4">titulo</h5>
+            <p class="text-white text-banner mt-3">txtxtxtxtxtxtxtx</p>
+                </div>
+            </div>
         </div>
     </div>
 </div>
