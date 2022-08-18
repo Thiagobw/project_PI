@@ -9,13 +9,13 @@
 
     <link rel="stylesheet" href="css/styleHome.css">
 
-    <title>Home - LA_Imports</title>
+    <title>produtos - LA_Imports</title>
 </head>
 <body>
 
 <header>
     <?php
-    include "../view/navHome.php";
+    include "../view/navbar/navbarSalePage.php";
     ?>
 </header>
 

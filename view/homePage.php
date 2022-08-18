@@ -13,7 +13,7 @@
 
 <header>
     <?php
-    include "../view/navInitialPage.php";
+    include "../view/navbar/navbarHomePage.php";
     ?>
 </header>
 
