@@ -19,10 +19,12 @@
     ?>
 </header>
 
-<div class="container-fluid mt-1">
+<div class="container-fluid">
     <div class="row">
         <div class="col-12 banner">
-            <img class="w-75" src="img/products/tenis 1.jpg" alt="">
+            <img class="w-75" src="" alt="">
+            benner <br>
+            banner <br>
         </div>
     </div>
 </div>

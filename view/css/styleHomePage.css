@@ -38,9 +38,9 @@ body {
 /*navbar*/
 header{
     height: 70px;
+    background-color: none;
 }
 nav {
-    border-bottom: 3px solid #ff0000;
 }
 
 .menu-cad {
@@ -65,6 +65,7 @@ nav {
 /*banner*/
 .banner {
     padding: 0 !important;
+    background-image: linear-gradient(to left, #de9c2c, #e5922a, #ea852b, #ee772d, #f16731, #f35436, #f23c3c, #f01843, #ed004c, #e90057, #e30064, #db0071, #d10080);
 } 
 
 /* product table */
