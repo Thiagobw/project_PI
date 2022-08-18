@@ -24,8 +24,10 @@
         <div class="col-12 banner">
             <div class="row">
                 <div class="col-4 text-center">
-                <h5 class="text-white title-banner mt-4">titulo</h5>
-            <p class="text-white text-banner mt-3">txtxtxtxtxtxtxtx</p>
+                <h5 class="text-white title-banner mt-4">Descubra o melhor para você na Luiz Alvez Imports!
+</h5>
+            <p class="text-white text-banner mt-3">Conforto, qualidade, estilo, inovação e personalidade tudo que você precisa para seu dia a dia. 
+</p>
                 </div>
             </div>
         </div>
