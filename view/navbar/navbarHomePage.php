@@ -1,5 +1,5 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
   <!-- Container wrapper -->
   <div class="container-fluid">
     <!-- Navbar brand, logo -->
