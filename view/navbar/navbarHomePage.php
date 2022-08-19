@@ -3,8 +3,8 @@
   <!-- Container wrapper -->
   <div class="container-fluid">
     <!-- Navbar brand, logo -->
-    <a class="navbar-brand ml-4" href="#">
-      <img class="img-fluid w-10" src="../view/img/img logo.jpg" alt=""/>
+    <a class="navbar-brand logo" href="#">
+      <img class="img-fluid" src="../view/img/img logo.jpg" height="80" width="80" alt=""/>
     </a>
     
     <!-- button responsive -->
