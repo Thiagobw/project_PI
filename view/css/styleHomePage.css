@@ -73,6 +73,7 @@ header{
 .texts {
     padding: 0;
 }
+
 .title-banner {
     text-align: left;
     margin-left: 5.5%;
@@ -90,7 +91,7 @@ header{
 }
 
 .test {
-    height: 50px;
+    height: 200px;
     background-color: #dfdce3;
 }
 /* product table */
