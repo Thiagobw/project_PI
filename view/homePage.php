@@ -15,7 +15,6 @@
     <?php
     include "../view/navbar/navbarHomePage.php";
     include "../view/pop-ups/pop-upAccount.php";
-    include "../view/pop-ups/pop-upCreateAccount.php";
     ?>
 </header>
 

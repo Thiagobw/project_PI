@@ -162,6 +162,14 @@ label {
     border: 1px solid #9b9a9b;
 }
 
+#createAcc {
+    display: none;
+}
+
+#title-createAcc {
+    display: none;
+}
+
 /*pagination*/
 .page-link {
     color: #ff0000 !important;

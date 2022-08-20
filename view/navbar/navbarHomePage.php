@@ -32,7 +32,7 @@
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenu">
                 <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#pop-upAccount">Entrar</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#pop-upCreateAccount">Cadastre-se</a></li>
+                <li><a class="dropdown-item" href="#">Cadastre-se</a></li>
               </ul>
             </li>
           </ul>
