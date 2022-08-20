@@ -28,7 +28,7 @@
                     <p class="text-white text-banner mt-5 mb-4">Conforto, qualidade, estilo, inovação e personalidade tudo que você precisa para seu dia a dia.</p>
                 </div>
                 <div class="col-12 col-lg-7 center">
-                    <div class="col-6 test"></div>
+                    <div class="col-11 col-lg-6 test"></div>
                 </div>
             </div>
         </div>
