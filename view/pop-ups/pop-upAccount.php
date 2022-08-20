@@ -40,7 +40,7 @@
                             </div>
 
                             <div class="col-11 col-sm-7 mt-2">
-                                <label for="Email"><i class="far fa-envelope"></i></label>
+                                <label for="Email"><i class="fas fa-phone"></i></label>
                                 <input class=" form-control input-user" type="text" placeholder="Telefone">
                             </div>
 
