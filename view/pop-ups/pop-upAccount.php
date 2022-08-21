@@ -3,9 +3,11 @@
         <div class="modal-content">
 
             <div class="modal-header">
-                <h2 class="modal-title" id="title-account">Entre</h2>
-                <h2 class="modal-title" id="title-createAcc">Crie sua conta</h2>
-                <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"><img class="img-fluid" src="img/icons/Icon_close.png" alt="" height="22" width="22"></button>
+                <h2 class="modal-title" id="title-account">Entre em sua conta</h2>
+                <h2 class="modal-title" id="title-createAcc">Crie a sua conta</h2>
+                <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+</svg></button>
             </div>
 
             <div class="modal-body">
@@ -17,7 +19,7 @@
                                 <input class=" form-control input-user" type="text" placeholder="Email">
                             </div>
                             <div class="col-11 col-sm-7 mt-3">
-                                <label for="Senha"><i class="fas fa-key"></i></label>
+                                <label for="Senha"><i class="bi bi-key"></i></label>
                                 <input class="form-control input-user" type="text" placeholder="Senha">
                             </div>
                             <div class="col-6 mt-3 center">
@@ -30,27 +32,27 @@
                     <div class="col-12 input-group">
                         <form class="input-group center" action="">
                             <div class="col-11 col-sm-7">
-                                <label for="Email"><i class="far fa-envelope"></i></label>
+                                <label for="Nome"><i class="fa-regular fa-user"></i></label>
                                 <input class=" form-control input-user" type="text" placeholder="Nome">
                             </div>
 
                             <div class="col-11 col-sm-7 mt-2">
-                                <label for="Email"><i class="far fa-envelope"></i></label>
+                                <label for="CPF"><i class="fa-regular fa-address-card"></i></label>
                                 <input class=" form-control input-user" type="text" placeholder="CPF">
                             </div>
 
                             <div class="col-11 col-sm-7 mt-2">
-                                <label for="Email"><i class="fas fa-phone"></i></label>
+                                <label for="Telefone"><i class="bi bi-telephone"></i></label>
                                 <input class=" form-control input-user" type="text" placeholder="Telefone">
                             </div>
 
                             <div class="col-11 col-sm-7 mt-2">
-                                <label for="Email"><i class="far fa-envelope"></i></label>
+                                <label for="Email"><i class="fa-regular fa-envelope"></i></label>
                                 <input class=" form-control input-user" type="text" placeholder="Email">
                             </div>
 
                             <div class="col-11 col-sm-7 mt-2">
-                                <label for="Senha"><i class="fas fa-key"></i></label>
+                                <label for="Senha"><i class="bi bi-key"></i></label>
                                 <input class="form-control input-user" type="password" placeholder="Senha">
                             </div>
                             <div class="col-6 mt-3 center">
