@@ -155,12 +155,14 @@ header{
 .input-user {
     padding: 0.25rem 0.5rem 0.25rem 2.7rem !important;
 }
+
 label {
     position: absolute;
     top: 4px;
     left: 28px;
-    font-size: 22px;
+    font-size: 23px !important;
 }
+
 .btn-log {
     font-size: 17px !important;
     border: 1px solid #9b9a9b;

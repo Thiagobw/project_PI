@@ -36,22 +36,22 @@
                                 <input class=" form-control input-user" type="text" placeholder="Nome">
                             </div>
 
-                            <div class="col-11 col-sm-7 mt-2">
+                            <div class="col-11 col-sm-7 mt-3">
                                 <label for="CPF"><i class="fa-regular fa-address-card"></i></label>
                                 <input class=" form-control input-user" type="text" placeholder="CPF">
                             </div>
 
-                            <div class="col-11 col-sm-7 mt-2">
+                            <div class="col-11 col-sm-7 mt-3">
                                 <label for="Telefone"><i class="bi bi-telephone"></i></label>
                                 <input class=" form-control input-user" type="text" placeholder="Telefone">
                             </div>
 
-                            <div class="col-11 col-sm-7 mt-2">
+                            <div class="col-11 col-sm-7 mt-3">
                                 <label for="Email"><i class="fa-regular fa-envelope"></i></label>
                                 <input class=" form-control input-user" type="text" placeholder="Email">
                             </div>
 
-                            <div class="col-11 col-sm-7 mt-2">
+                            <div class="col-11 col-sm-7 mt-3">
                                 <label for="Senha"><i class="bi bi-key"></i></label>
                                 <input class="form-control input-user" type="password" placeholder="Senha">
                             </div>
@@ -64,7 +64,7 @@
             </div>
 
             <div class="modal-footer center">
-            <span class=""><p> Caso não tenha uma conta, cadastre-se clicando <a href="" id="btncreateAcc" data-bs-toggle="modal" data-bs-target="#">aqui</a>.</p></span>
+            <span id="toRegister"><p> Caso não tenha uma conta, cadastre-se clicando <a href="" id="btncreateAcc" data-bs-toggle="modal">aqui</a>.</p></span>
             </div>
         </div>
     </div>
