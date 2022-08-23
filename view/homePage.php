@@ -21,14 +21,18 @@
 
 <div class="container-fluid banner">
     <div class="row center">
-        <div class="col-10" style="padding: 0;">
+        <div class="col-10 content_main">
             <div class="row center">
                 <div class="col-12 col-lg-5 text-center texts">
                 <h5 class="text-white title-banner mt-4">Descubra o melhor para você na Luiz Alvez Imports!</h5>
                     <p class="text-white text-banner mt-5 mb-4">Conforto, qualidade, estilo, inovação e personalidade tudo que você precisa para seu dia a dia.</p>
                 </div>
                 <div class="col-12 col-lg-6 center">
-                    <div class="col-11 col-lg-7 test"></div>
+                    <div class="col-11 col-lg-7 content_announcement">
+                        <main class="col-12 col-lg-6 bg-dark center">
+
+                        </main>
+                    </div>
                 </div>
             </div>
         </div>
