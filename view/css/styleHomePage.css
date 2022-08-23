@@ -71,7 +71,7 @@ header{
 
 /*banner*/
 .banner {
-    min-height: 450px;
+    min-height: auto;
     /**background-image: linear-gradient( to right, #732028, #82232b, #87232b, #98222d, #ae1e28, #c31b2a, #d23643, #d9535e, #e1808b, #e6999f, #ebb5ba);**/
     background-color: #AF1313;
 }
@@ -81,7 +81,7 @@ header{
 }
 
 .texts {
-    padding: 0;
+    padding: 80px 0 55px;
 }
 
 .title-banner {
