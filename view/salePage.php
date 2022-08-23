@@ -22,7 +22,6 @@
 <!-- pop-ups Account -->
 <?php
 include "../view/pop-ups/pop-upAccount.php";
-include "../view/pop-ups/pop-upCreateAccount.php";
 ?>
 
 <div class="container mt-5">
