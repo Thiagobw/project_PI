@@ -23,12 +23,15 @@
     <div class="row center">
         <div class="col-10 content_main">
             <div class="row center">
+
                 <div class="col-12 col-lg-5 text-center texts">
-                <h5 class="text-white title-banner mt-4">Descubra o melhor para você na Luiz Alvez Imports!</h5>
+                    <h5 class="text-white title-banner mt-4">Descubra o melhor para você na Luiz Alvez Imports!</h5>
                     <p class="text-white text-banner mt-5 mb-4">Conforto, qualidade, estilo, inovação e personalidade tudo que você precisa para seu dia a dia.</p>
                 </div>
+            
                 <div class="col-12 col-sm-11 col-md-10 col-lg-7 col-xl-6 center mt-3">
                     <div class="col-11 col-sm-10 col-md-9 col-lg-8 col-xl-8 content_announcement">
+
                         <main class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-10 bg-dark center">
 
                         </main>
