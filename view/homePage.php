@@ -48,7 +48,7 @@
 <main class="container-fluid">
     <div class="row">
         <div class="col-xl-6 bg-white">
-            txt
+            Luiz.alvez_imports foi criada para oferecer os melhores produtos com a mais alta qualidadde, produtos estes com os das marcas mais famosas como, Nike, Adidas, Puma, New Balance, Balanciaga, Bape, Gucci, Louis Vuitton, Vans, Converse, Versace, Lacoste e Schutz 
 
         </div>
     </div>
