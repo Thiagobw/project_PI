@@ -106,10 +106,12 @@ header{
     padding: 0;
 }
 
-.content_announcement main {
+.content_announcement section {
     height: 100%;
     position: relative !important;
-    top: 10%;
+    top: 8%;
+    left: 25%;
+    right: 25%;
 }
 
 /* product table */

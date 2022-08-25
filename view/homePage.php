@@ -21,7 +21,7 @@
 
 <div class="container-fluid banner">
     <div class="row center">
-        <div class="col-10 content_main">
+        <div class="col-11 col-sm-10 col-md-11 col-lg-12 col-xl-10 content_main">
             <div class="row center">
 
                 <div class="col-12 col-lg-5 text-center texts">
@@ -30,20 +30,29 @@
                 </div>
             
                 <div class="col-12 col-sm-11 col-md-10 col-lg-7 col-xl-6 center mt-3">
-                    <div class="col-11 col-sm-10 col-md-9 col-lg-8 col-xl-8 content_announcement">
+                    <div class="col-11 col-sm-10 col-md-9 col-lg-8 col-xl-9 content_announcement">
+                        <section class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-8 bg-dark">
+                            <h4 class="text-white">Marcas que comercializamos</h4>
+                        </section>
+                        
+                        <section class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-8 bg-dark center mt-4">
 
-                        <main class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-10 bg-dark center">
-
-                        </main>
-                        <main class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-10 bg-dark center mt-4">
-
-                        </main>
+                        </section>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+<main class="container-fluid">
+    <div class="row">
+        <div class="col-xl-6 bg-white">
+            txt
+
+        </div>
+    </div>
+</main>
 
 
 
