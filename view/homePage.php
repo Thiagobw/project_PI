@@ -51,6 +51,30 @@
             Luiz.alvez_imports foi criada para oferecer os melhores pro dutos com a mais alta qualidadde, produtos estes com os das marcas mais famosas como, Nike, Adidas, Puma, New Balance, Balanciaga, Dolce e Gabbana Bape, Gucci, Louis Vuitton, Vans, Converse, Versace, Lacoste e Schutz 
 
             La_Imports é uma loja dedicada a vendas de tenis casuais, sapatenis, esportivos, de performace, Chunky sneakers e Sneakers. 
+            
+            e-mail laimports@gmail.com
+
+            Localizado em Luiz Alvez
+
+            Telefone fixo 47 3377-3256
+            <!--Aqui podemos botar esses como redes sociais-->  
+            Whatsapp 47 99686-7053
+            Instagram luiz.alvez_imports
+            Facebook
+            <!--link do exemplo https://catalogoapp.mobi/7a9cd4fb-1608-4d05-9db3-05aa3cddcfa3-->
+            luiz.alvez_imports
+            Loja de Atacado, varejo e dropshipping
+            Linha de Nacional BR
+            Linha de Importsados
+            Linha Exclusiva
+            <!--Formas de pagamento link de exemplo https://www.reistsouza.com.br/formas-de-pagamento?gclid=CjwKCAjwu5yYBhAjEiwAKXk_eLLk2aZmtdo34UjahYBlFKvZXOCkSTdugsCuPtd7mOy6lfGCbzh7UhoCKkwQAvD_BwE-->
+            visa
+            elo
+            mastercard
+            hipercard
+            pix
+            tranferencia bancaria 
+            boleto bancario
         </div>
     </div>
 </main>
