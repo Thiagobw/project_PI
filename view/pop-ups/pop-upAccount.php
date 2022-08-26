@@ -30,7 +30,7 @@
                 </div>
                 <div class="row" id="createAcc">
                     <div class="col-12 input-group">
-                        <form class="input-group center" method="POST" action="../">
+                        <form class="input-group center" action="" method="POST">
                             <div class="col-11 col-sm-7">
                                 <label for="Nome"><i class="fa-regular fa-user"></i></label>
                                 <input class=" form-control input-user" type="text" placeholder="Nome" name="name">

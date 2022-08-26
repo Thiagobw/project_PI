@@ -11,16 +11,13 @@
     <title>Home Page - LA Imports</title>
 </head>
 <body>
-
+    
 <header>
     <?php
     include "../view/navbar/navbarHomePage.php";
     include "../view/pop-ups/pop-upAccount.php";
     ?>
 </header>
-
-
-
 
 
 <div class="container-fluid banner">
