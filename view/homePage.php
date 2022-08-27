@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="css/styleHomePage.css">
     <link rel="stylesheet" href="img/icons/fontawesome/css/all.min.css">
 
+    <!-- bibliotecas para fazer animações: Animate.css  Bounce.js AnimeJS GreenSock (GSAP) Magic Animations Zdog CSShake Hover.css AniJS  -->
     <title>Home Page - LA Imports</title>
 </head>
 <body>
-    
+
 <header>
     <?php
     include "../view/navbar/navbarHomePage.php";
-    include "../view/pop-ups/pop-upAccount.php";
+    include "../view/pop-upAccount.php";
     ?>
 </header>
 

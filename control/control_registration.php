@@ -1,15 +1,21 @@
 <?php
 
+include "../model/Users.php";
+include "../DAO/cad.php";
+include "../DAO/connection.php";
+
 $name = $_POST['name'];
 $cpf = $_POST['cpf'];
 $tell = $_POST['tell'];
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-$users = new users();
+$Users = new Users();
 
-$users->setName($name);
-$users->setCpf($cpf);
-$users->setTell($tell);
-$users->setEmail($email);
-$users->setPassword($password);
+$Users->setName($name);
+$Users->setCpf($cpf);
+$Users->setTell($tell);
+$Users->setEmail($email);
+$Users->setPassword($password);
+
+echo "nome: " . $Users->getName() . ", cpf: " . $Users->getCpf() . ", telefone: " . $Users->getTell() . ", email: " . $Users->getEmail() . ", senha: " . $Users->getPassword();

@@ -1,6 +1,6 @@
 <?php
 
-class users {
+class Users {
     
     private $name;
     private $cpf;
