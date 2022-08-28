@@ -13,7 +13,7 @@
             <div class="modal-body">
                 <div class="row" id="account">
                     <div class="col-12 input-group">
-                        <form class="input-group center" action="">
+                        <form class="input-group center" id="form1">
                             <div class="col-11 col-sm-7">
                                 <label for="Email"><i class="far fa-envelope"></i></label>
                                 <input class=" form-control input-user" type="text" placeholder="Email">
@@ -23,40 +23,40 @@
                                 <input class="form-control input-user" type="text" placeholder="Senha">
                             </div>
                             <div class="col-6 mt-3 center">
-                                <input class="btn w-80 btn-log" type="submit" name="" value="Entrar">
+                                <input class="btn w-80 btn-log" form="form1" type="submit" name="" value="Entrar">
                             </div>
                         </form>
                     </div>
                 </div>
                 <div class="row" id="createAcc">
                     <div class="col-12 input-group">
-                        <form class="input-group center" action="../control/control_registration.php" method="POST">
+                        <form class="input-group center" id="form2">
                             <div class="col-11 col-sm-7">
                                 <label for="Nome"><i class="fa-regular fa-user"></i></label>
-                                <input class=" form-control input-user" type="text" placeholder="Nome" name="name">
+                                <input class=" form-control input-user" type="text" placeholder="Nome" name="name" id="name">
                             </div>
 
                             <div class="col-11 col-sm-7 mt-3">
                                 <label for="CPF"><i class="fa-regular fa-address-card"></i></label>
-                                <input class=" form-control input-user" type="text" placeholder="CPF" name="cpf">
+                                <input class=" form-control input-user" type="text" placeholder="CPF" name="cpf" id="cpf">
                             </div>
 
                             <div class="col-11 col-sm-7 mt-3">
                                 <label for="Telefone"><i class="bi bi-telephone"></i></label>
-                                <input class=" form-control input-user" type="text" placeholder="Telefone" name="tell">
+                                <input class=" form-control input-user" type="text" placeholder="Telefone" name="tell" id="tell">
                             </div>
 
                             <div class="col-11 col-sm-7 mt-3">
                                 <label for="Email"><i class="fa-regular fa-envelope"></i></label>
-                                <input class=" form-control input-user" type="text" placeholder="Email" name="email">
+                                <input class=" form-control input-user" type="text" placeholder="Email" name="email" id="email">
                             </div>
 
                             <div class="col-11 col-sm-7 mt-3">
                                 <label for="Senha"><i class="bi bi-key"></i></label>
-                                <input class="form-control input-user" type="password" placeholder="Senha" name="password">
+                                <input class="form-control input-user" type="password" placeholder="Senha" name="password" id="pass">
                             </div>
                             <div class="col-6 mt-3 center">
-                                <input class="btn w-80 btn-log" type="submit" name="" value="Criar conta">
+                                <input class="btn w-80 btn-log" form="form2" type="submit" name="" value="Criar conta">
                             </div>
                         </form>
                     </div>
