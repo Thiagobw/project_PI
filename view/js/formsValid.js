@@ -23,11 +23,12 @@ $('#form2').submit(function(e){
 
  function ajax() {
     $ajax({
-        URL: '',
-        method: '',
+        URL: '../control/control_registration.php',
+        method: 'post',
         data: {name: name, cpf: cpf, tell: tell, email: email, pass: pass},
         dataType: 'json'
     }).done(function(result){
+        
         
     })
  }
