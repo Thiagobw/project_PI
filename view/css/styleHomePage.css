@@ -109,12 +109,22 @@ header{
     height: 100%;
     position: relative !important;
     top: 8%;
+    border-radius: 10px;
 }
-/**smartphone 1**/
-@media screen and (max-width: 320px) {
+
+.about {
+    background-color: none;
+    padding: 0 !important;
+}
+.about div {
+    padding: 0;
+}
+
+/*smartphone responsive*/
+@media (min-width: 300px) {
     
     .banner {
-        max-height: 300px !important;
+        max-height: 300px ;
     }
     .texts {
         padding: 0;
@@ -132,13 +142,14 @@ header{
     }
 
     .about {
-        margin-top: 180%;
+        margin-top: 175%;
     }
 }
 
-@media screen and (max-width: 375px) {
+/*smartphone responsive*/
+@media (min-width: 370px) {
     .banner {
-        max-height: 300px !important;
+        min-height: 300px;
     }
     .texts {
         padding: 0;
@@ -157,7 +168,339 @@ header{
     .about {
         margin-top: 150%;
     }
+}
 
+/*smartphone responsive*/
+@media (min-width: 424px) {
+    .banner {
+        min-height: 280px;
+    }
+    .texts {
+        padding: 0;
+        margin-top: 5%;
+    }
+    .title-banner {
+        margin-top: 6% !important;
+        letter-spacing: 1;
+        margin-right: 1%;
+        margin-left: 4%;
+    }
+    .text-banner {
+        margin-top: 10% !important;
+        margin-right: 5%;
+        margin-left: 4%;
+        margin-bottom: 0 !important;
+    }
+    .content_announcement section {
+        top: 40%;
+    }
+    .about {
+        margin-top: 133%;
+    }
+}
+
+/*smartphone responsive*/
+@media (min-width: 500px) {
+    .banner {
+        min-height: 280px;
+    }
+    .texts {
+        padding: 0;
+        margin-top: 4.5%;
+    }
+    .title-banner {
+        margin-top: 6% !important;
+        letter-spacing: 0;
+        margin-right: 4%;
+        margin-left: 4%;
+    }
+    .text-banner {
+        margin-top: 10% !important;
+        margin-right: 6%;
+        margin-left: 4%;
+        margin-bottom: 0 !important;
+    }
+    .content_announcement section {
+        top: 37%;
+    }
+    .about {
+        margin-top: 117%;
+    }
+}
+
+/*smartphone responsive*/
+@media (min-width: 525px) {
+    .banner {
+        min-height: 280px;
+    }
+    .texts {
+        padding: 0;
+        margin-top: 4.5%;
+    }
+    .title-banner {
+        margin-top: 6% !important;
+        letter-spacing: 0;
+        margin-right: 4%;
+        margin-left: 4%;
+    }
+    .text-banner {
+        margin-top: 10% !important;
+        margin-right: 6%;
+        margin-left: 4%;
+        margin-bottom: 0 !important;
+    }
+    .content_announcement section {
+        top: 35%;
+    }
+    .about {
+        margin-top: 111%;
+    }
+}
+
+/*smartphone responsive*/
+@media (min-width: 550px) {
+    .banner {
+        min-height: 280px;
+    }
+    .texts {
+        padding: 0;
+        margin-top: 4.5%;
+    }
+    .title-banner {
+        margin-top: 6% !important;
+        letter-spacing: 0;
+        margin-right: 4%;
+        margin-left: 4%;
+    }
+    .text-banner {
+        margin-top: 10% !important;
+        margin-right: 6%;
+        margin-left: 4%;
+        margin-bottom: 0 !important;
+    }
+    .content_announcement section {
+        top: 33%;
+    }
+    .about {
+        margin-top: 106%;
+    }
+}
+
+/*smartphone responsive*/
+@media (min-width: 600px) {
+    .banner {
+        min-height: 280px;
+    }
+    .texts {
+        padding: 0;
+        margin-top: 4.5%;
+    }
+    .title-banner {
+        margin-top: 6% !important;
+        letter-spacing: 0;
+        margin-right: 4%;
+        margin-left: 4%;
+    }
+    .text-banner {
+        margin-top: 10% !important;
+        margin-right: 6%;
+        margin-left: 4%;
+        margin-bottom: 0 !important;
+    }
+    .content_announcement section {
+        top: 32%;
+    }
+    .about {
+        margin-top: 96%;
+    }
+}
+
+/*smartphone responsive*/
+@media (min-width: 665px) {
+    .banner {
+        min-height: 280px;
+    }
+    .texts {
+        padding: 0;
+        margin-top: 3%;
+    }
+    .title-banner {
+        margin-top: 6% !important;
+        letter-spacing: 0;
+        margin-right: 4%;
+        margin-left: 4%;
+    }
+    .text-banner {
+        margin-top: 10% !important;
+        margin-right: 6%;
+        margin-left: 4%;
+        margin-bottom: 0 !important;
+    }
+    .content_announcement section {
+        top: 32%;
+    }
+    .about {
+        margin-top: 88%;
+    }
+}
+
+/*smartphone responsive*/
+@media (min-width: 767px) {
+    .banner {
+        min-height: 280px;
+    }
+    .texts {
+        padding: 0;
+        margin-top: 2.5%;
+    }
+    .title-banner {
+        margin-top: 6% !important;
+        letter-spacing: 0;
+        margin-right: 5%;
+        margin-left: 6%;
+    }
+    .text-banner {
+        margin-top: 10% !important;
+        margin-right: 12%;
+        margin-left: 6%;
+        margin-bottom: 0 !important;
+    }
+    .content_announcement section {
+        top: 27%;
+    }
+    .about {
+        margin-top: 76%;
+    }
+}
+
+/*smartphone responsive*/
+@media (min-width: 840px) {
+    .banner {
+        min-height: 280px;
+    }
+    .texts {
+        padding: 0;
+        margin-top: 1.8%;
+    }
+    .title-banner {
+        margin-top: 6% !important;
+        letter-spacing: 0;
+        margin-right: 5%;
+        margin-left: 6%;
+    }
+    .text-banner {
+        margin-top: 10% !important;
+        margin-right: 12%;
+        margin-left: 6%;
+        margin-bottom: 0 !important;
+    }
+    .content_announcement section {
+        top: 19%;
+    }
+    .about {
+        margin-top: 69%;
+    }
+}
+/*smartphone responsive*/
+@media (min-width: 859px) {
+    .banner {
+        min-height: 280px;
+    }
+    .texts {
+        padding: 0;
+        margin-top: 1%;
+    }
+    .title-banner {
+        margin-top: 6% !important;
+        letter-spacing: 0;
+        margin-right: 12%;
+        margin-left: 12%;
+    }
+    .text-banner {
+        margin-top: 10% !important;
+        margin-right: 12%;
+        margin-left: 12%;
+        margin-bottom: 0 !important;
+    }
+    .content_announcement section {
+        top: 20%;
+    }
+    .about {
+        margin-top: 67.2%;
+    }
+}
+
+/*smartphone responsive*/
+@media (min-width: 927px) {
+    .banner {
+        min-height: 280px;
+    }
+    .texts {
+        padding: 0;
+        margin-top: 0%;
+    }
+    .title-banner {
+        margin-top: 6% !important;
+        letter-spacing: 0;
+        margin-right: 12%;
+        margin-left: 12%;
+    }
+    .text-banner {
+        margin-top: 8% !important;
+        margin-right: 12%;
+        margin-left: 12%;
+        margin-bottom: 0 !important;
+    }
+    .content_announcement section {
+        top: 25%;
+    }
+    .about {
+        margin-top: 62%;
+    }
+}
+
+/*smartphone responsive*/
+@media (min-width: 935px) and (max-width: 990px) {
+    .banner {
+        min-height: 280px;
+    }
+    .texts {
+        padding: 0;
+        margin-top: 0%;
+    }
+    .title-banner {
+        margin-top: 6% !important;
+        letter-spacing: 0;
+        margin-right: 12%;
+        margin-left: 12%;
+    }
+    .text-banner {
+        margin-top: 8% !important;
+        margin-right: 12%;
+        margin-left: 12%;
+        margin-bottom: 0 !important;
+    }
+    .content_announcement section {
+        top: 33%;
+    }
+    .about {
+        margin-top: 60.2%;
+    }
+}
+
+/*restart for pc*/
+@media (min-width: 992px) {
+    .about {
+        margin-top: 0%;
+    }
+    .about div {
+        border-right: 1px double #AF1313;
+        border-bottom: 1px double #AF1313;
+        border-bottom-right-radius: 15px;
+    }
+    .content_announcement section {
+        border-radius: 10px;
+    }
 }
 
 /*modal account*/

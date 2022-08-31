@@ -33,11 +33,11 @@
             
                 <div class="col-12 col-sm-11 col-md-10 col-lg-7 col-xl-6 center mt-3" style="padding: 0;">
                     <div class="col-11 col-sm-10 col-md-9 col-lg-8 col-xl-9 content_announcement">
-                        <section class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-8 bg-dark">
+                        <section class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-8 bg-white shadow">
                             <h4 class="text-white">Marcas que comercializamos</h4>
                         </section>
                         
-                        <section class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-8 bg-dark center mt-4">
+                        <section class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-8 bg-white center mt-4 shadow">
 
                         </section>
                     </div>
@@ -49,9 +49,12 @@
 
 <main class="container-fluid">
     <div class="row">
-        <div class="col-12 col-xl-6 bg-primary about">
+        <div class="col-12 col-lg-7 col-xl-6 about">
+            <div class="col-12 col-lg-10 col-xl-12 bg-white shadow"> 
             Luiz.alvez_imports foi criada para oferecer os melhores pro dutos com a mais alta qualidadde, produtos estes com os das marcas mais famosas como, Nike, Adidas, Puma, New Balance, Balanciaga, Dolce e Gabbana Bape, Gucci, Louis Vuitton, Vans, Converse, Versace, Lacoste e Schutz 
             <br>
+            <h3>sobre a loja</h3>
+            L.A Imports é uma loja indepedente....  importamos tenis dos mais diversos modelos e marcas dos paises, x, y e z...
             La_Imports é uma loja dedicada a vendas de tenis casuais, sapatenis, esportivos, de performace, Chunky sneakers e Sneakers. 
             <br>
             e-mail laimports@gmail.com
@@ -92,11 +95,18 @@
             <br>
             boleto bancario
             <br>
+            </div>
         </div>
     </div>
 </main>
 
-
+<footer class="container-fluid bg-dark mt-4">
+    <div class="row">
+        <div class="col-12">
+            txtxtxt
+        </div>
+    </div>
+</footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>

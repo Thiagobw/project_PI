@@ -14,16 +14,16 @@
                 <div class="row" id="account">
                     <div class="col-12 input-group">
                         <form class="input-group center" id="form1">
-                            <div class="col-11 col-sm-7">
+                            <div class="col-12 col-sm-7">
                                 <label for="Email"><i class="far fa-envelope"></i></label>
                                 <input class=" form-control input-user" type="text" placeholder="Email">
                             </div>
-                            <div class="col-11 col-sm-7 mt-3">
+                            <div class="col-12 col-sm-7 mt-3">
                                 <label for="Senha"><i class="bi bi-key"></i></label>
                                 <input class="form-control input-user" type="text" placeholder="Senha">
                             </div>
                             <div class="col-6 mt-3 center">
-                                <input class="btn w-80 btn-log" form="form1" type="submit" name="" value="Entrar">
+                                <input class="btn btn-primary w-100 btn-log" form="form1" type="submit" name="" value="Entrar">
                             </div>
                         </form>
                     </div>
