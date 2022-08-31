@@ -31,7 +31,7 @@
                     <p class="text-white text-banner mt-5 mb-4">Conforto, qualidade, estilo, inovação e personalidade tudo que você precisa para seu dia a dia.</p>
                 </div>
             
-                <div class="col-12 col-sm-11 col-md-10 col-lg-7 col-xl-6 center mt-3">
+                <div class="col-12 col-sm-11 col-md-10 col-lg-7 col-xl-6 center mt-3" style="padding: 0;">
                     <div class="col-11 col-sm-10 col-md-9 col-lg-8 col-xl-9 content_announcement">
                         <section class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-8 bg-dark">
                             <h4 class="text-white">Marcas que comercializamos</h4>
@@ -49,7 +49,7 @@
 
 <main class="container-fluid">
     <div class="row">
-        <div class="col-xl-6 bg-white">
+        <div class="col-12 col-xl-6 bg-primary about">
             Luiz.alvez_imports foi criada para oferecer os melhores pro dutos com a mais alta qualidadde, produtos estes com os das marcas mais famosas como, Nike, Adidas, Puma, New Balance, Balanciaga, Dolce e Gabbana Bape, Gucci, Louis Vuitton, Vans, Converse, Versace, Lacoste e Schutz 
             <br>
             La_Imports é uma loja dedicada a vendas de tenis casuais, sapatenis, esportivos, de performace, Chunky sneakers e Sneakers. 

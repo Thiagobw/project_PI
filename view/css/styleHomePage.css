@@ -13,7 +13,7 @@
 
 /*gerais*/
 body {
-    background-color: #dfdce3;
+    background-color: #fff;
 }
 
 .center {
@@ -72,7 +72,6 @@ header{
 /*banner*/
 .banner {
     min-height: auto;
-    /**background-image: linear-gradient( to right, #732028, #82232b, #87232b, #98222d, #ae1e28, #c31b2a, #d23643, #d9535e, #e1808b, #e6999f, #ebb5ba);**/
     background-color: #AF1313;
 }
 
@@ -111,57 +110,54 @@ header{
     position: relative !important;
     top: 8%;
 }
-
-/* product table */
-.tbl {
-    width: 100%;
-    height: 300px;
-    overflow-y: scroll;
-    border-radius: 5px;
-}
-
-.title-tbl:hover {
-    background-color: #212529 !important;
-}
-
-.nameLink {
-    text-decoration: none !important;
-    color: #212529;
-}
-
-
-/*products*/
-.bg-prod {
-    background-color: none !important;
-}
-.prod {
-    padding: 0 !important;
+/**smartphone 1**/
+@media screen and (max-width: 320px) {
     
-}
-.img {
-    border: 0.3px solid #818081;
-    width: 87% !important;
+    .banner {
+        max-height: 300px !important;
+    }
+    .texts {
+        padding: 0;
+    }
+    .title-banner {
+        letter-spacing: 0;
+        margin-right: 0;
+    }
+    .text-banner {
+        margin-bottom: 0 !important;
+    }
+
+    .content_announcement section {
+        top: 20%;
+    }
+
+    .about {
+        margin-top: 180%;
+    }
 }
 
-.dividing-line {
-    height: 0.05px;
-    background-color: rgba(0, 0, 0, 0.156);
-}
-.btnADD {
-    border: 0.5px solid #ff0000 !important;
-    color: #ff0000 !important;
-    font-size: 16.5px !important;
-}
-.btnADD:focus {
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25) !important;
-}
+@media screen and (max-width: 375px) {
+    .banner {
+        max-height: 300px !important;
+    }
+    .texts {
+        padding: 0;
+    }
+    .title-banner {
+        letter-spacing: 1;
+        margin-right: 0;
+    }
+    .text-banner {
+        margin-right: 5%;
+        margin-bottom: 0 !important;
+    }
+    .content_announcement section {
+        top: 20%;
+    }
+    .about {
+        margin-top: 150%;
+    }
 
-
-/*modal product*/
-.price {
-    font-size: x-large;
-    color: #11c827;
 }
 
 /*modal account*/
@@ -187,20 +183,4 @@ label {
 
 #title-createAcc {
     display: none;
-}
-
-/*pagination*/
-.page-link {
-    color: #ff0000 !important;
-}
-.page-item.activated .page-link {
-    z-index: 1 !important;
-    color: #fff !important;
-    background-color: #ff0000 !important;
-    border-color: #ff0000 !important;
-  }
-.page-link:focus {
-    z-index: 1 !important;
-    outline: 0;
-    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25) !important;
 }
