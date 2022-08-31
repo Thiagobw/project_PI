@@ -494,8 +494,13 @@ header{
         margin-top: 0%;
     }
     .about div {
-        border-right: 1px double #AF1313;
+        /*border-right: 1px double #AF1313;
         border-bottom: 1px double #AF1313;
+        */
+    border: 3px sólido transparente;
+    border-image: linear-gradient(to left, #fff, #AF1313, black);
+    border-image-slice: 1;
+    /*padding: 25px;*/
         border-bottom-right-radius: 15px;
     }
     .content_announcement section {
