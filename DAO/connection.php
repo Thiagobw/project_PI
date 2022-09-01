@@ -1,11 +1,11 @@
 <?php
 
 function connect() {
-    $host = "";  /* localhost */
-    $user = ""; /* root */
+    $host = "localhost";  /* localhost */
+    $user = "root"; /* root */
     $pass = ""; /* password database */
-    $dbName = ""; /* name database */
-    $db = ""; /* mysql  */
+    $dbName = "mydb"; /* name database */
+    $db = "mysql"; /* mysql  */
 
     try {
         $PDO = new PDO($db . ':host=' . $host . ';dbname=' . $dbName, $user, $pass);
