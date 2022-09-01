@@ -9,4 +9,11 @@ $user= new Users();
 $user->setCpf($cpf);
 $user->setPassword($password);
 
-autenticar($user);
+$result = autenticar($user);
+
+if (count($result)>0){
+
+}
+
+
+echo json_encode($resposta);
