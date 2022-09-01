@@ -20,7 +20,7 @@ $('#form2').submit(function(e){
 
 function ajaxLog() {
     $ajax({
-        URL: '\htdocs\project_PI\control\atutenticacao.php',
+        URL: 'project_PI/control/atutenticacao.php',
         method: 'post',
         data: {name: name, cpf: cpf, tell: tell, email: email, pass: pass},
         dataType: 'json'

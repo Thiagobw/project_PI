@@ -15,5 +15,6 @@ if (count($result)>0){
 
 }
 
+$result = array();
 
-echo json_encode($resposta);
+echo json_encode($result);
