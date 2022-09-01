@@ -490,6 +490,9 @@ header{
 
 /*restart for pc*/
 @media (min-width: 992px) {
+    .btn-submit-Create {
+        float: bottom;
+    }
     .about {
         margin-top: 0;
     }
