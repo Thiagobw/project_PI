@@ -1,10 +1,10 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white">
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
   <!-- Container wrapper -->
   <div class="container-fluid">
     <!-- Navbar brand, logo -->
-    <a class="navbar-brand ml-4" href="#">
-      <img class="img-fluid" src="img/imgteste2.png" height="30" alt=""/>
+    <a class="navbar-brand logo" href="#">
+      <img class="img-fluid ml-2" src="../view/img/img logo.jpg" height="80" width="80" alt=""/>
     </a>
     
     <!-- button responsive -->
@@ -26,13 +26,13 @@
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle menu-cad" href="#" id="navbarDropdownMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <img class="rounded-circle img-fluid" src="img/icons/person_FILL0_wght400_GRAD0_opsz40.png" height='27' width='27'> Entre ou Cadastre-se
+              <i class="fa-regular fa-user" style="color: black !important;"></i> Entre ou Cadastre-se
               </a>
               
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenu">
-                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#pop-upAccount">Entrar</a></li>
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#pop-upAccount" id="btnLogin">Entrar</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#pop-upCreateAccount">Cadastre-se</a></li>
+                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#pop-upAccount" id="btnRegister">Cadastre-se</a></li>
               </ul>
             </li>
           </ul>
