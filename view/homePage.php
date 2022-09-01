@@ -34,7 +34,35 @@
                 <div class="col-12 col-sm-11 col-md-10 col-lg-7 col-xl-6 center mt-3" style="padding: 0;">
                     <div class="col-11 col-sm-10 col-md-9 col-lg-8 col-xl-9 content_announcement">
                         <section class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-8 bg-white shadow">
-                            <h4 class="text-white">Marcas que comercializamos</h4>
+                            <h5 class="text-center">Marcas que comercializamos</h5>
+                            <main class="container-fluid">
+                                <div class="carousel slide" data-bs-ride="carousel" id="brandSlide">
+                                    <div class="carousel-indicators">
+                                        <button type="button" data-bs-target="#brandSlide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                        <button type="button" data-bs-target="#brandSlide" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                        <button type="button" data-bs-target="#brandSlide" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                    </div>
+                                    <div class="carousel-inner" style="padding: 0;">
+                                        <div class="carousel-item active">
+                                            <img class="d-block w-80 center" src="img/brands/Nike-Logo.png" alt="brand nike">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="" alt="brand adidas">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img class="d-block w-100" src="" alt="brand test">
+                                        </div>
+                                    </div>
+                                    <button class="carousel-control-prev" type="button" data-bs-target="#brandSlide" data-bs-slide="prev">
+                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Previous</span>
+                                    </button>
+                                    <button class="carousel-control-next" type="button" data-bs-target="#brandSlide" data-bs-slide="next">
+                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                        <span class="visually-hidden">Next</span>
+                                    </button>
+                                </div>
+                            </main>
                         </section>
                         
                         <section class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-8 bg-white center mt-4 shadow">

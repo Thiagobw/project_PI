@@ -491,7 +491,7 @@ header{
 /*restart for pc*/
 @media (min-width: 992px) {
     .about {
-        margin-top: 0%;
+        margin-top: 0;
     }
     .about div {
         border-left: none !important;
@@ -510,14 +510,36 @@ header{
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
     border-bottom-right-radius: 1em;
-    background: linear-gradient(to bottom right, #AF1313, #AF1313, #fff);
+    background: linear-gradient(to bottom right, #AF1313 50%, #AF1313 10%, #fff 100%);
 }
 
 .content_announcement section {
-        border-radius: 10px;
+        border-radius: 1em;
+        left: 20%;
     }
 }
-
+@media (min-width: 992px) and (max-width: 1199px) {
+    .about div {
+        border-left: none !important;
+        border-top: none !important;
+        border-bottom-right-radius: 1em;
+        box-sizing: border-box;
+        border: 2px;
+        color: #000;
+        background: #fff;
+        background-clip: padding-box;
+        border: solid transparent;
+}
+.about::before {
+    width: 83.35%;
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    border-bottom-right-radius: 1em;
+    background: linear-gradient(to bottom right, #AF1313, #AF1313, #fff);
+}
+}
 /*modal account*/
 .input-user {
     padding: 0.25rem 0.5rem 0.25rem 2.7rem !important;
