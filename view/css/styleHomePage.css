@@ -106,7 +106,7 @@ header{
 }
 
 .content_announcement section {
-    height: 100%;
+    height: auto;
     position: relative !important;
     top: 8%;
     border-radius: 10px;
@@ -145,11 +145,10 @@ header{
         margin-top: 175%;
     }
 }
-
 /*smartphone responsive*/
-@media (min-width: 370px) {
+@media (min-width: 250px) {
     .banner {
-        min-height: 300px;
+        min-height: 390px;
     }
     .texts {
         padding: 0;
@@ -157,6 +156,61 @@ header{
     .title-banner {
         letter-spacing: 1;
         margin-right: 0;
+        margin-left: 4%;
+        font-size: 25px;
+    }
+    .text-banner {
+        margin-right: 4%;
+        margin-left: 4%;
+        margin-top: 0.5% !important;
+        text-align: left;
+        padding-top: 1.5em;
+    }
+    .content_announcement section {
+        top: 10%;
+    }
+    .about {
+        margin-top: 260%;
+    }
+}
+
+/*smartphone responsive*/
+@media (min-width: 319px) {
+    .banner {
+        min-height: 380px;
+    }
+    .texts {
+        padding: 0;
+    }
+    .title-banner {
+        letter-spacing: 1;
+        margin-right: 0;
+        font-size: 22px;
+    }
+    .text-banner {
+        margin-right: 3%;
+
+        
+    }
+    .content_announcement section {
+        top: 20%;
+    }
+    .about {
+        margin-top: 200%;
+    }
+}
+
+/*smartphone responsive*/
+@media (min-width: 370px) {
+    .banner {
+        min-height: 360px;
+    }
+    .texts {
+        padding: 0;
+    }
+    .title-banner {
+        letter-spacing: 1;
+        margin-right: 1%;
     }
     .text-banner {
         margin-right: 5%;
@@ -173,7 +227,7 @@ header{
 /*smartphone responsive*/
 @media (min-width: 424px) {
     .banner {
-        min-height: 280px;
+        min-height: 345px;
     }
     .texts {
         padding: 0;
@@ -219,6 +273,7 @@ header{
         margin-right: 6%;
         margin-left: 4%;
         margin-bottom: 0 !important;
+        padding-top: 0.15em;
     }
     .content_announcement section {
         top: 37%;
@@ -393,6 +448,7 @@ header{
         margin-right: 12%;
         margin-left: 6%;
         margin-bottom: 0 !important;
+        padding-top: 0.1em;
     }
     .content_announcement section {
         top: 19%;
@@ -490,6 +546,9 @@ header{
 
 /*restart for pc*/
 @media (min-width: 992px) {
+    .text-banner {
+        padding-top: 0;
+    }
     .btn-submit-Create {
         float: bottom;
     }
@@ -506,22 +565,25 @@ header{
         background: #fff;
         background-clip: padding-box;
         border: solid transparent;
-}
-.about::before {
-    content: '';
-    z-index: -1;
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    border-bottom-right-radius: 1em;
-    background: linear-gradient(to bottom right, #AF1313 50%, #AF1313 10%, #fff 100%);
-}
+    }
+    .about::before {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        border-bottom-right-radius: 1em;
+        background: linear-gradient(to bottom right, #AF1313 50%, #AF1313 10%, #fff 100%);
+    }
 
-.content_announcement section {
+    .content_announcement section {
         border-radius: 1em;
         left: 20%;
     }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
+    .banner {
+        min-height: 330px;
+    }
     .about div {
         border-left: none !important;
         border-top: none !important;
@@ -532,17 +594,23 @@ header{
         background: #fff;
         background-clip: padding-box;
         border: solid transparent;
+    }
+    .about::before {
+        width: 83.35%;
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        border-bottom-right-radius: 1em;
+        background: linear-gradient(to bottom right, #AF1313, #AF1313, #fff);
+    }
 }
-.about::before {
-    width: 83.35%;
-    content: '';
-    z-index: -1;
-    position: absolute;
-    top: 0; right: 0; bottom: 0; left: 0;
-    border-bottom-right-radius: 1em;
-    background: linear-gradient(to bottom right, #AF1313, #AF1313, #fff);
+@media (min-width: 1200px) and (max-width: 1450px){
+    .banner {
+        min-height: 336px;
+    }
 }
-}
+
 /*modal account*/
 .input-user {
     padding: 0.25rem 0.5rem 0.25rem 2.7rem !important;

@@ -27,46 +27,33 @@
             <div class="row center">
 
                 <div class="col-12 col-lg-5 text-center texts">
-                    <h5 class="text-white title-banner mt-4">Descubra o melhor para você na Luiz Alvez Imports!</h5>
-                    <p class="text-white text-banner mt-5 mb-4">Conforto, qualidade, estilo, inovação e personalidade tudo que você precisa para seu dia a dia.</p>
+                    <h5 class="text-white title-banner mt-4">O melhor para você na Luiz Alvez Imports!</h5>
+                    <p class="text-white text-banner mt-5 mb-4">
+                        Temos o objetivo de oferecer aquilo que tem de melhor no mundo dos tenis aos nossos clientes.
+                        aqui oferecemos uma grande linha de produtos com alta qualidade e das marcas com maiores destaques atualmente, contribuindo 
+                        para tanto para seu estilo quanto tambem para seu Conforto e qualidade, tudo que você precisa para seu dia a dia.
+                    </p>
                 </div>
             
                 <div class="col-12 col-sm-11 col-md-10 col-lg-7 col-xl-6 center mt-3" style="padding: 0;">
                     <div class="col-11 col-sm-10 col-md-9 col-lg-8 col-xl-9 content_announcement">
-                        <section class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-8 bg-white shadow">
-                            <h5 class="text-center">Marcas que comercializamos</h5>
-                            <main class="container-fluid">
-                                <div class="carousel slide" data-bs-ride="carousel" id="brandSlide">
-                                    <div class="carousel-indicators">
-                                        <button type="button" data-bs-target="#brandSlide" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                        <button type="button" data-bs-target="#brandSlide" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                        <button type="button" data-bs-target="#brandSlide" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                    </div>
-                                    <div class="carousel-inner" style="padding: 0;">
-                                        <div class="carousel-item active">
-                                            <img class="d-block w-80 center" src="img/brands/Nike-Logo.png" alt="brand nike">
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img class="d-block w-100" src="" alt="brand adidas">
-                                        </div>
-                                        <div class="carousel-item">
-                                            <img class="d-block w-100" src="" alt="brand test">
-                                        </div>
-                                    </div>
-                                    <button class="carousel-control-prev" type="button" data-bs-target="#brandSlide" data-bs-slide="prev">
-                                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Previous</span>
-                                    </button>
-                                    <button class="carousel-control-next" type="button" data-bs-target="#brandSlide" data-bs-slide="next">
-                                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                        <span class="visually-hidden">Next</span>
-                                    </button>
+                        <section class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-8 bg-white mt-5 shadow">
+                            <main>
+                                <div class="container-fluid">
                                 </div>
                             </main>
                         </section>
                         
-                        <section class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-8 bg-white center mt-4 shadow">
-
+                        <section class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-8 bg-white center mt-5 shadow">
+                            <main class="container-fluid">
+                                <h3 class="text-center p-2">sobre nós</h3>
+                                <p>L.A Imports é uma loja indepedente.... (alterar conforme for correto) <br>
+                                    dedicada a... <br>
+                                    importamos tenis dos mais diversos modelos e marcas dos paises, x, y e z... <br>
+                                    La_Imports é uma loja dedicada a vendas de tenis casuais, sapatenis, esportivos, de performace, Chunky sneakers e Sneakers.
+                                    <!--Nike, Adidas, Puma, New Balance, Balanciaga, Dolce e Gabbana Bape, Gucci, Louis Vuitton, Vans, Converse, Versace, Lacoste e Schutz-->
+                                </p>
+                            </main>
                         </section>
                     </div>
                 </div>
@@ -78,51 +65,12 @@
 <main class="container-fluid">
     <div class="row">
         <div class="col-12 col-lg-7 col-xl-6 about">
-            <div class="col-12 col-lg-10 col-xl-12 bg-white shadow"> 
-            Luiz.alvez_imports foi criada para oferecer os melhores pro dutos com a mais alta qualidadde, produtos estes com os das marcas mais famosas como, Nike, Adidas, Puma, New Balance, Balanciaga, Dolce e Gabbana Bape, Gucci, Louis Vuitton, Vans, Converse, Versace, Lacoste e Schutz 
-            <br>
-            <h3>sobre a loja</h3>
-            L.A Imports é uma loja indepedente....  importamos tenis dos mais diversos modelos e marcas dos paises, x, y e z...
-            La_Imports é uma loja dedicada a vendas de tenis casuais, sapatenis, esportivos, de performace, Chunky sneakers e Sneakers. 
-            <br>
-            e-mail laimports@gmail.com
-            <br>
-            Localizado em Luiz Alvez
-            <br>
-            Telefone fixo 47 3377-3256
-            <br>
-            <!--Aqui podemos botar esses como redes sociais-->  
-            Whatsapp 47 99686-7053
-            <br>
-            Instagram luiz.alvez_imports
-            <br>
-            Facebook
-            <!--link do exemplo https://catalogoapp.mobi/7a9cd4fb-1608-4d05-9db3-05aa3cddcfa3-->
-            luiz.alvez_imports
-            <br>
-            Loja de Atacado, varejo e dropshipping
-            <br>
-            Linha de Nacional BR
-            <br>
-            Linha de Importsados
-            <br>
-            Linha Exclusiva
-            <!--Formas de pagamento link de exemplo https://www.reistsouza.com.br/formas-de-pagamento?gclid=CjwKCAjwu5yYBhAjEiwAKXk_eLLk2aZmtdo34UjahYBlFKvZXOCkSTdugsCuPtd7mOy6lfGCbzh7UhoCKkwQAvD_BwE-->
-            <br>
-            visa
-            <br>
-            elo
-            <br>
-            mastercard
-            <br>
-            hipercard
-            <br>
-            pix
-            <br>
-            tranferencia bancaria 
-            <br>
-            boleto bancario
-            <br>
+            <div class="col-12 col-lg-10 col-xl-12 bg-white shadow">
+                <div class="container-fluid">
+                    <div class="row center" style="width: 100%;">
+                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -130,8 +78,16 @@
 
 <footer class="container-fluid bg-dark mt-4">
     <div class="row">
-        <div class="col-12">
-            txtxtxt
+        <div class="col-12 text-white">
+            <!-- a ver... Loja de Atacado, varejo e dropshipping, Linha de Importsados, Linha de Nacional BR, Linha Exclusiva-->
+            <!--Formas de pagamento link de exemplo https://www.reistsouza.com.br/formas-de-pagamento?gclid=CjwKCAjwu5yYBhAjEiwAKXk_eLLk2aZmtdo34UjahYBlFKvZXOCkSTdugsCuPtd7mOy6lfGCbzh7UhoCKkwQAvD_BwE-->
+            <!-- boleto bancario, tranferencia bancaria, pix, hipercard, mastercard, elo, visa  -->
+        e-mail laimports@gmail.com
+        Localizado em Luiz Alvez
+        Telefone fixo 47 3377-3256
+        Whatsapp 47 99686-7053
+        Instagram luiz.alvez_imports
+        Facebook luiz.alvez_imports
         </div>
     </div>
 </footer>
