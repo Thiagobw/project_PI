@@ -1,3 +1,20 @@
+/* log in */
+$('#form1').submit(function(e){
+    e.preventDefault();
+    var cpfLog = $('#CpfLog').val();
+    var passLog = $('#passLog').val();
+
+    //fazer evento de validalção em tempo real
+    if(cpfLog.length == 0 || passLog.length == 0){
+        alert("preencha todos os campos para poder fazer log in!");
+    } else{
+        alert("tudo certo!");
+
+        ajaxLog();
+    }
+})
+
+/* create account */
 $('#form2').submit(function(e){
     e.preventDefault();
 
@@ -13,10 +30,9 @@ $('#form2').submit(function(e){
     } else{
         alert("tudo certo!");
 
-        //ajax();
+        ajaxCreate();
     }
 })
-
 
 function ajaxLog() {
     $ajax({

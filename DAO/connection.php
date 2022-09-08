@@ -3,7 +3,7 @@
 function connect() {
     $host = "localhost";  /* localhost */
     $user = "root"; /* root */
-    $pass = ""; /* password database */
+    $pass = "aluno"; /* password database */
     $dbName = "mydb"; /* name database */
     $db = "mysql"; /* mysql  */
 

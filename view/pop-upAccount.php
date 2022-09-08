@@ -9,25 +9,27 @@
   <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
 </svg></button>
             </div>
-
+            <!-- log in form -->
             <div class="modal-body">
                 <div class="row" id="account">
                     <div class="col-12 input-group">
                         <form class="input-group center" id="form1">
                             <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8">
                                 <label for="Email"><i class="fa-regular fa-address-card"></i></label>
-                                <input class=" form-control input-user" type="text" placeholder="CPF">
+                                <input class=" form-control input-user" type="text" placeholder="CPF" id="CpfLog">
                             </div>
                             <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                 <label for="Senha"><i class="bi bi-key"></i></label>
-                                <input class="form-control input-user" type="text" placeholder="Senha">
+                                <input class="form-control input-user" type="password" placeholder="Senha" id="passLog">
                             </div>
                             <div class="col-5 col-sm-5 col-lg-5 mt-3 center">
-                                <input class="btn btn-primary w-100 btn-log" form="form1" type="submit" name="" value="Entrar">
+                                <input class="btn btn-primary w-100 btn-log" form="form1" type="submit" name="log-in" value="Entrar">
                             </div>
                         </form>
                     </div>
                 </div>
+
+                <!-- registration form -->
                 <div class="row" id="createAcc">
                     <div class="col-12 input-group">
                         <form class="input-group center" id="form2">
