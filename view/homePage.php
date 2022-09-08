@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="css/styleHomePage.css">
     <link rel="stylesheet" href="img/icons/fontawesome/css/all.min.css">
 
-    <!-- bibliotecas para fazer animações: Animate.css  Bounce.js AnimeJS GreenSock (GSAP) Magic Animations Zdog CSShake Hover.css AniJS  -->
     <title>Home Page - LA Imports</title>
 </head>
 <body>
@@ -24,70 +23,67 @@
 <div class="container-fluid banner">
     <div class="row center">
         <div class="col-11 col-sm-10 col-md-11 col-lg-12 col-xl-10 content_main">
-            <div class="row center">
+            <br><br><br><br><br><br>banner<br><br><br><br><br><br>
+        </div>
+    </div>
+</div>
 
-                <div class="col-12 col-lg-5 text-center texts">
-                    <h5 class="text-white title-banner mt-4">O melhor para você na Luiz Alvez Imports!</h5>
-                    <p class="text-white text-banner mt-5 mb-4">
-                        Temos o objetivo de oferecer aquilo que tem de melhor no mundo dos tenis aos nossos clientes.
-                        aqui oferecemos uma grande linha de produtos com alta qualidade e das marcas com maiores destaques atualmente, contribuindo 
-                        para tanto para seu estilo quanto tambem para seu Conforto e qualidade, tudo que você precisa para seu dia a dia.
-                    </p>
-                </div>
+
+<div class="container-fluid mt-3 mb-3">
+    <div class="row justify-content-around">
+
+		<div class="col-11 col-sm-8 col-md-5 col-lg-5 col-xl-3 bg-dark mt-3 mb-3 text-white">
+            imagem de produtos
+            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br>
+        </div>
+
+		<div class="col-11 col-sm-8 col-md-5 col-lg-5 col-xl-3 bg-dark mt-3 mb-3 text-white">
+        imagem de produtos
+            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br>
+        </div>
+
+        <div class="col-11 col-sm-8 col-md-6 col-lg-6 col-xl-3 bg-dark mt-3 mb-3 text-white">
+        imagem de produtos
+            <br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br>
+        </div>
+    </div>
+</div>
+
+<div class="about-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h3 class="about-title"> Sobre a Luiz alvez Imports</h3>
+            </div>
+
+            <div class="col-md-6">
+                <img class="img-fluid" src="" alt="Luiz Alvez Imports">
+            </div>
             
-                <div class="col-12 col-sm-11 col-md-10 col-lg-7 col-xl-6 center mt-3" style="padding: 0;">
-                    <div class="col-11 col-sm-10 col-md-9 col-lg-8 col-xl-9 content_announcement">
-                        <section class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-8 bg-white mt-5 shadow">
-                            <main>
-                                <div class="container-fluid">
-                                </div>
-                            </main>
-                        </section>
-                        
-                        <section class="col-12 col-sm-11 col-md-11 col-lg-7 col-xl-8 bg-white center mt-5 shadow">
-                            <main class="container-fluid">
-                                <h3 class="text-center p-2">sobre nós</h3>
-                                <p>L.A Imports é uma loja indepedente.... (alterar conforme for correto) <br>
-                                    dedicada a... <br>
-                                    importamos tenis dos mais diversos modelos e marcas dos paises, x, y e z... <br>
-                                    La_Imports é uma loja dedicada a vendas de tenis casuais, sapatenis, esportivos, de performace, Chunky sneakers e Sneakers.
-                                    <!--Nike, Adidas, Puma, New Balance, Balanciaga, Dolce e Gabbana Bape, Gucci, Louis Vuitton, Vans, Converse, Versace, Lacoste e Schutz-->
-                                </p>
-                            </main>
-                        </section>
-                    </div>
-                </div>
+            <div class="col-md-6">
+                <h3 class="about-subtitle">uma loja dedicada no seu estilo e conforto!</h3>
+                <p>um pouco de texto</p>
+                <p>um pouco de texto</p>
+                <p> Outras caracteristicas: </p>
+
+                <ul class="list-about">
+                    <li><i class="fas fa-check"></i>testtesttesttesttesttest</li>
+                    <li><i class="fas fa-check"></i>testtesttesttesttesttest</li>
+                    <li><i class="fas fa-check"></i>testtesttesttesttesttest</li>
+                    <li><i class="fas fa-check"></i>testtesttesttesttesttest</li>
+                    <li><i class="fas fa-check"></i>testtesttesttesttesttest</li>
+                </ul>
             </div>
         </div>
     </div>
 </div>
 
-<main class="container-fluid">
-    <div class="row">
-        <div class="col-12 col-lg-7 col-xl-6 about">
-            <div class="col-12 col-lg-10 col-xl-12 bg-white shadow">
-                <div class="container-fluid">
-                    <div class="row center" style="width: 100%;">
-                    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</main>
-
-<footer class="container-fluid bg-dark mt-4">
+<footer class="container-fluid bg-dark">
     <div class="row">
         <div class="col-12 text-white">
-            <!-- a ver... Loja de Atacado, varejo e dropshipping, Linha de Importsados, Linha de Nacional BR, Linha Exclusiva-->
-            <!--Formas de pagamento link de exemplo https://www.reistsouza.com.br/formas-de-pagamento?gclid=CjwKCAjwu5yYBhAjEiwAKXk_eLLk2aZmtdo34UjahYBlFKvZXOCkSTdugsCuPtd7mOy6lfGCbzh7UhoCKkwQAvD_BwE-->
-            <!-- boleto bancario, tranferencia bancaria, pix, hipercard, mastercard, elo, visa  -->
-        e-mail laimports@gmail.com
-        Localizado em Luiz Alvez
-        Telefone fixo 47 3377-3256
-        Whatsapp 47 99686-7053
-        Instagram luiz.alvez_imports
-        Facebook luiz.alvez_imports
         </div>
     </div>
 </footer>
