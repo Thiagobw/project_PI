@@ -74,13 +74,53 @@ header{
     min-height: auto;
     background-color: #AF1313;
 }
-.content_main {
+.banner_content_main {
     padding: 0;
+}
+
+/*featured products*/
+.prod {
+    height: 190px;
+}
+@media (min-width: 349px) and (max-width: 399px) {
+    .prod {
+        height: 225px;
+    }
+}
+@media (min-width: 400px) and (max-width: 443px) {
+    .prod {
+        height: 290px;
+    }
+}
+@media (min-width: 444px) and (max-width: 575px) {
+    .prod {
+        height: 300px;
+    }
+}
+@media (min-width: 576px) and (max-width: 767px) {
+    .prod {
+        height: 298px;
+    }
+}
+@media (min-width: 768px) and (max-width: 1199px) {
+    .prod {
+        height: 298px;
+    }
+}
+@media (min-width: 1200px) {
+    .prod {
+        height: 340px;
+    }
+}
+@media (min-width: 2300px) {
+    .prod {
+        height: 370px;
+    }
 }
 
 /*about the company*/
 .about-area {
-    /*dar uma cor de fundo*/
+    background-color: #fff8dc;
 }
 
 .about-title {
@@ -137,6 +177,12 @@ header{
         left: 36%;
     }
 }
+@media (min-width: 504px) and (max-width: 991px) {
+    .about-title::after {
+        width: 28%;
+        left: 36%;
+    }
+}
 
 
 .about-subtitle {
@@ -157,6 +203,7 @@ header{
     color: #65DAF9;
     margin-right: 15px;
 }
+
 /*modal account*/
 .input-user {
     padding: 0.25rem 0.5rem 0.25rem 2.7rem !important;

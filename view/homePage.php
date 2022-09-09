@@ -22,50 +22,51 @@
 
 <div class="container-fluid banner">
     <div class="row center">
-        <div class="col-12 col-sm-10 col-md-11 col-lg-12 col-xl-10 content_main">
-            <img src="img/imagem.png" alt="Banner" class="img-fluid w-100">
+        <div class="col-12 banner_content_main">
+            <img src="img/img_banner1.png" alt="Banner LA Imports" class="img-fluid w-100">
         </div>
     </div>
 </div>
 
 
+<!-- featured products -->
 <div class="container-fluid mt-3 mb-3">
     <div class="row justify-content-around">
 
-		<div class="col-11 col-sm-8 col-md-5 col-lg-5 col-xl-3 bg-dark mt-3 mb-3 text-white center" style="height: 190px;">
-            <img src="img/products/yezzyzebra.png" alt="Mais Vendidos" class="w-100 img-fluid ">
+		<div class="col-11 col-sm-8 col-md-5 col-lg-5 col-xl-3 bg-dark mt-3 mb-3 center prod">
+            <img src="img/products/yezzyzebra.png" alt="Mais Vendidos" class="w-100">
         </div>
 
-		<div class="col-11 col-sm-8 col-md-5 col-lg-5 col-xl-3 bg-dark mt-3 mb-3 text-white center" style="height: 190px;">
-            <img src="img/products/airJordanChicago.png" alt="Mais Vendidos" class= "img-fluid">
+		<div class="col-11 col-sm-8 col-md-5 col-lg-5 col-xl-3 bg-dark mt-3 mb-3 center prod">
+            <img src="img/products/airJordanChicago.png" alt="Mais Vendidos" class="w-100">
         </div>
 
-        <div class="col-11 col-sm-8 col-md-6 col-lg-6 col-xl-3 bg-dark mt-3 mb-3 text-white center" style="height: 190px;">
-            <img src="img/products/airForce1.png" alt="Mais Vendidos" class="img-fluid">
+        <div class="col-11 col-sm-8 col-md-6 col-lg-6 col-xl-3 bg-dark mt-3 mb-3 center prod">
+            <img src="img/products/airForce1.png" alt="Mais Vendidos" class="w-100">
         </div>
     </div>
 
     <div class="row justify-content-around">
 
-<div class="col-11 col-sm-8 col-md-5 col-lg-5 col-xl-3 bg-dark mt-3 mb-3 text-white center" style="height: 190px;">
-    <img src="img/products/adidasForum.png" alt="Mais Vendidos" class="w-100 img-fluid ">
-</div>
+        <div class="col-11 col-sm-8 col-md-5 col-lg-5 col-xl-3 bg-dark mt-3 mb-3 center prod">
+            <img src="img/products/adidasForum.png" alt="Mais Vendidos" class="w-100">
+        </div>
 
-<div class="col-11 col-sm-8 col-md-5 col-lg-5 col-xl-3 bg-dark mt-3 mb-3 text-white center " style="height: 190px;">
-    <img src="img/products/new550.png" alt="Mais Vendidos" class= "img-fluid">
-</div>
+        <div class="col-11 col-sm-8 col-md-5 col-lg-5 col-xl-3 bg-dark mt-3 mb-3 center prod">
+            <img src="img/products/new550.png" alt="Mais Vendidos" class= "w-100">
+        </div>
 
-<div class="col-11 col-sm-8 col-md-6 col-lg-6 col-xl-3 bg-dark mt-3 mb-3 text-white center" style="height: 190px;">
-    <img src="img/products/nikeDunk.png" alt="Mais Vendidos" class="img-fluid">
-</div>
-</div>
+        <div class="col-11 col-sm-8 col-md-6 col-lg-6 col-xl-3 bg-dark mt-3 mb-3 center prod">
+            <img src="img/products/nikeDunk.png" alt="Mais Vendidos" class="w-100">
+        </div>
+    </div>
 </div>
 
 <div class="about-area">
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h3 class="about-title"> Sobre a Luiz alvez Imports</h3>
+                <h3 class="about-title">Sobre a Luiz alvez Imports</h3>
             </div>
 
             <div class="col-md-6">
@@ -73,7 +74,7 @@
             </div>
             
             <div class="col-md-6">
-                <h3 class="about-subtitle">Uma loja dedicada no seu estilo e conforto!</h3>
+                <h3 class="about-subtitle">Uma loja dedicada ao seu estilo e conforto diario!</h3>
                 <p>Procura ter modelos que além de conforto, qualidade são muito bonitos.</p>
                 <p>Apenas com marcas de grandes nomes procurando dar segurança e confiança para o cliente.</p>
                 <p> Outras caracteristicas: </p>
@@ -86,6 +87,20 @@
                     <li><i class="fas fa-check"></i>testtesttesttesttesttest</li>
                 </ul>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h3>contate-nós</h3>
+        </div>
+        <div class="col-md-6">
+
+        </div>
+        <div class="col-md-6">
+
         </div>
     </div>
 </div>
