@@ -70,7 +70,7 @@
             </div>
 
             <div class="col-md-6">
-                <img class="img-fluid" src="" alt="Luiz Alvez Imports">
+                <img class="img-fluid" src="img/img_logo.png" alt="Luiz Alvez Imports"height="350" width="350">
             </div>
             
             <div class="col-md-6">
@@ -80,11 +80,11 @@
                 <p> Outras caracteristicas: </p>
 
                 <ul class="list-about">
-                    <li><i class="fas fa-check"></i>testtesttesttesttesttest</li>
-                    <li><i class="fas fa-check"></i>testtesttesttesttesttest</li>
-                    <li><i class="fas fa-check"></i>testtesttesttesttesttest</li>
-                    <li><i class="fas fa-check"></i>testtesttesttesttesttest</li>
-                    <li><i class="fas fa-check"></i>testtesttesttesttesttest</li>
+                    <li><i class="fas fa-check"></i>Tenis Originais.</li>
+                    <li><i class="fas fa-check"></i>Garantia de Fabrica.</li>
+                    <li><i class="fas fa-check"></i>Entregas para todos Brasil.</li>
+                    <li><i class="fas fa-check"></i>Vendas apenas por encomenda.</li>
+                    <li><i class="fas fa-check"></i>Modelos femininos e masculinos.</li>
                 </ul>
             </div>
         </div>
