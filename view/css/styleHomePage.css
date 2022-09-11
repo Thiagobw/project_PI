@@ -79,30 +79,163 @@ header{
 }
 
 /*featured products*/
+.featured_products_title {
+    color: #000000;
+    margin: 0 0 60px 0;
+    font-size: 40px;
+    text-align: center;
+}
+.featured_products_title::after {
+    content: "";
+    border-top: 2px solid #000000;
+    width: 25%;
+    position: absolute;
+    top: 60px;
+    left: 36.5%;
+}
 .prod {
     height: 190px;
+    border-radius: 1em;
+    border-bottom: 1px solid #d9d9d9;
+    border-top: 1px solid #e6e5e5;
+}
+@media (min-width: 240px) and (max-width: 267px) {
+    .featured_products_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 38%;
+        position: absolute;
+        top: 255px;
+        left: 29%;
+    }    
+}
+@media (min-width: 268px) and (max-width: 291px) {
+    .featured_products_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 38%;
+        position: absolute;
+        top: 243px;
+        left: 30%;
+    }
+}
+@media (min-width: 292px) and (max-width: 299px) {
+    .featured_products_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 38%;
+        position: absolute;
+        top: 220px;
+        left: 30%;
+    }
+}
+@media (min-width: 300px) and (max-width: 315px) {
+    .featured_products_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 38%;
+        position: absolute;
+        top: 215px;
+        left: 30%;
+    }
+}
+@media (min-width: 316px) and (max-width: 348px) {
+    .featured_products_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 38%;
+        position: absolute;
+        top: 170px;
+        left: 30%;
+    }
 }
 @media (min-width: 349px) and (max-width: 399px) {
+    .featured_products_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 38%;
+        position: absolute;
+        top: 175px;
+        left: 30%;
+    }
     .prod {
         height: 225px;
     }
 }
 @media (min-width: 400px) and (max-width: 443px) {
+    .featured_products_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 38%;
+        position: absolute;
+        top: 173px;
+        left: 30%;
+    }
     .prod {
         height: 290px;
     }
 }
-@media (min-width: 444px) and (max-width: 575px) {
+@media (min-width: 444px) and (max-width: 557px) {
+    .featured_products_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 38%;
+        position: absolute;
+        top: 170px;
+        left: 30%;
+    }
+    .prod {
+        height: 300px;
+    }
+}
+@media (min-width: 458px) and (max-width: 575px) {
+    .featured_products_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 38%;
+        position: absolute;
+        top: 130px;
+        left: 30%;
+    }
     .prod {
         height: 300px;
     }
 }
 @media (min-width: 576px) and (max-width: 767px) {
+    .featured_products_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 38%;
+        position: absolute;
+        top: 120px;
+        left: 30%;
+    }
     .prod {
         height: 298px;
     }
 }
-@media (min-width: 768px) and (max-width: 1199px) {
+@media (min-width: 768px) and (max-width: 813px) {
+    .featured_products_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 38%;
+        position: absolute;
+        top: 115px;
+        left: 30%;
+    }
+    .prod {
+        height: 298px;
+    }
+}
+@media (min-width: 814px) and (max-width: 1199px) {
+    .featured_products_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 38%;
+        position: absolute;
+        top: 85px;
+        left: 30%;
+    }
     .prod {
         height: 298px;
     }
@@ -120,11 +253,11 @@ header{
 
 /*about the company*/
 .about-area {
-    background-color: #fff8dc;
+    background-color: #e0a954;
 }
 
 .about-title {
-    color: #343a40;
+    color: #000000;
     margin: 0 0 60px 0;
     font-size: 40px;
     text-align: center;
@@ -132,10 +265,10 @@ header{
 .about-title::after {
     content: "";
     border-top: 2px solid #000000;
-    width: 15%;
+    width: 25%;
     position: absolute;
     top: 60px;
-    left: 42.5%;
+    left: 36.5%;
 }
 @media (min-width: 240px) and (max-width: 267px) {
     .about-title::after {
@@ -183,11 +316,9 @@ header{
         left: 36%;
     }
 }
-
-
 .about-subtitle {
     font-size: 17px;
-    color: #343a40;
+    color: #000000;
     text-transform: uppercase;
     font-weight: bold;
 }
@@ -200,15 +331,120 @@ header{
     line-height: 30px;
 }
 .list-about i {
-    color: #65DAF9;
+    color: #65DAF9 !important;
     margin-right: 15px;
+}
+.about-text {
+    color: #000000;
+}
+
+/*contact area*/
+.contact-area {
+    background-color: #fff;
+}
+.contact-title {
+    color: #343a40;
+    margin: 0 0 60px 0;
+    font-size: 40px;
+    text-align: center;
+}
+.contact-title::after {
+    content: "";
+    border-top: 2px solid #000000;
+    width: 15%;
+    position: absolute;
+    top: 60px;
+    left: 42.5%;
+}
+@media (min-width: 240px) and (max-width: 267px) {
+    .contact-title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 38%;
+        position: absolute;
+        top: 155px;
+        left: 29%;
+    }    
+}
+@media (min-width: 268px) and (max-width: 299px) {
+    .contact-title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 38%;
+        position: absolute;
+        top: 115px;
+        left: 29%;
+    }
+}
+@media (min-width: 300px) and (max-width: 399px) {
+    .contact-title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 40%;
+        position: absolute;
+        top: 60px;
+        left: 28%;
+    }
+}
+@media (min-width: 400px) and (max-width: 503px) {
+    .contact-title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 28%;
+        position: absolute;
+        top: 58px;
+        left: 34.5%;
+    }
+}
+@media (min-width: 504px) and (max-width: 991px) {
+    .contact-title::after {
+        width: 28%;
+        left: 36%;
+    }
+}
+.input-msgm {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #80bdff;
+    box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.20);
+}
+.input-msgm:focus {
+    background-color: #fff;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.11rem rgba(0, 123, 255, 0.29);
+}
+.title-address, .title-numer, .title-whatsapp {
+    font-weight: bold;
+    margin-bottom: -0.9%;
+}
+
+/*footer*/
+footer {
+    background-color: #000000;
+}
+.social_networks {
+    text-align: center;
+}
+.social_networks a {
+    font-size: 18px;
+    margin-top: 1%;
+}
+.social_networks a i {
+    font-size: 22px;
+    padding: 5px;
+}
+#instagram {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /*modal account*/
 .input-user {
     padding: 0.25rem 0.5rem 0.25rem 2.7rem !important;
 }
-
 label {
     position: absolute;
     top: 4px;
