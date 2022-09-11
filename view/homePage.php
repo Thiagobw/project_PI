@@ -146,21 +146,31 @@
 <footer>
     <div class="container">
         <div class="row">
+
+            <!--company social networks-->
             <div class="col-md-6 mt-3 social_networks">
-                <h5 class="text-white">Redes Sociais</h5>            
+                <h5 class="text-white mt-2">Redes Sociais</h5>            
                 <a class="btn" href="https://www.instagram.com/luiz.alvez_imports/" target="_blank"><i id="instagram" class="fa-brands fa-instagram"></i> Instagram</a>
                 <br>
                 <a class="btn" href=""><i class="fa-brands fa-facebook-f"></i> Facebook</a>
             </div>
 
+            <!-- accepted payment methods-->
             <div class=" col-md-6 mt-3">
-                <h5 class="text-white text-center">Formas de pagamentos</h5>
-                <img src="https://images.tcdn.com.br/commerce/assets/store/img/icons/formas_pagamento/pag_peqcartavisatraycheckout.png?50f5886fd37ca2d739f9991be7419369" alt="">
-                <img src="https://images.tcdn.com.br/commerce/assets/store/img/icons/formas_pagamento/pag_peqelotraycheckout.png?50f5886fd37ca2d739f9991be7419369" alt="">
-                <img src="https://images.tcdn.com.br/commerce/assets/store/img/icons/formas_pagamento/pag_peqmastercardtraycheckout.png?50f5886fd37ca2d739f9991be7419369" alt="">
-                <img src="https://images.tcdn.com.br/commerce/assets/store/img/icons/formas_pagamento/pag_pd_peqcartaohiper.png?50f5886fd37ca2d739f9991be7419369" alt="">
-                <img src="https://images.tcdn.com.br/commerce/assets/store/img/icons/formas_pagamento/pag_peqpix.png?50f5886fd37ca2d739f9991be7419369" alt="">
-                <img src="https://images.tcdn.com.br/commerce/assets/store/img/icons/formas_pagamento/pag_peqboletotraycheckout.png?50f5886fd37ca2d739f9991be7419369" alt="">
+                <div class="row">
+                    <div class="col-12 mt-2">
+                        <h5 class="text-white text-center">Formas de pagamento</h5>
+                    </div>
+
+                    <div class="col-12 center mt-2">
+                        <img class="mr-1" src="https://images.tcdn.com.br/commerce/assets/store/img/icons/formas_pagamento/pag_peqcartavisatraycheckout.png?50f5886fd37ca2d739f9991be7419369" alt="Visa">
+                        <img class="mr-1" src="https://images.tcdn.com.br/commerce/assets/store/img/icons/formas_pagamento/pag_peqelotraycheckout.png?50f5886fd37ca2d739f9991be7419369" alt="Elo">
+                        <img class="mr-1" src="https://images.tcdn.com.br/commerce/assets/store/img/icons/formas_pagamento/pag_peqmastercardtraycheckout.png?50f5886fd37ca2d739f9991be7419369" alt="Mastercard">
+                        <img class="mr-1" src="https://images.tcdn.com.br/commerce/assets/store/img/icons/formas_pagamento/pag_pd_peqcartaohiper.png?50f5886fd37ca2d739f9991be7419369" alt="Hipercard">
+                        <img class="mr-1" src="https://images.tcdn.com.br/commerce/assets/store/img/icons/formas_pagamento/pag_peqpix.png?50f5886fd37ca2d739f9991be7419369" alt="Pix">
+                        <img src="https://images.tcdn.com.br/commerce/assets/store/img/icons/formas_pagamento/pag_peqboletotraycheckout.png?50f5886fd37ca2d739f9991be7419369" alt="Boleto bancario">
+                    </div>
+                </div>
             </div>
             <div class="col-12">
 
