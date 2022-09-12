@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styleHomePage.css">
     <link rel="stylesheet" href="img/icons/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
     <title>Home Page - LA Imports</title>
 </head>
@@ -33,7 +34,7 @@
     <div class="col-12">
         <h3 class="featured_products_title">O melhor para você na Luiz Alves Imports!</h3>
     </div>
-    <div class="row justify-content-around">
+    <div class="row justify-content-around" id="row_products_animate1">
 
 		<div class="col-11 col-sm-8 col-md-5 col-lg-5 col-xl-3 mt-3 mb-3 center prod shadow">
             <img src="img/products/yezzyzebra.png" alt="Mais Vendidos" class="w-100">
@@ -48,7 +49,7 @@
         </div>
     </div>
 
-    <div class="row justify-content-around">
+    <div class="row justify-content-around" id="row_products_animate2">
         <div class="col-11 col-sm-8 col-md-5 col-lg-5 col-xl-3 mt-3 mb-3 center prod shadow">
             <img src="img/products/adidasForum.png" alt="Mais Vendidos" class="w-100">
         </div>

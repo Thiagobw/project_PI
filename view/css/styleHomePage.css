@@ -99,6 +99,23 @@ header{
     border-bottom: 1px solid #d9d9d9;
     border-top: 1px solid #e6e5e5;
 }
+.prod:hover {
+        /*animation*/
+        animation: pulse;
+        animation-duration: 1.5s;
+}
+
+ /*animation for PC and tablet*/
+@media (min-width: 768px) {
+    .featured_products_title {
+        animation: flash;
+    animation-duration: 1.3s;
+    }
+    #row_products_animate1 {
+        animation: bounceInRight;
+        animation-duration: 2s;
+    }
+}
 @media (min-width: 240px) and (max-width: 267px) {
     .featured_products_title::after {
         content: "";
@@ -460,12 +477,22 @@ label {
 .btn-log {
     font-size: 17px !important;
     letter-spacing: 1px;
+    font-weight: 300;
+    color: #ffffff;
 }
 
 #createAcc {
     display: none;
 }
-
+#btncreateAcc {
+    font-size: 17px !important;
+    color: #ffffff;
+    font-weight: 300;
+}
 #title-createAcc {
     display: none;
+}
+#toRegister {
+    font-size: large;
+    color: #000000;
 }
