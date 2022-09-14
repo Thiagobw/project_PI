@@ -94,6 +94,23 @@
     </div>
 </div>
 
+<!--sale ad area-->
+<div class="ad_area">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-4">
+                <h3 class="ad_title">Adquira seu tênis</h3>
+            </div>
+
+            <div class="col-12">
+                <p class="text-center">escrever algo assim... Nos só fazemos vendas atraves de encomendas, portanto para encomendar entre em contato conosco via whatsapp....</p>
+                <p class="text-center">e para nós enviar uma mensagem clique no botão abaixo:</p>
+                <a class="btn w-30" href="">Whatsapp</a> afazer o btn ainda e implementação do plugin wpp
+            </div>
+        </div>
+    </div>
+</div>
+
 <!--company contact area-->
 <div class="contact-area">
     <div class="container">

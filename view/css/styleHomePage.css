@@ -32,7 +32,10 @@ body {
     width: 80% !important;
 }
 .w-10 {
-    width: 5% !important;
+    width: 10% !important;
+}
+.w-30 {
+    width: 30% !important;
 }
 .h-90 {
     height: 90% !important;
@@ -354,6 +357,77 @@ header{
 .about-text {
     color: #000000;
 }
+/*sale ad area*/
+.ad_title {
+    color: #343a40;
+    margin: 0 0 60px 0;
+    font-size: 40px;
+    text-align: center;
+}
+.ad_title::after {
+    content: "";
+    border-top: 2px solid #000000;
+    width: 17%;
+    position: absolute;
+    top: 60px;
+    left: 41.5%;
+}
+@media (min-width: 240px) and (max-width: 267px) {
+    .ad_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 38%;
+        position: absolute;
+        top: 110px;
+        left: 29%;
+    }
+}
+@media (min-width: 268px) and (max-width: 299px) {
+    .ad_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 38%;
+        position: absolute;
+        top: 105px;
+        left: 29%;
+    }
+}
+@media (min-width: 300px) and (max-width: 339px) {
+    .ad_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 40%;
+        position: absolute;
+        top: 100px;
+        left: 28%;
+    }
+}
+@media (min-width: 340px) and (max-width: 399px) {
+    .ad_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 40%;
+        position: absolute;
+        top: 70px;
+        left: 28%;
+    }
+}
+@media (min-width: 400px) and (max-width: 503px) {
+    .ad_title::after {
+        content: "";
+        border-top: 2px solid #000000;
+        width: 35%;
+        position: absolute;
+        top: 58px;
+        left: 33%;
+    }
+}
+@media (min-width: 504px) and (max-width: 991px) {
+    .ad_title::after {
+        width: 33%;
+        left: 34%;
+    }
+}
 
 /*contact area*/
 .contact-area {
@@ -389,7 +463,7 @@ header{
         border-top: 2px solid #000000;
         width: 38%;
         position: absolute;
-        top: 115px;
+        top: 75px;
         left: 29%;
     }
 }
@@ -459,13 +533,23 @@ footer {
 }
 /*modal account*/
 .modal-content {
-    background-color: #ffffff10 !important;
+    background-color: #00000010 !important;
     border: 1px solid #ffffff50;
     backdrop-filter: blur(3px);
     border-radius: 1em;
 }
 .input-user {
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid #003773;
+        box-shadow: 0 0 0 0.1rem rgba(0, 123, 255, 0.20);
     padding: 0.25rem 0.5rem 0.25rem 2.7rem !important;
+}
+.input-user:focus {
+    background-color: #fff;
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.11rem rgba(0, 123, 255, 0.29);
 }
 label {
     position: absolute;
