@@ -73,7 +73,7 @@
             </div>
 
             <div class="col-md-6 mb-4" style="padding: 0;">
-                <img class="img-fluid w-100" src="img/img_exemplo.png" alt="Luiz Alvez Imports">
+                <img class="img-fluid w-100" src="img/lojatenis.jpg" alt="Luiz Alvez Imports">
             </div>
             
             <div class="col-md-6 about-text">
@@ -148,10 +148,10 @@
             <div class="col-md-6">
                 <div class="col-12 text-left mt-4">
                     <p class="ml-5 title-numer">Telefone</p>
-                    <p class="ml-5">47 3377-3256</p>
+                    <p class="ml-5">47 3377-1069</p>
 
                     <p class="ml-5 title-whatsapp">Whatsapp</p>
-                    <p class="ml-5">a fazer</p>
+                    <p class="ml-5">(47) 99686-7053</p>
 
                     <p class="ml-5 title-address">Endereço</p>
                     <p class="ml-5 text-address">estamos localizados na cidade Luiz alves</p>
