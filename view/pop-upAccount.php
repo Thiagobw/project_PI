@@ -13,14 +13,14 @@
             <div class="modal-body">
                 <div class="row" id="account">
                     <div class="col-12 input-group">
-                        <form class="input-group center" id="form1">
+                        <form class="input-group center" id="form1" action="/project_PI/control/autenticacao.php"  method="post">
                             <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8">
                                 <label for="Email"><i class="fa-regular fa-address-card"></i></label>
-                                <input class=" form-control input-user" type="text" placeholder="CPF" id="CpfLog" maxlength="14" autocomplete="off">
+                                <input class=" form-control input-user" type="text" placeholder="CPF" id="CpfLog"  name="CpfLog" maxlength="14" autocomplete="off">
                             </div>
                             <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                 <label for="Senha"><i class="bi bi-key"></i></label>
-                                <input class="form-control input-user" type="password" placeholder="Senha" id="passLog">
+                                <input class="form-control input-user" type="password" placeholder="Senha" id="passLog"  name="passLog">
                             </div>
                             <div class="col-5 col-sm-5 col-lg-5 mt-3 center">
                                 <input class="btn btn-primary w-100 btn-log" form="form1" type="submit" name="log-in" value="Entrar">
