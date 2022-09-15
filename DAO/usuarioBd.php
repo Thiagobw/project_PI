@@ -8,13 +8,14 @@ function autenticar (Users $user){
     $password=$user->getPassword();
 
     $conexao = connect();
-    $stmt = $conexao->prepare("SELECT * FROM vendedor where CPF = :CPF and senha= :senha");
-    $stmt->bindValue(':CPF', $cpf);
+    $stmt = $conexao->prepare("SELECT * FROM usuario where login = :login and senha= :senha");
+    $stmt->bindValue(':login', $cpf);
     $stmt->bindValue(':senha', $password);
 $stmt->execute();
 
 
 $result = $stmt->fetchAll();
+
 return $result;
 
 }

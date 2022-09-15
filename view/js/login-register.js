@@ -8,9 +8,17 @@ $('#form1').submit(function(e){
     if(cpfLog.length == 0 || passLog.length == 0){
         alert("preencha todos os campos para poder fazer log in!");
     } else{
-        alert("tudo certo!");
+        alert("tudo certo222!");
 
-        ajaxLog();
+        $.ajax({
+            url: $('#form1').attr("action"),
+            method: 'post',
+            data: $('#form1').serialize(),
+            dataType: 'json'
+        }).done(function(result){
+            alert (result);
+            
+        })
     }
 })
 
@@ -38,7 +46,7 @@ function ajaxLog() {
     $ajax({
         URL: 'project_PI/control/atutenticacao.php',
         method: 'post',
-        data: {name: name, cpf: cpf, tell: tell, email: email, pass: pass},
+        data: $('#form1').serialize(),
         dataType: 'json'
     }).done(function(result){
         
