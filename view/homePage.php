@@ -176,14 +176,15 @@
     })
 
     // utilizar keyup para tell
-    
-    tell.addEventListener('keypress', () => {
+    /**
+        tell.addEventListener('keypress', () => {
         let tellLength = tell.value.length;
 
         if (tellLength == 2) {
             "(" += tell.value += "";
         }
     })
+     */
 </script>
 
 </body>
