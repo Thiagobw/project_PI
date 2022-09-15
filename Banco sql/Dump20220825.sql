@@ -85,13 +85,17 @@ CREATE TABLE `email` (
   `email` varchar(60) NOT NULL DEFAULT 'nao informado',
   `Vendedor_id_vendedor` int(11) NOT NULL,
   `Cliente_id_cliente` int(11) NOT NULL,
+  `Cliente_id_usuario` int(11) NOT NULL,
+  
   PRIMARY KEY (`id_email`),
   UNIQUE KEY `email_UNIQUE` (`email`),
   UNIQUE KEY `id_email_UNIQUE` (`id_email`),
   KEY `fk_Email_Vendedor_idx` (`Vendedor_id_vendedor`),
   KEY `fk_Email_Cliente1_idx` (`Cliente_id_cliente`),
   CONSTRAINT `fk_Email_Cliente1` FOREIGN KEY (`Cliente_id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Email_Vendedor` FOREIGN KEY (`Vendedor_id_vendedor`) REFERENCES `vendedor` (`id_vendedor`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_Email_Vendedor` FOREIGN KEY (`Vendedor_id_vendedor`) REFERENCES `vendedor` (`id_vendedor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+    KEY `fk_usuario_Cliente1_idx` (`Cliente_id_usuario`),
+  CONSTRAINT `fk_usuario_Cliente1` FOREIGN KEY (`Cliente_id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -269,9 +273,13 @@ CREATE TABLE `vendedor` (
   `id_vendedor` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) DEFAULT NULL,
   `CPF` varchar(14) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
   PRIMARY KEY (`id_vendedor`,`CPF`),
   UNIQUE KEY `CPF_UNIQUE` (`CPF`),
-  UNIQUE KEY `id_vendedor_UNIQUE` (`id_vendedor`)
+  UNIQUE KEY `id_vendedor_UNIQUE` (`id_vendedor`),
+  KEY `fk_Vendedor_usuario_idx` (`id_vendedor`),
+  CONSTRAINT `fk_Vendedor_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -301,6 +309,8 @@ CREATE TABLE `usuario` (
   `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
   `login` varchar(100) DEFAULT NULL,
   `senha` varchar(300) DEFAULT NULL,
+  `tipo` int(1) NOT NULL DEFAULT 1 , /* 1 - VENDEDOR, 2 - CLIENTE - 0 ADMIN**/
+
   PRIMARY KEY (`id_usuario`),
   UNIQUE KEY `id_usuario_UNIQUE` (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
