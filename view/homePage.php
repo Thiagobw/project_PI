@@ -160,7 +160,7 @@
                     </a>
 
                     <p class="ml-5 mt-3 title-address">Endereço</p>
-                    <p class="ml-5 text-address">estamos localizados na cidade Luiz alves</p>
+                    <p class="ml-5 text-address">Rodvia SC-414 km19, n° 8267, Vila Nova, Luiz Alves, 89128-000 </p>
                 </div>
             </div>
         </div>

@@ -294,3 +294,15 @@ UNLOCK TABLES;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
 -- Dump completed on 2022-08-25 11:39:03
+DROP TABLE IF EXISTS `usuario`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `usuario` (
+  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `login` varchar(100) DEFAULT NULL,
+  `senha` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`),
+  UNIQUE KEY `id_usuario_UNIQUE` (`id_usuario`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
