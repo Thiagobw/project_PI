@@ -1,6 +1,9 @@
 /*imports*/
+/*icons*/
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css");
+/*fonts*/
 
+/*-----------------------*/
 
 /*reset*/
 * {
@@ -9,7 +12,7 @@
     box-sizing: border-box;
     font-family: sans-serif;
 }
-
+/*-----------------------*/
 
 /*gerais*/
 body {
@@ -21,21 +24,33 @@ body {
     justify-content: center !important;
     align-items: center !important;
 }
+/*-----------------------*/
+
 /*custon size*/
-.w-90 {
-    width: 90% !important;
-}
+/*width custon*/
 .w-95 {
     width: 95% !important;
+}
+.w-90 {
+    width: 90% !important;
 }
 .w-80 {
     width: 80% !important;
 }
+.w-30 {
+    width: 30% !important;
+}
+.w-20 {
+    width: 20% !important;
+}
 .w-10 {
     width: 10% !important;
 }
-.w-30 {
-    width: 30% !important;
+/*-----------------------*/
+
+/*height custon*/
+.h-95 {
+    height: 95% !important;
 }
 .h-90 {
     height: 90% !important;
@@ -43,7 +58,16 @@ body {
 .h-80 {
     height: 80% !important;
 }
-
+.h-30 {
+    height: 30% !important;
+}
+.h-20 {
+    height: 20% !important;
+}
+.h-10 {
+    height: 10% !important;
+}
+/*-----------------------*/
 
 /*navbar*/
 header{
@@ -71,6 +95,7 @@ header{
 .menu-options::after {
     content: none !important;
 }
+/*-----------------------*/
 
 /*banner*/
 .banner {
@@ -80,6 +105,7 @@ header{
 .banner_content_main {
     padding: 0;
 }
+/*-----------------------*/
 
 /*featured products*/
 .featured_products_title {
@@ -107,6 +133,7 @@ header{
         animation: pulse;
         animation-duration: 1.5s;
 }
+/*-----------------------*/
 
  /*animation for PC and tablet*/
 @media (min-width: 768px) {
@@ -270,6 +297,7 @@ header{
         height: 370px;
     }
 }
+/*-----------------------*/
 
 /*about the company*/
 .about-area {
@@ -357,7 +385,15 @@ header{
 .about-text {
     color: #000000;
 }
+/*-----------------------*/
+
 /*sale ad area*/
+#btn_wpp {
+    border-radius: 1.3em;
+}
+#btn_wpp:focus {
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.4);
+}
 .ad_title {
     color: #343a40;
     margin: 0 0 60px 0;
@@ -428,8 +464,16 @@ header{
         left: 34%;
     }
 }
+/*-----------------------*/
 
 /*contact area*/
+#contact_wpp {
+    text-decoration: none;
+    color: #0068ff;
+}
+#contact_wpp:hover {
+    color: #003fbd;
+}
 .contact-area {
     background-color: #fff;
 }
@@ -509,6 +553,7 @@ header{
     font-weight: bold;
     margin-bottom: -0.9%;
 }
+/*-----------------------*/
 
 /*footer*/
 footer {
@@ -531,6 +576,8 @@ footer {
             background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+/*-----------------------*/
+
 /*modal account*/
 .modal-content {
     background-color: #00000010 !important;
@@ -580,3 +627,4 @@ label {
     font-size: large;
     color: #000000;
 }
+/*-----------------------*/

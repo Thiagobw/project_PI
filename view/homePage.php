@@ -105,7 +105,11 @@
             <div class="col-12">
                 <p class="text-center">escrever algo assim... Nos só fazemos vendas atraves de encomendas, portanto para encomendar entre em contato conosco via whatsapp....</p>
                 <p class="text-center">e para nós enviar uma mensagem clique no botão abaixo:</p>
-                <a class="btn w-30" href="">Whatsapp</a> afazer o btn ainda e implementação do plugin wpp
+                <div class="row center">
+                    <a class="w-30" id="btn_wpp" aria-label="Chat on WhatsApp" target="_blank" href="https://wa.me/5547996867053?text=Olá!%20Estou%20interesse%20em%20encomendar%20um%20tênis%20com%20vocês!">
+                        <img class="img-fluid w-100" alt="Chat on WhatsApp" src="img/WhatsAppButtonGreenLarge.svg"/>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
@@ -151,9 +155,11 @@
                     <p class="ml-5">47 3377-1069</p>
 
                     <p class="ml-5 title-whatsapp">Whatsapp</p>
-                    <p class="ml-5">(47) 99686-7053</p>
+                    <a class="ml-5" id="contact_wpp" aria-label="Chat on WhatsApp" target="_blank" href="https://wa.me/5547996867053?text=Olá!%20Eu%20falo%20com%20Luis%20Alves%20Imports?">
+                        +55 (47) 99686-7053
+                    </a>
 
-                    <p class="ml-5 title-address">Endereço</p>
+                    <p class="ml-5 mt-3 title-address">Endereço</p>
                     <p class="ml-5 text-address">estamos localizados na cidade Luiz alves</p>
                 </div>
             </div>
