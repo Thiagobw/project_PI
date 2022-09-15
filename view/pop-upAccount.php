@@ -16,7 +16,7 @@
                         <form class="input-group center" id="form1">
                             <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8">
                                 <label for="Email"><i class="fa-regular fa-address-card"></i></label>
-                                <input class=" form-control input-user" type="text" placeholder="CPF" id="CpfLog">
+                                <input class=" form-control input-user" type="text" placeholder="CPF" id="CpfLog" maxlength="14" autocomplete="off">
                             </div>
                             <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                 <label for="Senha"><i class="bi bi-key"></i></label>
@@ -41,7 +41,7 @@
 
                             <div class="col-12 col-sm-7 col-lg-8 mt-3">
                                 <label for="CPF"><i class="fa-regular fa-address-card"></i></label>
-                                <input class=" form-control input-user" type="text" placeholder="CPF" name="cpf" id="cpf">
+                                <input class=" form-control input-user" type="text" placeholder="CPF" name="cpf" id="cpf" maxlength="14" autocomplete="off">
                             </div>
 
                             <div class="col-12 col-sm-7 col-lg-8 mt-3">
