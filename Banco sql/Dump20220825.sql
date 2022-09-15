@@ -269,7 +269,6 @@ CREATE TABLE `vendedor` (
   `id_vendedor` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) DEFAULT NULL,
   `CPF` varchar(14) NOT NULL,
-  `senha` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_vendedor`,`CPF`),
   UNIQUE KEY `CPF_UNIQUE` (`CPF`),
   UNIQUE KEY `id_vendedor_UNIQUE` (`id_vendedor`)
