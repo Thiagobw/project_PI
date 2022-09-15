@@ -13,9 +13,17 @@ $user->setCpf($cpf);
 $user->setPassword($pass);
 
 $result = autenticar($user);
-
+$resposta = array();
+$resposta['status'] = false;
 if (count($result)>0) {
-    echo json_encode($result);
+    $resposta['status'] = true;
+    session_start();
+    $_SESSION['autenticado'] = true;
+    $_SESSION['usuario'] = $result;
+    
+} else{
+    $resposta['msg'] = "usuario/login invalido";
+
 }
 
-echo json_encode($result);
+echo json_encode($resposta);

@@ -1,3 +1,9 @@
+<?php
+ session_start();
+ if ($_SESSION['autenticado'] == false){
+    header('Location: /project_PI/view/homePage.php');
+ }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

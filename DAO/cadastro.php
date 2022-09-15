@@ -34,7 +34,7 @@ $logarray = $array['login'];
           href='login.html'</script>";
 
         }else{
-            
+
           echo"<script language='javascript' type='text/javascript'>
           alert('Não foi possível cadastrar esse usuário');window.location
           .href='cadastro.html'</script>";

@@ -8,16 +8,18 @@ $('#form1').submit(function(e){
     if(cpfLog.length == 0 || passLog.length == 0){
         alert("preencha todos os campos para poder fazer log in!");
     } else{
-        alert("tudo certo222!");
-
         $.ajax({
             url: $('#form1').attr("action"),
             method: 'post',
             data: $('#form1').serialize(),
             dataType: 'json'
         }).done(function(result){
-            alert (result);
-            
+            if(result.status == true){
+                window.location="/project_PI/view/dashboard.php";
+            }else{
+                alert(result.msg);
+            }
+           
         })
     }
 })
