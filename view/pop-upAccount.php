@@ -46,7 +46,7 @@
 
                             <div class="col-12 col-sm-7 col-lg-8 mt-3">
                                 <label for="Telefone"><i class="bi bi-telephone"></i></label>
-                                <input class=" form-control input-user" type="text" placeholder="Telefone" name="tell" id="tell">
+                                <input class=" form-control input-user" type="text" placeholder="Telefone" name="tell" id="tell" onKeyup="phoneMask(v)">
                             </div>
 
                             <div class="col-12 col-sm-7 col-lg-8 mt-3">
