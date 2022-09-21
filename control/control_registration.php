@@ -8,7 +8,7 @@ $name = $_POST['name'];
 $cpf = $_POST['cpf'];
 $tell = $_POST['tell'];
 $email = $_POST['email'];
-$pass = SHA1($_POST['pass']);
+$pass = password_hash($_POST['pass'], PASSWORD_ARGON2I, ['memory_cost' => 2048, 'time_cost' => 4, 'threads' => 3]);
 
 $Users = new Users();
 

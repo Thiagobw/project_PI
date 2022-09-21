@@ -4,24 +4,24 @@ $(document).ready(function() {
 
     function TestaCPF(strCPF) {
 
-        var Soma;
+        var Sum;
         var Resto;
-        Soma = 0;
+        Sum = 0;
       
         strCPF = strCPF.replace(/[^0-9]/g,'');
 
         if (strCPF == "00000000000") return false;
 
-        for (i=1; i<=9; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (11 - i);
+        for (i=1; i<=9; i++) Sum = Sum + parseInt(strCPF.substring(i-1, i)) * (11 - i);
         
-        Resto = (Soma * 10) % 11;
+        Resto = (Sum * 10) % 11;
 
         if ((Resto == 10) || (Resto == 11))  Resto = 0;
         if (Resto != parseInt(strCPF.substring(9, 10)) ) return false;
 
-        Soma = 0;
-        for (i = 1; i <= 10; i++) Soma = Soma + parseInt(strCPF.substring(i-1, i)) * (12 - i);
-        Resto = (Soma * 10) % 11;
+        Sum = 0;
+        for (i = 1; i <= 10; i++) Sum = Sum + parseInt(strCPF.substring(i-1, i)) * (12 - i);
+        Resto = (Sum * 10) % 11;
 
         if ((Resto == 10) || (Resto == 11))  Resto = 0;
         if (Resto != parseInt(strCPF.substring(10, 11) ) ) return false;
@@ -43,17 +43,16 @@ $(document).ready(function() {
             } else{
                  $.ajax({
                     type: 'POST',
-                    url: '../control/autenticacao.php',
+                    url: 'project_PI/control/authentication.php',
                     dataType: 'json',
                     data: { cpf:cpfLog, pass: passLog },
                     success: function(json){    
-                        if(json.status == true){
-                            location.reload();
+                        if(json.status == true) {
+                            location.reload('project_PI/view/salePage.php');
                         }else{
                             alert(json.msg);
                         }
                         
-
                     },
                     error: function() {
                         alert('Erro: contate o suporte')
@@ -80,23 +79,23 @@ $(document).ready(function() {
 
         if(TestaCPF(cpf)){
 
-            if(name.length == 0 || cpf.length == 0 || tell.length == 0 || email.length == 0 || pass.length == 0){
+            if(name.length == 0 || cpf.length == 0 || tell.length == 0 || email.length == 0 || pass.length == 0) {
                 alert("preencha todos os campos para poder fazer cadastro!");
 
             } else{
                 $.ajax({
                     type: 'POST',
-                    url: '../control/control_registration.php',
+                    url: 'project_PI/control/control_registration.php',
                     dataType: 'json',
                     data: { cpf:cpf, pass: pass ,name: name,tell:tell, email:email},
-                    success: function(json){    
+                    success: function(json) {
+
                         if(json.status == true){
                             location.reload();
                         }else{
                             alert(json.msg);
                         }
                         
-
                     },
                     error: function() {
                         alert('Erro: contate o suporte')

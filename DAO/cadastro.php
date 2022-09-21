@@ -9,14 +9,14 @@ $select = mysql_query($query_select,$connect);
 $array = mysql_fetch_array($select);
 $logarray = $array['login'];
 
-  if($login == "" || $login == null){
+  if($login == "" || $login == null) {
 
     echo"<script language='javascript' type='text/javascript'>
     alert('O campo login deve ser preenchido');window.location.href='
     cadastro.html';</script>";
 
     }else{
-      if($logarray == $login){
+      if($logarray == $login) {
 
         echo"<script language='javascript' type='text/javascript'>
         alert('Esse login já existe');window.location.href='
@@ -31,7 +31,7 @@ $logarray = $array['login'];
 
           echo"<script language='javascript' type='text/javascript'>
           alert('Usuário cadastrado com sucesso!');window.location.
-          href='login.html'</script>";
+          href='salePage.php'</script>";
 
         }else{
 
