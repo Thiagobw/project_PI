@@ -5,10 +5,13 @@
             <div class="modal-header">
                 <h2 class="modal-title" id="title-account">Entre em sua conta</h2>
                 <h2 class="modal-title" id="title-createAcc">Crie a sua conta</h2>
-                <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
-  <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
-</svg></button>
+                <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
+                        <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
+                    </svg>
+                </button>
             </div>
+
             <!-- log in form -->
             <div class="modal-body">
                 <div class="row" id="account">
@@ -46,7 +49,7 @@
 
                             <div class="col-12 col-sm-7 col-lg-8 mt-3">
                                 <label for="Telefone"><i class="bi bi-telephone"></i></label>
-                                <input class=" form-control input-user  is-valid" type="text" placeholder="Telefone" name="tell" id="tell">
+                                <input class=" form-control input-user  is-valid" type="text" placeholder="Telefone" name="tell" id="tell" maxlength="15">
                             </div>
 
                             <div class="col-12 col-sm-7 col-lg-8 mt-3">

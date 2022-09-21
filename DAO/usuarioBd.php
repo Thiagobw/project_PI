@@ -4,24 +4,25 @@ include_once "connection.php";
 include_once "../model/users.php";
 
 
-function autenticar (Users $user) {
+function autenticar (Users $user){
     $cpf=$user->getCpf();
-    $pass=$user->getPassword();
+    $senha=$user->getPassword();
 
 
     $conexao = connect();
 
     $stmt = $conexao->prepare("SELECT * FROM usuarios where cpf = :cpf and senha = :senha");
     $stmt->bindValue(':cpf', $cpf);
-    $stmt->bindValue(':senha', $pass);
+    $stmt->bindValue(':senha', $senha);
     $stmt->execute();
 
     $result = $stmt->fetchAll();
 
     return $result;
+
 }
 
- function autenticar_email(Users $user) {
+ function autenticar_email(Users $user){
     $email=$user->getEmail();
 
     $conexao = connect();

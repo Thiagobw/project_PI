@@ -4,13 +4,11 @@ include_once "../DAO/usuarioBd.php";
 include_once "../model/users.php";
 // include_once "../DAO/connection.php";
 
-// falta fazer um filtro extra aqui, antes de setar nas variaveis.
-
 $name = $_POST['name'];
 $cpf = $_POST['cpf'];
 $tell = $_POST['tell'];
 $email = $_POST['email'];
-$pass = password_hash($_POST['pass'], PASSWORD_ARGON2I, ['memory_cost' => 2048, 'time_cost' => 4, 'threads' => 3]);
+$pass = SHA1($_POST['pass']);
 
 $Users = new Users();
 
@@ -25,8 +23,8 @@ if($pass < 6){
 		$result_email = autenticar_email($Users);
 		if(count($result_email)<1){
 			$result_cpf = autenticar_cpf($Users);
-
 			if(count($result_cpf)<1){
+
 
 				$data = [
 				    'nome' => $name,
