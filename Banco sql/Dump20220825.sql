@@ -50,26 +50,6 @@ CREATE TABLE `cliente` (
 
 /*Data for the table `cliente` */
 
-/*Table structure for table `email` */
-
-DROP TABLE IF EXISTS `email`;
-
-CREATE TABLE `email` (
-  `id_email` int(11) NOT NULL AUTO_INCREMENT COMMENT '\n\n',
-  `email` varchar(60) NOT NULL DEFAULT 'nao informado',
-  `Vendedor_id_vendedor` int(11) NOT NULL,
-  `Cliente_id_cliente` int(11) NOT NULL,
-  PRIMARY KEY (`id_email`),
-  UNIQUE KEY `email_UNIQUE` (`email`),
-  UNIQUE KEY `id_email_UNIQUE` (`id_email`),
-  KEY `fk_Email_Vendedor_idx` (`Vendedor_id_vendedor`),
-  KEY `fk_Email_Cliente1_idx` (`Cliente_id_cliente`),
-  CONSTRAINT `fk_Email_Cliente1` FOREIGN KEY (`Cliente_id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_Email_Vendedor` FOREIGN KEY (`Vendedor_id_vendedor`) REFERENCES `vendedor` (`id_vendedor`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-/*Data for the table `email` */
-
 /*Table structure for table `endereco` */
 
 DROP TABLE IF EXISTS `endereco`;
@@ -129,6 +109,22 @@ CREATE TABLE `pedido_produto` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 /*Data for the table `pedido_produto` */
+
+/*Table structure for table `vendedor` */
+
+DROP TABLE IF EXISTS `vendedor`;
+
+CREATE TABLE `vendedor` (
+  `id_vendedor` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) DEFAULT NULL,
+  `CPF` varchar(14) NOT NULL,
+  `senha` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`id_vendedor`,`CPF`),
+  UNIQUE KEY `CPF_UNIQUE` (`CPF`),
+  UNIQUE KEY `id_vendedor_UNIQUE` (`id_vendedor`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+/*Data for the table `vendedor` */
 
 insert  into `pedido_produto`(`idPedido_Produto`,`quantidade`,`valor`,`Pedido_id_pedido`,`Produtos_idProdutos`) values 
 (1,'1','250',0,3),
@@ -201,22 +197,26 @@ insert  into `usuarios`(`id_usuario`,`nome`,`cpf`,`telefone`,`email`,`senha`) va
 (3,'loco','003.112.840-86','145566656','veruska6584@uorak.com','7163d28263e69194a23cc96dde29dd92886fb034'),
 (4,'trser','212.547.400-07','(14) 99881-244','desenvolvimento@contabilivre.com.br','f0d45e5602bb978a29d940ca611d113ec3feb44d');
 
-/*Table structure for table `vendedor` */
 
-DROP TABLE IF EXISTS `vendedor`;
+/*Table structure for table `email` */
 
-CREATE TABLE `vendedor` (
-  `id_vendedor` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) DEFAULT NULL,
-  `CPF` varchar(14) NOT NULL,
-  `senha` varchar(300) DEFAULT NULL,
-  PRIMARY KEY (`id_vendedor`,`CPF`),
-  UNIQUE KEY `CPF_UNIQUE` (`CPF`),
-  UNIQUE KEY `id_vendedor_UNIQUE` (`id_vendedor`)
+DROP TABLE IF EXISTS `email`;
+
+CREATE TABLE `email` (
+  `id_email` int(11) NOT NULL AUTO_INCREMENT COMMENT '\n\n',
+  `email` varchar(60) NOT NULL DEFAULT 'nao informado',
+  `Vendedor_id_vendedor` int(11) NOT NULL,
+  `Cliente_id_cliente` int(11) NOT NULL,
+  PRIMARY KEY (`id_email`),
+  UNIQUE KEY `email_UNIQUE` (`email`),
+  UNIQUE KEY `id_email_UNIQUE` (`id_email`),
+  KEY `fk_Email_Vendedor_idx` (`Vendedor_id_vendedor`),
+  KEY `fk_Email_Cliente1_idx` (`Cliente_id_cliente`),
+  CONSTRAINT `fk_Email_Cliente1` FOREIGN KEY (`Cliente_id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Email_Vendedor` FOREIGN KEY (`Vendedor_id_vendedor`) REFERENCES `vendedor` (`id_vendedor`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*Data for the table `vendedor` */
-
+/*Data for the table `email` */
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
