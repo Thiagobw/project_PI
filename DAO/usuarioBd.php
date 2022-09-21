@@ -1,92 +1,97 @@
 <?php
 
 include_once "connection.php";
+include_once "../model/users.php";
 
 
-function autenticar (Users $user){
+function autenticar (Users $user) {
     $cpf=$user->getCpf();
-    $password=$user->getPassword();
+    $pass=$user->getPassword();
+
 
     $conexao = connect();
-    $stmt = $conexao->prepare("SELECT * FROM usuario where login = :login and senha= :senha");
-    $stmt->bindValue(':login', $cpf);
-    $stmt->bindValue(':senha', $password);
-$stmt->execute();
 
+    $stmt = $conexao->prepare("SELECT * FROM usuarios where cpf = :cpf and senha = :senha");
+    $stmt->bindValue(':cpf', $cpf);
+    $stmt->bindValue(':senha', $pass);
+    $stmt->execute();
 
-$result = $stmt->fetchAll();
+    $result = $stmt->fetchAll();
 
-return $result;
-
+    return $result;
 }
 
- function autenticar (User $user){
-     $numero=$user->getnumero();
+ function autenticar_email(Users $user) {
+    $email=$user->getEmail();
 
-     $conexao=connect();
-     $stmt = $conexao->prepare("SELECT * FROM telefone where numero = :numero");
-     $stmt->bindvalue(':numero', $numero);
-$stmt->execute();
+    $conexao = connect();
 
-$result = $stmt->fetchAll();
-return $result;
+    $stmt = $conexao->prepare("SELECT * FROM usuarios where email = :email");
+    $stmt->bindValue(':email', $email);
+    $stmt->execute();
+
+    $result = $stmt->fetchAll();
+
+    return $result;
  }
 
- function autenticar (Users $user){
-     $Cliente_id_cliente=$user->getCliente_id_cliente();
+ function autenticar_cpf(Users $user){
+    $cpf=$user->getCpf();
 
-     $conexao = connect();
-     $stmt = $conexao->prepare("SELECT * FROM telefone where Cliente_id_cliente= :Cliente_id_cliente")
-     $stmt->bindvalue(':Cliente_id_cliente', $Cliente_id_cliente);
-     $stmt->execute();
+    $conexao = connect();
 
-     $result=$stmt->fetchAll();
-     return $result;
- }
+    $stmt = $conexao->prepare("SELECT * FROM usuarios where cpf = :cpf");
+    $stmt->bindValue(':cpf', $cpf);
+    $stmt->execute();
 
-  function autenticar(Users $user){
-      $id_telefone=$user->getid_telefone();
+    $result = $stmt->fetchAll();
 
-      $conexao = connect();
-      $stmt = $conexao->prepare("SELECT * FROM telefone where id_telefone = :id_telefone")
-      $stmt-> bindvalue(':id_telefone',$id_telefone);
-      $stmt->execute();
+    return $result;
+}
 
-      $result=$stmt->fetchAll();
-      return $result;
-  }
+//   function autenticar(Users $user){
+//       $id_telefone=$user->getid_telefone();
 
-   function autenticar(Users $user){
-       $Vendedor_id_vendedor=$user->getVendedor_id_vendedor();
+//       $conexao = connect();
+//       $stmt = $conexao->prepare("SELECT * FROM telefone where id_telefone = :id_telefone")
+//       $stmt-> bindvalue(':id_telefone',$id_telefone);
+//       $stmt->execute();
 
-       $conexao = connect();
-       $stmt=$conexao->prepare("SELECT * FROM telefone where Vendedor_id_vendedor= :Vendedor_id_vendedor");
-       $stmt->bindvalue(':Vendedor_id_vendedor',$Vendedor_id_vendedor);
-       $stmt->execute();
+//       $result=$stmt->fetchAll();
+//       return $result;
+//   }
 
-       $result=$stmt->fetchAll();
-       return $result;
-   }
+//    function autenticar(Users $user){
+//        $Vendedor_id_vendedor=$user->getVendedor_id_vendedor();
 
-   function autenticar (Users $user){
-       $id_produtos=$user->getid_produtos();
+//        $conexao = connect();
+//        $stmt=$conexao->prepare("SELECT * FROM telefone where Vendedor_id_vendedor= :Vendedor_id_vendedor");
+//        $stmt->bindvalue(':Vendedor_id_vendedor',$Vendedor_id_vendedor);
+//        $stmt->execute();
 
-       $conexao=connect();
-       $stmt=$conexao->prepare("SELECT * FROM produtos where id_produtos= :id_produtos");
-       $stmt->bindvalue(':id_produtos',$id_produtos);
-       $stmt->execute();
+//        $result=$stmt->fetchAll();
+//        return $result;
+//    }
 
-       $result=$stmt->fetchAll();
-       return $result;
-   }
-    function autenticar (Users $user){
-        $nome_produto = $user->getnome_produto();
+//    function autenticar (Users $user){
+//        $id_produtos=$user->getid_produtos();
 
-        $conexao=connect();
-        $stmt=$conexao->prepare("SELECT * FROM produtos where nome_produto= nome_produto");
-        $stmt->bindvalue(':nome_produto', $nome_produto);
-        $stmt-> execute();
+//        $conexao=connect();
+//        $stmt=$conexao->prepare("SELECT * FROM produtos where id_produtos= :id_produtos");
+//        $stmt->bindvalue(':id_produtos',$id_produtos);
+//        $stmt->execute();
 
-        $result=$stmt->fetchAll();
-        return $result;
-    }
+//        $result=$stmt->fetchAll();
+//        return $result;
+//    }
+//     function autenticar (Users $user){
+//         $nome_produto = $user->getnome_produto();
+
+//         $conexao=connect();
+//         $stmt=$conexao->prepare("SELECT * FROM produtos where nome_produto= nome_produto");
+//         $stmt->bindvalue(':nome_produto', $nome_produto);
+//         $stmt-> execute();
+
+//         $result=$stmt->fetchAll();
+//         return $result;
+//     }
