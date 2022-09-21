@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="css/styleHomePage.css">
     <link rel="stylesheet" href="img/icons/fontawesome/css/all.min.css">
 
+    <!-- bibliotecas para fazer animações: Animate.css  Bounce.js AnimeJS GreenSock (GSAP) Magic Animations Zdog CSShake Hover.css AniJS  -->
     <title>Home Page - LA Imports</title>
 </head>
 <body>
@@ -81,7 +82,50 @@
     <div class="row">
         <div class="col-12 col-lg-7 col-xl-6 about">
             <div class="col-12 col-lg-10 col-xl-12 bg-white shadow"> 
-
+            Luiz.alvez_imports foi criada para oferecer os melhores pro dutos com a mais alta qualidadde, produtos estes com os das marcas mais famosas como, Nike, Adidas, Puma, New Balance, Balanciaga, Dolce e Gabbana Bape, Gucci, Louis Vuitton, Vans, Converse, Versace, Lacoste e Schutz 
+            <br>
+            <h3>sobre a loja</h3>
+            L.A Imports é uma loja indepedente....  importamos tenis dos mais diversos modelos e marcas dos paises, x, y e z...
+            La_Imports é uma loja dedicada a vendas de tenis casuais, sapatenis, esportivos, de performace, Chunky sneakers e Sneakers. 
+            <br>
+            e-mail laimports@gmail.com
+            <br>
+            Localizado em Luiz Alvez
+            <br>
+            Telefone fixo 47 3377-3256
+            <br>
+            <!--Aqui podemos botar esses como redes sociais-->  
+            Whatsapp 47 99686-7053
+            <br>
+            Instagram luiz.alvez_imports
+            <br>
+            Facebook
+            <!--link do exemplo https://catalogoapp.mobi/7a9cd4fb-1608-4d05-9db3-05aa3cddcfa3-->
+            luiz.alvez_imports
+            <br>
+            Loja de Atacado, varejo e dropshipping
+            <br>
+            Linha de Nacional BR
+            <br>
+            Linha de Importsados
+            <br>
+            Linha Exclusiva
+            <!--Formas de pagamento link de exemplo https://www.reistsouza.com.br/formas-de-pagamento?gclid=CjwKCAjwu5yYBhAjEiwAKXk_eLLk2aZmtdo34UjahYBlFKvZXOCkSTdugsCuPtd7mOy6lfGCbzh7UhoCKkwQAvD_BwE-->
+            <br>
+            visa
+            <br>
+            elo
+            <br>
+            mastercard
+            <br>
+            hipercard
+            <br>
+            pix
+            <br>
+            tranferencia bancaria 
+            <br>
+            boleto bancario
+            <br>
             </div>
         </div>
     </div>
@@ -101,7 +145,6 @@
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 <script src="js/login-register.js"></script>
 <script src="js/jquery.mask.min.js"></script>
-
 
 <!-- mask for inputs -->
 <script>
@@ -134,7 +177,10 @@
             cpfRegist.value += '-';
         }
     })
-    $('#tell').mask('(00) 00000-0000');
+
+    $('#tell').mask('(00) 00000-00000');
+
+    
 </script>
 
 </body>

@@ -21,13 +21,13 @@
 
 <header>
     <?php
-    include "../view/navbar/navbarSalePage.php";
+    include "Project_PI/view/navbar/navbarSalePage.php";
     ?>
 </header>
 
 <!-- pop-ups Account -->
 <?php
-include "../view/pop-ups/pop-upAccount.php";
+include "project_PI/view/pop-ups/pop-upAccount.php";
 ?>
 
 <div class="container mt-5">
