@@ -77,7 +77,7 @@
             </div>
             
             <div class="col-md-6 about-text">
-                <h3 class="about-subtitle">Uma loja dedicada ao seu estilo e conforto diario!</h3>
+                <h3 class="about-subtitle">Uma loja dedicada ao seu estilo e conforto diário!</h3>
                 <p class="mt-3">Loja Brasileira de Atacado, varejo e dropshipping, com linhas de Importados, Nacionais e Exclusivos.</p>
                 <p>Trabalhamos apenas com marcas grandes, procurando dar segurança e confiança para nossos clientes.</p>
                 <p class="mt-4"> Outras caracteristicas: </p>
