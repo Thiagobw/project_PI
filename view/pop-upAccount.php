@@ -49,7 +49,7 @@
 
                             <div class="col-12 col-sm-7 col-lg-8 mt-3">
                                 <label for="Telefone"><i class="bi bi-telephone"></i></label>
-                                <input class=" form-control input-user  is-valid" type="text" placeholder="Telefone" name="tell" id="tell" maxlength="15">
+                                <input class=" form-control input-user" type="text" placeholder="Telefone" name="tell" id="tell" maxlength="15">
                             </div>
 
                             <div class="col-12 col-sm-7 col-lg-8 mt-3">

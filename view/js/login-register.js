@@ -77,33 +77,36 @@ $(document).ready(function() {
         var email = $('#email').val();
         var pass = $('#pass').val();
 
-        if(TestaCPF(cpf)){
+        if(name.length == 0 || cpf.length == 0 || tell.length == 0 || email.length == 0 || pass.length == 0) {
+            alert("preencha todos os campos para poder fazer cadastro!");
 
-            if(name.length == 0 || cpf.length == 0 || tell.length == 0 || email.length == 0 || pass.length == 0) {
-                alert("preencha todos os campos para poder fazer cadastro!");
+        } else {
 
-            } else{
+            if(TestaCPF(cpf)) {
+
                 $.ajax({
                     type: 'POST',
                     url: 'project_PI/control/control_registration.php',
                     dataType: 'json',
-                    data: { cpf:cpf, pass: pass ,name: name,tell:tell, email:email},
+                    data: { cpf: cpf, pass: pass, name: name, tell: tell, email: email},
                     success: function(json) {
-
-                        if(json.status == true){
+    
+                        if (json.status == true) {
                             location.reload();
-                        }else{
+    
+                        } else {
                             alert(json.msg);
                         }
-                        
+                            
                     },
                     error: function() {
                         alert('Erro: contate o suporte')
                     }
                 });
-            }
-        }else{
-            alert('CPF invalido');
+
+            } else {
+                alert('CPF invalido');
+            }   
         }
     })
 })

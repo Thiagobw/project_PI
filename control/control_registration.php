@@ -2,7 +2,7 @@
 
 include_once "../DAO/usuarioBd.php";
 include_once "../model/users.php";
-// include_once "../DAO/connection.php";
+include_once "../DAO/connection.php";
 
 $name = $_POST['name'];
 $cpf = $_POST['cpf'];
@@ -22,6 +22,7 @@ if($pass < 6){
 	if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
 		$result_email = autenticar_email($Users);
 		if(count($result_email)<1){
+
 			$result_cpf = autenticar_cpf($Users);
 			if(count($result_cpf)<1){
 
@@ -38,7 +39,6 @@ if($pass < 6){
 				$sql = "INSERT INTO usuarios (nome, cpf, telefone, email, senha) VALUES (:nome, :cpf, :telefone, :email, :senha)";
 
 				$stmt= $conexao->prepare($sql);
-
 
 				$stmt->execute($data);
 
