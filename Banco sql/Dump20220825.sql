@@ -195,6 +195,7 @@ CREATE TABLE `usuarios` (
 
 /*Data for the table `usuarios` */
 
+
 /*Table structure for table `vendedor` */
 
 DROP TABLE IF EXISTS `vendedor`;
