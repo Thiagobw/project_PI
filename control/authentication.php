@@ -12,6 +12,7 @@ $user->setCpf($cpf);
 $user->setPassword($pass);
 
 $result = autenticar($user);
+die(var_dump($result));
 $answer = array();
 $answer['status'] = true;
 

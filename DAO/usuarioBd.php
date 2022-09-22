@@ -15,7 +15,7 @@ function autenticar (Users $user) {
     $stmt->bindValue(':cpf', $cpf);
     $stmt->bindValue(':senha', $senha);
     $stmt->execute();
-
+    die(var_dump($cpf, $senha));
     $result = $stmt->fetchAll();
 
     return $result;
