@@ -50,6 +50,7 @@ CREATE TABLE `cliente` (
 
 /*Data for the table `cliente` */
 
+
 /*Table structure for table `email` */
 
 DROP TABLE IF EXISTS `email`;
@@ -128,13 +129,7 @@ CREATE TABLE `pedido_produto` (
   CONSTRAINT `fk_Pedido_Produto_Produtos1` FOREIGN KEY (`Produtos_idProdutos`) REFERENCES `produtos` (`id_produtos`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
-/*Data for the table `pedido_produto` */
 
-insert  into `pedido_produto`(`idPedido_Produto`,`quantidade`,`valor`,`Pedido_id_pedido`,`Produtos_idProdutos`) values 
-(1,'1','250',0,3),
-(2,'1','250',0,3),
-(3,'1','400',0,2),
-(4,'1','499',0,4);
 
 /*Table structure for table `produtos` */
 
@@ -151,13 +146,6 @@ CREATE TABLE `produtos` (
   KEY `fk_Produtos_Modelo1_idx` (`Modelo_idModelo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
-/*Data for the table `produtos` */
-
-insert  into `produtos`(`id_produtos`,`nome_produto`,`preco_produto`,`quantidade`,`Modelo_idModelo`) values 
-(2,'Nike Air Jordan High 1 Tie Dye - unissex','400',98,0),
-(3,'Balenciaga Triple S','250',18,0),
-(4,'Nike Sb Dunk Low','499',2,0),
-(5,'Adidas Yezzy Boost 350 V2','350',0,0);
 
 /*Table structure for table `telefone` */
 
@@ -195,6 +183,7 @@ CREATE TABLE `usuarios` (
 
 /*Data for the table `usuarios` */
 
+
 /*Table structure for table `vendedor` */
 
 DROP TABLE IF EXISTS `vendedor`;
@@ -210,6 +199,25 @@ CREATE TABLE `vendedor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `vendedor` */
+
+/*Data for the table `pedido_produto` */
+
+insert  into `pedido_produto`(`idPedido_Produto`,`quantidade`,`valor`,`Pedido_id_pedido`,`Produtos_idProdutos`) values 
+(1,'1','250',0,3),
+(2,'1','250',0,3),
+(3,'1','400',0,2),
+(4,'1','499',0,4);
+
+
+/*Data for the table `produtos` */
+
+insert  into `produtos`(`id_produtos`,`nome_produto`,`preco_produto`,`quantidade`,`Modelo_idModelo`) values 
+(2,'Nike Air Jordan High 1 Tie Dye - unissex','400',98,0),
+(3,'Balenciaga Triple S','250',18,0),
+(4,'Nike Sb Dunk Low','499',2,0),
+(5,'Adidas Yezzy Boost 350 V2','350',0,0);
+
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
