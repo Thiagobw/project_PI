@@ -142,13 +142,13 @@ include "project_PI/view/pop-ups/pop-upAccount.php";
 
                         <div class="row mt-3">
                             <div class="col-12 ">
-                                <p class="text-center">Nike Air Jordan High 1 Tie Dye - unissex</p>
-                                <p class="text-center price">R$ <span>400,00</span></p>
+                                <p class="text-center">Nike Sb Dunk Low</p>
+                                <p class="text-center price">R$ <span>499,00</span></p>
                             </div>
                         </div>
                         <div class="row center mb-2">
                             <div class="col-12 btn-group center">
-                                <a class="btn btnADD" href=""><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</a>
+                                <button class="btn btnADD" onclick="pedido_produto('Nike Sb Dunk Low')"><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</button>
                             </div>
                         </div>
                     </div>
@@ -167,13 +167,13 @@ include "project_PI/view/pop-ups/pop-upAccount.php";
 
                         <div class="row mt-3">
                             <div class="col-12 ">
-                                <p class="text-center">Nike Air Jordan High 1 Tie Dye - unissex</p>
-                                <p class="text-center price">R$ <span>400,00</span></p>
+                                <p class="text-center">Balenciaga Triple S</p>
+                                <p class="text-center price">R$ <span>250,00</span></p>
                             </div>
                         </div>
                         <div class="row center mb-2">
                             <div class="col-12 btn-group center">
-                                <a class="btn btnADD" href=""><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</a>
+                                <button class="btn btnADD" onclick="pedido_produto('Balenciaga Triple S')"><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</button>
                             </div>
                         </div>
                     </div>
@@ -192,13 +192,13 @@ include "project_PI/view/pop-ups/pop-upAccount.php";
 
                         <div class="row mt-3">
                             <div class="col-12 ">
-                                <p class="text-center">Nike Air Jordan High 1 Tie Dye - unissex</p>
-                                <p class="text-center price">R$ <span>400,00</span></p>
+                                <p class="text-center">Adidas Yezzy Boost 350 V2</p>
+                                <p class="text-center price">R$ <span>350,00</span></p>
                             </div>
                         </div>
                         <div class="row center mb-2">
                             <div class="col-12 btn-group center">
-                                <a class="btn btnADD" href=""><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</a>
+                                <button class="btn btnADD" onclick="pedido_produto('Adidas Yezzy Boost 350 V2')"><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</button>
                             </div>
                         </div>
                     </div>
@@ -217,13 +217,14 @@ include "project_PI/view/pop-ups/pop-upAccount.php";
 
                         <div class="row mt-3">
                             <div class="col-12 ">
+
                                 <p class="text-center">Nike Air Jordan High 1 Tie Dye - unissex</p>
                                 <p class="text-center price">R$ <span>400,00</span></p>
                             </div>
                         </div>
                         <div class="row center mb-2">
                             <div class="col-12 btn-group center">
-                                <a class="btn btnADD" href=""><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</a>
+                                <button class="btn btnADD" onclick="pedido_produto('Nike Air Jordan High 1 Tie Dye - unissex')"><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</button>
                             </div>
                         </div>
                     </div>
@@ -242,17 +243,15 @@ include "project_PI/view/pop-ups/pop-upAccount.php";
         <nav aria-label="Page navigation example" style="border: none !important;">
             <ul class="pagination">
                 <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Previous">
+                    <a class="page-link" href="salePage3.php" aria-label="Previous">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <li class="page-item activated" onclick="activate(this)"><a class="page-link" href="#">1</a></li>
-                <li class="page-item" onclick="activate(this)"><a class="page-link" href="#">2</a></li>
-                <li class="page-item" onclick="activate(this)"><a class="page-link" href="#">3</a></li>
-                <li class="page-item" onclick="activate(this)"><a class="page-link" href="#">4</a></li>
-                <li class="page-item" onclick="activate(this)"><a class="page-link" href="#">5</a></li>
+                <li class="page-item activated" onclick="activate(this)"><a class="page-link" href="salePage.php">1</a></li>
+                <li class="page-item" onclick="activate(this)"><a class="page-link" href="salePage2.php">2</a></li>
+                <li class="page-item" onclick="activate(this)"><a class="page-link" href="salePage3.php">3</a></li>
                 <li class="page-item">
-                    <a class="page-link" href="#" aria-label="Next">
+                    <a class="page-link" href="salePage3.php" aria-label="Next">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
@@ -264,6 +263,7 @@ include "project_PI/view/pop-ups/pop-upAccount.php";
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
 integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
 <script src="https://kit.fontawesome.com/d368f48e5f.js" crossorigin="anonymous"></script>
 
 <script>
@@ -274,6 +274,30 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
         }
         element.classList.add("activated");
     }
+
+    function pedido_produto(prod){
+
+        $.ajax({
+            type: 'POST',
+            url: '../control/produto.php',
+            dataType: 'json',
+            data: { prod:prod},
+            success: function(json){    
+                if(json.status == true){
+                    alert('produto adicionado com sucesso!');
+                }else{
+                    alert(json.msg);
+                }
+                
+
+            },
+            error: function() {
+                alert('Erro: contate o suporte')
+            }
+        });
+
+    }
+
 </script>
 </body>
 </html>
