@@ -20,7 +20,7 @@ if (count($result)>0) {
 
     $answer['status'] = true;
     session_start();
-    $_SESSION['autenticado'] = true;
+    $_SESSION['autenticado'] = false;
     $_SESSION['usuario'] = $result;
     
 } else{
