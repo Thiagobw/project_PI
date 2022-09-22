@@ -41,7 +41,6 @@ if(count($result)>0) {
 
 			$answer['status'] = true;
 
-
 	}else{
 
 		$answer['msg'] = "Esgotado";
