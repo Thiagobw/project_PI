@@ -13,7 +13,7 @@ $user->setPassword($pass);
 
 $result = autenticar($user);
 $answer = array();
-$answer['status'] = false;
+$answer['status'] = true;
 
 
 if (count($result)>0) {
