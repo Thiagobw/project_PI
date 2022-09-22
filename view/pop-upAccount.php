@@ -5,7 +5,7 @@
             <div class="modal-header">
                 <h2 class="modal-title" id="title-account">Entre em sua conta</h2>
                 <h2 class="modal-title" id="title-createAcc">Crie a sua conta</h2>
-                <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">
+                <button type="button" class="btn btn-close btn-danger" data-bs-dismiss="modal" aria-label="Close">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-x-lg" viewBox="0 0 16 16">
                         <path d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z"/>
                     </svg>
@@ -32,37 +32,38 @@
                     </div>
                 </div>
 
+
                 <!-- registration form -->
                 <div class="row" id="createAcc">
                     <div class="col-12 input-group">
                         <form class="input-group center" id="form2">
 
-                            <div class="col-12 col-sm-7 col-lg-8">
+                            <div class="col-12 col-sm-10 col-md-10 col-lg-8 mt-3">
                                 <label for="Nome"><i class="fa-regular fa-user"></i></label>
                                 <input class=" form-control input-user" type="text" placeholder="Nome" name="name" id="name">
                             </div>
 
-                            <div class="col-12 col-sm-7 col-lg-8 mt-3">
+                            <div class="col-12 col-sm-10 col-md-10 col-lg-8 mt-3">
                                 <label for="CPF"><i class="fa-regular fa-address-card"></i></label>
                                 <input class=" form-control input-user" type="text" placeholder="CPF" name="cpf" id="cpf" maxlength="14" autocomplete="off">
                             </div>
 
-                            <div class="col-12 col-sm-7 col-lg-8 mt-3">
+                            <div class="col-12 col-sm-10 col-md-10 col-lg-8 mt-3">
                                 <label for="Telefone"><i class="bi bi-telephone"></i></label>
                                 <input class=" form-control input-user" type="text" placeholder="Telefone" name="tell" id="tell" maxlength="15">
                             </div>
 
-                            <div class="col-12 col-sm-7 col-lg-8 mt-3">
+                            <div class="col-12 col-sm-10 col-md-10 col-lg-8 mt-3">
                                 <label for="Email"><i class="fa-regular fa-envelope"></i></label>
                                 <input class=" form-control input-user" type="text" placeholder="Email" name="email" id="email">
                             </div>
 
-                            <div class="col-12 col-sm-7 col-lg-8 mt-3">
+                            <div class="col-12 col-sm-10 col-md-10 col-lg-8 mt-3">
                                 <label for="Senha"><i class="bi bi-key"></i></label>
                                 <input class="form-control input-user" type="password" placeholder="Senha" name="password" id="pass">
                             </div>
-                            <div class="col-8 col-lg-5 mt-3 center">
-                                <input class="btn btn-primary w-75 btn-log" form="form2" type="submit" name="" value="Criar conta">
+                            <div class="col-12 col-sml-10 col-md-11 col-lg-5 mt-3 center">
+                                <input class="btn btn-primary w-75 btn-log btn-success" form="form2" type="submit" name="" value="Criar conta">
                             </div>
                         </form>
                     </div>
@@ -70,7 +71,10 @@
             </div>
 
             <div class="modal-footer center">
-            <span id="toRegister"><p> Caso não tenha uma conta, cadastre-se clicando <a href="" id="btncreateAcc" data-bs-toggle="modal">aqui</a>.</p></span>
+                <span id="toRegister">
+                    <p> Caso não tenha sua conta </p>
+                    <a class="center btn btn-primary" id="btncreateAcc" data-bs-toggle="modal">Crie uma Conta</a>
+                </span>
             </div>
         </div>
     </div>
