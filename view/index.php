@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -140,6 +143,45 @@
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="js/pop-upDisplayControl.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
-<script src="js/formsValid.js"></script>
+<script src="js/login-register.js"></script>
+<script src="js/jquery.mask.min.js"></script>
+
+<!-- mask for inputs -->
+<script>
+    //getting input data
+    const cpfLog = document.querySelector('#CpfLog');
+    const cpfRegist = document.querySelector('#cpf');
+
+    //mask for login input
+    cpfLog.addEventListener('keypress', () => {
+        let cpfLogLength = cpfLog.value.length;
+
+        if (cpfLogLength == 3 || cpfLogLength == 7) {
+            cpfLog.value += '.';
+        }
+        else if (cpfLogLength == 11) {
+            cpfLog.value += '-';
+        }
+    })
+    // --------------------------- //
+
+
+    //mask for registration input
+    cpfRegist.addEventListener('keypress', () => {
+        let cpfRegistLength = cpfRegist.value.length;
+
+        if(cpfRegistLength == 3 || cpfRegistLength == 7) {
+            cpfRegist.value += '.';
+        }
+        else if (cpfRegistLength == 11) {
+            cpfRegist.value += '-';
+        }
+    })
+
+    $('#tell').mask('(00) 00000-0000');
+
+    
+</script>
+
 </body>
 </html>

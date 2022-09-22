@@ -1,29 +1,25 @@
-CREATE DATABASE  IF NOT EXISTS `mydb` /*!40100 DEFAULT CHARACTER SET utf8 */;
-USE `mydb`;
--- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
---
--- Host: localhost    Database: mydb
--- ------------------------------------------------------
--- Server version	5.7.20-log
+/*
+SQLyog Community v13.1.7 (64 bit)
+MySQL - 10.4.22-MariaDB : Database - mydb
+*********************************************************************
+*/
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8 */;
-/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
-/*!40103 SET TIME_ZONE='+00:00' */;
+
+/*!40101 SET SQL_MODE=''*/;
+
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`mydb` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
---
--- Table structure for table `caracteristicas`
---
+USE `mydb`;
+
+/*Table structure for table `caracteristicas` */
 
 DROP TABLE IF EXISTS `caracteristicas`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `caracteristicas` (
   `idCaracteristicas` int(11) NOT NULL AUTO_INCREMENT,
   `fk_produtos_id_produtos` int(11) NOT NULL,
@@ -36,24 +32,13 @@ CREATE TABLE `caracteristicas` (
   PRIMARY KEY (`idCaracteristicas`),
   UNIQUE KEY `idCaracteristicas_UNIQUE` (`idCaracteristicas`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `caracteristicas`
---
+/*Data for the table `caracteristicas` */
 
-LOCK TABLES `caracteristicas` WRITE;
-/*!40000 ALTER TABLE `caracteristicas` DISABLE KEYS */;
-/*!40000 ALTER TABLE `caracteristicas` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `cliente`
---
+/*Table structure for table `cliente` */
 
 DROP TABLE IF EXISTS `cliente`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `cliente` (
   `id_cliente` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
@@ -62,24 +47,15 @@ CREATE TABLE `cliente` (
   UNIQUE KEY `CPF_UNIQUE` (`CPF`),
   UNIQUE KEY `id_cliente_UNIQUE` (`id_cliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `cliente`
---
 
-LOCK TABLES `cliente` WRITE;
-/*!40000 ALTER TABLE `cliente` DISABLE KEYS */;
-/*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
-UNLOCK TABLES;
+/*Data for the table `cliente` */
 
---
--- Table structure for table `email`
---
+
+/*Table structure for table `email` */
 
 DROP TABLE IF EXISTS `email`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `email` (
   `id_email` int(11) NOT NULL AUTO_INCREMENT COMMENT '\n\n',
   `email` varchar(60) NOT NULL DEFAULT 'nao informado',
@@ -93,24 +69,13 @@ CREATE TABLE `email` (
   CONSTRAINT `fk_Email_Cliente1` FOREIGN KEY (`Cliente_id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Email_Vendedor` FOREIGN KEY (`Vendedor_id_vendedor`) REFERENCES `vendedor` (`id_vendedor`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `email`
---
+/*Data for the table `email` */
 
-LOCK TABLES `email` WRITE;
-/*!40000 ALTER TABLE `email` DISABLE KEYS */;
-/*!40000 ALTER TABLE `email` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `endereco`
---
+/*Table structure for table `endereco` */
 
 DROP TABLE IF EXISTS `endereco`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `endereco` (
   `id_endereco` int(11) NOT NULL AUTO_INCREMENT,
   `numero_endereco` int(11) DEFAULT NULL,
@@ -126,24 +91,13 @@ CREATE TABLE `endereco` (
   KEY `fk_Endereco_Cliente1_idx` (`Cliente_id_cliente`),
   CONSTRAINT `fk_Endereco_Cliente1` FOREIGN KEY (`Cliente_id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `endereco`
---
+/*Data for the table `endereco` */
 
-LOCK TABLES `endereco` WRITE;
-/*!40000 ALTER TABLE `endereco` DISABLE KEYS */;
-/*!40000 ALTER TABLE `endereco` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `pedido`
---
+/*Table structure for table `pedido` */
 
 DROP TABLE IF EXISTS `pedido`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `pedido` (
   `id_pedido` int(11) NOT NULL AUTO_INCREMENT,
   `valor_pedido` varchar(20) NOT NULL,
@@ -157,24 +111,13 @@ CREATE TABLE `pedido` (
   CONSTRAINT `fk_Pedido_Cliente1` FOREIGN KEY (`Cliente_id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Pedido_Vendedor1` FOREIGN KEY (`Vendedor_id_vendedor`) REFERENCES `vendedor` (`id_vendedor`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `pedido`
---
+/*Data for the table `pedido` */
 
-LOCK TABLES `pedido` WRITE;
-/*!40000 ALTER TABLE `pedido` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pedido` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `pedido_produto`
---
+/*Table structure for table `pedido_produto` */
 
 DROP TABLE IF EXISTS `pedido_produto`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `pedido_produto` (
   `idPedido_Produto` int(11) NOT NULL AUTO_INCREMENT,
   `quantidade` varchar(45) NOT NULL,
@@ -184,27 +127,15 @@ CREATE TABLE `pedido_produto` (
   PRIMARY KEY (`idPedido_Produto`),
   KEY `fk_Pedido_Produto_Pedido1_idx` (`Pedido_id_pedido`),
   KEY `fk_Pedido_Produto_Produtos1_idx` (`Produtos_idProdutos`),
-  CONSTRAINT `fk_Pedido_Produto_Pedido1` FOREIGN KEY (`Pedido_id_pedido`) REFERENCES `pedido` (`id_pedido`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Pedido_Produto_Produtos1` FOREIGN KEY (`Produtos_idProdutos`) REFERENCES `produtos` (`id_produtos`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `pedido_produto`
---
 
-LOCK TABLES `pedido_produto` WRITE;
-/*!40000 ALTER TABLE `pedido_produto` DISABLE KEYS */;
-/*!40000 ALTER TABLE `pedido_produto` ENABLE KEYS */;
-UNLOCK TABLES;
 
---
--- Table structure for table `produtos`
---
+/*Table structure for table `produtos` */
 
 DROP TABLE IF EXISTS `produtos`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `produtos` (
   `id_produtos` int(11) NOT NULL AUTO_INCREMENT,
   `nome_produto` varchar(45) NOT NULL,
@@ -213,27 +144,14 @@ CREATE TABLE `produtos` (
   `Modelo_idModelo` int(11) NOT NULL,
   PRIMARY KEY (`id_produtos`),
   UNIQUE KEY `id_produtos_UNIQUE` (`id_produtos`),
-  KEY `fk_Produtos_Modelo1_idx` (`Modelo_idModelo`),
-  CONSTRAINT `fk_Produtos_Modelo1` FOREIGN KEY (`Modelo_idModelo`) REFERENCES `modelo` (`idModelo`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
+  KEY `fk_Produtos_Modelo1_idx` (`Modelo_idModelo`)
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `produtos`
---
 
-LOCK TABLES `produtos` WRITE;
-/*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
-/*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `telefone`
---
+/*Table structure for table `telefone` */
 
 DROP TABLE IF EXISTS `telefone`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `telefone` (
   `id_telefone` int(11) NOT NULL AUTO_INCREMENT,
   `numero` varchar(18) NOT NULL,
@@ -247,51 +165,98 @@ CREATE TABLE `telefone` (
   CONSTRAINT `fk_Telefone_Cliente1` FOREIGN KEY (`Cliente_id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Telefone_Vendedor1` FOREIGN KEY (`Vendedor_id_vendedor`) REFERENCES `vendedor` (`id_vendedor`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `telefone`
---
+/*Data for the table `telefone` */
 
-LOCK TABLES `telefone` WRITE;
-/*!40000 ALTER TABLE `telefone` DISABLE KEYS */;
-/*!40000 ALTER TABLE `telefone` ENABLE KEYS */;
-UNLOCK TABLES;
+/*Table structure for table `usuarios` */
 
---
--- Table structure for table `vendedor`
---
+DROP TABLE IF EXISTS `usuarios`;
+
+CREATE TABLE `usuarios` (
+  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) DEFAULT NULL,
+  `cpf` varchar(14) DEFAULT NULL,
+  `telefone` varchar(15) DEFAULT NULL,
+  `email` varchar(60) DEFAULT NULL,
+  `senha` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id_usuario`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*Data for the table `usuarios` */
+
+
+/*Table structure for table `vendedor` */
 
 DROP TABLE IF EXISTS `vendedor`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
+
 CREATE TABLE `vendedor` (
   `id_vendedor` int(11) NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) DEFAULT NULL,
   `CPF` varchar(14) NOT NULL,
-  `senha` int(11) DEFAULT NULL,
+  `senha` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`id_vendedor`,`CPF`),
   UNIQUE KEY `CPF_UNIQUE` (`CPF`),
   UNIQUE KEY `id_vendedor_UNIQUE` (`id_vendedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
---
--- Dumping data for table `vendedor`
---
 
-LOCK TABLES `vendedor` WRITE;
-/*!40000 ALTER TABLE `vendedor` DISABLE KEYS */;
-/*!40000 ALTER TABLE `vendedor` ENABLE KEYS */;
-UNLOCK TABLES;
-/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*Data for the table `vendedor` */
+
+/*Data for the table `pedido_produto` */
+
+insert  into `pedido_produto`(`idPedido_Produto`,`quantidade`,`valor`,`Pedido_id_pedido`,`Produtos_idProdutos`) values 
+(1,'1','250',0,3),
+(2,'1','250',0,3),
+(3,'1','400',0,2),
+(4,'1','499',0,4);
+
+
+/*Data for the table `produtos` */
+
+insert  into `produtos`(`id_produtos`,`nome_produto`,`preco_produto`,`quantidade`,`Modelo_idModelo`) values 
+(2,'Nike Air Jordan High 1 Tie Dye - unissex','400',98,0),
+(3,'Balenciaga Triple S','250',18,0),
+(4,'Nike Sb Dunk Low','499',2,0),
+(5,'Adidas Yezzy Boost 350 V2','350',0,0);
+
+
+/*Data for the table `endereco` */
+
+insert into endereco (id_endereco, numero_endereco, rua, bairro, cidade, estado, cep, complemento) VALUES
+(1, 90, "Beco Pamplona", "7 de Setembro", "Gaspar", "Santa Catarina" "89114-876", 501),
+(2, 00, "Rodovia sc-414", "Vila Nova", "Luiz Alves", "Santa Catarina", "89128-000", 0),
+(3, 8267, "Rodovia sc-414", "Vila Nova", "Luiz Alves", "Santa Catarina", "89128-000", 0);
+
+/*Data for the table 'cliente'*/
+
+insert  into 'cliente'('id_cliente', 'nome', 'CPF') values (1,"Ferdinando Rainert", "119.082.619-43");
+insert into 'cliente'('id_cliente', 'nome', 'CPF') values (2,"Bruno Erbs", "108.912.169-52");
+insert into 'cliente'('id_cliente', 'nome', 'CPF') values (3,"Rafael Antônio Bressanini", "103.725.339-65");
+insert into 'cliente'('id_cliente', 'nome', 'CPF') values (4,"Thiago Leopoldo Beffart Weber", "076.147.659-82");
+
+
+/*Data for the table 'usuarios'*/
+
+insert into 'usuarios' ('id_usuario', 'nome', 'cpf', 'telefone', 'email', 'senha') values ("Ferdinando Rainert", "119.082.619-43", "(47)920000706", "fer.rainert@gmail.com");
+insert into 'usuarios' ('id_usuario', 'nome', 'cpf', 'telefone', 'email', 'senha') values ("Bruno Erbs","108.912.169-52", "(47)99164992", "brunoerbs4@gmail.com", "erbs1311");
+insert into 'usuarios' ('id_usuario', 'nome', 'cpf', 'telefone', 'email', 'senha') values ("Rafael Antõnio Bressanini", "103.725.339-65", "laimportsloja@gmail.com", "123456");
+insert into 'usuarios' ('id_usuario', 'nome', 'cpf', 'telefone', 'email', 'senha') values ("Thiago Leopoldo Beffart Weber", "076.147.659-82", "thiago.bw@gmail.com", "123456");
+
+
+/*Data for the table 'vendedor'*/
+
+insert into 'vendedor' ('id_vendedor', 'nome', 'CPF', 'senha') values (1,"Ferdinando Rainert", "119.082.619-43", "Porradesenha24@");
+insert into 'vendedor' ('id_vendedor', 'nome', 'CPF', 'senha') values (2, "Bruno Erbs","108.912.169-52", "erbs1311");
+insert into 'vendedor' ('id_vendedor', 'nome', 'CPF', 'senha') values (3, "Rafael Antõnio Bressanini", "103.725.339-65", "123456");
+insert into 'vendedor' ('id_vendedor', 'nome', 'CPF', 'senha') values (4, "Thiago Leopoldo Beffart Weber", "076.147.659-82", "123456");
+
+
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-08-25 11:39:03
+
+
+

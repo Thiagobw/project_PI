@@ -28,6 +28,7 @@ btnRegister.addEventListener('click', function(){
     checkContainer();
 });
 
+
 btnLogin.addEventListener('click', function(){
 
     if(containerAccount.style.display == 'none') {
