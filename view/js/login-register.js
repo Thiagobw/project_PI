@@ -2,7 +2,7 @@
 /* check if jquery is loaded */
 $(document).ready(function() {
 
-    function TestaCPF(strCPF) {
+    function checkCPF(strCPF) {
 
         var Sum;
         var Resto;
@@ -36,32 +36,35 @@ $(document).ready(function() {
         var cpfLog = $('#CpfLog').val();
         var passLog = $('#passLog').val();
 
-        if(TestaCPF(cpfLog)){
+        if(cpfLog.length == 0 || passLog.length == 0) {
+            alert("preencha todos os campos para poder fazer log in!");
+        } else {
 
-            if(cpfLog.length == 0 || passLog.length == 0) {
-                alert("preencha todos os campos para poder fazer log in!");
-            } else{
-                 $.ajax({
+            if(checkCPF(cpfLog)) {
+
+                $.ajax({
                     type: 'POST',
                     url: 'project_PI/control/authentication.php',
                     dataType: 'json',
                     data: { cpf:cpfLog, pass: passLog },
-                    success: function(json){    
-                        if(json.status == true) {
-                            location.reload('project_PI/view/salePage.php');
-                        }else{
-                            alert(json.msg);
+
+                    success: function(json) {
+
+                        if (json.status == true) {
+                                location.reload('project_PI/view/salePage.php');
+                        } else {
+                                alert(json.msg);
                         }
-                        
                     },
+
                     error: function() {
                         alert('Erro: contate o suporte')
                     }
                 });
 
+            } else {
+                    alert('CPF invalido');
             }
-        }else{
-            alert('CPF invalido');
         }
     })
     /* ------------------- */
@@ -77,33 +80,36 @@ $(document).ready(function() {
         var email = $('#email').val();
         var pass = $('#pass').val();
 
-        if(TestaCPF(cpf)){
+        if(name.length == 0 || cpf.length == 0 || tell.length == 0 || email.length == 0 || pass.length == 0) {
+            alert("preencha todos os campos para poder fazer cadastro!");
 
-            if(name.length == 0 || cpf.length == 0 || tell.length == 0 || email.length == 0 || pass.length == 0) {
-                alert("preencha todos os campos para poder fazer cadastro!");
+        } else {
 
-            } else{
+            if(checkCPF(cpf)) {
+
                 $.ajax({
                     type: 'POST',
                     url: 'project_PI/control/control_registration.php',
                     dataType: 'json',
-                    data: { cpf:cpf, pass: pass ,name: name,tell:tell, email:email},
+                    data: { cpf: cpf, pass: pass, name: name, tell: tell, email: email},
                     success: function(json) {
-
-                        if(json.status == true){
+    
+                        if (json.status == true) {
                             location.reload();
-                        }else{
+    
+                        } else {
                             alert(json.msg);
                         }
-                        
+                            
                     },
                     error: function() {
                         alert('Erro: contate o suporte')
                     }
                 });
-            }
-        }else{
-            alert('CPF invalido');
+
+            } else {
+                alert('CPF invalido');
+            }   
         }
     })
 })

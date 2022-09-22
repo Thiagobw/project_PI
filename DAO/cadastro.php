@@ -2,11 +2,11 @@
 
 $login = $_POST['login'];
 $senha = MD5($_POST['senha']);
-$connect = mysql_connect('login','senha');
-$db = mysql_select_db('mydb');
+$connect = mysqli_connect('login','senha');
+$db = mysqli_select_db('mydb');
 $query_select = "SELECT login FROM usuario WHERE login = '$login'";
-$select = mysql_query($query_select,$connect);
-$array = mysql_fetch_array($select);
+$select = mysqli_query($query_select,$connect);
+$array = mysqli_fetch_array($select);
 $logarray = $array['login'];
 
   if($login == "" || $login == null) {
