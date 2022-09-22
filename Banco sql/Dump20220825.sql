@@ -218,14 +218,6 @@ insert  into `produtos`(`id_produtos`,`nome_produto`,`preco_produto`,`quantidade
 (5,'Adidas Yezzy Boost 350 V2','350',0,0);
 
 
-/*Data for the table `endereco` */
-
-insert into endereco (id_endereco, numero_endereco, rua, bairro, cidade, estado, cep, complemento) VALUES
-(1, 90, "Beco Pamplona", "7 de Setembro", "Gaspar", "Santa Catarina" "89114-876", 501),
-(2, 00, "Rodovia sc-414", "Vila Nova", "Luiz Alves", "Santa Catarina", "89128-000", 0),
-(3, 8267, "Rodovia sc-414", "Vila Nova", "Luiz Alves", "Santa Catarina", "89128-000", 0);
-
-
 
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
