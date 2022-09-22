@@ -1,7 +1,7 @@
 <?php
  session_start();
  if ($_SESSION['autenticado'] == false){
-    header('Location: /project_PI/view/homePage.php');
+    header('Location: /project_PI/view/index.php');
  }
 ?>
 <!DOCTYPE html>
