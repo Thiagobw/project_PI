@@ -213,22 +213,37 @@
 <script src="js/login-register.js"></script>
 <script src="js/jquery.mask.min.js"></script>
 
-<script type="text/javascript">
-    var btmView = document.getElementById('btnView');
-    btmView.addEventListener('click', function() {
+<!-- see password functionality -->
+<script>
+    // see and hide password in login form
+    function alterViewPassL() {
+        var btnL = document.getElementById('btnViewPL');
+        let pass = document.getElementById('passLog');
 
-        let pass1 = document.getElementById('passLog');
-        let pass2 = document.getElementById('pass');
-
-        if (pass1.type == 'password') {
-            pass1.type = 'text';
-            this.style.opacity = '1';
+        if (pass.type == 'password') {
+            pass.type = 'text'
+            btnL.style.opacity = '1'
 
         } else {
-            pass1.type = 'password';
-            this1.style.opacity = '.4';
+            pass.type = 'password'
+            btnL.style.opacity = '.4'
         }
-    })
+    }
+
+    // see and hide password in register form
+    function alterViewPass() {
+        var btnR = document.getElementById('btnViewP');
+        let pass2 = document.getElementById('pass');
+
+        if (pass2.type == 'password') {
+            pass2.type = 'text'
+            btnR.style.opacity = '1'
+
+        } else {
+            pass2.type = 'password'
+            btnR.style.opacity = '.4'
+        }
+    }
 </script>
 
 <!-- mask for inputs -->

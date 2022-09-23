@@ -611,7 +611,8 @@ label {
     font-weight: 300;
     color: #ffffff;
 }
-#btnView {
+
+.btnView {
     background-color: transparent;
     position: relative;
     bottom: 40px;
@@ -625,15 +626,16 @@ label {
     transition: .2s;
     opacity: .2;
 }
-#btnView:focus {
+.btnView:focus {
     border: none;
     outline: none;
 }
-#btnView i {
+.btnView i {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 #createAcc {
     display: none;
 }
