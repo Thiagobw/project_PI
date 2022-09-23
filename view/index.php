@@ -213,8 +213,26 @@
 <script src="js/login-register.js"></script>
 <script src="js/jquery.mask.min.js"></script>
 
+<script type="text/javascript">
+    var btmView = document.getElementById('btnView');
+    btmView.addEventListener('click', function() {
+
+        let pass1 = document.getElementById('passLog');
+        let pass2 = document.getElementById('pass');
+
+        if (pass1.type == 'password') {
+            pass1.type = 'text';
+            this.style.opacity = '1';
+
+        } else {
+            pass1.type = 'password';
+            this1.style.opacity = '.4';
+        }
+    })
+</script>
+
 <!-- mask for inputs -->
-<script>
+<script  type="text/javascript">
     //getting input data
     const cpfLog = document.querySelector('#CpfLog');
     const cpfRegist = document.querySelector('#cpf');

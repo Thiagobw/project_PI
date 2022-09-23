@@ -611,20 +611,46 @@ label {
     font-weight: 300;
     color: #ffffff;
 }
-
+#btnView {
+    background-color: transparent;
+    position: relative;
+    bottom: 40px;
+    left: 91.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    width: 40px;
+    height: 40px;
+    transition: .2s;
+    opacity: .2;
+}
+#btnView:focus {
+    border: none;
+    outline: none;
+}
+#btnView i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 #createAcc {
     display: none;
 }
+
 #btncreateAcc {
     font-size: 17px !important;
     color: #ffffff;
     font-weight: 300;
 }
+
 #title-createAcc {
     display: none;
 }
+
 #toRegister {
     font-size: large;
     color: #000000;
 }
+
 /*-----------------------*/

@@ -24,6 +24,7 @@
                             <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                 <label for="Senha"><i class="bi bi-key"></i></label>
                                 <input class="form-control input-user" type="password" placeholder="Senha" id="passLog"  name="passLog">
+                                <button type="button" id="btnView"><i class="fa-solid fa-eye"></i></button>
                             </div>
                             <div class="col-5 col-sm-5 col-lg-5 mt-3 center">
                                 <input class="btn btn-primary w-100 btn-log" form="form1" type="submit" name="log-in" value="Entrar">
@@ -61,6 +62,7 @@
                             <div class="col-12 col-sm-10 col-md-10 col-lg-8 mt-3">
                                 <label for="Senha"><i class="bi bi-key"></i></label>
                                 <input class="form-control input-user" type="password" placeholder="Senha" name="password" id="pass">
+                                <button type="button" id="btnView"><i class="fa-solid fa-eye"></i></button>
                             </div>
                             <div class="col-12 col-sml-10 col-md-11 col-lg-5 mt-3 center">
                                 <input class="btn btn-primary w-75 btn-log btn-success" form="form2" type="submit" name="" value="Criar conta">
