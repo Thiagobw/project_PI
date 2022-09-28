@@ -10,14 +10,14 @@ class Products {
         return $this->$name = $name;
     }
     public function getName() {
-        return $this->$name;
+        return $this->name;
     }
 
     public function setAmount($amount) {
         return $this->$amount = $amount;
     }
     public function getAmount() {
-        return $this->$amount;
+        return $this->amount;
     }
 
 }
