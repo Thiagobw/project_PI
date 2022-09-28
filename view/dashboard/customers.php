@@ -131,43 +131,53 @@
 
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    
-                    <div class="col-12">
+                <div class="row g-4">  
+                    <div class="col-12 col-sm-12 col-xl-12">
                         <div class="bg-secondary rounded h-100 p-4">
-                            <h6 class="mb-4 text-center" style="font-size: larger;"> Lista de Clientes</h6>
+                            <div class="row top-table">
+                                <div class="col-12 col-xl-9">
+                                    <div class="col-12 col-xl-10">
+                                        <h6 class="mb-4 ml-1 text-center" style="font-size: larger;">Lista de Clientes</h6>
+                                    </div>
+                                    <div class="col-1">
+                                        <button class="btn-register-customers">cadastra</button>
+                                    </div>
+                                </div>
+                            </div>
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
                                         <tr>
-                                            <th scope="col">ID</th>
                                             <th scope="col">Nome</th>
                                             <th scope="col">CPF</th>
                                             <th scope="col">Email</th>
-                                            <th scope="col">Ações</th>
+                                            <th scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <th scope="row">1</th>
                                             <td>Cliente teste</td>
                                             <td>000.111.222-33</td>
                                             <td>ClienteT@email.com</td>
-                                            <td>delet | altere</td>
+                                            <td><button>t</button></td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">2</th>
                                             <td>Cliente x</td>
                                             <td>111.222.333-44</td>
                                             <td>Clientex@email.com</td>
-                                            <td>delet | altere</td>
+                                            <td><button>t</button></td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">3</th>
                                             <td>Cliente y</td>
                                             <td>222.333.444-55</td>
                                             <td>Clientey@email.com</td>
-                                            <td>delet | altere</td>
+                                            <td><button>t</button></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Cliente z</td>
+                                            <td>333.444.555-66</td>
+                                            <td>Clientez@email.com</td>
+                                            <td><button>t</button></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -177,26 +187,6 @@
                 </div>
             </div>
             <!-- Table End -->
-
-
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Your Site Name</a>, All Right Reserved. 
-                        </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                            <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer End -->
-        </div>
-        <!-- Content End -->
 
 
         <!-- Back to Top -->

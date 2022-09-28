@@ -287,3 +287,17 @@
     background: var(--dark);
     border-color: var(--primary);
 }
+
+.top-table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.top-table div {
+    display: inline-block;
+}
+
+.btn-register-customers {
+    width: 50px;
+    height: 50px;
+}
