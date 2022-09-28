@@ -138,7 +138,7 @@
                             <div class="row top-table">
                                 <div class="col-12 col-xl-12" style="padding: 0;">
                                     <div class="col-12 col-xl-10 mb-3">
-                                        <h6 class=" ml-1 text-center" style="font-size: larger;">Lista de Clientes</h6>
+                                        <h6 class=" ml-1 text-center" style="font-size: larger;">Lista de Produtos</h6>
                                     </div>
                                     <div class="col-1 btn-register-customers mb-2">
                                         <button><i class="fa-solid fa-user-plus"></i></button>
