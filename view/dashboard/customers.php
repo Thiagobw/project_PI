@@ -14,21 +14,21 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"> 
     
     <!-- Icon Font Stylesheet -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../img/icons/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
 
     <!-- Libraries Stylesheet -->
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
-    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="lib/owlcarousel/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -135,12 +135,12 @@
                     <div class="col-12 col-sm-12 col-xl-12">
                         <div class="bg-secondary rounded h-100 p-4">
                             <div class="row top-table">
-                                <div class="col-12 col-xl-9">
-                                    <div class="col-12 col-xl-10">
-                                        <h6 class="mb-4 ml-1 text-center" style="font-size: larger;">Lista de Clientes</h6>
+                                <div class="col-12 col-xl-12" style="padding: 0;">
+                                    <div class="col-12 col-xl-10 mb-3">
+                                        <h6 class=" ml-1 text-center" style="font-size: larger;">Lista de Clientes</h6>
                                     </div>
-                                    <div class="col-1">
-                                        <button class="btn-register-customers">cadastra</button>
+                                    <div class="col-1 btn-register-customers mb-2">
+                                        <button><i class="fa-solid fa-user-plus"></i></button>
                                     </div>
                                 </div>
                             </div>
