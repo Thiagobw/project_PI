@@ -140,8 +140,8 @@
                                     <div class="col-12 col-xl-10 mb-3">
                                         <h6 class=" ml-1 text-center" style="font-size: larger;">Lista de Produtos</h6>
                                     </div>
-                                    <div class="col-1 btn-register-customers mb-2">
-                                        <button><i class="fa-solid fa-user-plus"></i></button>
+                                    <div class="col-1 btn-register mb-2">
+                                        <button><i class="fa-solid fa-gift"></i> +</button>
                                     </div>
                                 </div>
                             </div>
@@ -162,21 +162,21 @@
                                             <td>  Balenciaga Triple S- unissex</td>
                                             <td>30 unidades</td>
                                             <td>Em estoque</td>
-                                            <td><button>t</button></td>
+                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">2</th>
                                             <td>  Nike Sb Dunk Low - unissex</td>
                                             <td>03 unidades</td>
                                             <td>Baixo estoque</td>
-                                            <td><button>t</button></td>
+                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
                                         <tr>
                                             <th scope="row">3</th>
                                             <td>  Adidas Yezzy Boost 350 V2 - unissex</td>
                                             <td>0 unidades</td>
                                             <td>Estoque esgotado</td>
-                                            <td><button>t</button></td>
+                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -186,24 +186,7 @@
                 </div>
             </div>
             <!-- Table End -->
-
-
-            <!-- Footer Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary rounded-top p-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Your Site Name</a>, All Right Reserved. 
-                        </div>
-                        <div class="col-12 col-sm-6 text-center text-sm-end">
-                            <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                            Designed By <a href="https://htmlcodex.com">HTML Codex</a>
-                            <br>Distributed By: <a href="https://themewagon.com" target="_blank">ThemeWagon</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- Footer End -->
+            
         </div>
         <!-- Content End -->
 

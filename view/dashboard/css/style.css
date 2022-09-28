@@ -288,6 +288,7 @@
     border-color: var(--primary);
 }
 
+/*top table*/
 .top-table {
     display: flex;
     align-items: center;
@@ -297,12 +298,12 @@
     display: inline-block;
 }
 
-.btn-register-customers {
+.btn-register {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.btn-register-customers button {
+.btn-register button {
     font-size: large;
     display: flex;
     justify-content: center;
@@ -315,6 +316,17 @@
     color: var(--light);
     background-color: var(--dark);
 }
-.btn-register-customers button:hover {
+.btn-register button:hover {
     color: var(--primary);
+}
+
+/*btn more customer and product options*/
+.btn-plus-options {
+    background-color: var(--dark);
+    color: var(--light);
+    font-size: 19px !important;
+}
+.btn-plus-options:hover {
+    color: var(--primary);
+    border: 0.5px solid var(--primary);
 }

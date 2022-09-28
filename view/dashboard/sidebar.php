@@ -22,7 +22,7 @@
                             <a href="../index.php" class="dropdown-item">Sair</a>
                         </div>
                     </div>
-                    <a href="index.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Dashboard</a>
+                    <a href="index.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Painel</a>
                     <a href="customers.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Clientes</a>
                     <a href="products.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Produtos</a>
                 </div>

@@ -139,8 +139,8 @@
                                     <div class="col-12 col-xl-10 mb-3">
                                         <h6 class=" ml-1 text-center" style="font-size: larger;">Lista de Clientes</h6>
                                     </div>
-                                    <div class="col-1 btn-register-customers mb-2">
-                                        <button><i class="fa-solid fa-user-plus"></i></button>
+                                    <div class="col-1 btn-register mb-2">
+                                        <button><i class="fa-solid fa-user"></i> +</button>
                                     </div>
                                 </div>
                             </div>
@@ -159,25 +159,25 @@
                                             <td>Cliente teste</td>
                                             <td>000.111.222-33</td>
                                             <td>ClienteT@email.com</td>
-                                            <td><button>t</button></td>
+                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
                                         <tr>
                                             <td>Cliente x</td>
                                             <td>111.222.333-44</td>
                                             <td>Clientex@email.com</td>
-                                            <td><button>t</button></td>
+                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
                                         <tr>
                                             <td>Cliente y</td>
                                             <td>222.333.444-55</td>
                                             <td>Clientey@email.com</td>
-                                            <td><button>t</button></td>
+                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
                                         <tr>
                                             <td>Cliente z</td>
                                             <td>333.444.555-66</td>
                                             <td>Clientez@email.com</td>
-                                            <td><button>t</button></td>
+                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
                                     </tbody>
                                 </table>
