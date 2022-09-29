@@ -135,10 +135,10 @@ CREATE TABLE `pedido_produto` (
 /*Data for the table `pedido_produto` */
 
 insert  into `pedido_produto`(`idPedido_Produto`,`quantidade`,`valor`,`Pedido_id_pedido`,`Produtos_idProdutos`) values 
-(1,'1','250',0,3),
-(2,'1','250',0,3),
-(3,'1','400',0,2),
-(4,'1','499',0,4);
+(1,"1","250",0,3),
+(2,"1","250",0,3),
+(3,"1","400",0,2),
+(4,"1","499",0,4);
 
 /*Table structure for table `produtos` */
 
@@ -158,10 +158,10 @@ CREATE TABLE `produtos` (
 /*Data for the table `produtos` */
 
 insert  into `produtos`(`id_produtos`,`nome_produto`,`preco_produto`,`quantidade`,`Modelo_idModelo`) values 
-(2,'Nike Air Jordan High 1 Tie Dye - unissex','400',98,0),
-(3,'Balenciaga Triple S','250',18,0),
-(4,'Nike Sb Dunk Low','499',2,0),
-(5,'Adidas Yezzy Boost 350 V2','350',0,0);
+(2,"Nike Air Jordan High 1 Tie Dye - unissex","400",98,0),
+(3,"Balenciaga Triple S","250",18,0),
+(4,"Nike Sb Dunk Low","499",2,0),
+(5,"Adidas Yezzy Boost 350 V2","350",0,0);
 
 /*Table structure for table `telefone` */
 
@@ -200,10 +200,10 @@ CREATE TABLE `usuarios` (
 /*Data for the table `usuarios` */
 
 insert  into `usuarios`(`id_usuario`,`nome`,`cpf`,`telefone`,`email`,`senha`) values 
-(1,'teste','477.516.858-40',NULL,NULL,'teste'),
-(2,'testf','047.734.300-79','1545','trdtc','c71ce8327ddb80f5f2d66ef497a4c2f2ed295a15'),
-(3,'loco','003.112.840-86','145566656','veruska6584@uorak.com','7163d28263e69194a23cc96dde29dd92886fb034'),
-(4,'trser','212.547.400-07','(14) 99881-244','desenvolvimento@contabilivre.com.br','f0d45e5602bb978a29d940ca611d113ec3feb44d');
+(1,"teste","477.516.858-40",NULL,NULL,"teste"),
+(2,"test","047.734.300-79","1545","trdtc","c71ce8327ddb80f5f2d66ef497a4c2f2ed295a1"),
+(3,"loco","003.112.840-86","145566656","veruska6584@uorak.com","7163d28263e69194a23cc96dde29dd92886fb034"),
+(4,"trser","212.547.400-07","(14) 99881-244","desenvolvimento@contabilivre.com.br","f0d45e5602bb978a29d940ca611d113ec3feb44d");
 
 /*Table structure for table `vendedor` */
 
@@ -230,19 +230,19 @@ CREATE TABLE `vendedor` (
 /*Data for the table `pedido_produto` */
 
 insert  into `pedido_produto`(`idPedido_Produto`,`quantidade`,`valor`,`Pedido_id_pedido`,`Produtos_idProdutos`) values 
-(1,'1','250',0,3),
-(2,'1','250',0,3),
-(3,'1','400',0,2),
-(4,'1','499',0,4);
+(1,"1","250",0,3),
+(2,"1","250",0,3),
+(3,"1","400",0,2),
+(4,"1","499",0,4);
 
 
 /*Data for the table `produtos` */
 
 insert  into `produtos`(`id_produtos`,`nome_produto`,`preco_produto`,`quantidade`,`Modelo_idModelo`) values 
-(2,'Nike Air Jordan High 1 Tie Dye - unissex','400',98,0),
-(3,'Balenciaga Triple S','250',18,0),
-(4,'Nike Sb Dunk Low','499',2,0),
-(5,'Adidas Yezzy Boost 350 V2','350',0,0);
+(2,"Nike Air Jordan High 1 Tie Dye - unissex","400",98,0),
+(3,"Balenciaga Triple S","250",18,0),
+(4,"Nike Sb Dunk Low","499",2,0),
+(5,"Adidas Yezzy Boost 350 V2","350",0,0);
 
 
 /*Data for the table `endereco` */
