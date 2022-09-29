@@ -53,7 +53,7 @@ $(document).ready(function () {
                     success: function (data) {
 
                         if (data.status == true) {
-                            location.reload('project_PI/view/salePage.php');
+                            location.reload(window.location.pathname + '../view/dashboard/');
                         } else {
                             alert(data.msg);
                         }
