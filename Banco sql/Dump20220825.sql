@@ -262,18 +262,18 @@ insert into `cliente`(`id_cliente`, `nome`, `CPF`) values (4,"Thiago Leopoldo Be
 
 /*Data for the table 'usuarios'*/
 
-insert into `usuarios` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`) values ("Ferdinando Rainert", "119.082.619-43", "(47)920000706", "fer.rainert@gmail.com");
-insert into `usuarios` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`) values ("Bruno Erbs","108.912.169-52", "(47)99164992", "brunoerbs4@gmail.com", "erbs1311");
-insert into `usuarios` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`) values ("Rafael Antõnio Bressanini", "103.725.339-65", "laimportsloja@gmail.com", "123456");
-insert into `usuarios` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`) values ("Thiago Leopoldo Beffart Weber", "076.147.659-82", "thiago.bw@gmail.com", "123456");
+insert into `usuario` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`, `tipo`) values ("Ferdinando Rainert", "119.082.619-43", "(47)920000706", "fer.rainert@gmail.com");
+insert into `usuario` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`, `tipo`) values ("Bruno Erbs","108.912.169-52", "(47)99164992", "brunoerbs4@gmail.com", "erbs1311");
+insert into `usuario` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`, `tipo`) values ("Rafael Antõnio Bressanini", "103.725.339-65", "laimportsloja@gmail.com", "123456");
+insert into `usuario` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`, `tipo`) values ("Thiago Leopoldo Beffart Weber", "076.147.659-82", "thiago.bw@gmail.com", "123456");
 
 
 /*Data for the table 'vendedor'*/
 
-insert into `vendedor` (`id_vendedor`, `nome`, `CPF`, `senha`) values (1,"Ferdinando Rainert", "119.082.619-43", "Porradesenha24@");
-insert into `vendedor` (`id_vendedor`, `nome`, `CPF`, `senha`) values (2, "Bruno Erbs","108.912.169-52", "erbs1311");
-insert into `vendedor` (`id_vendedor`, `nome`, `CPF`, `senha`) values (3, "Rafael Antõnio Bressanini", "103.725.339-65", "123456");
-insert into `vendedor` (`id_vendedor`, `nome`, `CPF`, `senha`) values (4, "Thiago Leopoldo Beffart Weber", "076.147.659-82", "123456");
+insert into `vendedor` (`id_vendedor`, `nome`, `CPF`, `senha`) values (1,"Ferdinando Rainert", "119.082.619-43", "Porradesenha24@",0);
+insert into `vendedor` (`id_vendedor`, `nome`, `CPF`, `senha`) values (2, "Bruno Erbs","108.912.169-52", "erbs1311",0);
+insert into `vendedor` (`id_vendedor`, `nome`, `CPF`, `senha`) values (3, "Rafael Antõnio Bressanini", "103.725.339-65", "123456",0);
+insert into `vendedor` (`id_vendedor`, `nome`, `CPF`, `senha`) values (4, "Thiago Leopoldo Beffart Weber", "076.147.659-82", "123456",0);
 
 
 
