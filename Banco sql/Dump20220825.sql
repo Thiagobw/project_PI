@@ -229,13 +229,6 @@ CREATE TABLE `vendedor` (
 
 /*Data for the table `pedido_produto` */
 
-insert  into `pedido_produto`(`idPedido_Produto`,`quantidade`,`valor`,`Pedido_id_pedido`,`Produtos_idProdutos`) values 
-(1,"1","250",0,3),
-(2,"1","250",0,3),
-(3,"1","400",0,2),
-(4,"1","499",0,4);
-
-
 /*Data for the table `produtos` */
 
 insert  into `produtos`(`id_produtos`,`nome_produto`,`preco_produto`,`quantidade`,`Modelo_idModelo`) values 
