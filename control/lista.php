@@ -1,5 +1,5 @@
 <?php
-//adiciona coneção
+//adiciona conexão
 include_once("connection.php");
 //query para consulta 
 $sql = "SELECT id_cliente, nome, CPF from cliente";

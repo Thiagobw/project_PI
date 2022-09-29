@@ -15,4 +15,6 @@ function connect() {
     } catch (PDOException $e) {
         echo "erro ao conectar: " . $e->getMessage();
     }
+  header('Location: http://localhost/project_PI/view/salePage.php?#', true, 301);
+  exit();
 }
