@@ -7,7 +7,7 @@ include_once "../model/users.php";
 $cpf = $_POST['cpf'];
 $pass_sent = $_POST['pass'];
 
-password_verify($pass_sent, "pass do banco") {
+if (password_verify($pass_sent, "pass do banco")) {
     echo "senha correta";
 } else {
     echo "senha errada";
