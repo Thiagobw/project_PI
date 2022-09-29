@@ -5,7 +5,13 @@ include_once "../model/users.php";
 
 
 $cpf = $_POST['cpf'];
-$pass = password_hash($_POST['pass'], PASSWORD_ARGON2I, ['memory_cost' => 2048, 'time_cost' => 4, 'threads' => 3]);
+$pass_sent = $_POST['pass'];
+
+password_verify($pass_sent, "pass do banco") {
+    echo "senha correta";
+} else {
+    echo "senha errada";
+}
 
 $user= new Users();
 $user->setCpf($cpf);
