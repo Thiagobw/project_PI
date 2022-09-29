@@ -19,5 +19,4 @@ class Products {
     public function getAmount() {
         return $this->amount;
     }
-
 }
