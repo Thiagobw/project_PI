@@ -4,9 +4,9 @@ require_once 'Model.php';
 class Products {
     private $name;
     private $amount;
-    private $modelo; //fazer agregação
+    private Model $modelo; 
 
-    public function setName($name) {
+    public function setName(string $name) {
         return $this->$name = $name;
     }
     public function getName() {
