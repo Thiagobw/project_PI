@@ -77,8 +77,8 @@ DROP TABLE IF EXISTS `email`;
 
 CREATE TABLE `email` (
 
-  `id_email` int(11) NOT NULL AUTO_INCREMENT COMMENT `\n\n`,
-  `email` varchar(60) NOT NULL DEFAULT `nao informado`,
+  `id_email` int(11) NOT NULL AUTO_INCREMENT COMMENT "\n\n",
+  `email` varchar(60) NOT NULL DEFAULT "NI",
   `Vendedor_id_vendedor` int(11) NOT NULL,
   `Cliente_id_cliente` int(11) NOT NULL,
   `Cliente_id_usuario` int(11) NOT NULL,
@@ -274,4 +274,3 @@ insert into `vendedor` (`id_vendedor`, `nome`, `CPF`, `senha`) values (4, `Thiag
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
