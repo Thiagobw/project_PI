@@ -6,15 +6,35 @@ MySQL - 10.4.22-MariaDB : Database - mydb
 
 /*!40101 SET NAMES utf8 */;
 
-/*!40101 SET SQL_MODE=''*/;
+/*!40101 SET SQL_MODE=``*/;
 
 /*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
-/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE=`NO_AUTO_VALUE_ON_ZERO` */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 CREATE DATABASE /*!32312 IF NOT EXISTS*/`mydb` /*!40100 DEFAULT CHARACTER SET utf8 */;
 
 USE `mydb`;
+
+-- Dump completed on 2022-08-25 11:39:03
+DROP TABLE IF EXISTS `usuarios`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+/*Table structure for table `usuarios` */
+CREATE TABLE `usuarios` (
+
+  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
+  `nome` varchar(100) DEFAULT NULL,
+  `cpf` char(14) DEFAULT NULL,
+  `telefone` char(15) DEFAULT NULL,
+  `email` varchar(60) DEFAULT NULL,
+  `senha` varchar(260) DEFAULT NULL,
+  `tipo` int(1) NOT NULL DEFAULT 1,    /* 1 - VENDEDOR, 2 - CLIENTE - 0 ADMIN */
+  PRIMARY KEY (`id_usuario`),
+  UNIQUE KEY `id_usuario_UNIQUE` (`id_usuario`)
+
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 /*Table structure for table `caracteristicas` */
 
@@ -55,8 +75,8 @@ CREATE TABLE `cliente` (
 DROP TABLE IF EXISTS `email`;
 
 CREATE TABLE `email` (
-  `id_email` int(11) NOT NULL AUTO_INCREMENT COMMENT '\n\n',
-  `email` varchar(60) NOT NULL DEFAULT 'nao informado',
+  `id_email` int(11) NOT NULL AUTO_INCREMENT COMMENT `\n\n`,
+  `email` varchar(60) NOT NULL DEFAULT `nao informado`,
   `Vendedor_id_vendedor` int(11) NOT NULL,
   `Cliente_id_cliente` int(11) NOT NULL,
   `Cliente_id_usuario` int(11) NOT NULL,
@@ -69,7 +89,7 @@ CREATE TABLE `email` (
   CONSTRAINT `fk_Email_Cliente1` FOREIGN KEY (`Cliente_id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_Email_Vendedor` FOREIGN KEY (`Vendedor_id_vendedor`) REFERENCES `vendedor` (`id_vendedor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
     KEY `fk_usuario_Cliente1_idx` (`Cliente_id_usuario`),
-  CONSTRAINT `fk_usuario_Cliente1` FOREIGN KEY (`Cliente_id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_usuario_Cliente1` FOREIGN KEY (`Cliente_id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 /*Data for the table `email` */
@@ -122,8 +142,8 @@ DROP TABLE IF EXISTS `pedido_produto`;
 
 CREATE TABLE `pedido_produto` (
   `idPedido_Produto` int(11) NOT NULL AUTO_INCREMENT,
-  `quantidade` varchar(45) NOT NULL,
-  `valor` varchar(45) NOT NULL,
+  `quantidade` int(11) NOT NULL,
+  `valor` int(11) NOT NULL,
   `Pedido_id_pedido` int(11) NOT NULL,
   `Produtos_idProdutos` int(11) NOT NULL,
   PRIMARY KEY (`idPedido_Produto`),
@@ -131,14 +151,6 @@ CREATE TABLE `pedido_produto` (
   KEY `fk_Pedido_Produto_Produtos1_idx` (`Produtos_idProdutos`),
   CONSTRAINT `fk_Pedido_Produto_Produtos1` FOREIGN KEY (`Produtos_idProdutos`) REFERENCES `produtos` (`id_produtos`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-
-/*Data for the table `pedido_produto` */
-
-insert  into `pedido_produto`(`idPedido_Produto`,`quantidade`,`valor`,`Pedido_id_pedido`,`Produtos_idProdutos`) values 
-(1,'1','250',0,3),
-(2,'1','250',0,3),
-(3,'1','400',0,2),
-(4,'1','499',0,4);
 
 /*Table structure for table `produtos` */
 
@@ -155,13 +167,6 @@ CREATE TABLE `produtos` (
   KEY `fk_Produtos_Modelo1_idx` (`Modelo_idModelo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
-/*Data for the table `produtos` */
-
-insert  into `produtos`(`id_produtos`,`nome_produto`,`preco_produto`,`quantidade`,`Modelo_idModelo`) values 
-(2,'Nike Air Jordan High 1 Tie Dye - unissex','400',98,0),
-(3,'Balenciaga Triple S','250',18,0),
-(4,'Nike Sb Dunk Low','499',2,0),
-(5,'Adidas Yezzy Boost 350 V2','350',0,0);
 
 /*Table structure for table `telefone` */
 
@@ -181,29 +186,6 @@ CREATE TABLE `telefone` (
   CONSTRAINT `fk_Telefone_Vendedor1` FOREIGN KEY (`Vendedor_id_vendedor`) REFERENCES `vendedor` (`id_vendedor`) ON DELETE NO ACTION ON UPDATE NO ACTION
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*Data for the table `telefone` */
-
-/*Table structure for table `usuarios` */
-
-DROP TABLE IF EXISTS `usuarios`;
-
-CREATE TABLE `usuarios` (
-  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
-  `nome` varchar(100) DEFAULT NULL,
-  `cpf` varchar(14) DEFAULT NULL,
-  `telefone` varchar(15) DEFAULT NULL,
-  `email` varchar(60) DEFAULT NULL,
-  `senha` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`id_usuario`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
-
-/*Data for the table `usuarios` */
-
-insert  into `usuarios`(`id_usuario`,`nome`,`cpf`,`telefone`,`email`,`senha`) values 
-(1,'teste','477.516.858-40',NULL,NULL,'teste'),
-(2,'testf','047.734.300-79','1545','trdtc','c71ce8327ddb80f5f2d66ef497a4c2f2ed295a15'),
-(3,'loco','003.112.840-86','145566656','veruska6584@uorak.com','7163d28263e69194a23cc96dde29dd92886fb034'),
-(4,'trser','212.547.400-07','(14) 99881-244','desenvolvimento@contabilivre.com.br','f0d45e5602bb978a29d940ca611d113ec3feb44d');
 
 /*Table structure for table `vendedor` */
 
@@ -218,62 +200,65 @@ CREATE TABLE `vendedor` (
   UNIQUE KEY `CPF_UNIQUE` (`CPF`),
   UNIQUE KEY `id_vendedor_UNIQUE` (`id_vendedor`),
   KEY `fk_Vendedor_usuario_idx` (`id_vendedor`),
-  CONSTRAINT `fk_Vendedor_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuario` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
+  CONSTRAINT `fk_Vendedor_usuario` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE NO ACTION ON UPDATE NO ACTION
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-/*Data for the table `vendedor` */
+
+/*Data for the table `usuarios`*/
+
+insert into `usuarios` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`) values
+(1, `Ferdinando Rainert`, `119.082.619-43`, `(47)920000706`, `fer.rainert@gmail.com`, ``), /* php_hash = 321456*/
+(2, `Bruno Erbs`, `108.912.169-52`, `(47)99164992`, `brunoerbs4@gmail.com`, ``), /* php_hash = erbs1311 */
+(3, `Rafael Antônio`, `103.725.339-65`, `(47) 99995-6428`, `laimportsloja@gmail.com`, ``), /* php_hash = 123456 */
+(4, `Thiago Leopoldo`, `076.147.659-82`, `(49) 96850-6313`,`thgleopoldo901@gmail.com`, ``); /* pho_hash = 654321*/
 
 
-/*Data for the table `vendedor` */
+/*Data for the table `telefone` */
 
-/*Data for the table `pedido_produto` */
 
-insert  into `pedido_produto`(`idPedido_Produto`,`quantidade`,`valor`,`Pedido_id_pedido`,`Produtos_idProdutos`) values 
-(1,'1','250',0,3),
-(2,'1','250',0,3),
-(3,'1','400',0,2),
-(4,'1','499',0,4);
 
 
 /*Data for the table `produtos` */
 
 insert  into `produtos`(`id_produtos`,`nome_produto`,`preco_produto`,`quantidade`,`Modelo_idModelo`) values 
-(2,'Nike Air Jordan High 1 Tie Dye - unissex','400',98,0),
-(3,'Balenciaga Triple S','250',18,0),
-(4,'Nike Sb Dunk Low','499',2,0),
-(5,'Adidas Yezzy Boost 350 V2','350',0,0);
+(2, `Nike Air Jordan High 1 Tie Dye - unissex`, 400, 98, 0),
+(3, `Balenciaga Triple S`, 250, 18, 0),
+(4, `Nike Sb Dunk Low`, 499, 2, 0),
+(5, `Adidas Yezzy Boost 350 V2`, 350, 0, 0);
+
+
+/*Data for the table `pedido_produto` */
+
+insert  into `pedido_produto`(`idPedido_Produto`,`quantidade`,`valor`,`Pedido_id_pedido`,`Produtos_idProdutos`) values 
+(1, 1, 250, 0, 3),
+(2, 1, 250, 0, 3),
+(3, 1, 400, 0, 2),
+(4, 1, 499, 0, 4);
 
 
 /*Data for the table `endereco` */
 
-insert into endereco (id_endereco, numero_endereco, rua, bairro, cidade, estado, cep, complemento) VALUES
-(1, 90, "Beco Pamplona", "7 de Setembro", "Gaspar", "Santa Catarina" "89114-876", 501),
-(2, 00, "Rodovia sc-414", "Vila Nova", "Luiz Alves", "Santa Catarina", "89128-000", 0),
-(3, 8267, "Rodovia sc-414", "Vila Nova", "Luiz Alves", "Santa Catarina", "89128-000", 0);
-
-/*Data for the table 'cliente'*/
-
-insert  into 'cliente'('id_cliente', 'nome', 'CPF') values (1,"Ferdinando Rainert", "119.082.619-43");
-insert into 'cliente'('id_cliente', 'nome', 'CPF') values (2,"Bruno Erbs", "108.912.169-52");
-insert into 'cliente'('id_cliente', 'nome', 'CPF') values (3,"Rafael Antônio Bressanini", "103.725.339-65");
-insert into 'cliente'('id_cliente', 'nome', 'CPF') values (4,"Thiago Leopoldo Beffart Weber", "076.147.659-82");
+insert into endereco (`id_endereco`, `numero_endereco`, `rua`, `bairro`, `cidade`, `estado`, `cep`, `complemento`) VALUES
+(1, 90, `Beco Pamplona`, `7 de Setembro`, `Gaspar`, `Santa Catarina`, `89114-876`, 501),
+(2, 00, `Rodovia sc-414`, `Vila Nova`, `Luiz Alves`, `Santa Catarina`, `89128-000`, 0),
+(3, 8267, `Rodovia sc-414`, `Vila Nova`, `Luiz Alves`, `Santa Catarina`, `89128-000`, 0);
 
 
-/*Data for the table 'usuarios'*/
+/*Data for the table `cliente`*/
 
-insert into 'usuarios' ('id_usuario', 'nome', 'cpf', 'telefone', 'email', 'senha') values ("Ferdinando Rainert", "119.082.619-43", "(47)920000706", "fer.rainert@gmail.com");
-insert into 'usuarios' ('id_usuario', 'nome', 'cpf', 'telefone', 'email', 'senha') values ("Bruno Erbs","108.912.169-52", "(47)99164992", "brunoerbs4@gmail.com", "erbs1311");
-insert into 'usuarios' ('id_usuario', 'nome', 'cpf', 'telefone', 'email', 'senha') values ("Rafael Antõnio Bressanini", "103.725.339-65", "laimportsloja@gmail.com", "123456");
-insert into 'usuarios' ('id_usuario', 'nome', 'cpf', 'telefone', 'email', 'senha') values ("Thiago Leopoldo Beffart Weber", "076.147.659-82", "thiago.bw@gmail.com", "123456");
+insert  into `cliente` (`id_cliente`, `nome`, `CPF`) values (1,`Ferdinando Rainert`, `119.082.619-43`);
+insert into `cliente` (`id_cliente`, `nome`, `CPF`) values (2,`Bruno Erbs`, `108.912.169-52`);
+insert into `cliente` (`id_cliente`, `nome`, `CPF`) values (3,`Rafael Antônio Bressanini`, `103.725.339-65`);
+insert into `cliente` (`id_cliente`, `nome`, `CPF`) values (4,`Thiago Leopoldo Beffart Weber`, `076.147.659-82`);
 
 
-/*Data for the table 'vendedor'*/
+/*Data for the table `vendedor`*/
 
-insert into 'vendedor' ('id_vendedor', 'nome', 'CPF', 'senha') values (1,"Ferdinando Rainert", "119.082.619-43", "Porradesenha24@");
-insert into 'vendedor' ('id_vendedor', 'nome', 'CPF', 'senha') values (2, "Bruno Erbs","108.912.169-52", "erbs1311");
-insert into 'vendedor' ('id_vendedor', 'nome', 'CPF', 'senha') values (3, "Rafael Antõnio Bressanini", "103.725.339-65", "123456");
-insert into 'vendedor' ('id_vendedor', 'nome', 'CPF', 'senha') values (4, "Thiago Leopoldo Beffart Weber", "076.147.659-82", "123456");
+insert into `vendedor` (`id_vendedor`, `nome`, `CPF`, `senha`) values (1,`Ferdinando Rainert`, `119.082.619-43`, `Porradesenha24@`);
+insert into `vendedor` (`id_vendedor`, `nome`, `CPF`, `senha`) values (2, `Bruno Erbs`,`108.912.169-52`, `erbs1311`);
+insert into `vendedor` (`id_vendedor`, `nome`, `CPF`, `senha`) values (3, `Rafael Antõnio Bressanini`, `103.725.339-65`, `123456`);
+insert into `vendedor` (`id_vendedor`, `nome`, `CPF`, `senha`) values (4, `Thiago Leopoldo Beffart Weber`, `076.147.659-82`, `123456`);
 
 
 
@@ -281,19 +266,4 @@ insert into 'vendedor' ('id_vendedor', 'nome', 'CPF', 'senha') values (4, "Thiag
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
-
--- Dump completed on 2022-08-25 11:39:03
-DROP TABLE IF EXISTS `usuario`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `usuario` (
-  `id_usuario` int(11) NOT NULL AUTO_INCREMENT,
-  `login` varchar(100) DEFAULT NULL,
-  `senha` varchar(300) DEFAULT NULL,
-  `tipo` int(1) NOT NULL DEFAULT 1 , /* 1 - VENDEDOR, 2 - CLIENTE - 0 ADMIN**/
-
-  PRIMARY KEY (`id_usuario`),
-  UNIQUE KEY `id_usuario_UNIQUE` (`id_usuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
