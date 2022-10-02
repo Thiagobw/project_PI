@@ -152,6 +152,7 @@
                                             <th scope="col">CPF</th>
                                             <th scope="col">Email</th>
                                             <th scope="col"></th>
+                                            <td></td>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -208,4 +209,4 @@
     <script src="js/main.js"></script>
 </body>
 
-</html>
+</html> 
