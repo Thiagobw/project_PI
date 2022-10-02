@@ -26,6 +26,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    
 
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -129,6 +130,10 @@
             </nav>
             <!-- Navbar End -->
 
+            <!-- Importing popup file -->
+            <?php
+                require_once "../dashboard/register-prod-cli.php";
+            ?>
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -141,7 +146,7 @@
                                         <h6 class=" ml-1 text-center" style="font-size: larger;">Lista de Produtos</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
-                                        <button><i class="fa-solid fa-gift"></i> +</button>
+                                        <button data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-gift"></i> +</button>
                                     </div>
                                 </div>
                             </div>
