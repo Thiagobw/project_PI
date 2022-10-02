@@ -287,3 +287,46 @@
     background: var(--dark);
     border-color: var(--primary);
 }
+
+/*top table*/
+.top-table {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.top-table div {
+    display: inline-block;
+}
+
+.btn-register {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-register button {
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    text-align: center;
+    text-justify: auto;
+    color: var(--light);
+    background-color: var(--dark);
+}
+.btn-register button:hover {
+    color: var(--primary);
+}
+
+/*btn more customer and product options*/
+.btn-plus-options {
+    background-color: var(--dark);
+    color: var(--light);
+    font-size: 19px !important;
+}
+.btn-plus-options:hover {
+    color: var(--primary);
+    border: 0.5px solid var(--primary);
+}
