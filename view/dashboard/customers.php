@@ -144,7 +144,7 @@
                                         <h6 class=" ml-1 text-center" style="font-size: larger;">Lista de Clientes</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
-                                        <button type="button" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-user"></i> +</button>
+                                        <button type="button" id="btnRegisterCust" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-user"></i> +</button>
                                     </div>
                                 </div>
                             </div>
@@ -210,6 +210,16 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-</body>
 
+    <!-- forms visibility controller -->
+    <script>
+        var btnRegisterCust = document.querySelector('#btnRegisterCust');
+
+        btnRegisterCust.addEventListener('click', function() {
+            const formCustomers = document.querySelector('#registerCustomers');
+
+                formCustomers.style.display = "flex";
+        })
+    </script>
+</body>
 </html>
