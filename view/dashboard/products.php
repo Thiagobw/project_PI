@@ -146,7 +146,7 @@
                                         <h6 class=" ml-1 text-center" style="font-size: larger;">Lista de Produtos</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
-                                        <button data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-gift"></i> +</button>
+                                        <button id="btnRegisterProd" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-gift"></i> +</button>
                                     </div>
                                 </div>
                             </div>
@@ -213,6 +213,16 @@
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-</body>
 
+    <!-- forms visibility controller -->
+    <script>
+        var btnRegisterProd = document.querySelector('#btnRegisterProd');
+
+        btnRegisterProd.addEventListener('click', function() {
+            const formProducts = document.querySelector('#registerProducts');
+
+                formProducts.style.display = "flex";
+        })
+    </script>
+</body>
 </html>
