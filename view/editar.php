@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include_once 'includes/header.php'; //a definir
 include_once 'includes/menu.php'; // a definir
 ?>
@@ -12,11 +12,12 @@ include_once 'includes/menu.php'; // a definir
 
 <?php
     include_once 'DAO/connection.php'
-    $id = filter_input(INPUT_GET, 'id_usuario', FILTER_SANITIZE_NUMBER_INT);
+
+    $id_usuario = filter_input(INPUT_GET, 'id_usuario', FILTER_SANITIZE_NUMBER_INT);
+    $_SESSION['id_usuario'] = $id_usuario;
     $querySelect = $link->query("SELECT * FROM usuarios where id_usuario='$id'");
 
     while($registros = $querySelect->fetch_assoc()){
-        $id_usuario = $registros['id_usuario'];
         $nome = $registros['nome'];
         $email = $registros['email'];
         $cpf = $registros['cpf'];
