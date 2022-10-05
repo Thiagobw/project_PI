@@ -7,18 +7,25 @@ include_once "../model/users.php";
 function autenticar (Users $user) {
 
     $cpf = $user->getCpf();
-    $senha = $user->getPassword();
-
+    $pass_sent = $user->getPassword();
+    
     $conexao = connect();
-
-    $stmt = $conexao->prepare("SELECT * FROM usuarios where cpf = :cpf and senha = :senha");
+    
+    $stmt = $conexao->prepare("SELECT * FROM usuarios where cpf = :cpf");
     $stmt->bindValue(':cpf', $cpf);
-    $stmt->bindValue(':senha', $senha);
     $stmt->execute();
-    die(var_dump($cpf, $senha));
     $result = $stmt->fetchAll();
+    if(count($result)>0){
+        $actualPass = $result[0]['senha'];
+        if(password_verify($pass_sent, $actualPass)){
+            return $result[0];
+        } else {
+            return false;
+        }
+    } else {
+        return false;
+    }
 
-    return $result;
 
 }
 

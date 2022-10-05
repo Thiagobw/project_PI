@@ -3,6 +3,8 @@
 class Users {
     
     private $name;
+    private $cpf;
+    private $tell;
     private $email;
     private $password;
 
@@ -20,6 +22,22 @@ class Users {
 
     public function getEmail() {
         return $this->email;
+    }
+
+    public function setCpf($cpf) {
+        return $this->cpf = $cpf;
+    }
+    
+    public function getCpf() {
+        return $this->cpf;
+    }
+    
+    public function setTell($tell) {
+        return $this->tell = $tell;
+    }
+    
+    public function getTell() {
+        return $this->tell;
     }
 
     public function setPassword($password) {

@@ -45,21 +45,18 @@ $(document).ready(function () {
                 let link_server = window.location.pathname + '../control/authentication.php';
 
                 $.ajax({
-                    type: 'POST',
                     url: link_server,
+                    type: "post",
                     dataType: 'json',
                     data: { cpf: cpfLog, pass: passLog },
-
                     success: function (data) {
-
                         if (data.status == true) {
-                            location.reload(window.location.pathname + '../view/dashboard/');
+                            window.location.replace(window.location.pathname + 'dashboard/');
                         } else {
                             alert(data.msg);
                         }
                     },
-
-                    error: function () {
+                    error: function (data) {
                         alert('Erro: contate o suporte')
                     }
                 });

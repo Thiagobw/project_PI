@@ -8,7 +8,9 @@ $name = $_POST['name'];
 $cpf = $_POST['cpf'];
 $tell = $_POST['tell'];
 $email = $_POST['email'];
-$pass = password_hash($_POST['pass'], PASSWORD_ARGON2I, ['memory_cost' => 2048, 'time_cost' => 4, 'threads' => 3]);
+$pass_sent = $_POST['pass'];
+$passCounter = strlen($pass_sent);
+$pass = password_hash($pass_sent, PASSWORD_ARGON2I, ['memory_cost' => 2048, 'time_cost' => 4, 'threads' => 3]);
 
 $Users = new Users();
 
@@ -16,16 +18,15 @@ $Users->setName($name);
 $Users->setCpf($cpf);
 $Users->setTell($tell);
 $Users->setEmail($email);
-$Users->setPassword($pass);
+$Users->setPassword($pass_sent);
 
-if($pass < 6){
+if($passCounter > 6){
 	if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
 		$result_email = autenticar_email($Users);
 		if(count($result_email)<1){
-
+			
 			$result_cpf = autenticar_cpf($Users);
 			if(count($result_cpf)<1){
-
 
 				$data = [
 				    'nome' => $name,
@@ -53,21 +54,17 @@ if($pass < 6){
 
 				} else{
 				    $answer['msg'] = "Erro ao cadastrar";
-
+							$answer['status'] = false;
 				}
-
-				
 			
 			}else{
 				$answer['msg'] = "Cpf ja cadastrado";
 				$answer['status'] = false;
-
 			}
 
 		}else{
 			$answer['msg'] = "Email ja cadastrado";
 			$answer['status'] = false;
-
 		}
 	}else{
 		$answer['msg'] = "Email invalido";
