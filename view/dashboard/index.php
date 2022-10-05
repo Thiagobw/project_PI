@@ -1,5 +1,9 @@
+<?php
+session_start();
+include_once ('../../control/checkAuth.php');
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
@@ -50,7 +54,7 @@
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="./" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
                 </a>
 
@@ -105,7 +109,7 @@
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Perfil auterado</h6>
+                                <h6 class="fw-normal mb-0">Perfil alterado</h6>
                                 <small>Há 15 minutos</small>
                             </a>
                             <hr class="dropdown-divider">
