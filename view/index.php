@@ -1,8 +1,25 @@
-
-
-
+<?php
+session_start();
+function checkAuth(){
+    if(isset($_SESSION['autenticado']) && $_SESSION['autenticado'] == true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+if(checkAuth()) {
+    $user = $_SESSION['usuario'];
+    $userName = $user['nome'];
+    $shortNameArray = explode(' ', $userName, -1);
+    if(count($shortNameArray)<=0){
+        $shortName =  $userName;
+    } else {
+        $shortName = $shortNameArray[0];
+    }
+}
+?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

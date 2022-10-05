@@ -25,15 +25,22 @@
         <div class="collapse navbar-collapse ml-1 mr-1" id="navbarNavDarkDropdown">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle menu-cad" href="#" id="navbarDropdownMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="fa-regular fa-user" style="color: black !important;"></i> Entre ou Cadastre-se
+              <?php 
+              if(checkAuth()):
+              ?>
+              <a class="nav-link menu-cad" href="./dashboard">
+                <i class="fa-regular fa-user" style="color: black !important;"></i> <?php echo $shortName; ?>
               </a>
-              
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenu">
-                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#pop-upAccount" id="btnLogin">Entrar</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#pop-upAccount" id="btnRegister">Cadastre-se</a></li>
-              </ul>
+              <?php else: ?>
+                <a class="nav-link dropdown-toggle menu-cad" href="#" id="navbarDropdownMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-user" style="color: black !important;"></i> Entre ou Cadastre-se
+                </a>              
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenu">
+                  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#pop-upAccount" id="btnLogin">Entrar</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#pop-upAccount" id="btnRegister">Cadastre-se</a></li>
+                </ul>
+              <?php endif; ?>
             </li>
           </ul>
         </div>
