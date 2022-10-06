@@ -152,6 +152,12 @@ include_once ('../../control/checkAuth.php');
                                     <div class="col-1 btn-register mb-2">
                                         <button data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-gift"></i> +</button>
                                     </div>
+                                    <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title text-dark"> Cadastrar um novo Cliente</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
                                 </div>
                             </div>
                             <div class="table-responsive">
