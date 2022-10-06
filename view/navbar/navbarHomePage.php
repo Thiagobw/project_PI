@@ -29,11 +29,11 @@
               if(checkAuth()):
               ?>
               <a class="nav-link menu-cad" href="./dashboard">
-                <i class="fa-regular fa-user" style="color: black !important;"></i> <?php echo $shortName; ?>
+                <i class="fa-regular fa-user"></i> <?php echo $shortName; ?>
               </a>
               <?php else: ?>
-                <a class="nav-link dropdown-toggle menu-cad" href="#" id="navbarDropdownMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  <i class="fa-solid fa-user" style="color: black !important;"></i> Entre ou Cadastre-se
+                <a class="nav-link dropdown-toggle menu-cad btn-dropdown-cad" href="#" id="navbarDropdownMenu" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="fa-solid fa-user mr-2"></i>Entre ou Cadastre-se
                 </a>              
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenu">
                   <li><a class="dropdown-item" href="#" data-bs-toggle="modal" data-bs-target="#pop-upAccount" id="btnLogin">Entrar</a></li>
