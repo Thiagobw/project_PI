@@ -11,7 +11,7 @@ include_once 'includes/menu.php'; // a definir
 </div>
 
 <?php
-    include_once 'DAO/connection.php'
+    include_once 'DAO/connection.php';
 
     $id_usuario = filter_input(INPUT_GET, 'id_usuario', FILTER_SANITIZE_NUMBER_INT);
     $_SESSION['id_usuario'] = $id_usuario;

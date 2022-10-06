@@ -1,3 +1,4 @@
+baseurl = "/project_PI/"
 
 /* check if jquery is loaded */
 $(document).ready(function () {
@@ -42,7 +43,7 @@ $(document).ready(function () {
 
             if (checkCPF(cpfLog)) {
 
-                let link_server = window.location.pathname + '../control/authentication.php';
+                let link_server = baseurl + 'control/authentication.php';
 
                 $.ajax({
                     url: link_server,
@@ -51,7 +52,7 @@ $(document).ready(function () {
                     data: { cpf: cpfLog, pass: passLog },
                     success: function (data) {
                         if (data.status == true) {
-                            window.location.replace(window.location.pathname + 'dashboard/');
+                            window.location.replace(baseurl + 'view/dashboard/');
                         } else {
                             alert(data.msg);
                         }
@@ -86,7 +87,7 @@ $(document).ready(function () {
 
             if (checkCPF(cpf)) {
 
-                let link_server = window.location.pathname + '../control/control_registration.php';
+                let link_server = baseurl + 'control/control_registration.php';
 
                 $.ajax({
 
