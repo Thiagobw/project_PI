@@ -10,12 +10,7 @@ function checkAuth(){
 if(checkAuth()) {
     $user = $_SESSION['usuario'];
     $userName = $user['nome'];
-    $shortNameArray = explode(' ', $userName, -1);
-    if(count($shortNameArray)<=0){
-        $shortName =  $userName;
-    } else {
-        $shortName = $shortNameArray[0];
-    }
+    $shortName = explode(' ', $userName, -1);
 }
 ?>
 <!DOCTYPE html>
