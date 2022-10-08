@@ -10,7 +10,7 @@ $data = filter_input(INPUT_POST, 'data', FILTER_SANITIZE_NUMBER_FLOAT);
 $queryUpdate = $link->query("UPDATE pedido SET valor_pedido='$valor_pedido', forma_pagamento='$forma_pagamento', data='$data' WHERE id_pedido='$id_pedido'");
 $affected_rows = mysqli_affected_rows($link);
 if($affected_rows > 0){
- header("location:../");// botar a localização da pagina de colsulta 
+ header("location:../");// botar a localização da pagina de colsulta.
 }
 
 
