@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse ml-1 mr-1" id="navbarNavDarkDropdown">
           <ul class="navbar-nav">
             <li class="nav-item dropdown">
-              <?php 
+            <?php 
               if(checkAuth()):
               ?>
               <a class="nav-link menu-cad" href="./dashboard">
