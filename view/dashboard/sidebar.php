@@ -5,14 +5,14 @@
         </a>
         <div class="navbar-nav w-100">
             <div class="nav-item dropdown">
-                <a href="#" class="nav-link dropdown-toggle active mb-1" data-bs-toggle="dropdown">
+                <a href="#" class="nav-link dropdown-toggle active mb-1" data-bs-toggle="dropdown" id="accDropDown">
                     <div class="d-flex align-items-center ms-1 mb-1 mt-1" style="align-items: center;">
                         <div class="position-relative">
                             <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                            <div class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
+                            <div class="bg-success rounded-circle" id="icon-online"></div>
                         </div>
                         <div class="ms-3">
-                            <h6 class="mb-0"><?php echo $shortName; ?></h6>
+                            <h6 class="mb-0 name-user"><?php echo $shortName; ?></h6>
                             <span>Admin</span>
                         </div>
                     </div>
@@ -22,11 +22,11 @@
                     <a href="../../control/sair.php" class="dropdown-item">Sair</a>
                 </div>
             </div>
-            <a href="index.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Painel</a>
-            <a href="products.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Produtos</a>
-            <a href="providers.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Fornecedores</a>
-            <a href="customers.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Funcionarios</a>
-            <a href="customers.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Clientes</a>
+            <a href="index.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i> Painel</a>
+            <a href="products.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i> Produtos</a>
+            <a href="providers.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i> Fornecedores</a>
+            <a href="customers.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i> Funcionarios</a>
+            <a href="customers.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i> Clientes</a>
         </div>
     </nav>
 </div>

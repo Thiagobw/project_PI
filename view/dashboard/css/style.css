@@ -4,6 +4,7 @@
     --secondary: #191C24;
     --light: #6C7293;
     --dark: #000000;
+    --white: #ffffff;
 }
 
 .center {
@@ -11,7 +12,12 @@
     align-items: center !important;
     justify-content: center !important;
 }
-
+.me-2 {
+    margin-right:.5rem !important;
+}
+.ms-3 {
+    margin-left:1rem !important;
+}
 .back-to-top {
     position: fixed;
     display: none;
@@ -20,7 +26,30 @@
     z-index: 99;
 }
 
-
+.bg-secondary {
+    background-color: var(--secondary) !important;
+}
+.text-secondary {
+    color: var(--light) !important;
+}
+.text-primary {
+    color: var(--primary) !important;
+}
+.name-user, .text-white-bold {
+    color: var(--white) !important;
+    font-weight: bold;
+}
+#accDropDown::after {
+    top: 18px !important;
+    right: 33px !important;
+}
+#icon-online {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 0.25rem !important;
+    border: 1px solid var(--white) !important;
+}
 /*** Spinner ***/
 #spinner {
     opacity: 0;

@@ -28,7 +28,7 @@ include_once ('../../control/checkAuth.php');
     <link rel="stylesheet" href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -58,7 +58,7 @@ include_once ('../../control/checkAuth.php');
                     <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
                 </a>
 
-                <a href="#" class="sidebar-toggler flex-shrink-0">
+                <a href="#" class="sidebar-toggler flex-shrink-0 text-primary">
                     <i class="fa fa-bars"></i>
                 </a>
 
@@ -138,8 +138,8 @@ include_once ('../../control/checkAuth.php');
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa-solid fa-dollar-sign fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Ganho de hoje</p>
-                                <h6 class="mb-0">R$ 1.234</h6>
+                                <p class="mb-2 text-secondary">Ganho de hoje</p>
+                                <h6 class="mb-0 text-white-bold">R$ 1.234</h6>
                             </div>
                         </div>
                     </div>
@@ -147,8 +147,8 @@ include_once ('../../control/checkAuth.php');
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-bar fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">total de venda</p>
-                                <h6 class="mb-0">R$ 1.234</h6>
+                                <p class="mb-2 text-secondary">total de venda</p>
+                                <h6 class="mb-0 text-white-bold">R$ 1.234</h6>
                             </div>
                         </div>
                     </div>
@@ -156,8 +156,8 @@ include_once ('../../control/checkAuth.php');
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-area fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Receita de hoje</p>
-                                <h6 class="mb-0">R$ 1.234</h6>
+                                <p class="mb-2 text-secondary">Receita de hoje</p>
+                                <h6 class="mb-0 text-white-bold">R$ 1.234</h6>
                             </div>
                         </div>
                     </div>
@@ -165,8 +165,8 @@ include_once ('../../control/checkAuth.php');
                         <div class="bg-secondary rounded d-flex align-items-center justify-content-between p-4">
                             <i class="fa fa-chart-pie fa-3x text-primary"></i>
                             <div class="ms-3">
-                                <p class="mb-2">Rendimento total</p>
-                                <h6 class="mb-0">R$ 1.234</h6>
+                                <p class="mb-2 text-secondary">Rendimento total</p>
+                                <h6 class="mb-0 text-white-bold">R$ 1.234</h6>
                             </div>
                         </div>
                     </div>
@@ -181,7 +181,7 @@ include_once ('../../control/checkAuth.php');
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-secondary text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Vendas Nacionais</h6>
+                                <h6 class="mb-0 text-white-bold">Vendas Nacionais</h6>
                                 <a href="">Tudo</a>
                             </div>
                             <canvas id="worldwide-sales"></canvas>
@@ -190,7 +190,7 @@ include_once ('../../control/checkAuth.php');
                     <div class="col-sm-12 col-xl-6">
                         <div class="bg-secondary text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Vendas e receitas</h6>
+                                <h6 class="mb-0 text-white-bold">Vendas e receitas</h6>
                                 <a href="">Tudo</a>
                             </div>
                             <canvas id="salse-revenue"></canvas>
