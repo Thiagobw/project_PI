@@ -1,6 +1,10 @@
 <?php
 session_start();
 include_once ('../../control/checkAuth.php');
+include_once ('../../DAO/CustomersBd.php');
+
+$listar_cliente = buscar_cliente();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -163,30 +167,21 @@ include_once ('../../control/checkAuth.php');
                                         </tr>
                                     </thead>
                                     <tbody>
+
+                                    <?php
+                                    foreach($lista_cliente as $cliente){
+
+
+                                    ?>
                                         <tr>
-                                            <td>Cliente teste</td>
-                                            <td>000.111.222-33</td>
-                                            <td>ClienteT@email.com</td>
+                                        <td><?php echo $cliente->getCodigoClie();?></td>
+                                            <td> <?php echo $cliente->getName(); ?></td>
+                                            <td> <?php echo $cliente->getEmail();?> </td>
+                                            <td> <?php echo $cliente->getCpf();?> </td>
                                             <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
-                                        <tr>
-                                            <td>Cliente x</td>
-                                            <td>111.222.333-44</td>
-                                            <td>Clientex@email.com</td>
-                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cliente y</td>
-                                            <td>222.333.444-55</td>
-                                            <td>Clientey@email.com</td>
-                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cliente z</td>
-                                            <td>333.444.555-66</td>
-                                            <td>Clientez@email.com</td>
-                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
-                                        </tr>
+                                    <?php } ?>
+
                                     </tbody>
                                 </table>
                             </div>
