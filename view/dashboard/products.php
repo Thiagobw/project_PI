@@ -1,6 +1,11 @@
 <?php
 session_start();
 include_once ('../../control/checkAuth.php');
+include_once ('../../DAO/productsBd.php');
+
+$lista_products = buscar_produto();
+
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -161,32 +166,28 @@ include_once ('../../control/checkAuth.php');
                                             <th scope="col">Codigo</th>
                                             <th scope="col">Nome</th>
                                             <th scope="col">Quantidade em estoque</th>
-                                            <th scope="col">Situação</th>
+                                            <th scope="col">Preço</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                     
+                                     <?php 
+                                     foreach($lista_products as $prod){
+
+                                     
+                                     ?>
+                                     
                                         <tr>
-                                            <th scope="row">1</th>
-                                            <td>  Balenciaga Triple S- unissex</td>
-                                            <td>30 unidades</td>
-                                            <td>Em estoque</td>
+                                            <td><?php echo $prod->getCodigo();?></td>
+                                            <td> <?php echo $prod->getName(); ?></td>
+                                            <td> <?php echo $prod->getAmount();?> </td>
+                                            <td> <?php echo $prod->getPrice();?> </td>
                                             <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
-                                        <tr>
-                                            <th scope="row">2</th>
-                                            <td>  Nike Sb Dunk Low - unissex</td>
-                                            <td>03 unidades</td>
-                                            <td>Baixo estoque</td>
-                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <th scope="row">3</th>
-                                            <td>  Adidas Yezzy Boost 350 V2 - unissex</td>
-                                            <td>0 unidades</td>
-                                            <td>Estoque esgotado</td>
-                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
-                                        </tr>
+                                     
+                                     <?php } ?>
+
                                     </tbody>
                                 </table>
                             </div>
