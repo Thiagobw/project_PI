@@ -5,33 +5,54 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalToggleLabel">Cadastrar Cliente</h5>
                     <button type="button" class="btn btn-danger btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    X
+                    
                     </button>
                 </div>
     
                 <div class="modal-body">
                     <div class="row" id="account">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="form1">
+                            <form class="input-group center" id="formCustomers">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome" id="nameCli" maxlength="100" name="nomeCli">
+                                    <input class=" form-control input-user" type="text" placeholder="Nome" id="nameCustomers" maxlength="100" name="nomeCustomers">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="CPF" id="cpfCli"  name="cpfCli" maxlength="14" autocomplete="off">
+                                    <input class=" form-control input-user" type="text" placeholder="CPF" id="cpfCustomers"  name="cpfCustomers" maxlength="14" autocomplete="off">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="email" placeholder="Email" id="emailCli"  name="emailCli" maxlength="40">
+                                    <input class=" form-control input-user" type="email" placeholder="Email" id="emailCustomers"  name="emailCustomers" maxlength="40">
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100 btn-log" form="form1" type="submit" name="log-in" value="Cadastrar Cliente">
+                                    <input class="btn btn-primary w-100" form="formCustomers" type="submit" name="submitCustomers" value="Cadastrar Cliente">
                                 </div>
                             </form>
                         </div>
                     </div>
 
+                    <div class="row" id="account">
+                        <div class="col-12 input-group">
+                            <form class="input-group center" id="formProviders">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
+                                    <input class=" form-control input-user" type="text" placeholder="Nome" id="nameProviders" maxlength="100" name="nomeProviders">
+                                </div>
+
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
+                                    <input class=" form-control input-user" type="text" placeholder="CPF" id="cpfProviders"  name="cpfProviders" maxlength="14" autocomplete="off">
+                                </div>
+
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
+                                    <input class=" form-control input-user" type="email" placeholder="Email" id="emailProviders"  name="emailProviders" maxlength="40">
+                                </div>
+
+                                <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
+                                    <input class="btn btn-primary w-100" form="formProviders" type="submit" name="submitProviders" value="Cadastrar Fornecedor">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
 
                 </div>
             </div>
