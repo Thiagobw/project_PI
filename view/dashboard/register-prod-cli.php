@@ -5,7 +5,7 @@
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalToggleLabel">Cadastrar Cliente</h5>
                     <button type="button" class="btn btn-danger btn-close" data-bs-dismiss="modal" aria-label="Close">
-                    
+                    X
                     </button>
                 </div>
     
@@ -22,15 +22,17 @@
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="email" placeholder="Email" id="emailCli"  name="emailCli">
+                                    <input class=" form-control input-user" type="email" placeholder="Email" id="emailCli"  name="emailCli" maxlength="40">
                                 </div>
 
-                                <div class="col-8 col-sm-5 col-lg-5 mt-3 center">
+                                <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
                                     <input class="btn btn-primary w-100 btn-log" form="form1" type="submit" name="log-in" value="Cadastrar Cliente">
                                 </div>
                             </form>
                         </div>
                     </div>
+
+
                 </div>
             </div>
         </div>
