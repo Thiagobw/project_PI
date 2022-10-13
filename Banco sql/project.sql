@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 05-Out-2022 às 07:37
--- Versão do servidor: 10.4.25-MariaDB
--- versão do PHP: 8.1.10
+-- Tempo de geração: 13-Out-2022 às 15:43
+-- Versão do servidor: 5.7.20-log
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -47,7 +47,9 @@ CREATE TABLE `caracteristicas` (
 CREATE TABLE `cliente` (
   `id_cliente` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
-  `CPF` char(14) NOT NULL
+  `CPF` char(14) NOT NULL,
+  `email` varchar(40) NOT NULL DEFAULT 'não informado',
+  `telefone` char(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -151,7 +153,7 @@ CREATE TABLE `usuarios` (
   `telefone` char(15) DEFAULT NULL,
   `email` varchar(60) DEFAULT NULL,
   `senha` varchar(260) DEFAULT NULL,
-  `tipo` int(1) NOT NULL DEFAULT 1
+  `tipo` int(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -159,8 +161,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`, `tipo`) VALUES
-(46, 'thiago', '076.147.659-82', '(47) 99225-7589', 'thgleopoldo900@gmail.com', '$argon2i$v=19$m=2048,t=4,p=3$N08za1BJMWRFRzRiZ2U3UQ$NbUMfvfnrbBtH4nnEFZTxd53RcB3V6CO4ShmtQraJyQ', 1),
-(47, 'thiago leopoldo', '824.698.149-87', '(47) 99179-5988', 'thiago.bw@aluno.ifsc.edu.br', '$argon2i$v=19$m=2048,t=4,p=3$YVBlQ2dSTlQwZFhUUldBVA$sRINfir4jBes6tLffUQEsQ8cNBT7TA6bGffMqsm1pEU', 1);
+(48, 'thiago', '076.147.659-82', '(47) 99225-7589', 'thgleopoldo900@gmail.com', '$argon2i$v=19$m=2048,t=4,p=3$blFVTGJTN2h3Q2pBNS45Tw$NYGUt8TjIXEyFZFv/1gJtOT5tMmwcT7hdE4p55laz5M', 1);
 
 -- --------------------------------------------------------
 
@@ -316,7 +317,7 @@ ALTER TABLE `telefone`
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT de tabela `vendedor`
