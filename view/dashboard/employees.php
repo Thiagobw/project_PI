@@ -1,7 +1,11 @@
 <?php
 session_start();
 include_once ('../../control/checkAuth.php');
+include_once ('../../DAO/funcBd.php');
+
+$listar_vendedor = buscar_func();
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -164,34 +168,39 @@ include_once ('../../control/checkAuth.php');
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php 
+
+                                    if (  empty($listar_vendedor)==true){
+                                    ?>
+
+
+                                    <tr>
+                                            <td class="text-white text-center" colspan="6">nenhum vendedor cadastrado</td>
+                                            </tr>
+
+                                    <?php
+
+                                    }else{
+
+                                    
+
+
+                                     foreach($listar_vendedor as $vendedor){
+
+                                     
+                                     ?>
+                                     
                                         <tr>
-                                            <td>Cliente teste</td>
-                                            <td>000.111.222-33</td>
-                                            <td>Vendedor</td>
-                                            <td>ClienteT@email.com</td>
+                                            <td> <?php echo $vendedor->getName(); ?></td>
+                                            <td> <?php echo $vendedor->getCpf();?> </td>
+                                            <td> <?php if ($vendedor->getTipo() == 2) {
+                                            echo "Vendedor";
+                                            }?> </td>
+                                            <td> <?php echo $vendedor->getEmail();?> </td>
                                             <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
-                                        <tr>
-                                            <td>Cliente x</td>
-                                            <td>111.222.333-44</td>
-                                            <td>Admin</td>
-                                            <td>Clientex@email.com</td>
-                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cliente y</td>
-                                            <td>222.333.444-55</td>
-                                            <td>Vendedor</td>
-                                            <td>Clientey@email.com</td>
-                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Cliente z</td>
-                                            <td>333.444.555-66</td>
-                                            <td>Vendedor</td>
-                                            <td>Clientez@email.com</td>
-                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
-                                        </tr>
+                                     
+                                     <?php }} ?>
                                     </tbody>
                                 </table>
                             </div>
