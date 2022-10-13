@@ -172,6 +172,8 @@ CREATE TABLE `vendedor` (
   `id_vendedor` int(11) NOT NULL,
   `nome` varchar(100) DEFAULT NULL,
   `CPF` varchar(14) NOT NULL,
+  `email` varchar (40) NOT NULL,
+  `tipo` int(11) DEFAULT 2,
   `senha` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
