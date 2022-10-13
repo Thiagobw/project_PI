@@ -10,7 +10,7 @@ function buscar_cliente(){
     $stmt->execute();
 
     $result = $stmt->fetchAll();
-    $resul_cliente = array();
+    $result_cliente = array();
 
     foreach($result as $registro){
         $cliente = new Customers();
@@ -21,5 +21,5 @@ function buscar_cliente(){
     }
 
 
-    return $resul_cliente;
+    return $result_cliente;
     }
