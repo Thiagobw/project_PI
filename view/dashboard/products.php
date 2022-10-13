@@ -171,8 +171,14 @@ $lista_products = buscar_produto();
                                         </tr>
                                     </thead>
                                     <tbody>
-                                     
+                                    <?php 
+                                        if (  empty($lista_products)==true){
+                                    ?>
+                                    <tr>
+                                        <td class="text-white text-center" colspan="6">Nenhum produto cadastrado</td>
+                                    </tr>
                                      <?php 
+
                                      foreach($lista_products as $prod){
 
                                      
@@ -186,7 +192,7 @@ $lista_products = buscar_produto();
                                             <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
                                      
-                                     <?php } ?>
+                                     <?php }} ?>
 
                                     </tbody>
                                 </table>
