@@ -29,7 +29,7 @@ include_once ('../../control/checkAuth.php');
     <link rel="stylesheet" href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -138,14 +138,14 @@ include_once ('../../control/checkAuth.php');
                 require_once "../dashboard/register-prod-cli.php";
             ?>
             <!-- Table Start -->
-            <div class="container-fluid pt-4 px-4">
+            <div class="container-fluid pt-1 px-4">
                 <div class="row g-4">  
                     <div class="col-12 col-sm-12 col-xl-12">
                         <div class="bg-secondary rounded h-100 p-4">
                             <div class="row top-table">
                                 <div class="col-12 col-xl-12" style="padding: 0;">
                                     <div class="col-12 col-xl-10 mb-3">
-                                        <h6 class=" ml-1 text-center" style="font-size: larger;">Lista de Clientes</h6>
+                                        <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Clientes</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
                                         <button type="button" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-user"></i> +</button>
@@ -153,7 +153,7 @@ include_once ('../../control/checkAuth.php');
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table text-secondary">
                                     <thead>
                                         <tr>
                                             <th scope="col">Nome</th>

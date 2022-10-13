@@ -1,3 +1,7 @@
+<?php
+session_start();
+include_once ('../../control/checkAuth.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -26,6 +30,7 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
     
 
     <!-- Template Stylesheet -->
@@ -143,7 +148,7 @@
                             <div class="row top-table">
                                 <div class="col-12 col-xl-12" style="padding: 0;">
                                     <div class="col-12 col-xl-10 mb-3">
-                                        <h6 class=" ml-1 text-center" style="font-size: larger;">Lista de Fornecedores</h6>
+                                        <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Fornecedores</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
                                         <button data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-handshake-angle"></i> +</button>
@@ -151,7 +156,7 @@
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table">
+                                <table class="table text-secondary">
                                     <thead>
                                         <tr>
                                             <th scope="col">Nome</th>
@@ -161,17 +166,17 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <th scope="row">fornecedorX</th>
+                                            <td scope="row">fornecedorX</td>
                                             <td>0000000000</td>
                                             <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">fornecedorY</th>
+                                            <td scope="row">fornecedorY</td>
                                             <td>0000000000</td>
                                             <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
                                         <tr>
-                                            <th scope="row">fornecedorZ</th>
+                                            <td scope="row">fornecedorZ</td>
                                             <td>0000000000</td>
                                             <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>

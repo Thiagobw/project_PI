@@ -182,7 +182,7 @@ include_once ('../../control/checkAuth.php');
                         <div class="bg-secondary text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <h6 class="mb-0 text-white-bold">Vendas Nacionais</h6>
-                                <a href="">Tudo</a>
+                                <a class="btn btn-all" href="">Tudo</a>
                             </div>
                             <canvas id="worldwide-sales"></canvas>
                         </div>
@@ -191,7 +191,7 @@ include_once ('../../control/checkAuth.php');
                         <div class="bg-secondary text-center rounded p-4">
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <h6 class="mb-0 text-white-bold">Vendas e receitas</h6>
-                                <a href="">Tudo</a>
+                                <a class="btn btn-all" href="">Tudo</a>
                             </div>
                             <canvas id="salse-revenue"></canvas>
                         </div>
@@ -205,67 +205,65 @@ include_once ('../../control/checkAuth.php');
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary text-center rounded p-4">
                     <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0">Venda recente</h6>
-                        <a href="">Tudo</a>
+                        <h6 class="mb-0 text-white">Venda recente</h6>
+                        <a class="btn btn-all" href="">Tudo</a>
                     </div>
-                    <div class="table-responsive">
+                    <div class="table-responsive border-table-sales">
                         <table class="table text-start align-middle table-bordered table-hover mb-0">
                             <thead>
                                 <tr class="text-white">
-                                    <th scope="col"><input class="form-check-input" type="checkbox"></th>
-                                    <th scope="col">Date</th>
-                                    <th scope="col">Invoice</th>
-                                    <th scope="col">Customer</th>
-                                    <th scope="col">Amount</th>
+                                    <th scope="col">Data</th>
+                                    <th scope="col">Fatura</th>
+                                    <th scope="col">Cliente</th>
+                                    <th scope="col">Quantia</th>
                                     <th scope="col">Status</th>
-                                    <th scope="col">Action</th>
+                                    <th scope="col">Ação</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class="text-secondary">
                                 <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
                                     <td>01 Jan 2045</td>
                                     <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
+                                    <td>Cliente A</td>
                                     <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
+                                    <td>Pago</td>
+                                    <td><a class="btn btn-sm btn-danger" href="">Detalhes</a></td>
                                 </tr>
-                                <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
+
+                                <tr>    
                                     <td>01 Jan 2045</td>
                                     <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
+                                    <td>Cliente B</td>
                                     <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
+                                    <td>Pago</td>
+                                    <td><a class="btn btn-sm btn-danger" href="">Detalhes</a></td>
                                 </tr>
+
                                 <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
                                     <td>01 Jan 2045</td>
                                     <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
+                                    <td>Cliente C</td>
                                     <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
+                                    <td>Pago</td>
+                                    <td><a class="btn btn-sm btn-danger" href="">Detalhes</a></td>
                                 </tr>
+
                                 <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
                                     <td>01 Jan 2045</td>
                                     <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
+                                    <td>Cliente D</td>
                                     <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
+                                    <td>Pago</td>
+                                    <td><a class="btn btn-sm btn-danger" href="">Detalhes</a></td>
                                 </tr>
+
                                 <tr>
-                                    <td><input class="form-check-input" type="checkbox"></td>
                                     <td>01 Jan 2045</td>
                                     <td>INV-0123</td>
-                                    <td>Jhon Doe</td>
+                                    <td>Cliente E</td>
                                     <td>$123</td>
-                                    <td>Paid</td>
-                                    <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
+                                    <td>Pago</td>
+                                    <td><a class="btn btn-sm btn-danger" href="">Detalhes</a></td>
                                 </tr>
                             </tbody>
                         </table>
