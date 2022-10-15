@@ -166,32 +166,32 @@ $customersList = buscar_cliente();
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
+
                                     <tbody>
-                                    <?php
-                                    if (empty($customersList) == true) {
-                                    ?>
+                                        <?php
+                                        if (empty($customersList) == true) {
+                                        ?>
 
-                                    <tr>
-                                        <td class="text-white text-center" colspan="6">nenhum Cliente cadastrado</td>
-                                    </tr>
-                                    
-                                    <?php
-
-                                    } else{
-
-                                    foreach($customersList as $cliente) {
-
-                                    ?>
                                         <tr>
-                                            <td> <?php echo $cliente -> getCodigoClie();?></td>
-                                            <td> <?php echo $cliente -> getName(); ?></td>
-                                            <td> <?php echo $cliente -> getEmail();?> </td>
-                                            <td> <?php echo $cliente -> getCpf();?> </td>
-                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
+                                            <td class="text-white text-center" colspan="6">nenhum Cliente cadastrado</td>
                                         </tr>
+                                        
+                                        <?php
 
-                                    <?php }} ?>
+                                        } else{
 
+                                        foreach($customersList as $cliente) {
+
+                                        ?>
+                                            <tr>
+                                                <td> <?php echo $cliente -> getCodigoClie();?></td>
+                                                <td> <?php echo $cliente -> getName(); ?></td>
+                                                <td> <?php echo $cliente -> getEmail();?> </td>
+                                                <td> <?php echo $cliente -> getCpf();?> </td>
+                                                <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
+                                            </tr>
+
+                                        <?php }} ?>
                                     </tbody>
                                 </table>
                             </div>
