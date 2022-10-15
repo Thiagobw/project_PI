@@ -168,34 +168,29 @@ $listar_vendedor = buscar_func();
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php 
-
-                                    if (  empty($listar_vendedor)==true){
+                                    <?php
+                                    if (  empty($listar_vendedor) == true) {
                                     ?>
 
-
                                     <tr>
-                                            <td class="text-white text-center" colspan="6">nenhum vendedor cadastrado</td>
-                                            </tr>
+                                        <td class="text-white text-center" colspan="6">nenhum vendedor cadastrado</td>
+                                    </tr>
 
                                     <?php
 
-                                    }else{
+                                    } else{
 
-                                    
+                                     foreach($listar_vendedor as $vendedor) {
 
-
-                                     foreach($listar_vendedor as $vendedor){
-
-                                     
-                                     ?>
+                                    ?>
                                      
                                         <tr>
-                                            <td> <?php echo $vendedor->getName(); ?></td>
-                                            <td> <?php echo $vendedor->getCpf();?> </td>
-                                            <td> <?php if ($vendedor->getTipo() == 2) {
+                                            <td> <?php echo $vendedor -> getName(); ?></td>
+                                            <td> <?php echo $vendedor -> getCpf();?> </td>
+                                            <td> <?php if ($vendedor -> getTipo() == 2) {
                                             echo "Vendedor";
                                             }?> </td>
+
                                             <td> <?php echo $vendedor->getEmail();?> </td>
                                             <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>

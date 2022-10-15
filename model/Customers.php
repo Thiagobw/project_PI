@@ -1,6 +1,6 @@
 <?php
 
-class Customers extends Users {
+class Customers {
     private $cpf;
     private $tell;
     private $name;

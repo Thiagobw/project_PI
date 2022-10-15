@@ -3,7 +3,7 @@ session_start();
 include_once ('../../control/checkAuth.php');
 include_once ('../../DAO/custumersBd.php');
 
-$listar_cliente = buscar_cliente();
+$customersList = buscar_cliente();
 
 ?>
 <!DOCTYPE html>
@@ -167,20 +167,30 @@ $listar_cliente = buscar_cliente();
                                         </tr>
                                     </thead>
                                     <tbody>
-
                                     <?php
-                                    foreach($lista_cliente as $cliente){
+                                    if (empty($customersList) == true) {
+                                    ?>
 
+                                    <tr>
+                                        <td class="text-white text-center" colspan="6">nenhum Cliente cadastrado</td>
+                                    </tr>
+                                    
+                                    <?php
+
+                                    } else{
+
+                                    foreach($customersList as $cliente) {
 
                                     ?>
                                         <tr>
-                                        <td><?php echo $cliente->getCodigoClie();?></td>
-                                            <td> <?php echo $cliente->getName(); ?></td>
-                                            <td> <?php echo $cliente->getEmail();?> </td>
-                                            <td> <?php echo $cliente->getCpf();?> </td>
+                                            <td> <?php echo $cliente -> getCodigoClie();?></td>
+                                            <td> <?php echo $cliente -> getName(); ?></td>
+                                            <td> <?php echo $cliente -> getEmail();?> </td>
+                                            <td> <?php echo $cliente -> getCpf();?> </td>
                                             <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
-                                    <?php } ?>
+
+                                    <?php }} ?>
 
                                     </tbody>
                                 </table>

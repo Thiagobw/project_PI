@@ -172,23 +172,26 @@ $productsList = buscar_produto();
                                     </thead>
                                     <tbody>
                                     <?php 
-                                        if (  empty($productsList)==true) {
+                                        if (  empty($productsList) == true) {
                                     ?>
+                                    
                                     <tr>
                                         <td class="text-white text-center" colspan="6">Nenhum produto cadastrado</td>
                                     </tr>
-                                     <?php 
 
-                                     foreach($productsList as $prod){
+                                    <?php 
+                                    
+                                    } else{
 
-                                     
-                                     ?>
+                                     foreach($productsList as $prod) {
+   
+                                    ?>
                                      
                                         <tr>
-                                            <td><?php echo $prod->getCodigo();?></td>
-                                            <td> <?php echo $prod->getName(); ?></td>
-                                            <td> <?php echo $prod->getAmount();?> </td>
-                                            <td> <?php echo $prod->getPrice();?> </td>
+                                            <td> <?php echo $prod -> getCodigo();?></td>
+                                            <td> <?php echo $prod -> getName(); ?></td>
+                                            <td> <?php echo $prod -> getAmount();?> </td>
+                                            <td> <?php echo $prod -> getPrice();?> </td>
                                             <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
                                      
