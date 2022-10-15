@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once ('../../control/checkAuth.php');
-include_once ('../../DAO/CustomersBd.php');
+include_once ('../../DAO/custumersBd.php');
 
 $listar_cliente = buscar_cliente();
 

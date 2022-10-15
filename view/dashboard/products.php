@@ -3,7 +3,7 @@ session_start();
 include_once ('../../control/checkAuth.php');
 include_once ('../../DAO/productsBd.php');
 
-$lista_products = buscar_produto();
+$productsList = buscar_produto();
 
 
 ?>
@@ -172,14 +172,14 @@ $lista_products = buscar_produto();
                                     </thead>
                                     <tbody>
                                     <?php 
-                                        if (  empty($lista_products)==true){
+                                        if (  empty($productsList)==true) {
                                     ?>
                                     <tr>
                                         <td class="text-white text-center" colspan="6">Nenhum produto cadastrado</td>
                                     </tr>
                                      <?php 
 
-                                     foreach($lista_products as $prod){
+                                     foreach($productsList as $prod){
 
                                      
                                      ?>
