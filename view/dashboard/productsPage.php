@@ -1,13 +1,18 @@
 <?php
 session_start();
 include_once ('../../control/checkAuth.php');
+include_once ('../../DAO/productsBd.php');
+
+$productsList = buscar_produto();
+
+
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
-    <title>LA Imports - Fornecedores</title>
+    <title>LA Imports - Produtos</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -29,7 +34,6 @@ include_once ('../../control/checkAuth.php');
     <link rel="stylesheet" href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     
 
@@ -148,10 +152,10 @@ include_once ('../../control/checkAuth.php');
                             <div class="row top-table">
                                 <div class="col-12 col-xl-12" style="padding: 0;">
                                     <div class="col-12 col-xl-10 mb-3">
-                                        <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Fornecedores</h6>
+                                        <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Produtos</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
-                                        <button data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-handshake-angle"></i> +</button>
+                                        <button data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-gift"></i> +</button>
                                     </div>
                                 </div>
                             </div>
@@ -159,27 +163,40 @@ include_once ('../../control/checkAuth.php');
                                 <table class="table text-secondary">
                                     <thead>
                                         <tr>
+                                            <th scope="col">Codigo</th>
                                             <th scope="col">Nome</th>
-                                            <th scope="col">CNPJ</th>
+                                            <th scope="col">Quantidade em estoque</th>
+                                            <th scope="col">Preço</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php 
+                                        if (  empty($productsList) == true) {
+                                    ?>
+                                    
+                                    <tr>
+                                        <td class="text-white text-center" colspan="6">Nenhum produto cadastrado!</td>
+                                    </tr>
+
+                                    <?php 
+                                    
+                                    } else{
+
+                                     foreach ($productsList as $prod) {
+   
+                                    ?>
+                                     
                                         <tr>
-                                            <td scope="row">fornecedorX</td>
-                                            <td>0000000000</td>
+                                            <td> <?php echo $prod -> getCodigo();?></td>
+                                            <td> <?php echo $prod -> getName(); ?></td>
+                                            <td> <?php echo $prod -> getAmount();?> </td>
+                                            <td> <?php echo $prod -> getPrice();?> </td>
                                             <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
-                                        <tr>
-                                            <td scope="row">fornecedorY</td>
-                                            <td>0000000000</td>
-                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
-                                        </tr>
-                                        <tr>
-                                            <td scope="row">fornecedorZ</td>
-                                            <td>0000000000</td>
-                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
-                                        </tr>
+                                     
+                                     <?php }} ?>
+
                                     </tbody>
                                 </table>
                             </div>

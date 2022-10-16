@@ -1,17 +1,18 @@
 <?php
 session_start();
 include_once ('../../control/checkAuth.php');
-include_once ('../../DAO/custumersBd.php');
+include_once ('../../DAO/providersDB.php');
 
-$customersList = buscar_cliente();
+$providersList = search_provider();
+
 
 ?>
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>LA Imports - Clientes</title>
+    <title>LA Imports - Fornecedores</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -34,6 +35,7 @@ $customersList = buscar_cliente();
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    
 
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -142,17 +144,18 @@ $customersList = buscar_cliente();
                 require_once "../dashboard/register-prod-cli.php";
             ?>
             <!-- Table Start -->
-            <div class="container-fluid pt-1 px-4">
-                <div class="row g-4">  
-                    <div class="col-12 col-sm-12 col-xl-12">
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    
+                    <div class="col-12">
                         <div class="bg-secondary rounded h-100 p-4">
                             <div class="row top-table">
                                 <div class="col-12 col-xl-12" style="padding: 0;">
                                     <div class="col-12 col-xl-10 mb-3">
-                                        <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Clientes</h6>
+                                        <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Fornecedores</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
-                                        <button id="btnCustomers" type="button" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-user"></i> +</button>
+                                        <button data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-handshake-angle"></i> +</button>
                                     </div>
                                 </div>
                             </div>
@@ -161,37 +164,34 @@ $customersList = buscar_cliente();
                                     <thead>
                                         <tr>
                                             <th scope="col">Nome</th>
-                                            <th scope="col">CPF</th>
-                                            <th scope="col">Email</th>
+                                            <th scope="col">CNPJ</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
-
                                     <tbody>
-                                        <?php
-                                        if (empty($customersList) == true) {
-                                        ?>
+                                    <?php
+                                    if(empty($providersList) == true) {
+                                    ?>
 
-                                        <tr>
-                                            <td class="text-white text-center" colspan="6">nenhum Cliente cadastrado</td>
-                                        </tr>
-                                        
-                                        <?php
+                                    <tr>
+                                        <td class="text-white text-center" colspan="6">Nenhum fornecedor cadastrado!</td>
+                                    </tr>
 
-                                        } else{
+                                    <?php
 
-                                        foreach($customersList as $cliente) {
+                                    } else {
 
-                                        ?>
-                                            <tr>
-                                                <td> <?php echo $cliente -> getCodigoClie();?></td>
-                                                <td> <?php echo $cliente -> getName(); ?></td>
-                                                <td> <?php echo $cliente -> getEmail();?> </td>
-                                                <td> <?php echo $cliente -> getCpf();?> </td>
-                                                <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
-                                            </tr>
+                                    foreach ($providersList as $prov) {
+                                    
+                                    ?>
+                                    
+                                    <tr>
+                                        <td scope="row"><?php echo $prov -> getName(); ?></td>
+                                        <td scope="row"><?php echo $prov -> getCnpj(); ?></td>
+                                        <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
+                                    </tr>
 
-                                        <?php }} ?>
+                                    <?php }} ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -200,6 +200,9 @@ $customersList = buscar_cliente();
                 </div>
             </div>
             <!-- Table End -->
+            
+        </div>
+        <!-- Content End -->
 
 
         <!-- Back to Top -->

@@ -1,18 +1,17 @@
 <?php
 session_start();
 include_once ('../../control/checkAuth.php');
-include_once ('../../DAO/productsBd.php');
+include_once ('../../DAO/employeesDB.php');
 
-$productsList = buscar_produto();
-
-
+$employeesList = search_employee();
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
-    <title>LA Imports - Produtos</title>
+    <title>LA Imports - Funcionarios</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -35,7 +34,6 @@ $productsList = buscar_produto();
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    
 
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -145,17 +143,16 @@ $productsList = buscar_produto();
             ?>
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    
-                    <div class="col-12">
+                <div class="row g-4">  
+                    <div class="col-12 col-sm-12 col-xl-12">
                         <div class="bg-secondary rounded h-100 p-4">
                             <div class="row top-table">
                                 <div class="col-12 col-xl-12" style="padding: 0;">
                                     <div class="col-12 col-xl-10 mb-3">
-                                        <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Produtos</h6>
+                                        <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Funcionarios</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
-                                        <button data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-gift"></i> +</button>
+                                        <button type="button" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-user"></i> +</button>
                                     </div>
                                 </div>
                             </div>
@@ -163,40 +160,42 @@ $productsList = buscar_produto();
                                 <table class="table text-secondary">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Codigo</th>
                                             <th scope="col">Nome</th>
-                                            <th scope="col">Quantidade em estoque</th>
-                                            <th scope="col">Preço</th>
+                                            <th scope="col">CPF</th>
+                                            <th scope="col">Cargo</th>
+                                            <th scope="col">Email</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php 
-                                        if (  empty($productsList) == true) {
+                                    <?php
+                                    if (  empty($employeesList) == true) {
                                     ?>
-                                    
+
                                     <tr>
-                                        <td class="text-white text-center" colspan="6">Nenhum produto cadastrado</td>
+                                        <td class="text-white text-center" colspan="6">Nenhum vendedor cadastrado!</td>
                                     </tr>
 
-                                    <?php 
-                                    
+                                    <?php
+
                                     } else{
 
-                                     foreach($productsList as $prod) {
-   
+                                     foreach($employeesList as $vendedor) {
+
                                     ?>
                                      
                                         <tr>
-                                            <td> <?php echo $prod -> getCodigo();?></td>
-                                            <td> <?php echo $prod -> getName(); ?></td>
-                                            <td> <?php echo $prod -> getAmount();?> </td>
-                                            <td> <?php echo $prod -> getPrice();?> </td>
+                                            <td> <?php echo $vendedor -> getName(); ?></td>
+                                            <td> <?php echo $vendedor -> getCpf();?> </td>
+                                            <td> <?php if ($vendedor -> getType() == 2) {
+                                            echo "Vendedor";
+                                            }?> </td>
+
+                                            <td> <?php echo $vendedor->getEmail();?> </td>
                                             <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
                                      
                                      <?php }} ?>
-
                                     </tbody>
                                 </table>
                             </div>
@@ -205,13 +204,10 @@ $productsList = buscar_produto();
                 </div>
             </div>
             <!-- Table End -->
-            
-        </div>
-        <!-- Content End -->
 
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <a href="#" class="btn btn-lg bg-primary text-white btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->

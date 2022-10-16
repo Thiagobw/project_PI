@@ -293,13 +293,5 @@ include_once ('../../control/checkAuth.php');
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
-
-    <script>
-    var btnCustomers = document.querySelector('#btnCustomers');
-    var contentCustomers = document.querySelector('#contentRegisterCustomers');
-    btnCustomers.addEventListener('click', function() {
-        contentCustomers.style.display = 'flex';
-    })
-    </script>
 </body>
 </html>
