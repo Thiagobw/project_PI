@@ -3,7 +3,7 @@ session_start();
 include_once ('../../control/checkAuth.php');
 include_once ('../../DAO/custumersBd.php');
 
-$customersList = buscar_cliente();
+$customersList = search_customers();
 
 ?>
 <!DOCTYPE html>

@@ -3,10 +3,10 @@ include_once "../../DAO/connection.php";
 include_once "../../model/Customers.php";
 
 
-function buscar_cliente() {
-    $conexao = connect();
+function search_customers() {
+    $connection = connect();
 
-    $stmt = $conexao->prepare("SELECT * FROM cliente");
+    $stmt = $connection -> prepare("SELECT * FROM cliente");
     $stmt -> execute();
 
     $result = $stmt -> fetchAll();

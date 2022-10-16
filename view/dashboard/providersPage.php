@@ -138,10 +138,8 @@ $providersList = search_provider();
                 </div>
             </nav>
             <!-- Navbar End -->
-
-            <!-- Importing popup file -->
             <?php
-                require_once "../dashboard/register-prod-cli.php";
+                include ("../dashboard/popUp-register.php");
             ?>
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
@@ -155,7 +153,7 @@ $providersList = search_provider();
                                         <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Fornecedores</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
-                                        <button data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-handshake-angle"></i> +</button>
+                                        <button data-bs-toggle="modal" id="btnRegisterProv" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-handshake-angle"></i> +</button>
                                     </div>
                                 </div>
                             </div>
@@ -204,7 +202,6 @@ $providersList = search_provider();
         </div>
         <!-- Content End -->
 
-
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
@@ -222,6 +219,15 @@ $providersList = search_provider();
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        var btnRegisterProviders = document.querySelector('#btnRegisterProv');
+        
+        btnRegisterProviders.addEventListener('click', function() {
+            document.querySelector('.modal-title').textContent = "Cadastrar um fornecedor";
+        })
+        document.getElementById('timer').innerText = twodigits(min)+':'+twodigits(sec);
+    </script>
 </body>
 
 </html>
