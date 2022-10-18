@@ -616,7 +616,6 @@ label {
     background-color: transparent;
     position: relative;
     bottom: 40px;
-    left: 91.5%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -635,7 +634,111 @@ label {
     justify-content: center;
     align-items: center;
 }
-
+@media (min-width: 250px) {
+    .btnView {
+        left: 82.3%;
+    }
+}
+@media (min-width: 279px) {
+    .btnView {
+        left: 84%;
+    }
+}
+@media (min-width: 352px) {
+    .btnView {
+        left: 87%;
+    }
+}
+@media (min-width: 384px) {
+    .btnView {
+        left: 88%;
+    }
+}
+@media (min-width: 400px) {
+    .btnView {
+        left: 88.2%;
+    }
+}
+@media (min-width: 426px) {
+    .btnView {
+        left: 88.5%;
+    }
+}
+@media (min-width: 446px) {
+    .btnView {
+        left: 89%;
+    }
+}
+@media (min-width: 466px) {
+    .btnView {
+        left: 90%;
+    }
+}
+@media (min-width: 506px) {
+    .btnView {
+        left: 91.5%;
+    }
+}
+@media (min-width: 526px) {
+    .btnView {
+        left: 92%;
+    }
+}
+@media (min-width: 546px) {
+    .btnView {
+        left: 93%;
+    }
+}
+@media (min-width: 518px) {
+    .btnView {
+        left: 91%;
+    }
+}
+@media (min-width: 549px) {
+    .btnView {
+        left: 92%;
+    }
+}
+@media (min-width: 576px) {
+    .btnView {
+        left: 90%;
+    }
+}
+@media (min-width: 630px) {
+    .btnView {
+        left: 89%;
+    }
+}
+@media (min-width: 670px) {
+    .btnView {
+        left: 88.5%;
+    }
+}
+@media (min-width: 700px) {
+    .btnView {
+        left: 88%;
+    }
+}
+@media (min-width: 775px) {
+    .btnView {
+        left: 87.5%;
+    }
+}
+@media (min-width: 815px) {
+    .btnView {
+        left: 88%;
+    }
+}
+@media (min-width: 900px) {
+    .btnView {
+        left: 87%;
+    }
+}
+@media (min-width: 992px) {
+    .btnView {
+        left: 91.5%;
+    }
+}
 #createAcc {
     display: none;
 }
