@@ -18,7 +18,7 @@ function buscar_cliente(){
         $cliente->setCpf($registro["CPF"]);
         $cliente->setEmail($registro["email"]);
         
-        $resul_cliente[] = $cliente;
+        $result_cliente[] = $cliente;
     }
 
 

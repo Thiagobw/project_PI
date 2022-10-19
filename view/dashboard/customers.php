@@ -168,17 +168,21 @@ $listar_cliente = buscar_cliente();
                                     </thead>
                                     <tbody>
                                         <?php
-                                            if ( empty($lista_cliente)==true) {
+                                            if ( empty($listar_cliente)==true) {
+                                  
                                         ?>
                                     <tr>
                                         <td class="text-white text-center" colspan="6">Nenhum cliente cadastrado</td>
                                     </tr>    
                                     <?php
                                     }else {
-                                        foreach($lista_cliente as $cliente){
+                                        
+                                        foreach($listar_cliente as $cliente){
+                                    ?>
+                                    <?php
+                                    
                                     ?>
                                         <tr>
-                                        <td><?php echo $cliente->getCodigoClie();?></td>
                                             <td> <?php echo $cliente->getName(); ?></td>
                                             <td> <?php echo $cliente->getCpf();?> </td>
                                             <td> <?php echo $cliente->getEmail();?> </td>
