@@ -1,17 +1,18 @@
 <?php
 session_start();
 include_once ('../../control/checkAuth.php');
-include_once ('../../DAO/funcBd.php');
+include_once ('../../DAO/providersDB.php');
 
-$listar_vendedor = buscar_func();
+$providersList = search_provider();
+
+
 ?>
-
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>LA Imports - Funcionarios</title>
+    <title>LA Imports - Fornecedores</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -34,6 +35,7 @@ $listar_vendedor = buscar_func();
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    
 
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -136,23 +138,22 @@ $listar_vendedor = buscar_func();
                 </div>
             </nav>
             <!-- Navbar End -->
-
-            <!-- Importing popup file -->
             <?php
-                require_once "../dashboard/register-prod-cli.php";
+                include ("../dashboard/popUp-register.php");
             ?>
             <!-- Table Start -->
-            <div class="container-fluid pt-1 px-4">
-                <div class="row g-4">  
-                    <div class="col-12 col-sm-12 col-xl-12">
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    
+                    <div class="col-12">
                         <div class="bg-secondary rounded h-100 p-4">
                             <div class="row top-table">
                                 <div class="col-12 col-xl-12" style="padding: 0;">
                                     <div class="col-12 col-xl-10 mb-3">
-                                        <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Funcionarios</h6>
+                                        <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Fornecedores</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
-                                        <button type="button" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-user"></i> +</button>
+                                        <button data-bs-toggle="modal" id="btnRegisterProv" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-handshake-angle"></i> +</button>
                                     </div>
                                 </div>
                             </div>
@@ -161,46 +162,34 @@ $listar_vendedor = buscar_func();
                                     <thead>
                                         <tr>
                                             <th scope="col">Nome</th>
-                                            <th scope="col">CPF</th>
-                                            <th scope="col">Cargo</th>
-                                            <th scope="col">Email</th>
+                                            <th scope="col">CNPJ</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php 
-
-                                    if (  empty($listar_vendedor)==true){
+                                    <?php
+                                    if(empty($providersList) == true) {
                                     ?>
 
-
                                     <tr>
-                                            <td class="text-white text-center" colspan="6">nenhum vendedor cadastrado</td>
-                                            </tr>
+                                        <td class="text-white text-center" colspan="6">Nenhum fornecedor cadastrado!</td>
+                                    </tr>
 
                                     <?php
 
-                                    }else{
+                                    } else {
 
+                                    foreach ($providersList as $prov) {
                                     
+                                    ?>
+                                    
+                                    <tr>
+                                        <td scope="row"><?php echo $prov -> getName(); ?></td>
+                                        <td scope="row"><?php echo $prov -> getCnpj(); ?></td>
+                                        <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
+                                    </tr>
 
-
-                                     foreach($listar_vendedor as $vendedor){
-
-                                     
-                                     ?>
-                                     
-                                        <tr>
-                                            <td> <?php echo $vendedor->getName(); ?></td>
-                                            <td> <?php echo $vendedor->getCpf();?> </td>
-                                            <td> <?php if ($vendedor->getTipo() == 2) {
-                                            echo "Vendedor";
-                                            }?> </td>
-                                            <td> <?php echo $vendedor->getEmail();?> </td>
-                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
-                                        </tr>
-                                     
-                                     <?php }} ?>
+                                    <?php }} ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -209,10 +198,12 @@ $listar_vendedor = buscar_func();
                 </div>
             </div>
             <!-- Table End -->
-
+            
+        </div>
+        <!-- Content End -->
 
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg bg-primary text-white btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->
@@ -228,6 +219,15 @@ $listar_vendedor = buscar_func();
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+        var btnRegisterProviders = document.querySelector('#btnRegisterProv');
+        
+        btnRegisterProviders.addEventListener('click', function() {
+            document.querySelector('.modal-title').textContent = "Cadastrar um fornecedor";
+        })
+        document.getElementById('timer').innerText = twodigits(min)+':'+twodigits(sec);
+    </script>
 </body>
 
 </html>

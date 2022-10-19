@@ -55,20 +55,6 @@ CREATE TABLE `cliente` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `email`
---
-
-CREATE TABLE `email` (
-  `id_email` int(11) NOT NULL COMMENT '\n\n',
-  `email` varchar(60) NOT NULL DEFAULT 'NI',
-  `Vendedor_id_vendedor` int(11) NOT NULL,
-  `Cliente_id_cliente` int(11) NOT NULL,
-  `Cliente_id_usuario` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `endereco`
 --
 
@@ -160,8 +146,18 @@ CREATE TABLE `usuarios` (
 -- Extraindo dados da tabela `usuarios`
 --
 
-INSERT INTO `usuarios` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`, `tipo`) VALUES
-(48, 'thiago', '076.147.659-82', '(47) 99225-7589', 'thgleopoldo900@gmail.com', '$argon2i$v=19$m=2048,t=4,p=3$blFVTGJTN2h3Q2pBNS45Tw$NYGUt8TjIXEyFZFv/1gJtOT5tMmwcT7hdE4p55laz5M', 1);
+-- --------------------------------------------------------
+
+-- Estrutura da tabela `fornecedor`
+--
+
+CREATE TABLE `fornecedor` (
+  `id_funcionario` int(11) NOT NULL,
+  `nome` varchar(100) NOT NULL,
+  `cnpj` char(18) NOT NULL,
+  `email` varchar(40) NOT NULL DEFAULT 'não informado',
+  `telefone` char(15) NOT NULL
+)ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -171,7 +167,7 @@ INSERT INTO `usuarios` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha
 
 CREATE TABLE `vendedor` (
   `id_vendedor` int(11) NOT NULL,
-  `nome` varchar(100) DEFAULT NULL,
+  `nome` varchar(100) NOT NULL,
   `CPF` varchar(14) NOT NULL,
   `email` varchar (40) NOT NULL,
   `tipo` int(11) DEFAULT 2,

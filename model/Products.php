@@ -1,10 +1,9 @@
 <?php
-require_once 'Model.php';
 
 class Products {
     private $name;
     private $amount; /* quantidade */
-    private Model $model; /* modelo */
+    private $model; /* modelo */
     private Characteristics $productCharacteristics;
     private Manufacturer $manufacturer; /** fabricante */
     private $price;
@@ -24,11 +23,11 @@ class Products {
         return $this->amount;
     }
 
-    public function setModel ($modelDescription) {
-        $this-> model -> setDescription($modelDescription);
+    public function setModel ($model) {
+        $this-> model -> $model;
     }
     public function getModel () {
-        return $this-> model -> getDescription();
+        return $this -> model;
     }
     public function setPrice(string $price) {
         $this->price = $price;

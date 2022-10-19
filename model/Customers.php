@@ -1,8 +1,12 @@
 <?php
 
+<<<<<<< HEAD
 require_once "Users.php";
 
 class Customers extends Users {
+=======
+class Customers {
+>>>>>>> cadastro-de-produtos
     private $cpf;
     private $tell;
     private $name;

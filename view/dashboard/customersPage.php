@@ -1,10 +1,13 @@
 <?php
 session_start();
 include_once ('../../control/checkAuth.php');
-include_once ('../../DAO/productsBd.php');
+<<<<<<< HEAD:view/dashboard/customers.php
+include_once ('../../DAO/customersBd.php');
+=======
+include_once ('../../DAO/custumersBd.php');
+>>>>>>> cadastro-de-produtos:view/dashboard/customersPage.php
 
-$lista_products = buscar_produto();
-
+$customersList = search_customers();
 
 ?>
 <!DOCTYPE html>
@@ -12,7 +15,7 @@ $lista_products = buscar_produto();
 
 <head>
     <meta charset="utf-8">
-    <title>LA Imports - Produtos</title>
+    <title>LA Imports - Clientes</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -35,7 +38,6 @@ $lista_products = buscar_produto();
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    
 
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -145,17 +147,16 @@ $lista_products = buscar_produto();
             ?>
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    
-                    <div class="col-12">
+                <div class="row g-4">  
+                    <div class="col-12 col-sm-12 col-xl-12">
                         <div class="bg-secondary rounded h-100 p-4">
                             <div class="row top-table">
                                 <div class="col-12 col-xl-12" style="padding: 0;">
                                     <div class="col-12 col-xl-10 mb-3">
-                                        <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Produtos</h6>
+                                        <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Clientes</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
-                                        <button data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-gift"></i> +</button>
+                                        <button id="btnCustomers" type="button" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-user"></i> +</button>
                                     </div>
                                 </div>
                             </div>
@@ -163,37 +164,62 @@ $lista_products = buscar_produto();
                                 <table class="table text-secondary">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Codigo</th>
                                             <th scope="col">Nome</th>
-                                            <th scope="col">Quantidade em estoque</th>
-                                            <th scope="col">Preço</th>
+                                            <th scope="col">CPF</th>
+                                            <th scope="col">Email</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
+
                                     <tbody>
-                                    <?php 
-                                        if (  empty($lista_products)==true){
-                                    ?>
+                                        <?php
+<<<<<<< HEAD:view/dashboard/customers.php
+                                            if ( empty($listar_cliente)==true) {
+                                  
+                                        ?>
                                     <tr>
-                                        <td class="text-white text-center" colspan="6">Nenhum produto cadastrado</td>
-                                    </tr>
-                                     <?php 
-
-                                     foreach($lista_products as $prod){
-
-                                     
-                                     ?>
-                                     
+                                        <td class="text-white text-center" colspan="6">Nenhum cliente cadastrado</td>
+                                    </tr>    
+                                    <?php
+                                    }else {
+                                        
+                                        foreach($listar_cliente as $cliente){
+                                    ?>
+                                    <?php
+                                    
+                                    ?>
                                         <tr>
-                                            <td><?php echo $prod->getCodigo();?></td>
-                                            <td> <?php echo $prod->getName(); ?></td>
-                                            <td> <?php echo $prod->getAmount();?> </td>
-                                            <td> <?php echo $prod->getPrice();?> </td>
+                                            <td> <?php echo $cliente->getName(); ?></td>
+                                            <td> <?php echo $cliente->getCpf();?> </td>
+                                            <td> <?php echo $cliente->getEmail();?> </td>
                                             <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
                                         </tr>
-                                     
-                                     <?php }} ?>
+                                    <?php }} ?>
+=======
+                                        if (empty($customersList) == true) {
+                                        ?>
 
+                                        <tr>
+                                            <td class="text-white text-center" colspan="6">Nenhum Cliente cadastrado!</td>
+                                        </tr>
+                                        
+                                        <?php
+>>>>>>> cadastro-de-produtos:view/dashboard/customersPage.php
+
+                                        } else{
+
+                                        foreach($customersList as $cliente) {
+
+                                        ?>
+                                            <tr>
+                                                <td> <?php echo $cliente -> getCodigoClie();?></td>
+                                                <td> <?php echo $cliente -> getName(); ?></td>
+                                                <td> <?php echo $cliente -> getEmail();?> </td>
+                                                <td> <?php echo $cliente -> getCpf();?> </td>
+                                                <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
+                                            </tr>
+
+                                        <?php }} ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -202,9 +228,6 @@ $lista_products = buscar_produto();
                 </div>
             </div>
             <!-- Table End -->
-            
-        </div>
-        <!-- Content End -->
 
 
         <!-- Back to Top -->
