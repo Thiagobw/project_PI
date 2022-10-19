@@ -141,7 +141,7 @@ $productsList = buscar_produto();
 
             <!-- Importing popup file -->
             <?php
-                require_once "../dashboard/register-prod-cli.php";
+                require_once "../dashboard/popUp-register.php";
             ?>
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">

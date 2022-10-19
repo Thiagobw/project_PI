@@ -1,11 +1,7 @@
 <?php
 session_start();
 include_once ('../../control/checkAuth.php');
-<<<<<<< HEAD:view/dashboard/customers.php
 include_once ('../../DAO/customersBd.php');
-=======
-include_once ('../../DAO/custumersBd.php');
->>>>>>> cadastro-de-produtos:view/dashboard/customersPage.php
 
 $customersList = search_customers();
 
@@ -143,7 +139,7 @@ $customersList = search_customers();
 
             <!-- Importing popup file -->
             <?php
-                require_once "../dashboard/register-prod-cli.php";
+                require_once "../dashboard/popUp-register.php";
             ?>
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
@@ -173,29 +169,6 @@ $customersList = search_customers();
 
                                     <tbody>
                                         <?php
-<<<<<<< HEAD:view/dashboard/customers.php
-                                            if ( empty($listar_cliente)==true) {
-                                  
-                                        ?>
-                                    <tr>
-                                        <td class="text-white text-center" colspan="6">Nenhum cliente cadastrado</td>
-                                    </tr>    
-                                    <?php
-                                    }else {
-                                        
-                                        foreach($listar_cliente as $cliente){
-                                    ?>
-                                    <?php
-                                    
-                                    ?>
-                                        <tr>
-                                            <td> <?php echo $cliente->getName(); ?></td>
-                                            <td> <?php echo $cliente->getCpf();?> </td>
-                                            <td> <?php echo $cliente->getEmail();?> </td>
-                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
-                                        </tr>
-                                    <?php }} ?>
-=======
                                         if (empty($customersList) == true) {
                                         ?>
 
@@ -204,7 +177,6 @@ $customersList = search_customers();
                                         </tr>
                                         
                                         <?php
->>>>>>> cadastro-de-produtos:view/dashboard/customersPage.php
 
                                         } else{
 
