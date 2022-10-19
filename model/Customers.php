@@ -1,5 +1,7 @@
 <?php
 
+require_once "Users.php";
+
 class Customers extends Users {
     private $cpf;
     private $tell;

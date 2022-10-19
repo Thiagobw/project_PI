@@ -14,9 +14,10 @@ function buscar_cliente(){
 
     foreach($result as $registro){
         $cliente = new Customers();
-        $cliente->setEmail($registro["email"]);
         $cliente->setName($registro["nome"]);
         $cliente->setCpf($registro["CPF"]);
+        $cliente->setEmail($registro["email"]);
+        
         $resul_cliente[] = $cliente;
     }
 
