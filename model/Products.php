@@ -17,7 +17,7 @@ class Products {
     }
 
 
-    public function setAmount($amount) {
+    public function setAmount(int $amount) {
         $this -> amount = $amount;
     }
     public function getAmount() {
@@ -25,7 +25,7 @@ class Products {
     }
 
     
-    public function setModel ($model) {
+    public function setModel (string $model) {
         $this-> model -> $model;
     }
     public function getModel () {
@@ -40,7 +40,7 @@ class Products {
         return $this->productCharacteristics;
     }
 
-    
+
     public function setManufacturer (string $manufacturer) {
         $this -> manufacturer = $manufacturer;
     }
