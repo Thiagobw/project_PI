@@ -16,9 +16,9 @@
 
                     <div class="row" id="contentRegisterCust">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formCust">
+                            <form class="input-group center" id="formCust" action="" method="POST">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome" id="nameCustomers" maxlength="100" name="nomeCustomers">
+                                    <input class=" form-control input-user" type="text" placeholder="Nome do cliente" id="nameCustomers" maxlength="100" name="nomeCustomers">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
@@ -27,6 +27,10 @@
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <input class=" form-control input-user" type="email" placeholder="Email" id="emailCustomers"  name="emailCustomers" maxlength="40">
+                                </div>
+
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
+                                    <input class=" form-control input-user" type="tel" placeholder="Telefone" id="tellCustomers"  name="tellCustomers" maxlength="15">
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
@@ -38,17 +42,21 @@
 
                     <div class="row" id="contentRegisterProv">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formProviders">
+                            <form class="input-group center" id="formProviders" action="" method="POST">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome" id="nameProviders" maxlength="100" name="nomeProviders">
+                                    <input class=" form-control input-user" type="text" placeholder="Nome do fornecedor" id="nameProviders" maxlength="100" name="nomeProviders">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="CPF" id="cpfProviders"  name="cpfProviders" maxlength="14" autocomplete="off">
+                                    <input class=" form-control input-user" type="text" placeholder="CNPJ" id="cpfProviders"  name="cpfProviders" maxlength="14" autocomplete="off">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <input class=" form-control input-user" type="email" placeholder="Email" id="emailProviders"  name="emailProviders" maxlength="40">
+                                </div>
+
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
+                                    <input class=" form-control input-user" type="tel" placeholder="Telefone" id="tellProviders"  name="tellProviders" maxlength="15">
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">

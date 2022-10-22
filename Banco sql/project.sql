@@ -116,19 +116,6 @@ CREATE TABLE `produtos` (
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `telefone`
---
-
-CREATE TABLE `telefone` (
-  `id_telefone` int(11) NOT NULL,
-  `numero` char(15) NOT NULL,
-  `Cliente_id_cliente` int(11) NOT NULL,
-  `Vendedor_id_vendedor` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
 -- Estrutura da tabela `usuarios`
 --
 
@@ -181,6 +168,7 @@ CREATE TABLE `vendedor` (
 --
 -- Índices para tabela `caracteristicas`
 --
+
 ALTER TABLE `caracteristicas`
   ADD PRIMARY KEY (`idCaracteristicas`),
   ADD UNIQUE KEY `idCaracteristicas_UNIQUE` (`idCaracteristicas`);
@@ -188,24 +176,17 @@ ALTER TABLE `caracteristicas`
 --
 -- Índices para tabela `cliente`
 --
+
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_cliente`),
   ADD UNIQUE KEY `CPF_UNIQUE` (`CPF`),
   ADD UNIQUE KEY `id_cliente_UNIQUE` (`id_cliente`);
 
---
--- Índices para tabela `email`
---
-ALTER TABLE `email`
-  ADD PRIMARY KEY (`id_email`),
-  ADD UNIQUE KEY `email_UNIQUE` (`email`),
-  ADD UNIQUE KEY `id_email_UNIQUE` (`id_email`),
-  ADD KEY `Email_Vendedor_idx` (`Vendedor_id_vendedor`),
-  ADD KEY `Email_Cliente1_idx` (`Cliente_id_cliente`);
 
 --
 -- Índices para tabela `endereco`
 --
+
 ALTER TABLE `endereco`
   ADD PRIMARY KEY (`id_endereco`),
   ADD UNIQUE KEY `id_endereco_UNIQUE` (`id_endereco`),
@@ -214,12 +195,14 @@ ALTER TABLE `endereco`
 --
 -- Índices para tabela `pedido`
 --
+
 ALTER TABLE `pedido`
   ADD PRIMARY KEY (`id_pedido`);
 
 --
 -- Índices para tabela `pedido_produto`
 --
+
 ALTER TABLE `pedido_produto`
   ADD PRIMARY KEY (`idPedido_Produto`),
   ADD KEY `fk_Pedido_Produto_Pedido1_idx` (`Pedido_id_pedido`),
@@ -228,24 +211,16 @@ ALTER TABLE `pedido_produto`
 --
 -- Índices para tabela `produtos`
 --
+
 ALTER TABLE `produtos`
   ADD PRIMARY KEY (`id_produtos`),
   ADD UNIQUE KEY `id_produtos_UNIQUE` (`id_produtos`),
   ADD KEY `fk_Produtos_Modelo1_idx` (`Modelo_idModelo`);
 
 --
--- Índices para tabela `telefone`
---
-ALTER TABLE `telefone`
-  ADD PRIMARY KEY (`id_telefone`),
-  ADD UNIQUE KEY `numero_UNIQUE` (`numero`),
-  ADD UNIQUE KEY `id_telefone_UNIQUE` (`id_telefone`),
-  ADD KEY `fk_Telefone_Cliente1_idx` (`Cliente_id_cliente`),
-  ADD KEY `fk_Telefone_Vendedor1_idx` (`Vendedor_id_vendedor`);
-
---
 -- Índices para tabela `usuarios`
 --
+
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id_usuario`),
   ADD UNIQUE KEY `id_usuario_UNIQUE` (`id_usuario`);
@@ -253,6 +228,7 @@ ALTER TABLE `usuarios`
 --
 -- Índices para tabela `vendedor`
 --
+
 ALTER TABLE `vendedor`
   ADD PRIMARY KEY (`id_vendedor`,`CPF`),
   ADD UNIQUE KEY `CPF_UNIQUE` (`CPF`),
@@ -260,76 +236,65 @@ ALTER TABLE `vendedor`
   ADD KEY `fk_Vendedor_usuario_idx` (`id_vendedor`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
---
-
---
 -- AUTO_INCREMENT de tabela `caracteristicas`
 --
+
 ALTER TABLE `caracteristicas`
   MODIFY `idCaracteristicas` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
 --
+
 ALTER TABLE `cliente`
   MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de tabela `email`
---
-ALTER TABLE `email`
-  MODIFY `id_email` int(11) NOT NULL AUTO_INCREMENT COMMENT '\n\n';
-
---
 -- AUTO_INCREMENT de tabela `endereco`
 --
+
 ALTER TABLE `endereco`
   MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de tabela `pedido`
 --
+
 ALTER TABLE `pedido`
   MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `pedido_produto`
 --
+
 ALTER TABLE `pedido_produto`
-  MODIFY `idPedido_Produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `idPedido_Produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT de tabela `produtos`
 --
-ALTER TABLE `produtos`
-  MODIFY `id_produtos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
---
--- AUTO_INCREMENT de tabela `telefone`
---
-ALTER TABLE `telefone`
-  MODIFY `id_telefone` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `produtos`
+  MODIFY `id_produtos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
+
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- AUTO_INCREMENT de tabela `vendedor`
 --
-ALTER TABLE `vendedor`
-  MODIFY `id_vendedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
---
--- Restrições para despejos de tabelas
---
+ALTER TABLE `vendedor`
+  MODIFY `id_vendedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- Limitadores para a tabela `endereco`
 --
+
 ALTER TABLE `endereco`
   ADD CONSTRAINT `fk_Endereco_Cliente1` FOREIGN KEY (`Cliente_id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
