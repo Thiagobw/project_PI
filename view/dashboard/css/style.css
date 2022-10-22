@@ -380,9 +380,3 @@
     color: var(--primary);
     border: 0.5px solid var(--primary);
 }
-
-/* title popUp register products and customers*/
-#ttl-customers, ttl-products {
-    font-weight: normal !important;
-    display: none;
-}

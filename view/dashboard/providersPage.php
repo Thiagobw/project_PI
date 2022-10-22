@@ -153,7 +153,7 @@ $providersList = search_provider();
                                         <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Fornecedores</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
-                                        <button data-bs-toggle="modal" id="btnRegisterProv" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-handshake-angle"></i> +</button>
+                                        <button type="button" data-bs-toggle="modal" id="btnRegisterProv" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-handshake-angle"></i> +</button>
                                     </div>
                                 </div>
                             </div>
@@ -221,12 +221,39 @@ $providersList = search_provider();
     <script src="js/main.js"></script>
 
     <script>
-        var btnRegisterProviders = document.querySelector('#btnRegisterProv');
-        
+        var btnRegisterProviders = document.querySelector('');
+        var ttl1 = document.querySelector('#ttl-providers');
+        var ttl2 = document.querySelector('#ttl-customers');
+        var ttl3 = document.querySelector('#ttl-products');
+        var ttl4 = document.querySelector('#ttl-employees');
+
         btnRegisterProviders.addEventListener('click', function() {
-            document.querySelector('.modal-title').textContent = "Cadastrar um fornecedor";
+
         })
-        document.getElementById('timer').innerText = twodigits(min)+':'+twodigits(sec);
+    </script>
+
+<script>
+            var btn = document.querySelector('#btnRegisterProv');
+
+            btn.addEventListener('click', function() {
+            
+            const contentRegister1 = document.querySelector('#contentRegisterProv');
+            const contentRegister2 = document.querySelector('#contentRegisterCust');
+            const contentRegister3 = document.querySelector('#contentRegisterProd');
+            const contentRegister4 = document.querySelector('#contentRegisterEploy');
+            contentRegister2.style.display = 'none';
+            contentRegister3.style.display = 'none';
+            contentRegister4.style.display = 'none';
+
+            const ttl1 = document.querySelector('#ttl-providers');
+            const ttl2 = document.querySelector('#ttl-customers');
+            const ttl3 = document.querySelector('#ttl-products');
+            const ttl4 = document.querySelector('#ttl-employees');
+
+            ttl2.style.display = 'none';
+            ttl3.style.display = 'none';
+            ttl4.style.display = "none";
+        })
     </script>
 </body>
 

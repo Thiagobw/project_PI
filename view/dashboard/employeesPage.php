@@ -152,7 +152,7 @@ $employeesList = search_employee();
                                         <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Funcionarios</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
-                                        <button type="button" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-user"></i> +</button>
+                                        <button type="button" id="btnRegisterEmploy" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-user"></i> +</button>
                                     </div>
                                 </div>
                             </div>
@@ -223,6 +223,31 @@ $employeesList = search_employee();
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    <script>
+            var btn = document.querySelector('#btnRegisterEmploy');
+
+            btn.addEventListener('click', function() {
+            
+            const contentRegister1 = document.querySelector('#contentRegisterProv');
+            const contentRegister2 = document.querySelector('#contentRegisterCust');
+            const contentRegister3 = document.querySelector('#contentRegisterProd');
+            const contentRegister4 = document.querySelector('#contentRegisterEploy');
+            contentRegister1.style.display = 'none';
+            contentRegister2.style.display = 'none';
+            contentRegister3.style.display = 'none';
+
+
+            const ttl1 = document.querySelector('#ttl-providers');
+            const ttl2 = document.querySelector('#ttl-customers');
+            const ttl3 = document.querySelector('#ttl-products');
+            const ttl4 = document.querySelector('#ttl-employees');
+
+            ttl1.style.display = 'none';
+            ttl2.style.display = 'none';
+            ttl3.style.display = 'none';
+        })
+    </script>
 </body>
 
 </html>
