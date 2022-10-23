@@ -48,7 +48,7 @@
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="CNPJ" id="cpfProviders"  name="cpfProviders" maxlength="14" autocomplete="off">
+                                    <input class=" form-control input-user" type="text" placeholder="CNPJ" id="cnpjProviders"  name="cnpjProviders" maxlength="18" autocomplete="off">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
@@ -70,19 +70,24 @@
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formProviders">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome" id="nameProviders" maxlength="100" name="nomeProviders">
+                                    <input class=" form-control input-user" type="file" placeholder="Nome" id="imgProduct" name="imgProduct">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="CPF" id="cpfProviders"  name="cpfProviders" maxlength="14" autocomplete="off">
+                                    <input class=" form-control input-user" type="text" placeholder="Nome" id="nameProduct" maxlength="100" name="nomeProduct">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="email" placeholder="Email" id="emailProviders"  name="emailProviders" maxlength="40">
+                                    <input class=" form-control input-user" type="text" placeholder="Preço" id="priceProduct"  name="priceProduct" maxlength="14" autocomplete="off">
+                                </div>
+
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
+                                    <input class=" form-control input-user" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
+                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formProviders" type="submit" name="submitProviders" value="Cadastrar Fornecedor">
+                                    <input class="btn btn-primary w-100" form="formProviders" type="submit" name="submitProduct" value="Cadastrar Produto">
                                 </div>
                             </form>
                         </div>

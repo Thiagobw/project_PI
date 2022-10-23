@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `caracteristicas` (
-  `idCaracteristicas` int(11) NOT NULL,
+  `id_caracteristicas` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `fk_produtos_id_produtos` int(11) NOT NULL,
   `solado` varchar(20) NOT NULL,
   `lingueta` varchar(20) NOT NULL,
@@ -45,9 +45,9 @@ CREATE TABLE `caracteristicas` (
 --
 
 CREATE TABLE `cliente` (
-  `id_cliente` int(11) NOT NULL,
+  `id_cliente` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
-  `CPF` char(14) NOT NULL,
+  `CPF` char(14) NOT NULL UNIQUE KEY,
   `email` varchar(40) NOT NULL DEFAULT 'não informado',
   `telefone` char(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -59,7 +59,7 @@ CREATE TABLE `cliente` (
 --
 
 CREATE TABLE `endereco` (
-  `id_endereco` int(11) NOT NULL,
+  `id_endereco` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `numero_endereco` int(11) DEFAULT NULL,
   `rua` varchar(45) DEFAULT NULL,
   `bairro` varchar(45) DEFAULT NULL,
@@ -77,7 +77,7 @@ CREATE TABLE `endereco` (
 --
 
 CREATE TABLE `pedido` (
-  `id_pedido` int(11) NOT NULL,
+  `id_pedido` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `valor_pedido` varchar(20) NOT NULL,
   `forma_pagamento` varchar(10) NOT NULL,
   `data` varchar(10) NOT NULL,
@@ -92,7 +92,7 @@ CREATE TABLE `pedido` (
 --
 
 CREATE TABLE `pedido_produto` (
-  `idPedido_Produto` int(11) NOT NULL,
+  `idPedido_Produto` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `quantidade` int(11) NOT NULL,
   `valor` int(11) NOT NULL,
   `Pedido_id_pedido` int(11) NOT NULL,
@@ -106,9 +106,9 @@ CREATE TABLE `pedido_produto` (
 --
 
 CREATE TABLE `produtos` (
-  `id_produtos` int(11) NOT NULL,
-  `nome_produto` varchar(45) NOT NULL,
-  `preco_produto` int(11) DEFAULT NULL,
+  `id_produtos` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `nome_produto` varchar(100) NOT NULL,
+  `preco_produto` int(11) NOT NULL,
   `quantidade` int(11) NOT NULL,
   `Modelo_idModelo` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -120,7 +120,7 @@ CREATE TABLE `produtos` (
 --
 
 CREATE TABLE `usuarios` (
-  `id_usuario` int(11) NOT NULL,
+  `id_usuario` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) DEFAULT NULL,
   `cpf` char(14) DEFAULT NULL,
   `telefone` char(15) DEFAULT NULL,
@@ -153,7 +153,7 @@ CREATE TABLE `fornecedor` (
 --
 
 CREATE TABLE `vendedor` (
-  `id_vendedor` int(11) NOT NULL,
+  `id_vendedor` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `CPF` varchar(14) NOT NULL,
   `email` varchar (40) NOT NULL,
@@ -170,41 +170,21 @@ CREATE TABLE `vendedor` (
 --
 
 ALTER TABLE `caracteristicas`
-  ADD PRIMARY KEY (`idCaracteristicas`),
-  ADD UNIQUE KEY `idCaracteristicas_UNIQUE` (`idCaracteristicas`);
-
---
--- Índices para tabela `cliente`
---
-
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`id_cliente`),
-  ADD UNIQUE KEY `CPF_UNIQUE` (`CPF`),
-  ADD UNIQUE KEY `id_cliente_UNIQUE` (`id_cliente`);
-
+  ADD UNIQUE KEY `id_caracteristicas_UNIQUE` (`id_caracteristicas`);
 
 --
 -- Índices para tabela `endereco`
 --
 
 ALTER TABLE `endereco`
-  ADD PRIMARY KEY (`id_endereco`),
   ADD UNIQUE KEY `id_endereco_UNIQUE` (`id_endereco`),
   ADD KEY `fk_Endereco_Cliente1_idx` (`Cliente_id_cliente`);
-
---
--- Índices para tabela `pedido`
---
-
-ALTER TABLE `pedido`
-  ADD PRIMARY KEY (`id_pedido`);
 
 --
 -- Índices para tabela `pedido_produto`
 --
 
 ALTER TABLE `pedido_produto`
-  ADD PRIMARY KEY (`idPedido_Produto`),
   ADD KEY `fk_Pedido_Produto_Pedido1_idx` (`Pedido_id_pedido`),
   ADD KEY `fk_Pedido_Produto_Produtos1_idx` (`Produtos_idProdutos`);
 
@@ -213,7 +193,6 @@ ALTER TABLE `pedido_produto`
 --
 
 ALTER TABLE `produtos`
-  ADD PRIMARY KEY (`id_produtos`),
   ADD UNIQUE KEY `id_produtos_UNIQUE` (`id_produtos`),
   ADD KEY `fk_Produtos_Modelo1_idx` (`Modelo_idModelo`);
 
@@ -222,74 +201,7 @@ ALTER TABLE `produtos`
 --
 
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id_usuario`),
   ADD UNIQUE KEY `id_usuario_UNIQUE` (`id_usuario`);
-
---
--- Índices para tabela `vendedor`
---
-
-ALTER TABLE `vendedor`
-  ADD PRIMARY KEY (`id_vendedor`,`CPF`),
-  ADD UNIQUE KEY `CPF_UNIQUE` (`CPF`),
-  ADD UNIQUE KEY `id_vendedor_UNIQUE` (`id_vendedor`),
-  ADD KEY `fk_Vendedor_usuario_idx` (`id_vendedor`);
-
---
--- AUTO_INCREMENT de tabela `caracteristicas`
---
-
-ALTER TABLE `caracteristicas`
-  MODIFY `idCaracteristicas` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `cliente`
---
-
-ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de tabela `endereco`
---
-
-ALTER TABLE `endereco`
-  MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de tabela `pedido`
---
-
-ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `pedido_produto`
---
-
-ALTER TABLE `pedido_produto`
-  MODIFY `idPedido_Produto` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
-
---
--- AUTO_INCREMENT de tabela `produtos`
---
-
-ALTER TABLE `produtos`
-  MODIFY `id_produtos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
-
---
--- AUTO_INCREMENT de tabela `usuarios`
---
-
-ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
-
---
--- AUTO_INCREMENT de tabela `vendedor`
---
-
-ALTER TABLE `vendedor`
-  MODIFY `id_vendedor` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
 --
 -- Limitadores para a tabela `endereco`
