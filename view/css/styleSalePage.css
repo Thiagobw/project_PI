@@ -36,13 +36,6 @@ body {
 
 
 /*navbar*/
-header{
-    height: 70px;
-}
-nav {
-    border-bottom: 3px solid #ff0000;
-}
-
 .pesquisa {
     border: 1px solid #818081;
     background-color: #ced4da;
@@ -78,27 +71,15 @@ nav {
     border: 1.5px solid #11c827 !important;
 }
 
-.cart, .menu-cad {
+.cart, .userName {
     color: #ff0000 !important;
     font-size: 16.5px;
     letter-spacing: 1px;
 }
 
-.cart:hover, .menu-cad:hover {
+.cart:hover {
     background-color: rgba(0, 0, 0, 0.029);
     font-size: 16.7px;
-}
-
-.menu-cad::after {
-    color: black !important;
-}
-
-.menu-options::after {
-    content: none !important;
-}
-
-.menu-options:hover {
-    background-color: rgba(0, 0, 0, 0.029);
 }
 
 /*products*/

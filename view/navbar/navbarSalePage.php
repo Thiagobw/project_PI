@@ -1,11 +1,11 @@
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg fixed-top navbar-light bg-white shadow-lg">
+<nav class="navbar navbar-expand-lg navbar-light bg-white">
         <!-- Container wrapper -->
         <div class="container-fluid">
             <!-- Navbar brand, logo -->
 
-            <a class="navbar-brand ml-4" href="#">
-              <img class="img-fluid" src="img/imgteste2.png" height="30" alt=""/>
+            <a class="navbar-brand logo" href="#">
+                <img class="img-fluid ml-2" src="../view/img/img_logo.png" height="90" width="90" alt=""/>
             </a>
             <!-- button responsive -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,9 +34,9 @@
                       </a>
                     </li>
 
-                    <div>
-                    <h6 class="center"> <i class="fa-regular fa-user" style="color: black !important;"></i> <?php echo $shortName; ?></h6>
-                    </div>
+                    <h6 class="userName">
+                        <i class="fa-regular fa-user" style="color: black !important;"></i> <?php echo $shortName; ?>
+                    </h6>
                 </div>
             </div>
             <!-- Collapsible wrapper-->
