@@ -387,12 +387,18 @@
     color: var(--light);
     border: 1.5px solid var(--light);
     height: 300px;
+    padding: 0;
     transition: all .9s;
 }
 .selectFileImgProduct:hover {
     cursor: pointer;
     color: var(--primary);
     border: 1px solid var(--primary);
+}
+#imgSelected {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
 }
 @media (max-width: 320px) {
     .selectFileImgProduct {

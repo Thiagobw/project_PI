@@ -244,5 +244,4 @@ $customersList = search_customers();
         })
     </script>
 </body>
-
 </html>
