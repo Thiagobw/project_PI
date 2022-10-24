@@ -23,10 +23,11 @@
                 </div>
             </div>
             <a href="index.php" class="nav-item nav-link"><i class="fa fa-th me-2"></i> Painel</a>
-            <a href="productsPage.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i> Produtos</a>
-            <a href="providersPage.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i> Fornecedores</a>
-            <a href="employeesPage.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i> Funcionarios</a>
-            <a href="customersPage.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i> Clientes</a>
+            <a href="productsPage.php" class="nav-item nav-link"><i class="fa-solid fa-gift"></i> Produtos</a>
+            <a href="providersPage.php" class="nav-item nav-link"><i class="fa-solid fa-handshake-simple"></i> Fornecedores</a>
+            <a href="employeesPage.php" class="nav-item nav-link"><i class="fa-solid fa-users"></i> Funcionarios</a>
+            <a href="customersPage.php" class="nav-item nav-link"><i class="fa-solid fa-users"></i> Clientes</a>
+            <a href="../salePage.php" class="nav-item nav-link"><i class="fa-solid fa-bag-shopping"></i> Realizar venda</a>
         </div>
     </nav>
 </div>
