@@ -34,7 +34,9 @@
                       </a>
                     </li>
 
-                    <h6><?php echo $shortName; ?></h6>
+                    <div>
+                    <h6 class="center"> <i class="fa-regular fa-user" style="color: black !important;"></i> <?php echo $shortName; ?></h6>
+                    </div>
                 </div>
             </div>
             <!-- Collapsible wrapper-->

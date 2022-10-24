@@ -33,57 +33,6 @@ include_once "../DAO/productsBd.php";
     </div>
 </div>
 
-<!-- Scroll bar and table -->
-<div class="container-fluid">
-    <div class="row center">
-        <div class="col-12 col-sm-8">
-            <div class="shadow-lg tbl center">
-                <table class="table table-bordered table-hover table-responsive-lg">
-                    <thead>
-                        <tr class="">
-                            <th class="table-dark text-center title-tbl" colspan="4"> Informações de estoque </th>
-                        </tr>
-                        <tr>
-                          <th scope="col"> Codigo </th>
-                          <th scope="col"> Produto </th>
-                          <th scope="col"> Quantidade </th>
-                          <th scope="col"> Situação </th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td><li class="nav nav-item"><a class="nameLink" aria-current="page" href="#" data-bs-toggle="modal" data-bs-target="#modalInformation">Balenciaga Triple S</a></li></td>
-                            <td><span>20</span> Unidades</td>
-                            <td>Em estoque</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Nike Sb Dunk Low</td>
-                            <td><span>03</span> Unidades</td>
-                            <td>Baixo estoque</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Adidas Yezzy Boost 350 V2</td>
-                            <td><span>0</span> Unidades</td>
-                            <td>Esgotado</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Nike Air Jordan High 1 Tie Dye</td>
-                            <td><span>100</span> Unidades</td>
-                            <td>Em estoque</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
-</div>
-
-
 <!-- modal - product information -->
 <div id="modalInformation" class="modal fade">
     <div class="modal-dialog modal-lg">
