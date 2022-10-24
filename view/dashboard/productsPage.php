@@ -252,6 +252,29 @@ $productsList = buscar_produto();
             ttl4.style.display = 'none';
         })
     </script>
+
+    <script>
+        let imgselected = document.querySelector('#imgSelected');
+        let inputImage = document.querySelector('#imgProduct');
+        var imgSelect = document.querySelector('#imgSelect');
+        inputImage.addEventListener('click', () => {
+            inputImage.click();
+        });
+        inputImage.addEventListener('change', (e) => {
+            
+        /*if(imgselected.files.length <= 0) 
+            console.log("entra");
+            return;
+        */
+        let reader = new FileReader();
+        reader.onload = () => {
+            imgselected.src = reader.result;
+            imgSelect.style.display = 'none';
+            imgselected.style.display = 'flex';
+        }
+        reader.readAsDataURL(inputImage.files[0]);
+        })
+    </script>
 </body>
 
 </html>

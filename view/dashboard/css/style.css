@@ -380,3 +380,22 @@
     color: var(--primary);
     border: 0.5px solid var(--primary);
 }
+
+/* form registration products*/
+.selectFileImgProduct {
+    background-color: var(--dark);
+    color: var(--light);
+    border: 1.5px solid var(--light);
+    height: 300px;
+    transition: all .9s;
+}
+.selectFileImgProduct:hover {
+    cursor: pointer;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+@media (max-width: 320px) {
+    .selectFileImgProduct {
+        height: 280px;
+    }
+}

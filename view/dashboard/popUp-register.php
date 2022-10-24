@@ -70,7 +70,13 @@
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formProviders">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="file" placeholder="Nome" id="imgProduct" name="imgProduct">
+                                    <div class="row center">
+                                        <label class="col-12 col-sm-10 col-md-11 col-lg-8 selectFileImgProduct center" for="imgProduct">
+                                            <i class="fa-solid fa-file-image fa-4x" id="imgSelect"></i>
+                                            <img src="" id="imgSelected" alt="image selected" style="display: none;">
+                                        </label>
+                                    </div>
+                                    <input class=" form-control input-user" type="file" accept="image/*" id="imgProduct" name="imgProduct" style="display: none;">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
