@@ -1,8 +1,8 @@
 <?php
- session_start();
- if ($_SESSION['autenticado'] == false){
-    header('Location: /project_PI/view/index.php');
- }
+session_start();
+include_once "../control/checkAuth.php";
+include_once "../DAO/productsBd.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,20 +15,15 @@
 
     <link rel="stylesheet" href="css/styleSalePage.css">
 
-    <title>produtos - LA_Imports</title>
+    <title>LA Imports - Vender produto</title>
 </head>
 <body>
 
 <header>
     <?php
-    include "Project_PI/view/navbar/navbarSalePage.php";
+    require_once "navbar/navbarSalePage.php";
     ?>
 </header>
-
-<!-- pop-ups Account -->
-<?php
-include "project_PI/view/pop-ups/pop-upAccount.php";
-?>
 
 <div class="container mt-5">
     <div class="row">
