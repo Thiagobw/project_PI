@@ -68,7 +68,7 @@
 
                     <div class="row" id="contentRegisterProd">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formProviders">
+                            <form class="input-group center" id="formProd">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <div class="row center">
                                         <label class="col-12 col-sm-10 col-md-11 col-lg-8 selectFileImgProduct center" for="imgProduct">
@@ -101,7 +101,7 @@
 
                     <div class="row" id="contentRegisterEploy">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formProviders">
+                            <form class="input-group center" id="formEmployees">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <input class=" form-control input-user" type="text" placeholder="Nome" id="nameProviders" maxlength="100" name="nomeProviders">
                                 </div>

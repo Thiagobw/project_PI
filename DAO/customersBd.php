@@ -1,5 +1,5 @@
 <?php
-include_once "../../DAO/connection.php";
+include_once "connection.php";
 include_once "../../model/Customers.php";
 
 

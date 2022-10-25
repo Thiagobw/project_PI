@@ -1,6 +1,6 @@
 <?php
 include_once "connection.php";
-include_once "../../model/Products.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Products.php";
 
 
 function buscar_produto(){
