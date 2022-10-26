@@ -184,7 +184,6 @@ $customersList = search_customers();
 
                                         ?>
                                             <tr>
-                                                <td> <?php echo $cliente -> getCodigoClie();?></td>
                                                 <td> <?php echo $cliente -> getName(); ?></td>
                                                 <td> <?php echo $cliente -> getEmail();?> </td>
                                                 <td> <?php echo $cliente -> getCpf();?> </td>
