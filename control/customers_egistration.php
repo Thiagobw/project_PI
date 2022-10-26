@@ -1,8 +1,8 @@
 <?php
 
-include_once "../connection.php";
-include_once "../DAO/customersBd.php";
-include_once "../model/Customers.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/connection.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/customersBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Customers.php";
 
 $name = $_POST['nameCustomers'];
 $email = $_POST['emailCustomers'];
@@ -20,7 +20,7 @@ $result_regist = register_customers($cust);
 if ($result_regist == true) {
     header('Location: ../view/dashboard/customersPage.php');
 } else {
-    echo "falha ao cadastrar";
+    echo "<br/> falha ao cadastrar";
 }
 
 ?>

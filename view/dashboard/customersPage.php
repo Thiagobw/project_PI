@@ -4,7 +4,7 @@ include_once ('../../control/checkAuth.php');
 include_once ('../../DAO/customersBd.php');
 
 $customersList = search_customers();
-die(var_dump($customersList));
+//die(var_dump($customersList));
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -187,7 +187,7 @@ die(var_dump($customersList));
                                                 <td> <?php echo $cliente -> getName(); ?></td>
                                                 <td> <?php echo $cliente -> getEmail();?> </td>
                                                 <td> <?php echo $cliente -> getCpf();?> </td>
-                                                <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
+                                                <td><a class="btn btn-plus-options" href="delete.php?id=<?php echo $cliente -> getCodigoclie(); ?>"><i class="fa-solid fa-plus">delete</i></a></td>
                                             </tr>
 
                                         <?php }} ?>

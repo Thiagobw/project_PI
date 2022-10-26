@@ -1,6 +1,6 @@
 <?php
 include_once "connection.php";
-include_once "../../model/Customers.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Customers.php";
 
 
 function search_customers() {
@@ -14,12 +14,12 @@ function search_customers() {
 
     foreach($result as $registro) {
         $cliente = new Customers();
-
+        $cliente -> setCodigoclie($registro["id_cliente"]);
         $cliente -> setEmail($registro["email"]);
         $cliente -> setName($registro["nome"]);
         $cliente -> setCpf($registro["CPF"]);
 
-        $resul_cliente[] = $cliente;
+        $result_cliente[] = $cliente;
     }
 
     return $result_cliente;
@@ -28,13 +28,14 @@ function search_customers() {
 
 //registration
 function register_customers($cust) {
+
     try{
 
         $PDO = connect();
 
-        $sql = " INSERT INTO cliente (nome,CPF,email,telefone) Values (?,?,?,?)";
+        $sqlReg = " INSERT INTO cliente (nome,CPF,email,telefone) Values (?,?,?,?)";
 
-        $stmt = $PDO ->prepare($sql);
+        $stmt = $PDO ->prepare($sqlReg);
         $stmt->execute([$cust->getName(), $cust->getCpf(), $cust->getEmail(), $cust->getTell()]);
 
         if($stmt) {
@@ -44,7 +45,21 @@ function register_customers($cust) {
             return false;
         }
 
-    } catch (Exception $e){
+    } catch (Exception $e) {
+
+        echo $e->getMessage();
+        return false;
+    }
+}
+
+function delet_customers ($id) {
+
+    try {
+        $PDO = connect();
+
+        $sqlDel = "DELETE FROM `cliente` WHERE id_cliente=?";
+
+    } catch (Exception $e) {
 
         echo $e->getMessage();
         return false;

@@ -16,9 +16,9 @@
 
                     <div class="row" id="contentRegisterCust">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formCust" action="../../control/customers_egistration.php" method="POST">
+                            <form class="input-group center" id="formCustomers" action="../../control/customers_egistration.php" method="POST">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome do cliente" id="nameCustomers" name="nomeCustomers" maxlength="100">
+                                    <input class=" form-control input-user" type="text" placeholder="Nome do cliente" id="nameCustomers" name="nameCustomers" maxlength="100">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">

@@ -16,7 +16,7 @@ class Customers {
     }
 
     public function setTell($tell) {
-        return $this->name = $tell;
+        return $this->tell = $tell;
     }
 
     public function getTell() {
