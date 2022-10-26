@@ -1,6 +1,6 @@
 <?php
 include_once "connection.php";
-include_once "../model/Customers.php";
+include_once "../../model/Customers.php";
 
 
 function search_customers() {
