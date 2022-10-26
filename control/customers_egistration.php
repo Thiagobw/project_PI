@@ -8,7 +8,7 @@ $name = $_POST['nameCustomers'];
 $email = $_POST['emailCustomers'];
 $cpf = $_POST['cpfCustomers'];
 $tel = $_POST['tellCustomers'];
-die(var_dump($name, $cpf, $email, $tel));
+
 $cust = new Customers();
 
 $cust->setName($name);
@@ -16,7 +16,8 @@ $cust->setCpf($cpf);
 $cust->setEmail($email);
 $cust->setTell($tel);
 
-if (register_customers($cust) == true) {
+$result_regist = register_customers($cust);
+if ($result_regist == true) {
     header('Location: ../view/dashboard/customersPage.php');
 } else {
     echo "falha ao cadastrar";

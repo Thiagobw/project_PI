@@ -13,18 +13,20 @@ function search_customers() {
     $result_cliente = array();
 
     foreach($result as $registro) {
-        $cust = new Customers();
+        $cliente = new Customers();
 
-        $cust -> setEmail($registro["email"]);
-        $cust -> setName($registro["nome"]);
-        $cust -> setCpf($registro["CPF"]);
+        $cliente -> setEmail($registro["email"]);
+        $cliente -> setName($registro["nome"]);
+        $cliente -> setCpf($registro["CPF"]);
 
-        $resul_cliente[] = $cust;
+        $resul_cliente[] = $cliente;
     }
 
     return $result_cliente;
 }
 
+
+//registration
 function register_customers($cust) {
     try{
 
