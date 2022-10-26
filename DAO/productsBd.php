@@ -3,7 +3,7 @@ include_once "connection.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Products.php";
 
 
-function buscar_produto(){
+function search_products() {
     $conexao = connect();
 
     $stmt = $conexao->prepare("SELECT * FROM produtos");
@@ -24,4 +24,4 @@ function buscar_produto(){
 
 
     return $resul_produtos;
-    }
+}

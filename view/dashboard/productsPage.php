@@ -1,9 +1,9 @@
 <?php
 session_start();
 include_once ('../../control/checkAuth.php');
-include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Productsbd.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/Productsbd.php";
 
-$productsList = buscar_produto();
+$productsList = search_products();
 
 
 ?>
