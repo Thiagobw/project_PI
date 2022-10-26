@@ -4,7 +4,7 @@ include_once ('../../control/checkAuth.php');
 include_once ('../../DAO/customersBd.php');
 
 $customersList = search_customers();
-
+die(var_dump($customersList));
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
