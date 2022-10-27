@@ -193,8 +193,8 @@ $productsList = search_products();
                                             <td> <?php echo $prod -> getPrice();?> </td>
                                             <td class="">
                                                 <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
-                                                <a class="btn btn-plus-options" href="../../control/products_delete.php?id=<?php echo $prod -> getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
-                                                <a class="btn btn-plus-options" href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <a class="btn btn-plus-options" href="../../control/products_delete.php?id=<?php echo $prod ->getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
+                                                <a class="btn btn-plus-options" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod" href=""><i class="fa-solid fa-pen-to-square"></i></a>
                                             </td>
                                         </tr>
                                      
@@ -278,6 +278,32 @@ $productsList = search_products();
         reader.readAsDataURL(inputImage.files[0]);
         })
     </script>
-</body>
 
+<script>
+    var btn = document.querySelector('#btnAlterProd');
+
+     btn.addEventListener('click', function() {
+            
+        const contentAlter1 = document.querySelector('#contentAlterProv');
+        const contentAlter2 = document.querySelector('#contentAlterCust');
+        const contentAlter3 = document.querySelector('#contentAlterProd');
+        const contentAlter4 = document.querySelector('#contentAlterEploy');
+        
+        contentAlter1.style.display = 'none';
+        contentAlter3.style.display = 'none';
+        contentAlter4.style.display = 'none';
+
+        const ttl1 = document.querySelector('#ttl-providers');
+        const ttl2 = document.querySelector('#ttl-customers');
+        const ttl3 = document.querySelector('#ttl-products');
+        const ttl4 = document.querySelector('#ttl-employees');
+
+        ttl1.style.display = 'none';
+        ttl3.style.display = 'none';
+        ttl4.style.display = "none";
+        })
+
+</script>
+
+</body>
 </html>

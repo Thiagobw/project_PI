@@ -179,6 +179,7 @@ $customersList = search_customers();
                                         <?php
 
                                         } else{
+                                            include_once "popUp-alterRegister.php";
 
                                         foreach($customersList as $cliente) {
 
@@ -190,7 +191,7 @@ $customersList = search_customers();
                                                 <td class="">
                                                     <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
                                                     <a class="btn btn-plus-options" href="../../control/customers_delete.php?id=<?php echo $cliente -> getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
-                                                    <a class="btn btn-plus-options" href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                                                    <a class="btn btn-plus-options" id="btnAlterCust" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod" href=""><i class="fa-solid fa-pen-to-square"></i></a>
                                                 </td>
                                             </tr>
 
@@ -225,7 +226,7 @@ $customersList = search_customers();
     <script src="js/main.js"></script>
 
     <script>
-        var btn = document.querySelector('#btnRegisterCust');
+        var btn = document.querySelector('#btnAlterCust');
 
         btn.addEventListener('click', function() {
             
@@ -246,6 +247,33 @@ $customersList = search_customers();
             ttl3.style.display = 'none';
             ttl4.style.display = "none";
         })
+
+    </script>
+
+    <script>
+    var btn = document.querySelector('#btnAlterCust');
+
+     btn.addEventListener('click', function() {
+            
+        const contentAlter1 = document.querySelector('#contentAlterProv');
+        const contentAlter2 = document.querySelector('#contentAlterCust');
+        const contentAlter3 = document.querySelector('#contentAlterProd');
+        const contentAlter4 = document.querySelector('#contentAlterEploy');
+        
+        contentAlter1.style.display = 'none';
+        contentAlter3.style.display = 'none';
+        contentAlter4.style.display = 'none';
+
+        const ttl1 = document.querySelector('#ttl-providers');
+        const ttl2 = document.querySelector('#ttl-customers');
+        const ttl3 = document.querySelector('#ttl-products');
+        const ttl4 = document.querySelector('#ttl-employees');
+
+        ttl1.style.display = 'none';
+        ttl3.style.display = 'none';
+        ttl4.style.display = "none";
+        })
+
     </script>
 </body>
 </html>

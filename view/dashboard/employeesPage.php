@@ -178,7 +178,8 @@ $employeesList = search_employee();
 
                                     <?php
 
-                                    } else{
+                                    } else {
+                                        include_once "popUp-alterRegister.php";
 
                                      foreach($employeesList as $vendedor) {
 
@@ -195,6 +196,7 @@ $employeesList = search_employee();
                                             <td>
                                                 <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
                                                 <a class="btn btn-plus-options" href="../../control/employees_delete.php?id=<?php echo $vendedor -> getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
+                                                <a class="btn btn-plus-options" id="btnAlterEmploy" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod" href=""><i class="fa-solid fa-pen-to-square"></i></a>
                                             </td>
                                         </tr>
                                      
@@ -250,6 +252,34 @@ $employeesList = search_employee();
             ttl2.style.display = 'none';
             ttl3.style.display = 'none';
         })
+    </script>
+
+    <script>
+    var btn = document.querySelector('#btnAlterEmploy');
+
+     btn.addEventListener('click', function() {
+
+        const contentAlter1 = document.querySelector('#contentAlterProv');
+        const contentAlter2 = document.querySelector('#contentAlterCust');
+        const contentAlter3 = document.querySelector('#contentAlterProd');
+        const contentAlter4 = document.querySelector('#contentAlterEploy');
+        
+        contentAlter1.style.display = 'none';
+        contentAlter3.style.display = 'none';
+        contentAlter4.style.display = 'none';
+
+        const ttl1 = document.querySelector('#ttl-providers');
+        const ttl2 = document.querySelector('#ttl-customers');
+        const ttl3 = document.querySelector('#ttl-products');
+        const ttl4 = document.querySelector('#ttl-employees');
+
+        ttl1.style.display = 'none';
+        ttl2.style.display = 'none';
+        ttl3.style.display = 'none';
+
+
+    })
+
     </script>
 </body>
 
