@@ -61,7 +61,7 @@ function delet_employees($emp) {
         $sqlDel = "DELETE FROM vendedor WHERE id_vendedor=?";
 
         $stmt = $PDO -> prepare($sqlDel);
-        $stmt -> execute([$emp->getId]);
+        $stmt -> execute([$emp->getId()]);
         
         if($stmt) {
             return true;
