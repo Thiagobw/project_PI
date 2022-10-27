@@ -4,7 +4,7 @@ class Customers {
     private $cpf;
     private $tell;
     private $name;
-    private $codigoclie;
+    private $id;
     private $email;
 
     public function setCpf($cpf) {
@@ -31,12 +31,12 @@ class Customers {
         return $this->name;
     }
 
-    public function setCodigoclie(String $codigoclie) {
-        return $this->codigoclie = $codigoclie;
+    public function setId(int $id) {
+        return $this->id = $id;
     }
 
-    public function getCodigoclie() {
-        return $this->codigoclie;
+    public function getId() {
+        return $this->id;
     }
 
     public function setEmail($email) {

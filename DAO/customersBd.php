@@ -14,7 +14,7 @@ function search_customers() {
 
     foreach($result as $registro) {
         $cliente = new Customers();
-        $cliente -> setCodigoclie($registro["id_cliente"]);
+        $cliente -> setId($registro["id_cliente"]);
         $cliente -> setEmail($registro["email"]);
         $cliente -> setName($registro["nome"]);
         $cliente -> setCpf($registro["CPF"]);
@@ -35,8 +35,8 @@ function register_customers($cust) {
 
         $sqlReg = " INSERT INTO cliente (nome,CPF,email,telefone) Values (?,?,?,?)";
 
-        $stmt = $PDO ->prepare($sqlReg);
-        $stmt->execute([$cust->getName(), $cust->getCpf(), $cust->getEmail(), $cust->getTell()]);
+        $stmt = $PDO -> prepare($sqlReg);
+        $stmt -> execute([$cust->getName(), $cust->getCpf(), $cust->getEmail(), $cust->getTell()]);
 
         if($stmt) {
             return true;
@@ -52,12 +52,22 @@ function register_customers($cust) {
     }
 }
 
-function delet_customers ($id) {
+function delet_customers ($cust) {
 
     try {
         $PDO = connect();
 
-        $sqlDel = "DELETE FROM `cliente` WHERE id_cliente=?";
+        $sqlDel = "DELETE FROM cliente WHERE id_cliente=?";
+
+        $stmt = $PDO -> prepare($sqlDel);
+        $stmt -> execute([$cust->getId]);
+        
+        if($stmt) {
+            return true;
+        }
+        else {
+            return false;
+        }
 
     } catch (Exception $e) {
 

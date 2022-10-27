@@ -185,9 +185,9 @@ $customersList = search_customers();
                                         ?>
                                             <tr>
                                                 <td> <?php echo $cliente -> getName(); ?></td>
-                                                <td> <?php echo $cliente -> getEmail();?> </td>
                                                 <td> <?php echo $cliente -> getCpf();?> </td>
-                                                <td><a class="btn btn-plus-options" href="../../customers_delete.php?id=<?php echo $cliente -> getCodigoclie(); ?>"><i class="fa-solid fa-plus">delete</i></a></td>
+                                                <td> <?php echo $cliente -> getEmail();?> </td>
+                                                <td><a class="btn btn-plus-options" href="../../control/customers_delete.php?id=<?php echo $cliente -> getId(); ?>"><i class="fa-solid fa-plus">delete</i></a></td>
                                             </tr>
 
                                         <?php }} ?>
