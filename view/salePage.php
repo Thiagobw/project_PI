@@ -109,86 +109,12 @@ if(empty($productsList) == true) {
                     </div>
                 </div>
 
-            <?php }} ?>
-
-                <div class="col-11 col-sm-6 col-md-6 col-lg-4 col-xl-3 bg-prod mt-4">
-                    <div class="row">
-                        <div class="col-12 col-sm-11 col-xl-10 bg-white prod">
-                            <div class="row center mb-2 mt-2">
-                                <img class="img-fluid img" src="img/products/tenis 1.jpg" alt="">
-                            </div>
-                            <div class="col-12 dividing-line"></div>
-
-                            <div class="row mt-3">
-                                <div class="col-12 ">
-                                    <p class="text-center">Balenciaga Triple S</p>
-                                    <p class="text-center price">R$ <span>250,00</span></p>
-                                </div>
-                            </div>
-                            <div class="row center mb-2">
-                                <div class="col-12 btn-group center">
-                                    <button class="btn btnADD" onclick="pedido_produto('Balenciaga Triple S')"><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-11 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2 bg-prod">
-                    <div class="row">
-                        <div class="col-12 col-sm-11 col-xl-10 bg-white prod mt-4">
-                            <div class="row center mb-2 mt-2">
-                                <img class="img-fluid img" src="img/products/tenis 1.jpg" alt="">
-                            </div>
-                            <div class="col-12 dividing-line"></div>
-
-                            <div class="row mt-3">
-                                <div class="col-12 ">
-                                    <p class="text-center">Adidas Yezzy Boost 350 V2</p>
-                                    <p class="text-center price">R$ <span>350,00</span></p>
-                                </div>
-                            </div>
-                            <div class="row center mb-2">
-                                <div class="col-12 btn-group center">
-                                    <button class="btn btnADD" onclick="pedido_produto('Adidas Yezzy Boost 350 V2')"><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="col-11 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2 bg-prod">
-                    <div class="row">
-                        <div class="col-12 col-sm-11 col-xl-10 bg-white prod mt-4">
-                            <div class="row center mb-2 mt-2">
-                                <img class="img-fluid img" src="img/products/tenis 1.jpg" alt="">
-                            </div>
-
-                            <div class="col-12 dividing-line"></div>
-
-                            <div class="row mt-3">
-                                <div class="col-12 ">
-
-                                    <p class="text-center">Nike Air Jordan High 1 Tie Dye - unissex</p>
-                                    <p class="text-center price">R$ <span>400,00</span></p>
-                                </div>
-                            </div>
-                            <div class="row center mb-2">
-                                <div class="col-12 btn-group center">
-                                    <button class="btn btnADD" onclick="pedido_produto('Nike Air Jordan High 1 Tie Dye - unissex')"><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <?php } ?>
             </div>
-
-            
         </div>
     </div>
 </main>
+<?php } ?>
 
 <!-- product pagination -->
 <footer class="container-fluid mt-4 mb-1">
