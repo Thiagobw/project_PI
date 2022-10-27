@@ -139,7 +139,7 @@ CREATE TABLE `usuarios` (
 --
 
 CREATE TABLE `fornecedor` (
-  `id_funcionario` int(11) NOT NULL,
+  `id_fornecedor` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `cnpj` char(18) NOT NULL,
   `email` varchar(40) NOT NULL DEFAULT 'não informado',

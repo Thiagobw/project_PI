@@ -20,7 +20,7 @@ $prov ->setTell($tel);
 $result_regist = register_providers($prov);
 
 if ($result_regist == true) {
-    header('Location: ../view/dashboard/employeesPage.php');
+    header('Location: ../view/dashboard/providersPage.php');
 }
 else {
     echo "falha ao cadastrar";
