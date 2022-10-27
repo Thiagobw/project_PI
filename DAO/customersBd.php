@@ -76,4 +76,26 @@ function delet_customers ($cust) {
     }
 }
 
+function getCustomers($id){
+    $connection = connect();
+
+    $stmt = $connection -> prepare("SELECT * FROM cliente");
+    $stmt -> execute();
+
+    $result = $stmt -> fetchAll();
+    $result_cliente = array();
+    $cliente = new Customers();
+    foreach($result as $registro) {
+        
+        $cliente -> setId($registro["id_cliente"]);
+        $cliente -> setEmail($registro["email"]);
+        $cliente -> setName($registro["nome"]);
+        $cliente -> setCpf($registro["CPF"]);
+
+        
+    }
+    return $cliente
+}
+
+
 ?>

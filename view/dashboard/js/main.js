@@ -210,3 +210,14 @@
     
 })(jQuery);
 
+
+
+
+function getCustumerData(idCust){
+    $.get( "customers_select.php?id="+idCust, function( data ) {
+        
+        $( "idCustomers" ).attr('value', data['nome']);
+        $( "nameCustomers" ).attr('value', data['nome']);
+
+    });
+}

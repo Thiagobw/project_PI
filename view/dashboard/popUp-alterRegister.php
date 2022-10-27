@@ -17,6 +17,8 @@
                     <div class="row" id="contentAlterCust">
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formCustomers" action="../../control/customers_registration.php" method="POST">
+                            <input class=" form-control input-user" type="hidden" id="idCustomers" name="idCustomers">
+
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <input class=" form-control input-user" type="text" placeholder="Nome do cliente" id="nameCustomers" name="nameCustomers" maxlength="100">
                                 </div>
