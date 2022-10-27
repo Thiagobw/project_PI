@@ -1,7 +1,7 @@
 <?php
 session_start();
 include_once ('../../control/checkAuth.php');
-include_once ('../../DAO/employeesDB.php');
+include_once ('../../DAO/employeesBd.php');
 
 $employeesList = search_employee();
 ?>

@@ -25,3 +25,28 @@ function search_employee() {
 
     return $resul_search;
 }
+
+
+function register_employees($emp) {
+
+    try {
+
+        $PDO = connect();
+
+        $sqlReg = " INSERT INTO vendedor (nome,CPF,email,telefone,tipo) Values (?,?,?,?,?)";
+
+        $stmt = $PDO -> prepare($sqlReg);
+        $stmt -> execute([$emp->getName(), $emp->setCpf(), $emp->getEmail(), $emp->getTel(), $emp->getType()]);
+
+        if($stmt) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    } catch (Exception $e) {
+
+        echo $e->getMessage();
+        return false;
+    }
+}

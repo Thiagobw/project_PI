@@ -16,7 +16,7 @@
 
                     <div class="row" id="contentRegisterCust">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formCustomers" action="../../control/customers_egistration.php" method="POST">
+                            <form class="input-group center" id="formCustomers" action="../../control/customers_registration.php" method="POST">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <input class=" form-control input-user" type="text" placeholder="Nome do cliente" id="nameCustomers" name="nameCustomers" maxlength="100">
                                 </div>
@@ -44,7 +44,7 @@
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formProviders" action="" method="POST">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome do fornecedor" id="nameProviders" maxlength="100" name="nomeProviders">
+                                    <input class=" form-control input-user" type="text" placeholder="Nome do fornecedor" id="nameProviders" name="nameProviders" maxlength="100">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
@@ -101,21 +101,25 @@
 
                     <div class="row" id="contentRegisterEploy">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formEmployees">
+                            <form class="input-group center" id="formEmployees" action="../../control/employees_registration.php" method="POST">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome" id="nameProviders" maxlength="100" name="nomeProviders">
+                                    <input class=" form-control input-user" type="text" placeholder="Nome do Fornecedor" id="nameEmployees" name="nameEmployees" maxlength="100">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="CPF" id="cpfProviders"  name="cpfProviders" maxlength="14" autocomplete="off">
+                                    <input class=" form-control input-user" type="text" placeholder="CPF" id="cpfEmployees"  name="cpfEmployees" maxlength="14" autocomplete="off">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="email" placeholder="Email" id="emailProviders"  name="emailProviders" maxlength="40">
+                                    <input class=" form-control input-user" type="email" placeholder="Email" id="emailEmployees"  name="emailEmployees" maxlength="40">
+                                </div>
+
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
+                                    <input class=" form-control input-user" type="text" placeholder="Telefone" id="tellEmployees"  name="tellEmployees" maxlength="15">
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formProviders" type="submit" name="submitProviders" value="Cadastrar Fornecedor">
+                                    <input class="btn btn-primary w-100" form="formProviders" type="submit" name="submitEmployees" value="Cadastrar Fornecedor">
                                 </div>
                             </form>
                         </div>
