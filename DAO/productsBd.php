@@ -25,3 +25,29 @@ function search_products() {
 
     return $resul_produtos;
 }
+
+
+function register_products($prod) {
+
+    try{
+
+        $PDO = connect();
+
+        $sqlReg = " INSERT INTO produtos (nome_produto,preco_produto,quantidade,Modelo_idModelo) Values (?,?,?,?)";
+
+        $stmt = $PDO -> prepare($sqlReg);
+        $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getAmount(), 2]);
+
+        if($stmt) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    } catch (Exception $e) {
+
+        echo $e->getMessage();
+        return false;
+    }
+}
