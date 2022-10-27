@@ -6,6 +6,7 @@ class Employees {
     private $email;
     private $tel;
     private $type;
+    private $id;
 
     public function setName(string $name) {
         $this -> name = $name;
@@ -45,5 +46,13 @@ class Employees {
 
     public function getTel() {
         return $this -> tel;
+    }
+
+    public function setId(int $id) {
+        $this -> id = $id;
+    }
+
+    public function getId() {
+        return $this -> id;
     }
 }

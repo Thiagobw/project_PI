@@ -15,6 +15,7 @@ function search_employee() {
     foreach($result as $registro){
         $vendedor = new Employees();
 
+        $vendedor ->setId($registro['id_vendedor']);
         $vendedor -> setName($registro["nome"]);
         $vendedor -> setCpf($registro["CPF"]);
         $vendedor -> setEmail($registro["email"]);
@@ -44,6 +45,31 @@ function register_employees($emp) {
         else {
             return false;
         }
+    } catch (Exception $e) {
+
+        echo $e->getMessage();
+        return false;
+    }
+}
+
+
+function delet_employees($emp) {
+
+    try {
+        $PDO = connect();
+
+        $sqlDel = "DELETE FROM vendedor WHERE id_vendedor=?";
+
+        $stmt = $PDO -> prepare($sqlDel);
+        $stmt -> execute([$emp->getId]);
+        
+        if($stmt) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
     } catch (Exception $e) {
 
         echo $e->getMessage();
