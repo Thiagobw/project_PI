@@ -103,7 +103,7 @@
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formEmployees" action="../../control/employees_registration.php" method="POST">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome do Fornecedor" id="nameEmployees" name="nameEmployees" maxlength="100">
+                                    <input class=" form-control input-user" type="text" placeholder="Nome do Funcionario" id="nameEmployees" name="nameEmployees" maxlength="100">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
@@ -119,7 +119,7 @@
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formProviders" type="submit" name="submitEmployees" value="Cadastrar Fornecedor">
+                                    <input class="btn btn-primary w-100" form="formEmployees" type="submit" name="submitEmployees" value="Cadastrar Fornecedor">
                                 </div>
                             </form>
                         </div>

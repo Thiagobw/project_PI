@@ -15,7 +15,7 @@ class Employees {
         return $this -> name;
     }
 
-    public function setCpf($cpf) {
+    public function setCpf(string $cpf) {
         $this -> cpf = $cpf;
     }
     
@@ -39,7 +39,7 @@ class Employees {
         return $this -> type;
     }
 
-    public function setTel(int $tel) {
+    public function setTel(string $tel) {
         $this -> tel = $tel;
     }
 

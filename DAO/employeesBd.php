@@ -1,6 +1,6 @@
 <?php
 include_once "connection.php";
-include_once "../../model/Employees.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Employees.php";
 
 
 function search_employee() {
@@ -36,7 +36,7 @@ function register_employees($emp) {
         $sqlReg = " INSERT INTO vendedor (nome,CPF,email,telefone,tipo) Values (?,?,?,?,?)";
 
         $stmt = $PDO -> prepare($sqlReg);
-        $stmt -> execute([$emp->getName(), $emp->setCpf(), $emp->getEmail(), $emp->getTel(), $emp->getType()]);
+        $stmt -> execute([$emp->getName(), $emp->getCpf(), $emp->getEmail(), $emp->getTel(), $emp->getType()]);
 
         if($stmt) {
             return true;
