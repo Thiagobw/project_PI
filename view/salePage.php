@@ -2,6 +2,7 @@
 session_start();
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/productsBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Products.php";
 
 $productsList = search_products();
 
