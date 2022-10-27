@@ -192,7 +192,10 @@ $employeesList = search_employee();
                                             }?> </td>
 
                                             <td> <?php echo $vendedor->getEmail();?> </td>
-                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
+                                            <td>
+                                                <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
+                                                <a class="btn btn-plus-options" href="../../control/employees_delete.php?id=<?php echo $vendedor -> getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
+                                            </td>
                                         </tr>
                                      
                                      <?php }} ?>
