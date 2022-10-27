@@ -182,9 +182,7 @@ $providersList = search_provider();
                                     } else {
 
                                     foreach ($providersList as $prov) {
-                                    
                                     ?>
-                                    
                                     <tr>
                                             <td> <?php echo $prov -> getName();?></td>
                                             <td> <?php echo $prov -> getCnpj(); ?></td>

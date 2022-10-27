@@ -42,7 +42,7 @@
 
                     <div class="row" id="contentRegisterProv">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formProviders" action="" method="POST">
+                            <form class="input-group center" id="formProviders" action="     " method="POST">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <input class=" form-control input-user" type="text" placeholder="Nome do fornecedor" id="nameProviders" maxlength="100" name="nomeProviders">
                                 </div>
