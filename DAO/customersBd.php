@@ -60,7 +60,7 @@ function delet_customers ($cust) {
         $sqlDel = "DELETE FROM cliente WHERE id_cliente=?";
 
         $stmt = $PDO -> prepare($sqlDel);
-        $stmt -> execute([$cust->getId]);
+        $stmt -> execute([$cust->getId()]);
         
         if($stmt) {
             return true;
