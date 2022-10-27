@@ -3,6 +3,7 @@ session_start();
 include_once ('../../control/checkAuth.php');
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/Productsbd.php";
 
+
 $productsList = search_products();
 
 
