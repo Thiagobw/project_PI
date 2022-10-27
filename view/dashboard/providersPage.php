@@ -3,6 +3,7 @@ session_start();
 include_once ('../../control/checkAuth.php');
 include_once ('../../DAO/providersDB.php');
 
+
 $providersList = search_provider();
 
 

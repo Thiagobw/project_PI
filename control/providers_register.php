@@ -1,24 +1,24 @@
 <?php
 
-include_once "../connection.php";
-include_once "../DAO/providersBd.php";
-include_once "../Banco Sql/project.sql";
+include_once "../DAO/connection.php";
+include_once "../DAO/providersDB.php";
 
-$name = $_POST['name'];
-$email = $_POST['email'];
-$cnpj = $_POST['cnpj'];
-$tell = $_POST['tell'];
 
-$cust = new Provider();
+$name = $_POST['nomeProviders'];
+$email = $_POST['emailProviders'];
+$cnpj = $_POST['cnpjProviders'];
+$tell = $_POST['tellProviders'];
+
+$cust = new Providers();
 
 $cust->setName($name);
-$cust->setCpf($cnpj);
+$cust->setCnpj($cnpj);
 $cust->setEmail($email);
 $cust->setTell($tell);
 
-$result_regist = register_providers($cust);
+$result_regist = search_provider($cust);
 if ($result_regist == true) {
-    header('Location: ../view/dashboard/providersPage.php');
+    header('Location: ../view/dashboard/providersDB.php');
 } else {
     echo "falha ao cadastrar";
 }
