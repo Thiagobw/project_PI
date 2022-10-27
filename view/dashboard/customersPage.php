@@ -187,9 +187,12 @@ $customersList = search_customers();
                                                 <td> <?php echo $cliente -> getName(); ?></td>
                                                 <td> <?php echo $cliente -> getCpf();?> </td>
                                                 <td> <?php echo $cliente -> getEmail();?> </td>
-                                                <td><a class="btn btn-plus-options" href="../../control/customers_delete.php?id=<?php echo $cliente -> getId(); ?>"><i class="fa-solid fa-plus">delete</i></a></td>
+                                                <td class="">
+                                                    <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
+                                                    <a class="btn btn-plus-options" href="../../control/customers_delete.php?id=<?php echo $cliente -> getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
+                                                    <a class="btn btn-plus-options" href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                                                </td>
                                             </tr>
-
                                         <?php }} ?>
                                     </tbody>
                                 </table>
