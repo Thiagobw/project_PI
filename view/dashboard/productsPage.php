@@ -188,11 +188,14 @@ $productsList = search_products();
                                     ?>
                                      
                                         <tr>
-                                            <td> <?php echo $prod -> getCodigo();?></td>
                                             <td> <?php echo $prod -> getName(); ?></td>
                                             <td> <?php echo $prod -> getAmount();?> </td>
                                             <td> <?php echo $prod -> getPrice();?> </td>
-                                            <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
+                                            <td class="">
+                                                <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
+                                                <a class="btn btn-plus-options" href="../../control/products_delete.php?id=<?php echo $prod -> getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
+                                                <a class="btn btn-plus-options" href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                                            </td>
                                         </tr>
                                      
                                      <?php }} ?>

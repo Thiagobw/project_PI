@@ -14,7 +14,7 @@ function search_products() {
 
     foreach($result as $registro){
         $produto = new Products();
-        $produto->setCodigo($registro["id_produtos"]);
+        $produto->setId($registro["id_produtos"]);
         $produto->setName($registro["nome_produto"]);
         $produto->setAmount($registro["quantidade"]);
         $produto->setPrice($registro["preco_produto"]);
@@ -38,6 +38,29 @@ function register_products($prod) {
         $stmt = $PDO -> prepare($sqlReg);
         $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getAmount(), 2]);
 
+        if($stmt) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    } catch (Exception $e) {
+
+        echo $e->getMessage();
+        return false;
+    }
+}
+function delet_product ($prod) {
+
+    try {
+        $PDO = connect();
+
+        $sqlDel = "DELETE FROM produtos WHERE id_produtos=?";
+
+        $stmt = $PDO -> prepare($sqlDel);
+        $stmt -> execute([$prod->getId()]);
+        
         if($stmt) {
             return true;
         }

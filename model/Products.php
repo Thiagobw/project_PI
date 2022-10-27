@@ -7,7 +7,7 @@ class Products {
     private $productCharacteristics;
     private $manufacturer; /** fabricante */
     private $price;
-    private $code;
+    private $id;
 
     public function setName(string $name) {
         $this -> name = $name;
@@ -57,11 +57,11 @@ class Products {
     }
     
     
-    public function setCodigo (string $code) {
-        $this -> code = $code;
+    public function setId (int $id) {
+        $this -> id = $id;
     }
-    public function getCodigo() {
-        return $this -> code;
+    public function getId() {
+        return $this -> id;
     }
 
 }
