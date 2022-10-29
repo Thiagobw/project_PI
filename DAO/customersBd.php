@@ -76,7 +76,7 @@ function delet_customers ($cust) {
     }
 }
 
-function getCustomers($id){
+function getCustomers($id) {
     $connection = connect();
 
     $stmt = $connection -> prepare("SELECT * FROM cliente");
@@ -94,8 +94,5 @@ function getCustomers($id){
 
         
     }
-    return $cliente
+    return $cliente;
 }
-
-
-?>
