@@ -150,18 +150,18 @@ if(checkAuth()) {
                         <h5 class="text-center mb-3">nos envie um email!</h5>
                     </div>
                     <div class="col-12">
-                        <form class="input-group center" action="">
+                        <form class="input-group center" action="../control/submit_email/send_email_contact.php" method="POST">
                             <div class="col-12 col-xl-10 mt-2">
-                                <input class="form-control input-msgm" type="text" placeholder="nome">
+                                <input class="form-control input-msgm" type="text" placeholder="nome" name="nameContact">
                             </div>
                             <div class="col-12 col-xl-10 mt-4">
-                                <input class="form-control input-msgm" type="text" placeholder="email">
+                                <input class="form-control input-msgm" type="text" placeholder="email" name="emailContact">
                             </div>
                             <div class="col-12 col-xl-10 mt-4">
-                                <textarea class="form-control input-msgm" name="" id=""placeholder="escreva a mensagem"></textarea>
+                                <textarea class="form-control input-msgm" placeholder="escreva a mensagem" name="msgContact"></textarea>
                             </div>
                             <div class="col-12 col-xl-7 mt-3 mb-4">
-                                <input class="btn btn-primary form-control" type="submit" value="enviar">
+                                <input class="btn btn-primary form-control" type="submit" name="submitContact" value="enviar">
                             </div>
                         </form>
                     </div>
