@@ -213,7 +213,7 @@
 
 
 
-function getCustumerData(idCust){
+function getCustomerData(idCust){
     $.get( "customers_select.php?id="+idCust, function( data ) {
         
         $( "idCustomers" ).attr('value', data['nome']);
