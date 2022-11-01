@@ -1,10 +1,10 @@
 <?php
 
 class Providers {
-    private string $name;
-    private string $cnpj;
-    private string $email;
-    private string $tell;
+    private $name;
+    private $cnpj;
+    private $email;
+    private $tell;
 
     public function setName(string $name) {
         $this -> name = $name;
