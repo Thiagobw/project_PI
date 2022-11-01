@@ -52,6 +52,7 @@ function register_customers($cust) {
     }
 }
 
+// deletion
 function delet_customers ($cust) {
 
     try {
@@ -76,23 +77,24 @@ function delet_customers ($cust) {
     }
 }
 
-function getCustomers($id) {
+
+function getCustomer($id) {
     $connection = connect();
 
-    $stmt = $connection -> prepare("SELECT * FROM cliente");
-    $stmt -> execute();
+    $stmt = $connection -> prepare("SELECT * FROM cliente WHERE id_cliente=?");
+    $stmt -> execute([$id]);
 
     $result = $stmt -> fetchAll();
     $result_cliente = array();
-    $cliente = new Customers();
+    $cust = new Customers();
     foreach($result as $registro) {
         
-        $cliente -> setId($registro["id_cliente"]);
-        $cliente -> setEmail($registro["email"]);
-        $cliente -> setName($registro["nome"]);
-        $cliente -> setCpf($registro["CPF"]);
+        $cust -> setId($registro["id_cliente"]);
+        $cust -> setEmail($registro["email"]);
+        $cust -> setName($registro["nome"]);
+        $cust -> setCpf($registro["CPF"]);
 
         
     }
-    return $cliente;
+    return $cust;
 }
