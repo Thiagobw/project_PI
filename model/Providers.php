@@ -6,6 +6,14 @@ class Providers {
     private $email;
     private $tell;
 
+    public function setId(int $id) {
+        $this -> id = $id;
+    }
+    
+    public function getId () {
+        return $this -> id;
+    }
+
     public function setName(string $name) {
         $this -> name = $name;
     }
