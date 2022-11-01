@@ -1,10 +1,19 @@
 <?php
 
 class Providers {
+    private int $id;
     private string $name;
     private string $cnpj;
     private string $email;
     private string $tell;
+
+    public function setId(int $id) {
+        $this -> id = $id;
+    }
+    
+    public function getId () {
+        return $this -> id;
+    }
 
     public function setName(string $name) {
         $this -> name = $name;

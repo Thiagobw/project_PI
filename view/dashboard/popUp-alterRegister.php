@@ -16,7 +16,7 @@
 
                     <div class="row" id="contentAlterCust">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formCustomers" action="../../control/customers_registration.php" method="POST">
+                            <form class="input-group center" id="formCustomers">
                             <input class=" form-control input-user" type="hidden" id="idCustomers" name="idCustomers">
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
@@ -44,7 +44,7 @@
 
                     <div class="row" id="contentAlterProv">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formProviders" action="../../control/providers_registration.php" method="POST">
+                            <form class="input-group center" id="formProviders">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <input class=" form-control input-user" type="text" placeholder="Nome do fornecedor" id="nameProviders" name="nameProviders" maxlength="100">
                                 </div>
@@ -70,7 +70,7 @@
 
                     <div class="row" id="contentAlterProd">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formProd" action="../../control/products_registration.php" method="POST">
+                            <form class="input-group center" id="formProd">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <div class="row center">
                                         <label class="col-12 col-sm-10 col-md-11 col-lg-8 selectFileImgProduct center" for="imgProduct">

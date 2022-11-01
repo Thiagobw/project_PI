@@ -185,7 +185,11 @@ $providersList = search_provider();
                                     <tr>
                                         <td scope="row"><?php echo $prov -> getName(); ?></td>
                                         <td scope="row"><?php echo $prov -> getCnpj(); ?></td>
-                                        <td><a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a></td>
+                                        <td>
+                                            <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
+                                            <a class="btn btn-plus-options" href="../../control/providers_delete.php?id=<?php echo $prov->getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
+                                            <a class="btn btn-plus-options" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod" href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                                        </td>
                                     </tr>
 
                                     <?php }} ?>

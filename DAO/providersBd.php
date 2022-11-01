@@ -50,3 +50,28 @@ function register_providers($prov) {
         return false;
     }
 }
+
+
+function delet_provider($prov) {
+
+    try {
+        $PDO = connect();
+
+        $sqlDel = "DELETE FROM produtos WHERE id_produtos=?";
+
+        $stmt = $PDO -> prepare($sqlDel);
+        $stmt -> execute([$prov->getId()]);
+        
+        if($stmt) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    } catch (Exception $e) {
+
+        echo $e->getMessage();
+        return false;
+    }
+}
