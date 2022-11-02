@@ -194,7 +194,7 @@ $productsList = search_products();
                                             <td class="">
                                                 <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
                                                 <a class="btn btn-plus-options" href="../../control/products_delete.php?id=<?php echo $prod ->getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
-                                                <a class="btn btn-plus-options" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod" href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <a class="btn btn-plus-options" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="abrir_cust()"><i class="fa-solid fa-pen-to-square"></i></a>
                                             </td>
                                         </tr>
                                      
@@ -265,10 +265,6 @@ $productsList = search_products();
         });
         inputImage.addEventListener('change', (e) => {
             
-        /*if(imgselected.files.length <= 0) 
-            console.log("entra");
-            return;
-        */
         let reader = new FileReader();
         reader.onload = () => {
             imgselected.src = reader.result;
@@ -280,6 +276,14 @@ $productsList = search_products();
     </script>
 
 <script>
+
+    function abrir_cust () {
+        const contentAlter = document.querySelector('#contentAlterCust');
+        
+        contentAlter.style.display = 'flex';
+    }
+
+    /*
     var btn = document.querySelector('#btnAlterProd');
 
      btn.addEventListener('click', function() {
@@ -302,7 +306,7 @@ $productsList = search_products();
         ttl3.style.display = 'none';
         ttl4.style.display = "none";
         })
-
+        */
 </script>
 
 </body>

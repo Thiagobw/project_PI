@@ -1,5 +1,5 @@
 <div class="modal-dialog">
-    <div class="modal fade" id="PopUp-register-cli-prod" aria-hidden="true" tabindex="-1">
+    <div class="modal fade" id="PopUp_alter" aria-hidden="true" tabindex="-1">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
@@ -14,7 +14,7 @@
     
                 <div class="modal-body">
 
-                    <div class="row" id="contentAlterCust">
+                    <div class="row" id="contentAlterCust" style="display: none;">
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formCustomers">
                             <input class=" form-control input-user" type="hidden" id="idCustomers" name="idCustomers">
@@ -36,13 +36,13 @@
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formCustomers" type="submit" name="submitCustomers" value="Cadastrar Cliente">
+                                    <input class="btn btn-primary w-100" form="formCustomers" type="submit" name="submitCustomers" value="Atualizar Cliente">
                                 </div>
                             </form>
                         </div>
                     </div>
 
-                    <div class="row" id="contentAlterProv">
+                    <div class="row" id="contentAlterProv" style="display: none;">
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formProviders">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
@@ -68,7 +68,7 @@
                         </div>
                     </div>
 
-                    <div class="row" id="contentAlterProd">
+                    <div class="row" id="contentAlterProd" style="display: none;">
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formProd">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
@@ -101,7 +101,7 @@
                         </div>
                     </div>
 
-                    <div class="row" id="contentAlterEploy">
+                    <div class="row" id="contentAlterEploy" style="display: none;">
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formAlterEmployees">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
