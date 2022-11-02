@@ -278,7 +278,7 @@ $productsList = search_products();
 <script>
 
     function abrir_cust () {
-        const contentAlter = document.querySelector('#contentAlterCust');
+        const contentAlter = document.querySelector('#contentAlterProd');
         
         contentAlter.style.display = 'flex';
     }
@@ -286,26 +286,16 @@ $productsList = search_products();
     /*
     var btn = document.querySelector('#btnAlterProd');
 
-     btn.addEventListener('click', function() {
             
         const contentAlter1 = document.querySelector('#contentAlterProv');
         const contentAlter2 = document.querySelector('#contentAlterCust');
         const contentAlter3 = document.querySelector('#contentAlterProd');
         const contentAlter4 = document.querySelector('#contentAlterEploy');
-        
-        contentAlter1.style.display = 'none';
-        contentAlter3.style.display = 'none';
-        contentAlter4.style.display = 'none';
 
         const ttl1 = document.querySelector('#ttl-providers');
         const ttl2 = document.querySelector('#ttl-customers');
         const ttl3 = document.querySelector('#ttl-products');
         const ttl4 = document.querySelector('#ttl-employees');
-
-        ttl1.style.display = 'none';
-        ttl3.style.display = 'none';
-        ttl4.style.display = "none";
-        })
         */
 </script>
 
