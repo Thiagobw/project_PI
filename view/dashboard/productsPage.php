@@ -282,21 +282,6 @@ $productsList = search_products();
         
         contentAlter.style.display = 'flex';
     }
-
-    /*
-    var btn = document.querySelector('#btnAlterProd');
-
-            
-        const contentAlter1 = document.querySelector('#contentAlterProv');
-        const contentAlter2 = document.querySelector('#contentAlterCust');
-        const contentAlter3 = document.querySelector('#contentAlterProd');
-        const contentAlter4 = document.querySelector('#contentAlterEploy');
-
-        const ttl1 = document.querySelector('#ttl-providers');
-        const ttl2 = document.querySelector('#ttl-customers');
-        const ttl3 = document.querySelector('#ttl-products');
-        const ttl4 = document.querySelector('#ttl-employees');
-        */
 </script>
 
 </body>
