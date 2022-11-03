@@ -216,9 +216,11 @@
 function getCustomerData(idCust) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/customers_select.php?id="+idCust, function( data ) {
-       
-        $( "idCustomersChange" ).attr('value', data['nome']);
-        $( "nameCustomersChange" ).attr('value', data['nome']);
+        $("idCustomerChange").attr('value', data['id']);
+        $( "changeNameCustomers" ).attr('value', data['nome']);
+        $( "changeCpfCustomers" ).attr('value', data['nome']);
+        $("changeEmailCustomers").attr('value', data['email']);
+        $("changeTellCustomers").attr('value', data['tell']);
 
     });
 }
@@ -227,8 +229,11 @@ function getEmployeerData(idEmp) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/employees_select.php?id="+idEmp, function( data ) {
        
-        $( "idCustomersChange" ).attr('value', data['nome']); // mudar os nomes do imput ainda...
-        $( "nameCustomersChange" ).attr('value', data['nome']);
+        $("idCustomerChange").attr('value', data['id']);
+        $( "changeNameCustomers" ).attr('value', data['nome']);
+        $( "changeCpfCustomers" ).attr('value', data['nome']);
+        $("changeEmailCustomers").attr('value', data['email']);
+        $("changeTellCustomers").attr('value', data['tell']);
 
     });
 }

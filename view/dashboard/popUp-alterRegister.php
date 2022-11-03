@@ -17,7 +17,7 @@
                     <div class="row" id="contentAlterCust">
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formCustomers">
-                            <input class=" form-control input-user" type="hidden" id="idCustomers" name="idCustomers">
+                            <input class=" form-control input-user" type="hidden" id="idCustomerChange" name="idCustomerChange">
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <input class=" form-control input-user" type="text" placeholder="Nome do cliente" id="changeNameCustomers" name="changeNameCustomers" maxlength="100">
@@ -105,23 +105,23 @@
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formAlterEmployees">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome do Funcionario" id="nameEmployees" name="nameEmployees" maxlength="100">
+                                    <input class=" form-control input-user" type="text" placeholder="Nome do Funcionario" id="changeNameEmployees" name="changeNameEmployees" maxlength="100">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="CPF" id="cpfEmployees"  name="cpfEmployees" maxlength="14" autocomplete="off">
+                                    <input class=" form-control input-user" type="text" placeholder="CPF" id="changeCpfEmployees"  name="changeCpfEmployees" maxlength="14" autocomplete="off">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="email" placeholder="Email" id="emailEmployees"  name="emailEmployees" maxlength="40">
+                                    <input class=" form-control input-user" type="email" placeholder="Email" id="changeEmailEmployees"  name="changeEmailEmployees" maxlength="40">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Telefone" id="tellEmployees"  name="tellEmployees" maxlength="15">
+                                    <input class=" form-control input-user" type="text" placeholder="Telefone" id="changeTellEmployees"  name="changeTellEmployees" maxlength="15">
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formAlterEmployees" type="submit" name="submitEmployees" value="Atualizar">
+                                    <input class="btn btn-primary w-100" form="formAlterEmployees" type="submit" name="submitChangeEmployees" value="Atualizar">
                                 </div>
                             </form>
                         </div>
