@@ -235,7 +235,7 @@ function getEmployeerData(idEmp) {
 
 function getProductData(idProd) {
     BASE_URL = '/project_PI';
-    $.get( BASE_URL+"/control/customers_select.php?id="+idProd, function( data ) {
+    $.get( BASE_URL+"/control/products_select.php?id="+idProd, function( data ) {
        
         $( "idCustomersChange" ).attr('value', data['nome']); // mudar os nomes do imput ainda...
         $( "nameCustomersChange" ).attr('value', data['nome']);
@@ -244,7 +244,7 @@ function getProductData(idProd) {
 
 function getProviderData(idProv) {
     BASE_URL = '/project_PI';
-    $.get( BASE_URL+"/control/customers_select.php?id="+idProv, function( data ) {
+    $.get( BASE_URL+"/control/providers_select.php?id="+idProv, function( data ) {
        
         $( "idCustomersChange" ).attr('value', data['nome']); // mudar os nomes do imput ainda...
         $( "nameCustomersChange" ).attr('value', data['nome']);

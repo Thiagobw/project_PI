@@ -75,3 +75,25 @@ function delet_provider($prov) {
         return false;
     }
 }
+
+
+function getProvider($id) {
+    $connection = connect();
+
+    $stmt = $connection -> prepare("SELECT * FROM fornecedor WHERE id_fornecedor=?");
+    $stmt -> execute([$id]);
+
+    $result = $stmt -> fetchAll();
+    $result_cliente = array();
+    $cust = new Customers();
+    foreach($result as $registro) {
+        
+        $cust -> setId($registro["id_fornecedor"]);
+        $cust -> setEmail($registro["email"]);
+        $cust -> setName($registro["nome"]);
+        $cust -> setCpf($registro["CPF"]);
+
+        
+    }
+    return $cust;
+}
