@@ -166,6 +166,8 @@ $providersList = search_provider();
                                             <th scope="col">Nome</th>
                                             <th scope="col">CNPJ</th>
                                             <th scope="col">Email</th>
+                                            <th scope="col">Telefone</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -189,6 +191,8 @@ $providersList = search_provider();
                                         <td scope="row"><?php echo $prov -> getName(); ?></td>
                                         <td scope="row"><?php echo $prov -> getCnpj(); ?></td>
                                         <td scope="row"><?php echo $prov -> getEmail(); ?></td>
+                                        <td scope="row"><?php echo $prov -> getTelll(); ?></td>
+
 
                                         <td>
                                             <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
