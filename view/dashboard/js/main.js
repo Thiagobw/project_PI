@@ -213,11 +213,12 @@
 
 
 
-function getCustomerData(idCust){
-    $.get( "customers_select.php?id="+idCust, function( data ) {
-        
-        $( "idCustomers" ).attr('value', data['nome']);
-        $( "nameCustomers" ).attr('value', data['nome']);
+function getCustomerData(idCust) {
+    BASE_URL = '/project_PI';
+    $.get( BASE_URL+"/control/customers_select.php?id="+idCust, function( data ) {
+       
+        $( "idCustomersChange" ).attr('value', data['nome']);
+        $( "nameCustomersChange" ).attr('value', data['nome']);
 
     });
 }

@@ -405,3 +405,10 @@
         height: 280px;
     }
 }
+
+
+/* aeration form */
+#ttl-customers, #ttl-providers, #ttl-products, #ttl-employees, 
+#contentAlterCust, #contentAlterProv, #contentAlterProd, #contentAlterEploy {
+    display: none;
+}
