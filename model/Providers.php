@@ -5,14 +5,7 @@ class Providers {
     private $cnpj;
     private $email;
     private $tell;
-
-    public function setId(int $id) {
-        $this -> id = $id;
-    }
-    
-    public function getId () {
-        return $this -> id;
-    }
+    private $id;
 
     public function setName(string $name) {
         $this -> name = $name;
@@ -44,5 +37,12 @@ class Providers {
 
     public function getTell () {
         return $this -> tell;
+    }
+    public function setId(int $id) {
+        $this -> id = $id;
+    }
+    
+    public function getId () {
+        return $this -> id;
     }
 }

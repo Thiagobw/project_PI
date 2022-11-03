@@ -165,7 +165,7 @@ $providersList = search_provider();
                                         <tr>
                                             <th scope="col">Nome</th>
                                             <th scope="col">CNPJ</th>
-                                            <th scope="col"></th>
+                                            <th scope="col">Email</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -188,6 +188,8 @@ $providersList = search_provider();
                                     <tr>
                                         <td scope="row"><?php echo $prov -> getName(); ?></td>
                                         <td scope="row"><?php echo $prov -> getCnpj(); ?></td>
+                                        <td scope="row"><?php echo $prov -> getEmail(); ?></td>
+
                                         <td>
                                             <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
                                             <a class="btn btn-plus-options" href="../../control/providers_delete.php?id=<?php echo $prov->getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
