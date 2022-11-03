@@ -137,8 +137,11 @@ $providersList = search_provider();
                 </div>
             </nav>
             <!-- Navbar End -->
+
+            <!-- Importing popup file -->
             <?php
-                include ("../dashboard/popUp-register.php");
+                require_once "popUp-register.php";
+                include_once "popUp-alterRegister.php";
             ?>
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
@@ -152,7 +155,7 @@ $providersList = search_provider();
                                         <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Fornecedores</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
-                                        <button type="button" data-bs-toggle="modal" id="btnRegisterProv" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-handshake-angle"></i> +</button>
+                                        <button type="button" data-bs-toggle="modal" id="btnRegisterProv" data-bs-target="#PopUp_register"><i class="fa-solid fa-handshake-angle"></i> +</button>
                                     </div>
                                 </div>
                             </div>
@@ -188,7 +191,7 @@ $providersList = search_provider();
                                         <td>
                                             <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
                                             <a class="btn btn-plus-options" href="../../control/providers_delete.php?id=<?php echo $prov->getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
-                                            <a class="btn btn-plus-options" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod" href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                                            <a class="btn btn-plus-options" id="btnAlterProv" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href=""><i class="fa-solid fa-pen-to-square"></i></a>
                                         </td>
                                     </tr>
 
@@ -224,38 +227,28 @@ $providersList = search_provider();
     <script src="js/main.js"></script>
 
     <script>
-        var btnRegisterProviders = document.querySelector('');
-        var ttl1 = document.querySelector('#ttl-providers');
-        var ttl2 = document.querySelector('#ttl-customers');
-        var ttl3 = document.querySelector('#ttl-products');
-        var ttl4 = document.querySelector('#ttl-employees');
+        var btnR = document.querySelector('#btnRegisterProv');
 
-        btnRegisterProviders.addEventListener('click', function() {
+        btnR.addEventListener('click', function() {
 
+            const ttlR = document.querySelector('#ttl-providers');
+            ttlR.style.display = 'flex';
+
+            const contentR = document.querySelector('#contentRegisterProv');
+            contentR.style.display = 'flex';
         })
     </script>
-
-<script>
-            var btn = document.querySelector('#btnRegisterProv');
-
-            btn.addEventListener('click', function() {
+    
+    <script>
+        var btn = document.querySelector('#btnAlterProv');
+        
+        btn.addEventListener('click', function() {
+            const ttl = document.querySelector('#ttlProv');
+            ttl.style.display = 'flex';
             
-            const contentRegister1 = document.querySelector('#contentRegisterProv');
-            const contentRegister2 = document.querySelector('#contentRegisterCust');
-            const contentRegister3 = document.querySelector('#contentRegisterProd');
-            const contentRegister4 = document.querySelector('#contentRegisterEploy');
-            contentRegister2.style.display = 'none';
-            contentRegister3.style.display = 'none';
-            contentRegister4.style.display = 'none';
+            const content = document.querySelector('#contentAlterProv');
+            content.style.display = 'flex';
 
-            const ttl1 = document.querySelector('#ttl-providers');
-            const ttl2 = document.querySelector('#ttl-customers');
-            const ttl3 = document.querySelector('#ttl-products');
-            const ttl4 = document.querySelector('#ttl-employees');
-
-            ttl2.style.display = 'none';
-            ttl3.style.display = 'none';
-            ttl4.style.display = "none";
         })
     </script>
 </body>

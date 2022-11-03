@@ -382,6 +382,10 @@
 }
 
 /* form registration products*/
+#ttl-customers, #ttl-providers, #ttl-products, #ttl-employees, 
+#contentRegisterCust, #contentRegisterProv, #contentRegisterProd, #contentRegisterEploy {
+    display: none;
+}
 .selectFileImgProduct {
     background-color: var(--dark);
     color: var(--light);
@@ -408,7 +412,7 @@
 
 
 /* aeration form */
-#ttl-customers, #ttl-providers, #ttl-products, #ttl-employees, 
+#ttlCust, #ttlProv, #ttlProd, #ttlEmploy,
 #contentAlterCust, #contentAlterProv, #contentAlterProd, #contentAlterEploy {
     display: none;
 }

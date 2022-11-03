@@ -141,7 +141,8 @@ $productsList = search_products();
 
             <!-- Importing popup file -->
             <?php
-                require_once "../dashboard/popUp-register.php";
+                require_once "popUp-register.php";
+                include_once "popUp-alterRegister.php";
             ?>
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
@@ -155,7 +156,7 @@ $productsList = search_products();
                                         <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Produtos</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
-                                        <button type="button" id="btnRegisterProd" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-gift"></i> +</button>
+                                        <button type="button" id="btnRegisterProd" data-bs-toggle="modal" data-bs-target="#PopUp_register"><i class="fa-solid fa-gift"></i> +</button>
                                     </div>
                                 </div>
                             </div>
@@ -194,7 +195,7 @@ $productsList = search_products();
                                             <td class="">
                                                 <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
                                                 <a class="btn btn-plus-options" href="../../control/products_delete.php?id=<?php echo $prod ->getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
-                                                <a class="btn btn-plus-options" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="abrir_cust()"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <a class="btn btn-plus-options" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href=""><i class="fa-solid fa-pen-to-square"></i></a>
                                             </td>
                                         </tr>
                                      
@@ -235,26 +236,25 @@ $productsList = search_products();
             var btn = document.querySelector('#btnRegisterProd');
 
             btn.addEventListener('click', function() {
-            
-            const contentRegister1 = document.querySelector('#contentRegisterProv');
-            const contentRegister2 = document.querySelector('#contentRegisterCust');
-            const contentRegister3 = document.querySelector('#contentRegisterProd');
-            const contentRegister4 = document.querySelector('#contentRegisterEploy');
-            contentRegister1.style.display = 'none';
-            contentRegister2.style.display = 'none';
-            contentRegister4.style.display = 'none';
 
+            const contentR = document.querySelector('#contentRegisterProd');
+            contentR.style.display = 'flex';
 
-            const ttl1 = document.querySelector('#ttl-providers');
-            const ttl2 = document.querySelector('#ttl-customers');
-            const ttl3 = document.querySelector('#ttl-products');
-            const ttl4 = document.querySelector('#ttl-employees');
-
-            ttl1.style.display = 'none';
-            ttl2.style.display = 'none';
-            ttl4.style.display = 'none';
+            const ttlR = document.querySelector('#ttl-products');
+            ttlR.style.display = 'flex';
         })
     </script>
+
+<script>
+    var btn = document.querySelector('#btnAlterProd');
+    btn.addEventListener('click', function() {
+        const ttl = document.querySelector('#ttlProd');
+        ttl.style.display = 'flex';
+        
+        const content = document.querySelector('#contentAlterProd');
+        content.style.display = 'flex';
+    })
+</script>
 
     <script>
         let imgselected = document.querySelector('#imgSelected');
@@ -274,15 +274,5 @@ $productsList = search_products();
         reader.readAsDataURL(inputImage.files[0]);
         })
     </script>
-
-<script>
-
-    function abrir_cust () {
-        const contentAlter = document.querySelector('#contentAlterProd');
-        
-        contentAlter.style.display = 'flex';
-    }
-</script>
-
 </body>
 </html>

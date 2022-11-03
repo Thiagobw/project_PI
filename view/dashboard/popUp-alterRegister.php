@@ -3,10 +3,10 @@
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="ttl-customers"> Atualizar Cliente </h5>
-                    <h5 class="modal-title" id="ttl-providers"> Atualizar Fornecedores </h5>
-                    <h5 class="modal-title" id="ttl-products"> Atualizar Produtos </h5>
-                    <h5 class="modal-title" id="ttl-employees"> Atualizar Funcionarios</h5>
+                    <h5 class="modal-title" id="ttlCust"> Atualizar dados do Cliente </h5>
+                    <h5 class="modal-title" id="ttlProv"> Atualizar dados do Fornecedores </h5>
+                    <h5 class="modal-title" id="ttlProd"> Atualizar dados do Produtos </h5>
+                    <h5 class="modal-title" id="ttlEmploy"> Atualizar dados do Funcionarios </h5>
                     <button type="button" class="btn btn-danger btn-close" data-bs-dismiss="modal" aria-label="Close">
                     <i class="fa-solid fa-xmark"></i>
                     </button>
@@ -36,7 +36,7 @@
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formCustomers" type="submit" name="submitCustomers" value="Atualizar Cliente">
+                                    <input class="btn btn-primary w-100" form="formCustomers" type="submit" name="submitCustomers" value="Atualizar">
                                 </div>
                             </form>
                         </div>
@@ -62,7 +62,7 @@
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formProviders" type="submit" name="submitProviders" value="Cadastrar Fornecedor">
+                                    <input class="btn btn-primary w-100" form="formProviders" type="submit" name="submitProviders" value="Atualizar">
                                 </div>
                             </form>
                         </div>
@@ -95,7 +95,7 @@
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formProd" type="submit" name="submitProduct" value="Cadastrar Produto">
+                                    <input class="btn btn-primary w-100" form="formProd" type="submit" name="submitProduct" value="Atualizar">
                                 </div>
                             </form>
                         </div>
@@ -121,7 +121,7 @@
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formAlterEmployees" type="submit" name="submitEmployees" value="Cadastrar Fornecedor">
+                                    <input class="btn btn-primary w-100" form="formAlterEmployees" type="submit" name="submitEmployees" value="Atualizar">
                                 </div>
                             </form>
                         </div>

@@ -1,5 +1,5 @@
 <div class="modal-dialog">
-    <div class="modal fade" id="PopUp-register-cli-prod" aria-hidden="true" tabindex="-1">
+    <div class="modal fade" id="PopUp_register" aria-hidden="true" tabindex="-1">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">

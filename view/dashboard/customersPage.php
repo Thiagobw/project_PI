@@ -139,7 +139,8 @@ $customersList = search_customers();
 
             <!-- Importing popup file -->
             <?php
-                require_once "../dashboard/popUp-register.php";
+                require_once "popUp-register.php";
+                include_once "popUp-alterRegister.php";
             ?>
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
@@ -152,7 +153,7 @@ $customersList = search_customers();
                                         <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Clientes</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
-                                        <button type="button" id="btnRegisterCust" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod"><i class="fa-solid fa-user"></i> +</button>
+                                        <button type="button" id="btnRegisterCust" data-bs-toggle="modal" data-bs-target="#PopUp_register"><i class="fa-solid fa-user"></i> +</button>
                                     </div>
                                 </div>
                             </div>
@@ -179,7 +180,6 @@ $customersList = search_customers();
                                         <?php
 
                                         } else{
-                                            include_once "popUp-alterRegister.php";
 
                                         foreach($customersList as $cliente) {
 
@@ -191,7 +191,7 @@ $customersList = search_customers();
                                                 <td class="">
                                                     <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
                                                     <a class="btn btn-plus-options" href="../../control/customers_delete.php?id=<?php echo $cliente -> getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
-                                                    <a class="btn btn-plus-options" id="btnAlterCust" data-bs-toggle="modal" data-bs-target="#PopUp-register-cli-prod" href="#" onclick="getCustomerData(<?php echo $cliente -> getId(); ?>)"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                    <a class="btn btn-plus-options" id="btnAlterCust" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="#" onclick="getCustomerData(<?php echo $cliente -> getId(); ?>)"><i class="fa-solid fa-pen-to-square"></i></a>
                                                 </td>
                                             </tr>
 
@@ -225,55 +225,32 @@ $customersList = search_customers();
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
 
-    <script>
-        var btn = document.querySelector('#btnAlterCust');
+<script>
+    var btn = document.querySelector('#btnRegisterCust');
 
-        btn.addEventListener('click', function() {
-            
-            const contentRegister1 = document.querySelector('#contentRegisterProv');
-            const contentRegister2 = document.querySelector('#contentRegisterCust');
-            const contentRegister3 = document.querySelector('#contentRegisterProd');
-            const contentRegister4 = document.querySelector('#contentRegisterEploy');
-            contentRegister1.style.display = 'none';
-            contentRegister3.style.display = 'none';
-            contentRegister4.style.display = 'none';
+    btn.addEventListener('click', function() {
+        
+        const contentR = document.querySelector('#contentRegisterCust');
+        contentR.style.display = 'flex';
+        
+        const ttlR = document.querySelector('#ttl-customers');
+        ttlR.style.display = 'flex';
+    })
 
-            const ttl1 = document.querySelector('#ttl-providers');
-            const ttl2 = document.querySelector('#ttl-customers');
-            const ttl3 = document.querySelector('#ttl-products');
-            const ttl4 = document.querySelector('#ttl-employees');
+</script>
 
-            ttl1.style.display = 'none';
-            ttl3.style.display = 'none';
-            ttl4.style.display = "none";
-        })
-
-    </script>
-
-    <script>
+<script>
     var btn = document.querySelector('#btnAlterCust');
 
      btn.addEventListener('click', function() {
-            
-        const contentAlter1 = document.querySelector('#contentAlterProv');
-        const contentAlter2 = document.querySelector('#contentAlterCust');
-        const contentAlter3 = document.querySelector('#contentAlterProd');
-        const contentAlter4 = document.querySelector('#contentAlterEploy');
-        
-        contentAlter1.style.display = 'none';
-        contentAlter3.style.display = 'none';
-        contentAlter4.style.display = 'none';
 
-        const ttl1 = document.querySelector('#ttl-providers');
-        const ttl2 = document.querySelector('#ttl-customers');
-        const ttl3 = document.querySelector('#ttl-products');
-        const ttl4 = document.querySelector('#ttl-employees');
+        const ttl = document.querySelector('#ttlCust');
+        ttl.style.display = 'flex';
+        const content = document.querySelector('#contentAlterCust');
+        content.style.display = 'flex';
 
-        ttl1.style.display = 'none';
-        ttl3.style.display = 'none';
-        ttl4.style.display = "none";
-        })
+    })
 
-    </script>
+</script>
 </body>
 </html>
