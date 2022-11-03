@@ -107,7 +107,7 @@ function update_product($prod){
 
         $stmt = $PDO -> prepare($sqlReg);
         $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getAmount(), $prod->getId()]);
-       
+    
         if($stmt) {
             return true;
         }

@@ -111,7 +111,7 @@ function update_customers($cust){
 
         $stmt = $PDO -> prepare($sqlReg);
         $stmt -> execute([$cust->getName(), $cust->getCpf(), $cust->getEmail(), $cust->getTell(), $cust->getId()]);
-       
+    
         if($stmt) {
             return true;
         }
