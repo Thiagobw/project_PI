@@ -164,6 +164,7 @@ $customersList = search_customers();
                                             <th scope="col">Nome</th>
                                             <th scope="col">CPF</th>
                                             <th scope="col">Email</th>
+                                            <th scope="col">Telefone</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
@@ -188,6 +189,8 @@ $customersList = search_customers();
                                                 <td> <?php echo $cliente -> getName(); ?></td>
                                                 <td> <?php echo $cliente -> getCpf();?> </td>
                                                 <td> <?php echo $cliente -> getEmail();?> </td>
+                                                <td> <?php echo $cliente -> getTell();?> </td>
+
                                                 <td class="">
                                                     <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
                                                     <a class="btn btn-plus-options" href="../../control/customers_delete.php?id=<?php echo $cliente -> getId(); ?>"><i class="fa-solid fa-xmark"></i></a>

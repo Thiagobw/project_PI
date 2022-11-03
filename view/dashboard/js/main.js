@@ -216,6 +216,7 @@
 function getCustomerData(idCust) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/customers_select.php?id="+idCust, function( data ) {
+        data = JSON.parse(data);
         $("#idCustomerChange").val(data['id']);
         $("#changeNameCustomers" ).val(data['nome']);
         $("#changeCpfCustomers" ).val(data['cpf']);
@@ -228,7 +229,7 @@ function getCustomerData(idCust) {
 function getEmployeerData(idEmp) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/employees_select.php?id="+idEmp, function( data ) {
-       
+        data = JSON.parse(data);
         $("#idEmployeesChange").val(data['id']);
         $("#changeNameEmployees").val(data['nome']);
         $("#changeCpfEmployees").val(data['cpf']);
@@ -241,7 +242,7 @@ function getEmployeerData(idEmp) {
 function getProductData(idProd) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/products_select.php?id="+idProd, function( data ) {
-       
+        data = JSON.parse(data);
         $("#idProductChange").val(data['id']);
         $("#changeNameProduct").val(data['nome']);
         $("#changePriceProduct").val(data['preco']);
@@ -253,6 +254,7 @@ function getProductData(idProd) {
 function getProviderData(idProv) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/providers_select.php?id="+idProv, function( data ) {
+        data = JSON.parse(data);
         $("#idProviderChange").val(data['id']);
         $("#changeNameProviders").val(data['nome']);
         $("#changeCnpjProviders").val(data['cnpj']);

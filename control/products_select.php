@@ -1,6 +1,6 @@
 <?php
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/connection.php";
-include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/employeesBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/productsBd.php";
 
 
 $id = $_GET["id"];
