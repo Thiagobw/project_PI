@@ -216,11 +216,11 @@
 function getCustomerData(idCust) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/customers_select.php?id="+idCust, function( data ) {
-        $("idCustomerChange").attr('value', data['id']);
-        $( "changeNameCustomers" ).attr('value', data['nome']);
-        $( "changeCpfCustomers" ).attr('value', data['cpf']);
-        $("changeEmailCustomers").attr('value', data['email']);
-        $("changeTellCustomers").attr('value', data['tell']);
+        $("#idCustomerChange").val(data['id']);
+        $("#changeNameCustomers" ).val(data['nome']);
+        $("#changeCpfCustomers" ).val(data['cpf']);
+        $("#changeEmailCustomers").val(data['email']);
+        $("#changeTellCustomers").val(data['tell']);
 
     });
 }
@@ -229,11 +229,11 @@ function getEmployeerData(idEmp) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/employees_select.php?id="+idEmp, function( data ) {
        
-        $("idEmployeesChange").attr('value', data['id']);
-        $( "changeNameEmployees" ).attr('value', data['nome']);
-        $( "changeCpfEmployees" ).attr('value', data['cpf']);
-        $("changeEmailEmployees").attr('value', data['email']);
-        $("changeTellEmployees").attr('value', data['tell']);
+        $("#idEmployeesChange").val(data['id']);
+        $("#changeNameEmployees").val(data['nome']);
+        $("#changeCpfEmployees").val(data['cpf']);
+        $("#changeEmailEmployees").val(data['email']);
+        $("#changeTellEmployees").val(data['tell']);
 
     });
 }
@@ -242,10 +242,10 @@ function getProductData(idProd) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/products_select.php?id="+idProd, function( data ) {
        
-        $("idProductChange").attr('value', data['id']);
-        $( "changeNameProduct" ).attr('value', data['nome']);
-        $( "changePriceProduct" ).attr('value', data['preco']);
-        $("changeAmountProviders").attr('value', data['quantidade']);
+        $("#idProductChange").val(data['id']);
+        $("#changeNameProduct").val(data['nome']);
+        $("#changePriceProduct").val(data['preco']);
+        $("#changeAmountProviders").val(data['quantidade']);
 
     })
 }
@@ -253,11 +253,10 @@ function getProductData(idProd) {
 function getProviderData(idProv) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/providers_select.php?id="+idProv, function( data ) {
-       
-        $("idProviderChange").attr('value', data['id']);
-        $( "changeNameProviders" ).attr('value', data['nome']);
-        $( "changeCnpjProviders" ).attr('value', data['cnpj']);
-        $("changeEmailProviders").attr('value', data['email']);
-        $("changeTellProviders").attr('value', data['tell']);
+        $("#idProviderChange").val(data['id']);
+        $("#changeNameProviders").val(data['nome']);
+        $("#changeCnpjProviders").val(data['cnpj']);
+        $("#changeEmailProviders").val(data['email']);
+        $("#changeTellProviders").val(data['tell']);
     })
 }

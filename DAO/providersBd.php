@@ -86,15 +86,17 @@ function getProvider($id) {
 
     $result = $stmt -> fetchAll();
     $result_cliente = array();
-    $cust = new Customers();
+    $prov = new Providers();
     foreach($result as $registro) {
         
-        $cust -> setId($registro["id_fornecedor"]);
-        $cust -> setEmail($registro["email"]);
-        $cust -> setName($registro["nome"]);
-        $cust -> setCpf($registro["CPF"]);
+        $prov -> setId($registro["id_fornecedor"]);
+        $prov -> setEmail($registro["email"]);
+        $prov -> setName($registro["nome"]);
+        $prov -> setCnpj($registro["cnpj"]);
+        $prov -> setTell($registro["telefone"]);
+
 
         
     }
-    return $cust;
+    return $prov;
 }
