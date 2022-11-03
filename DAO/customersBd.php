@@ -18,6 +18,8 @@ function search_customers() {
         $cliente -> setEmail($registro["email"]);
         $cliente -> setName($registro["nome"]);
         $cliente -> setCpf($registro["CPF"]);
+        $cliente -> setTell($registro["telefone"]);
+
 
         $result_cliente[] = $cliente;
     }
@@ -98,4 +100,28 @@ function getCustomer($id) {
         
     }
     return $cust;
+}
+
+function update_customers($cust){
+    try{
+
+        $PDO = connect();
+
+        $sqlReg = " UPDATE cliente SET nome=?, CPF=?, email=?, telefone=?, WHERE id_cliente = ?";
+
+        $stmt = $PDO -> prepare($sqlReg);
+        $stmt -> execute([$cust->getName(), $cust->getCpf(), $cust->getEmail(), $cust->getTell(), $cust->getId()]);
+       
+        if($stmt) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    } catch (Exception $e) {
+
+        echo $e->getMessage();
+        return false;
+    }
 }

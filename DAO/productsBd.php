@@ -14,6 +14,7 @@ function search_products() {
 
     foreach($result as $registro){
         $produto = new Products();
+
         $produto->setId($registro["id_produtos"]);
         $produto->setName($registro["nome_produto"]);
         $produto->setAmount($registro["quantidade"]);
@@ -95,4 +96,28 @@ function getProduct($id) {
         
     }
     return $prod;
+}
+
+function update_product($prod){
+    try{
+
+        $PDO = connect();
+
+        $sqlReg = " UPDATE produtos SET nome_produto=?, preco_produto=?, quantidade=?, WHERE id_fornecedor = ?";
+
+        $stmt = $PDO -> prepare($sqlReg);
+        $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getAmount(), $prod->getId()]);
+       
+        if($stmt) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    } catch (Exception $e) {
+
+        echo $e->getMessage();
+        return false;
+    }
 }
