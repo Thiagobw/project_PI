@@ -20,23 +20,23 @@
                             <input class=" form-control input-user" type="hidden" id="idCustomers" name="idCustomers">
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome do cliente" id="nameCustomers" name="nameCustomers" maxlength="100">
+                                    <input class=" form-control input-user" type="text" placeholder="Nome do cliente" id="changeNameCustomers" name="changeNameCustomers" maxlength="100">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="CPF" id="cpfCustomers"  name="cpfCustomers" maxlength="14" autocomplete="off">
+                                    <input class=" form-control input-user" type="text" placeholder="CPF" id="changeCpfCustomers"  name="changeCpfCustomers" maxlength="14" autocomplete="off">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="email" placeholder="Email" id="emailCustomers"  name="emailCustomers" maxlength="40">
+                                    <input class=" form-control input-user" type="email" placeholder="Email" id="changeEmailCustomers"  name="changeEmailCustomers" maxlength="40">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="tel" placeholder="Telefone" id="tellCustomers"  name="tellCustomers" maxlength="15">
+                                    <input class=" form-control input-user" type="tel" placeholder="Telefone" id="changeTellCustomers"  name="changeTellCustomers" maxlength="15">
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formCustomers" type="submit" name="submitCustomers" value="Atualizar">
+                                    <input class="btn btn-primary w-100" form="formCustomers" type="submit" name="submitChangeCustomers" value="Atualizar">
                                 </div>
                             </form>
                         </div>
@@ -46,23 +46,23 @@
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formProviders">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome do fornecedor" id="nameProviders" name="nameProviders" maxlength="100">
+                                    <input class=" form-control input-user" type="text" placeholder="Nome do fornecedor" id="changeNameProviders" name="changeNameProviders" maxlength="100">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="CNPJ" id="cnpjProviders"  name="cnpjProviders" maxlength="18" autocomplete="off">
+                                    <input class=" form-control input-user" type="text" placeholder="CNPJ" id="changeCnpjProviders"  name="changeCnpjProviders" maxlength="18" autocomplete="off">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="email" placeholder="Email" id="emailProviders"  name="emailProviders" maxlength="40">
+                                    <input class=" form-control input-user" type="email" placeholder="Email" id="changeEmailProviders"  name="changeEmailProviders" maxlength="40">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="tel" placeholder="Telefone" id="tellProviders"  name="tellProviders" maxlength="15">
+                                    <input class=" form-control input-user" type="tel" placeholder="Telefone" id="changeTellProviders"  name="changeTellProviders" maxlength="15">
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formProviders" type="submit" name="submitProviders" value="Atualizar">
+                                    <input class="btn btn-primary w-100" form="formProviders" type="submit" name="submitChangeProviders" value="Atualizar">
                                 </div>
                             </form>
                         </div>
@@ -78,24 +78,24 @@
                                             <img src="" id="imgSelected" alt="image selected" style="display: none;">
                                         </label>
                                     </div>
-                                    <input class=" form-control input-user" type="file" accept="image/*" id="imgProduct" name="imgProduct" style="display: none;">
+                                    <input class=" form-control input-user" type="file" accept="image/*" id="imgProduct" name="changeImgProduct" style="display: none;">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome" id="nameProduct" name="nameProduct" maxlength="100">
+                                    <input class=" form-control input-user" type="text" placeholder="Nome" id="changeNameProduct" name="changeNameProduct" maxlength="100">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Preço" id="priceProduct"  name="priceProduct" maxlength="14" autocomplete="off">
+                                    <input class=" form-control input-user" type="text" placeholder="Preço" id="changePriceProduct"  name="changePriceProduct" maxlength="14" autocomplete="off">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
+                                    <input class=" form-control input-user" type="number" placeholder="quantidade" id="changeAmountProviders"  name="changeAmountProviders"
                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formProd" type="submit" name="submitProduct" value="Atualizar">
+                                    <input class="btn btn-primary w-100" form="formProd" type="submit" name="submitChangeProduct" value="Atualizar">
                                 </div>
                             </form>
                         </div>
