@@ -216,11 +216,12 @@
 function getCustomerData(idCust) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/customers_select.php?id="+idCust, function( data ) {
-        $("idCustomerChange").attr('value', data['id']);
-        $( "changeNameCustomers" ).attr('value', data['nome']);
-        $( "changeCpfCustomers" ).attr('value', data['nome']);
-        $("changeEmailCustomers").attr('value', data['email']);
-        $("changeTellCustomers").attr('value', data['tell']);
+        data = JSON.parse(data);
+        $("#idCustomerChange").val(data['id']);
+        $("#changeNameCustomers" ).val(data['nome']);
+        $("#changeCpfCustomers" ).val(data['cpf']);
+        $("#changeEmailCustomers").val(data['email']);
+        $("#changeTellCustomers").val(data['tell']);
 
     });
 }
@@ -228,12 +229,12 @@ function getCustomerData(idCust) {
 function getEmployeerData(idEmp) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/employees_select.php?id="+idEmp, function( data ) {
-       
-        $("idCustomerChange").attr('value', data['id']);
-        $( "changeNameCustomers" ).attr('value', data['nome']);
-        $( "changeCpfCustomers" ).attr('value', data['nome']);
-        $("changeEmailCustomers").attr('value', data['email']);
-        $("changeTellCustomers").attr('value', data['tell']);
+        data = JSON.parse(data);
+        $("#idEmployeesChange").val(data['id']);
+        $("#changeNameEmployees").val(data['nome']);
+        $("#changeCpfEmployees").val(data['cpf']);
+        $("#changeEmailEmployees").val(data['email']);
+        $("#changeTellEmployees").val(data['tell']);
 
     });
 }
@@ -241,17 +242,23 @@ function getEmployeerData(idEmp) {
 function getProductData(idProd) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/products_select.php?id="+idProd, function( data ) {
-       
-        $( "idCustomersChange" ).attr('value', data['nome']); // mudar os nomes do imput ainda...
-        $( "nameCustomersChange" ).attr('value', data['nome']);
+        data = JSON.parse(data);
+        $("#idProductChange").val(data['id']);
+        $("#changeNameProduct").val(data['nome']);
+        $("#changePriceProduct").val(data['preco']);
+        $("#changeAmountProviders").val(data['quantidade']);
+
     })
 }
 
 function getProviderData(idProv) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/providers_select.php?id="+idProv, function( data ) {
-       
-        $( "idCustomersChange" ).attr('value', data['nome']); // mudar os nomes do imput ainda...
-        $( "nameCustomersChange" ).attr('value', data['nome']);
+        data = JSON.parse(data);
+        $("#idProviderChange").val(data['id']);
+        $("#changeNameProviders").val(data['nome']);
+        $("#changeCnpjProviders").val(data['cnpj']);
+        $("#changeEmailProviders").val(data['email']);
+        $("#changeTellProviders").val(data['tell']);
     })
 }

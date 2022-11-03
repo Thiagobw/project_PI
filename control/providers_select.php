@@ -8,10 +8,10 @@ $id = $_GET["id"];
 $prov = getProvider($id);
 
 $result = array();
-$result['cpf'] = $customer -> getCpf();
-$result['tell'] = $customer -> getTell();
-$result['nome'] = $customer -> getName();
-$result['email'] = $customer -> getEmail();
-$result['id'] = $customer -> getId();
+$result['id'] = $prov -> getId();
+$result['nome'] = $prov -> getName();
+$result['cnpj'] = $prov -> getCnpj();
+$result['email'] = $prov -> getEmail();
+$result['tell'] = $prov -> getTell();
 
 echo json_encode($result);
