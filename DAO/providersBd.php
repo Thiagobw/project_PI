@@ -14,6 +14,7 @@ function search_provider () {
     foreach($result as $registro){
         $prov = new Providers();
 
+        $prov -> setId($registro['id_fornecedor']);
         $prov -> setName($registro['nome']);
         $prov -> setCnpj($registro['cnpj']);
         $prov -> setEmail($registro['email']);
@@ -57,7 +58,7 @@ function delet_provider($prov) {
     try {
         $PDO = connect();
 
-        $sqlDel = "DELETE FROM produtos WHERE id_produtos=?";
+        $sqlDel = "DELETE FROM fornecedor WHERE id_fornecedor=?";
 
         $stmt = $PDO -> prepare($sqlDel);
         $stmt -> execute([$prov->getId()]);

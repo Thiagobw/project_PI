@@ -6,12 +6,12 @@ $id = $_GET['id'];
 
 $prov = new Providers();
 
-$prov -> setId($id);
+$prov->setId($id);
 
 $result_delete = delet_provider($prov);
 
 if($result_delete == true) {
-    header('Location: ../view/dashboard/productsPage.php');
+    header('Location: ../view/dashboard/providersPage.php');
 }
 else {
     echo "falha ao deletar";
