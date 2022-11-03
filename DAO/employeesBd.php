@@ -98,3 +98,27 @@ function getEmploye($id) {
     }
     return $emp;
 }
+
+function update_employee($emp){
+    try{
+
+        $PDO = connect();
+
+        $sqlReg = " UPDATE vendodor SET nome=?, CPF=?, email=?, WHERE id_cliente = ?";
+
+        $stmt = $PDO -> prepare($sqlReg);
+        $stmt -> execute([$prov->getName(), $prov->getCpf(), $prov->getEmail(), $prov->getId()]);
+       
+        if($stmt) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    } catch (Exception $e) {
+
+        echo $e->getMessage();
+        return false;
+    }
+}

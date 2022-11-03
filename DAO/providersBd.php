@@ -76,3 +76,27 @@ function delet_provider($prov) {
         return false;
     }
 }
+
+function update_provider($prov){
+    try{
+
+        $PDO = connect();
+
+        $sqlReg = " UPDATE fornecedor SET nome=?, cnpj=?, email=?, telefone=? WHERE id_fornecedor = ?";
+
+        $stmt = $PDO -> prepare($sqlReg);
+        $stmt -> execute([$prov->getName(), $prov->getCnpj(), $prov->getEmail(), $prov->getTell(), $prov->getId()]);
+       
+        if($stmt) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    } catch (Exception $e) {
+
+        echo $e->getMessage();
+        return false;
+    }
+}
