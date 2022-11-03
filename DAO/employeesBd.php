@@ -108,7 +108,7 @@ function update_employee($emp){
 
         $stmt = $PDO -> prepare($sqlReg);
         $stmt -> execute([$prov->getName(), $prov->getCpf(), $prov->getEmail(), $prov->getId()]);
-       
+    
         if($stmt) {
             return true;
         }
