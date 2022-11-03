@@ -191,7 +191,7 @@ $providersList = search_provider();
                                         <td scope="row"><?php echo $prov -> getName(); ?></td>
                                         <td scope="row"><?php echo $prov -> getCnpj(); ?></td>
                                         <td scope="row"><?php echo $prov -> getEmail(); ?></td>
-                                        <td scope="row"><?php echo $prov -> getTelll(); ?></td>
+                                        <td scope="row"><?php echo $prov -> getTell(); ?></td>
 
 
                                         <td>
