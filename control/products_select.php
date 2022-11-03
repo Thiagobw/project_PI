@@ -9,7 +9,7 @@ $prod = getProduct($id);
 $result = array();
 $result['nome'] = $prod -> getName();
 $result['quantidade'] = $prod -> getAmount();
-$result['valor'] = $prod -> getPrice();
+$result['preco'] = $prod -> getPrice();
 $result['id'] = $prod -> getId();
 
 echo json_encode($result);

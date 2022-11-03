@@ -218,7 +218,7 @@ function getCustomerData(idCust) {
     $.get( BASE_URL+"/control/customers_select.php?id="+idCust, function( data ) {
         $("idCustomerChange").attr('value', data['id']);
         $( "changeNameCustomers" ).attr('value', data['nome']);
-        $( "changeCpfCustomers" ).attr('value', data['nome']);
+        $( "changeCpfCustomers" ).attr('value', data['cpf']);
         $("changeEmailCustomers").attr('value', data['email']);
         $("changeTellCustomers").attr('value', data['tell']);
 
@@ -229,11 +229,11 @@ function getEmployeerData(idEmp) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/employees_select.php?id="+idEmp, function( data ) {
        
-        $("idCustomerChange").attr('value', data['id']);
-        $( "changeNameCustomers" ).attr('value', data['nome']);
-        $( "changeCpfCustomers" ).attr('value', data['nome']);
-        $("changeEmailCustomers").attr('value', data['email']);
-        $("changeTellCustomers").attr('value', data['tell']);
+        $("idEmployeesChange").attr('value', data['id']);
+        $( "changeNameEmployees" ).attr('value', data['nome']);
+        $( "changeCpfEmployees" ).attr('value', data['cpf']);
+        $("changeEmailEmployees").attr('value', data['email']);
+        $("changeTellEmployees").attr('value', data['tell']);
 
     });
 }
@@ -242,8 +242,11 @@ function getProductData(idProd) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/products_select.php?id="+idProd, function( data ) {
        
-        $( "idCustomersChange" ).attr('value', data['nome']); // mudar os nomes do imput ainda...
-        $( "nameCustomersChange" ).attr('value', data['nome']);
+        $("idProductChange").attr('value', data['id']);
+        $( "changeNameProduct" ).attr('value', data['nome']);
+        $( "changePriceProduct" ).attr('value', data['preco']);
+        $("changeAmountProviders").attr('value', data['quantidade']);
+
     })
 }
 
@@ -251,7 +254,10 @@ function getProviderData(idProv) {
     BASE_URL = '/project_PI';
     $.get( BASE_URL+"/control/providers_select.php?id="+idProv, function( data ) {
        
-        $( "idCustomersChange" ).attr('value', data['nome']); // mudar os nomes do imput ainda...
-        $( "nameCustomersChange" ).attr('value', data['nome']);
+        $("idProviderChange").attr('value', data['id']);
+        $( "changeNameProviders" ).attr('value', data['nome']);
+        $( "changeCnpjProviders" ).attr('value', data['cnpj']);
+        $("changeEmailProviders").attr('value', data['email']);
+        $("changeTellProviders").attr('value', data['tell']);
     })
 }
