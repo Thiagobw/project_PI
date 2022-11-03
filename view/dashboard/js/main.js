@@ -222,3 +222,31 @@ function getCustomerData(idCust) {
 
     });
 }
+
+function getEmployeerData(idEmp) {
+    BASE_URL = '/project_PI';
+    $.get( BASE_URL+"/control/employees_select.php?id="+idEmp, function( data ) {
+       
+        $( "idCustomersChange" ).attr('value', data['nome']); // mudar os nomes do imput ainda...
+        $( "nameCustomersChange" ).attr('value', data['nome']);
+
+    });
+}
+
+function getProductData(idProd) {
+    BASE_URL = '/project_PI';
+    $.get( BASE_URL+"/control/customers_select.php?id="+idProd, function( data ) {
+       
+        $( "idCustomersChange" ).attr('value', data['nome']); // mudar os nomes do imput ainda...
+        $( "nameCustomersChange" ).attr('value', data['nome']);
+    })
+}
+
+function getProviderData(idProv) {
+    BASE_URL = '/project_PI';
+    $.get( BASE_URL+"/control/customers_select.php?id="+idProv, function( data ) {
+       
+        $( "idCustomersChange" ).attr('value', data['nome']); // mudar os nomes do imput ainda...
+        $( "nameCustomersChange" ).attr('value', data['nome']);
+    })
+}

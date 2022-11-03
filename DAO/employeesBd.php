@@ -76,3 +76,25 @@ function delet_employees($emp) {
         return false;
     }
 }
+
+
+function getEmploye($id) {
+    $connection = connect();
+
+    $stmt = $connection -> prepare("SELECT * FROM cliente WHERE id_cliente=?");
+    $stmt -> execute([$id]);
+
+    $result = $stmt -> fetchAll();
+    $result_cliente = array();
+    $emp = new Employees();
+    foreach($result as $registro) {
+        
+        $emp -> setId($registro["id_cliente"]);
+        $emp -> setEmail($registro["email"]);
+        $emp -> setName($registro["nome"]);
+        $emp -> setCpf($registro["CPF"]);
+
+        
+    }
+    return $emp;
+}

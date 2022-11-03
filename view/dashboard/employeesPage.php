@@ -195,7 +195,7 @@ $employeesList = search_employee();
                                             <td>
                                                 <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
                                                 <a class="btn btn-plus-options" href="../../control/employees_delete.php?id=<?php echo $vendedor -> getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
-                                                <a class="btn btn-plus-options" id="btnAlterEmploy" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <a class="btn btn-plus-options" id="btnAlterEmploy" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="getEmployeerData(<?php echo $vendedor -> getId(); ?>)"><i class="fa-solid fa-pen-to-square"></i></a>
                                             </td>
                                         </tr>
                                      

@@ -74,3 +74,25 @@ function delet_product ($prod) {
         return false;
     }
 }
+
+
+function getProduct($id) {
+    $connection = connect();
+
+    $stmt = $connection -> prepare("SELECT * FROM produtos WHERE id_produtos=?");
+    $stmt -> execute([$id]);
+
+    $result = $stmt -> fetchAll();
+    $result_prod = array();
+    $prod = new Products();
+    foreach($result as $registro) {
+        
+        $prod -> setId($registro["id_produtos"]);
+        $prod -> setName($registro["nome_produto"]);
+        $prod -> setPrice($registro["preco_produto"]);
+        $prod ->setAmount($registro['quantidade']);
+
+        
+    }
+    return $prod;
+}
