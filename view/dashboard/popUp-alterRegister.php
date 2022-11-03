@@ -45,6 +45,7 @@
                     <div class="row" id="contentAlterProv">
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formProviders">
+                            <input class=" form-control input-user" type="hidden" id="idCustomerChange" name="idProviderChange">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <input class=" form-control input-user" type="text" placeholder="Nome do fornecedor" id="changeNameProviders" name="changeNameProviders" maxlength="100">
                                 </div>
@@ -71,6 +72,7 @@
                     <div class="row" id="contentAlterProd">
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formProd">
+                            <input class=" form-control input-user" type="hidden" id="idCustomerChange" name="idProductChange">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <div class="row center">
                                         <label class="col-12 col-sm-10 col-md-11 col-lg-8 selectFileImgProduct center" for="imgProduct">
@@ -104,6 +106,7 @@
                     <div class="row" id="contentAlterEploy">
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formAlterEmployees">
+                            <input class=" form-control input-user" type="hidden" id="idEmployeesChange" name="idEmployeesChange">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <input class=" form-control input-user" type="text" placeholder="Nome do Funcionario" id="changeNameEmployees" name="changeNameEmployees" maxlength="100">
                                 </div>

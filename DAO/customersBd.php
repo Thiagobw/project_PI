@@ -93,6 +93,7 @@ function getCustomer($id) {
         $cust -> setEmail($registro["email"]);
         $cust -> setName($registro["nome"]);
         $cust -> setCpf($registro["CPF"]);
+        $cust -> setTell($registro["telefone"]);
 
         
     }

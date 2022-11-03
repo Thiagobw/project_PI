@@ -166,6 +166,8 @@ $providersList = search_provider();
                                             <th scope="col">Nome</th>
                                             <th scope="col">CNPJ</th>
                                             <th scope="col">Email</th>
+                                            <th scope="col">Telefone</th>
+
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -189,6 +191,8 @@ $providersList = search_provider();
                                         <td scope="row"><?php echo $prov -> getName(); ?></td>
                                         <td scope="row"><?php echo $prov -> getCnpj(); ?></td>
                                         <td scope="row"><?php echo $prov -> getEmail(); ?></td>
+                                        <td scope="row"><?php echo $prov -> getTelll(); ?></td>
+
 
                                         <td>
                                             <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
@@ -215,7 +219,7 @@ $providersList = search_provider();
     </div>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/chart/chart.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>

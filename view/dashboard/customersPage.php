@@ -164,6 +164,7 @@ $customersList = search_customers();
                                             <th scope="col">Nome</th>
                                             <th scope="col">CPF</th>
                                             <th scope="col">Email</th>
+                                            <th scope="col">Telefone</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
@@ -188,6 +189,8 @@ $customersList = search_customers();
                                                 <td> <?php echo $cliente -> getName(); ?></td>
                                                 <td> <?php echo $cliente -> getCpf();?> </td>
                                                 <td> <?php echo $cliente -> getEmail();?> </td>
+                                                <td> <?php echo $cliente -> getTell();?> </td>
+
                                                 <td class="">
                                                     <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
                                                     <a class="btn btn-plus-options" href="../../control/customers_delete.php?id=<?php echo $cliente -> getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
@@ -212,7 +215,7 @@ $customersList = search_customers();
     </div>
 
     <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="lib/chart/chart.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
