@@ -6,7 +6,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/employeesBd.php";
 
 $id = $_GET["id"];
 $emp = getEmploye($id);
-
+die(var_dump($emp));
 $result = array();
 $result['cpf'] = $emp->getCpf();
 $result['tell'] = $emp->getTel();
