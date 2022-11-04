@@ -4,6 +4,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Customers.php";
 
 
 function search_customers() {
+
     $connection = connect();
 
     $stmt = $connection -> prepare("SELECT * FROM cliente");
@@ -54,6 +55,7 @@ function register_customers($cust) {
     }
 }
 
+
 // deletion
 function delet_customers ($cust) {
 
@@ -81,6 +83,7 @@ function delet_customers ($cust) {
 
 
 function getCustomer($id) {
+
     $connection = connect();
 
     $stmt = $connection -> prepare("SELECT * FROM cliente WHERE id_cliente=?");
@@ -102,14 +105,16 @@ function getCustomer($id) {
     return $cust;
 }
 
-function update_customers($cust){
+
+function update_customers($cust) {
+
     try{
 
         $PDO = connect();
 
-        $sqlReg = " UPDATE cliente SET nome=?, CPF=?, email=?, telefone=?, WHERE id_cliente = ?";
+        $sqlUpdate = "UPDATE cliente SET nome=?, CPF=?, email=?, telefone=? WHERE id_cliente = ?";
 
-        $stmt = $PDO -> prepare($sqlReg);
+        $stmt = $PDO -> prepare($sqlUpdate);
         $stmt -> execute([$cust->getName(), $cust->getCpf(), $cust->getEmail(), $cust->getTell(), $cust->getId()]);
     
         if($stmt) {

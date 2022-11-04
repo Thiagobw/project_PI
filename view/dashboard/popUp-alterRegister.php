@@ -16,7 +16,7 @@
 
                     <div class="row" id="contentAlterCust">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formCustomers" action="../../control/custumers_update.php" method="POST">
+                            <form class="input-group center" id="formChangeCustomers" action="../../control/customers_update.php" method="POST">
                             <input class=" form-control input-user" type="hidden" id="idCustomerChange" name="idCustomerChange">
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
@@ -36,7 +36,7 @@
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formCustomers" type="submit" name="submitChangeCustomers" value="Atualizar">
+                                    <input class="btn btn-primary w-100" form="formChangeCustomers" type="submit" name="submitChangeCustomers" value="Atualizar">
                                 </div>
                             </form>
                         </div>
@@ -44,8 +44,8 @@
 
                     <div class="row" id="contentAlterProv">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formProviders" action="../../control/providers_update.php" method="POST">
-                            <input class=" form-control input-user" type="hidden" id="idCustomerChange" name="idProviderChange">
+                            <form class="input-group center" id="formChangeProviders" action="../../control/providers_update.php" method="POST">
+                            <input class=" form-control input-user" type="hidden" id="idProviderChange" name="idProviderChange">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <input class=" form-control input-user" type="text" placeholder="Nome do fornecedor" id="changeNameProviders" name="changeNameProviders" maxlength="100">
                                 </div>
@@ -63,7 +63,7 @@
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formProviders" type="submit" name="submitChangeProviders" value="Atualizar">
+                                    <input class="btn btn-primary w-100" form="formChangeProviders" type="submit" name="submitChangeProviders" value="Atualizar">
                                 </div>
                             </form>
                         </div>
@@ -71,8 +71,8 @@
 
                     <div class="row" id="contentAlterProd">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formProd" action="../../control/products_update.php" method="POST">
-                            <input class=" form-control input-user" type="hidden" id="idCustomerChange" name="idProductChange">
+                            <form class="input-group center" id="formChangeProd" action="../../control/products_update.php" method="POST">
+                            <input class=" form-control input-user" type="hidden" id="idProductChange" name="idProductChange">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <div class="row center">
                                         <label class="col-12 col-sm-10 col-md-11 col-lg-8 selectFileImgProduct center" for="imgProduct">
@@ -97,7 +97,7 @@
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formProd" type="submit" name="submitChangeProduct" value="Atualizar">
+                                    <input class="btn btn-primary w-100" form="formChangeProd" type="submit" name="submitChangeProduct" value="Atualizar">
                                 </div>
                             </form>
                         </div>
@@ -105,7 +105,7 @@
 
                     <div class="row" id="contentAlterEploy">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formAlterEmployees" action="../../control/employees_update.php" method="POST">
+                            <form class="input-group center" id="formChangeEmployees" action="../../control/employees_update.php" method="POST">
                             <input class=" form-control input-user" type="hidden" id="idEmployeesChange" name="idEmployeesChange">
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <input class=" form-control input-user" type="text" placeholder="Nome do Funcionario" id="changeNameEmployees" name="changeNameEmployees" maxlength="100">
@@ -124,7 +124,7 @@
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formAlterEmployees" type="submit" name="submitChangeEmployees" value="Atualizar">
+                                    <input class="btn btn-primary w-100" form="formChangeEmployees" type="submit" name="submitChangeEmployees" value="Atualizar">
                                 </div>
                             </form>
                         </div>

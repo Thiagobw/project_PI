@@ -2,7 +2,10 @@
 include_once "connection.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Providers.php";
 
+
+
 function search_provider () {
+
     $connection = connect();
 
     $stmt = $connection -> prepare("SELECT * FROM fornecedor");
@@ -77,30 +80,6 @@ function delet_provider($prov) {
     }
 }
 
-function update_provider($prov){
-    try{
-
-        $PDO = connect();
-
-        $sqlReg = " UPDATE fornecedor SET nome=?, cnpj=?, email=?, telefone=? WHERE id_fornecedor = ?";
-
-        $stmt = $PDO -> prepare($sqlReg);
-        $stmt -> execute([$prov->getName(), $prov->getCnpj(), $prov->getEmail(), $prov->getTell(), $prov->getId()]);
-       
-        if($stmt) {
-            return true;
-        }
-        else {
-            return false;
-        }
-
-    } catch (Exception $e) {
-
-        echo $e->getMessage();
-        return false;
-    }
-}
-
 
 function getProvider($id) {
     $connection = connect();
@@ -123,4 +102,30 @@ function getProvider($id) {
         
     }
     return $prov;
+}
+
+
+function update_provider($prov) {
+
+    try{
+
+        $PDO = connect();
+
+        $sqlReg = " UPDATE fornecedor SET nome=?, cnpj=?, email=?, telefone=? WHERE id_fornecedor = ?";
+
+        $stmt = $PDO -> prepare($sqlReg);
+        $stmt -> execute([$prov->getName(), $prov->getCnpj(), $prov->getEmail(), $prov->getTell(), $prov->getId()]);
+       
+        if($stmt) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    } catch (Exception $e) {
+
+        echo $e->getMessage();
+        return false;
+    }
 }

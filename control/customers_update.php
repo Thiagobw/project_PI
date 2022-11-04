@@ -10,21 +10,20 @@ $email = $_POST['changeEmailCustomers'];
 $cpf = $_POST['changeCpfCustomers'];
 $tel = $_POST['changeTellCustomers'];
 
-
 $cust = new Customers();
 
 $cust ->setId($id);
 $cust ->setName($name);
 $cust ->setEmail($email);
 $cust ->setCpf($cpf);
-$cust ->setTel($tel);
+$cust ->setTell($tel);
 
 
-$result_regist = update_customers($cust);
+$result_update = update_customers($cust);
 
-if ($result_regist == true) {
-    header('Location: ../view/dashboard/employeesPage.php');
+if ($result_update == true) {
+    header('Location: ../view/dashboard/customersPage.php');
 }
 else {
-    echo "falha ao cadastrar";
+    echo "falha ao falha ao atualizar dados";
 }

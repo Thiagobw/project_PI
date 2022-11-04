@@ -103,7 +103,7 @@ function update_product($prod){
 
         $PDO = connect();
 
-        $sqlReg = " UPDATE produtos SET nome_produto=?, preco_produto=?, quantidade=?, WHERE id_fornecedor = ?";
+        $sqlReg = " UPDATE produtos SET nome_produto=?, preco_produto=?, quantidade=? WHERE id_produtos=?";
 
         $stmt = $PDO -> prepare($sqlReg);
         $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getAmount(), $prod->getId()]);
