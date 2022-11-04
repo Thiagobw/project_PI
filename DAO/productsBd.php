@@ -12,7 +12,7 @@ function search_products() {
     $result = $stmt->fetchAll();
     $resul_produtos = array();
 
-    foreach($result as $registro){
+    foreach($result as $registro) {
         $produto = new Products();
 
         $produto->setId($registro["id_produtos"]);
@@ -22,8 +22,6 @@ function search_products() {
 
         $resul_produtos[] = $produto;
     }
-
-
     return $resul_produtos;
 }
 
@@ -52,6 +50,8 @@ function register_products($prod) {
         return false;
     }
 }
+
+
 function delet_product ($prod) {
 
     try {
@@ -77,27 +77,6 @@ function delet_product ($prod) {
 }
 
 
-function getProduct($id) {
-    $connection = connect();
-
-    $stmt = $connection -> prepare("SELECT * FROM produtos WHERE id_produtos=?");
-    $stmt -> execute([$id]);
-
-    $result = $stmt -> fetchAll();
-    $result_prod = array();
-    $prod = new Products();
-    foreach($result as $registro) {
-        
-        $prod -> setId($registro["id_produtos"]);
-        $prod -> setName($registro["nome_produto"]);
-        $prod -> setPrice($registro["preco_produto"]);
-        $prod ->setAmount($registro['quantidade']);
-
-        
-    }
-    return $prod;
-}
-
 function update_product($prod){
     try{
 
@@ -120,4 +99,24 @@ function update_product($prod){
         echo $e->getMessage();
         return false;
     }
+}
+
+
+function getProduct($id) {
+    $connection = connect();
+
+    $stmt = $connection -> prepare("SELECT * FROM produtos WHERE id_produtos=?");
+    $stmt -> execute([$id]);
+
+    $result = $stmt -> fetchAll();
+    $prod = new Products();
+    foreach($result as $registro) {
+        
+        $prod -> setId($registro["id_produtos"]);
+        $prod -> setName($registro["nome_produto"]);
+        $prod -> setPrice($registro["preco_produto"]);
+        $prod ->setAmount($registro['quantidade']);
+        
+    }
+    return $prod;
 }

@@ -15,21 +15,19 @@ function search_customers() {
 
     foreach($result as $registro) {
         $cliente = new Customers();
+        
         $cliente -> setId($registro["id_cliente"]);
         $cliente -> setEmail($registro["email"]);
         $cliente -> setName($registro["nome"]);
         $cliente -> setCpf($registro["CPF"]);
         $cliente -> setTell($registro["telefone"]);
 
-
         $result_cliente[] = $cliente;
     }
-
     return $result_cliente;
 }
 
 
-//registration
 function register_customers($cust) {
 
     try{
@@ -56,7 +54,6 @@ function register_customers($cust) {
 }
 
 
-// deletion
 function delet_customers ($cust) {
 
     try {
@@ -79,30 +76,6 @@ function delet_customers ($cust) {
         echo $e->getMessage();
         return false;
     }
-}
-
-
-function getCustomer($id) {
-
-    $connection = connect();
-
-    $stmt = $connection -> prepare("SELECT * FROM cliente WHERE id_cliente=?");
-    $stmt -> execute([$id]);
-
-    $result = $stmt -> fetchAll();
-    $result_cliente = array();
-    $cust = new Customers();
-    foreach($result as $registro) {
-        
-        $cust -> setId($registro["id_cliente"]);
-        $cust -> setEmail($registro["email"]);
-        $cust -> setName($registro["nome"]);
-        $cust -> setCpf($registro["CPF"]);
-        $cust -> setTell($registro["telefone"]);
-
-        
-    }
-    return $cust;
 }
 
 
@@ -129,4 +102,26 @@ function update_customers($cust) {
         echo $e->getMessage();
         return false;
     }
+}
+
+
+function getCustomer($id) {
+
+    $connection = connect();
+
+    $stmt = $connection -> prepare("SELECT * FROM cliente WHERE id_cliente=?");
+    $stmt -> execute([$id]);
+
+    $result = $stmt -> fetchAll();
+    $cust = new Customers();
+    foreach($result as $registro) {
+        
+        $cust -> setId($registro["id_cliente"]);
+        $cust -> setEmail($registro["email"]);
+        $cust -> setName($registro["nome"]);
+        $cust -> setCpf($registro["CPF"]);
+        $cust -> setTell($registro["telefone"]);
+        
+    }
+    return $cust;
 }

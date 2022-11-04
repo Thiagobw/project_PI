@@ -25,7 +25,6 @@ function search_provider () {
 
         $resul_search[] = $prov;
     }
-
     return $resul_search;
 }
 
@@ -81,30 +80,6 @@ function delet_provider($prov) {
 }
 
 
-function getProvider($id) {
-    $connection = connect();
-
-    $stmt = $connection -> prepare("SELECT * FROM fornecedor WHERE id_fornecedor=?");
-    $stmt -> execute([$id]);
-
-    $result = $stmt -> fetchAll();
-    $result_cliente = array();
-    $prov = new Providers();
-    foreach($result as $registro) {
-        
-        $prov -> setId($registro["id_fornecedor"]);
-        $prov -> setEmail($registro["email"]);
-        $prov -> setName($registro["nome"]);
-        $prov -> setCnpj($registro["cnpj"]);
-        $prov -> setTell($registro["telefone"]);
-
-
-        
-    }
-    return $prov;
-}
-
-
 function update_provider($prov) {
 
     try{
@@ -128,4 +103,25 @@ function update_provider($prov) {
         echo $e->getMessage();
         return false;
     }
+}
+
+
+function getProvider($id) {
+    $connection = connect();
+
+    $stmt = $connection -> prepare("SELECT * FROM fornecedor WHERE id_fornecedor=?");
+    $stmt -> execute([$id]);
+
+    $result = $stmt -> fetchAll();
+    $prov = new Providers();
+    foreach($result as $registro) {
+        
+        $prov -> setId($registro["id_fornecedor"]);
+        $prov -> setEmail($registro["email"]);
+        $prov -> setName($registro["nome"]);
+        $prov -> setCnpj($registro["cnpj"]);
+        $prov -> setTell($registro["telefone"]);
+        
+    }
+    return $prov;
 }
