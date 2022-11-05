@@ -10,9 +10,8 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/productsBd.php";
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    
+	<link rel="stylesheet" href="img/icons/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
-
     <link rel="stylesheet" href="css/styleSalePage.css">
 
     <title>LA Imports - Vender</title>
@@ -25,40 +24,47 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/productsBd.php";
     ?>
 </header>
 
-<!-- products -->
-<main class="mt-1">
-    <div class="container-fluid center">
-        <div class="col-12 col-sm-11 col-md-11 col-lg-10 col-xl-11">
-            <div class="row justify-content-around">
+<!-- products list -->
+<main class="container-fluid mt-5">
+	<div class="row justify-content-around">
+		<div class="col-10 col-sm-5 col-md-3 col-lg-2 bg-white">
+			<!-- image product -->
+			<div class="row mt-3">
+				<div class="col-12 center">
+					<img src="img/products/tenis 1.jpg" alt="" class="img-fluid w-95">
+				</div>
+			</div>
 
-                <div class="col-11 col-sm-6 col-md-6 col-lg-4 col-xl-3 col-xxl-2 bg-prod">
-                    <div class="row">
-                        <div class="col-12 col-sm-11 col-xl-10 bg-white prod mt-4">
-                            <div class="row center mb-2 mt-2">
-                                <img class="img-fluid img" src="img/products/tenis 1.jpg" alt="">
-                            </div>
+			<!-- product's name -->
+			<div class="row mt-2">
+				<div class="col-12 center">
+					<a href=""><h6>Nome do produto</h6></a>
+				</div>
+			</div>
 
-                            <div class="col-12 dividing-line"></div>
+			<div class="row center mt-2">
+				<div class="col-7">
+					<button class="w-100"><i class="fa-solid fa-cart-plus mr-1"></i> adicionar ao carrinho</button>
+				</div>
+			</div>
+		</div>
+		
+		<div class="col-10 col-sm-5 col-md-3 col-lg-2 bg-white">
 
-                            <div class="row mt-3">
-                                <div class="col-12 ">
+		</div>
+		
+		<div class="col-10 col-sm-5 col-md-3 col-lg-2 bg-white">
 
-                                    <p class="text-center">Nike Air Jordan High 1 Tie Dye - unissex</p>
-                                    <p class="text-center price">R$ <span>400,00</span></p>
-                                </div>
-                            </div>
-                            <div class="row center mb-2">
-                                <div class="col-12 btn-group center">
-                                    <button class="btn btnADD"><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+		</div>
+		
+		<div class="col-10 col-sm-5 col-md-3 col-lg-2 bg-white">
 
-        </div>
-    </div>
+		</div>
+		
+		<div class="col-10 col-sm-5 col-md-3 col-lg-2 bg-white">
+
+		</div>
+	</div>
 </main>
 
 <!-- product pagination -->

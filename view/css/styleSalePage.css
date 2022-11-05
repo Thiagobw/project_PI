@@ -83,13 +83,6 @@ body {
 }
 
 /*products*/
-.bg-prod {
-    background-color: none !important;
-}
-.prod {
-    padding: 0 !important;
-    
-}
 .img {
     border: 0.3px solid #818081;
     width: 87% !important;
