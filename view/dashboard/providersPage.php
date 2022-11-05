@@ -1,6 +1,6 @@
 <?php
 session_start();
-include_once ('../../control/checkAuth.php');
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/providersBd.php";
 
 $providersList = search_provider();
