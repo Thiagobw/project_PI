@@ -49,7 +49,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/productsBd.php";
                             </div>
                             <div class="row center mb-2">
                                 <div class="col-12 btn-group center">
-                                    <button class="btn btnADD" onclick="pedido_produto('Nike Air Jordan High 1 Tie Dye - unissex')"><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</button>
+                                    <button class="btn btnADD"><span><img class="img-fluid" src="img/icons/icon_AddShoppingCart.png" alt="" height='27' width='27'></span> Adicionar ao carrinho</button>
                                 </div>
                             </div>
                         </div>
@@ -64,18 +64,18 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/productsBd.php";
 <!-- product pagination -->
 <footer class="container-fluid mt-4 mb-1">
     <div class="col-12 center">
-        <nav aria-label="Page navigation example" style="border: none !important;">
+        <nav style="border: none !important;">
             <ul class="pagination">
                 <li class="page-item">
-                    <a class="page-link" href="salePage3.php" aria-label="Previous">
+                    <a class="page-link" href="">
                         <span aria-hidden="true">&laquo;</span>
                     </a>
                 </li>
-                <li class="page-item activated" onclick="activate(this)"><a class="page-link" href="salePage.php">1</a></li>
-                <li class="page-item" onclick="activate(this)"><a class="page-link" href="salePage2.php">2</a></li>
-                <li class="page-item" onclick="activate(this)"><a class="page-link" href="salePage3.php">3</a></li>
+                <li class="page-item activated"><a class="page-link" href="">1</a></li>
+                <li class="page-item"><a class="page-link" href="">2</a></li>
+                <li class="page-item"><a class="page-link" href="">3</a></li>
                 <li class="page-item">
-                    <a class="page-link" href="salePage3.php" aria-label="Next">
+                    <a class="page-link" href="">
                         <span aria-hidden="true">&raquo;</span>
                     </a>
                 </li>
@@ -98,30 +98,6 @@ integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxV
         }
         element.classList.add("activated");
     }
-
-    function pedido_produto(prod){
-
-        $.ajax({
-            type: 'POST',
-            url: '../control/produto.php',
-            dataType: 'json',
-            data: { prod:prod},
-            success: function(json){    
-                if(json.status == true){
-                    alert('produto adicionado com sucesso!');
-                }else{
-                    alert(json.msg);
-                }
-                
-
-            },
-            error: function() {
-                alert('Erro: contate o suporte')
-            }
-        });
-
-    }
-
 </script>
 </body>
 </html>
