@@ -9,7 +9,6 @@ $name = $_POST['changeNameEmployees'];
 $cpf = $_POST['changeCpfEmployees'];
 $email = $_POST['changeEmailEmployees'];
 $tel = $_POST['changeTellEmployees'];
-die(var_dump($name, $cpf, $email, $$tel));
 
 $emp = new Employees();
 
@@ -21,7 +20,7 @@ $emp ->setTel($tel);
 
 
 $result_regist = update_employee($emp);
-
+die(var_dump($result_regist));
 if ($result_regist == true) {
     header('Location: ../view/dashboard/employeesPage.php');
 }

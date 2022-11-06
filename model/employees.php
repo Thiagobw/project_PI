@@ -48,7 +48,7 @@ class Employees {
         return $this -> tel;
     }
 
-    public function setId(int $id) {
+    public function setId($id) {
         $this -> id = $id;
     }
 
