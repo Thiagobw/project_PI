@@ -25,46 +25,19 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/productsBd.php";
 </header>
 
 <!-- products list -->
-<main class="container-fluid mt-5">
-	<div class="row justify-content-around">
-		<div class="col-10 col-sm-5 col-md-3 col-lg-2 bg-white">
-			<!-- image product -->
-			<div class="row mt-3">
-				<div class="col-12 center">
-					<img src="img/products/tenis 1.jpg" alt="" class="img-fluid w-95">
-				</div>
-			</div>
-
-			<!-- product's name -->
-			<div class="row mt-2">
-				<div class="col-12 center">
-					<a href=""><h6>Nome do produto</h6></a>
-				</div>
-			</div>
-
-			<div class="row center mt-2">
-				<div class="col-7">
-					<button class="w-100"><i class="fa-solid fa-cart-plus mr-1"></i> adicionar ao carrinho</button>
-				</div>
-			</div>
-		</div>
-		
-		<div class="col-10 col-sm-5 col-md-3 col-lg-2 bg-white">
-
-		</div>
-		
-		<div class="col-10 col-sm-5 col-md-3 col-lg-2 bg-white">
-
-		</div>
-		
-		<div class="col-10 col-sm-5 col-md-3 col-lg-2 bg-white">
-
-		</div>
-		
-		<div class="col-10 col-sm-5 col-md-3 col-lg-2 bg-white">
-
-		</div>
-	</div>
+<main class="container mt-5">
+    <div id="products">
+      <div class="row mx-0">
+        <div class="col-lg-4 col-md-6 pt-md-0 pt-3">
+          <div class="card d-flex flex-column align-items-center">
+            <div class="product-name">Nike Tshirts for Men</div>
+            <div class="card-img">
+              <img src="https://www.freepnglogos.com/uploads/t-shirt-png/t-shirt-png-printed-shirts-south-africa-20.png" alt="" height="100" id="shirt">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 </main>
 
 <!-- product pagination -->
