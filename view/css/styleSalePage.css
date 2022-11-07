@@ -102,8 +102,23 @@ body {
 /*products cards*/
 .product-name {
     margin-top: 1%;
-    margin-bottom: 1%;
+    margin-bottom: 2%;
     text-align: center;
     font-size: large;
     font-weight: 700;
+}
+.price {
+    margin-top: 2%;
+    margin-bottom: 1%;
+    font-size: large;
+    font-weight: 700;
+}
+.price span {
+    font-size: larger;
+    color: #11c827;
+}
+
+#btn-add {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
 }

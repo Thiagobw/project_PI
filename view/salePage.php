@@ -3,6 +3,7 @@ session_start();
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/productsBd.php";
 
+$productsList = search_products();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -26,19 +27,30 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/productsBd.php";
 
 <!-- products list -->
 <main class="container mt-5">
-    <div id="products">
-      <div class="row mx-0">
+    <?php if (  empty($productsList) == true) { ?>
+        <h3>nenhum produto cadastrado para venda!</h3>
+    <?php }else { ?>
+    <div class="row mx-0">
         <div class="col-lg-4 col-md-6 pt-md-0 pt-3">
-          <div class="card d-flex flex-column align-items-center">
-            <div class="product-name">Nike Tshirts for Men</div>
-            <div class="card-img">
-              <img src="https://www.freepnglogos.com/uploads/t-shirt-png/t-shirt-png-printed-shirts-south-africa-20.png" alt="" height="100" id="shirt">
+            <div class="card d-flex flex-column align-items-center">
+                <div class="product-name">Nike Tshirts for Men</div>
+                <div class="card-img">
+                    <img class="img-fluid w-100" src="img/products/tenis 1.jpg" alt="">
+                </div>
+                <div class="row price">
+                    R$ <span> 900</span>
+                </div>
+                <div class="row">
+                    <button class="btn w-100" id="btn-add">
+                        <i class="fa-solid fa-cart-plus"></i> Adicionar
+                    </button>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
     </div>
+<?php } ?>
 </main>
+
 
 <!-- product pagination -->
 <footer class="container-fluid mt-4 mb-1">
