@@ -236,6 +236,12 @@ function getEmployeerData(idEmp) {
         $("#changeEmailEmployees").val(data['email']);
         $("#changeTellEmployees").val(data['tell']);
 
+        const ttl = document.querySelector('#ttlEmploy');
+        ttl.style.display = 'flex';
+
+        const content = document.querySelector('#contentAlterEploy');
+        content.style.display = 'flex';
+
     });
 }
 

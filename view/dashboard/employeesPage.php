@@ -237,21 +237,6 @@ $employeesList = search_employee();
             ttlR.style.display = 'flex';
         })
     </script>
-
-    <script>
-        var btn = document.querySelector('#btnAlterEmploy');
-
-        btn.addEventListener('click', function() {
-
-            const ttl = document.querySelector('#ttlEmploy');
-            ttl.style.display = 'flex';
-
-            const content = document.querySelector('#contentAlterEploy');
-            content.style.display = 'flex';
-
-        })
-
-    </script>
 </body>
 
 </html>
