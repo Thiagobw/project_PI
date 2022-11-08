@@ -136,8 +136,8 @@ $employeesList = search_employee();
 
             <!-- Importing popup file -->
             <?php
-                require_once "popUp-register.php";
-                include_once "popUp-alterRegister.php";
+                require_once "popUps/popUp-register.php";
+                include_once "popUps/popUp-change.php";
             ?>
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
