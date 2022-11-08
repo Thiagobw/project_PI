@@ -112,10 +112,11 @@ function getEmploye($id) {
     $emp = new Employees();
     foreach($result as $registro) {
         
-        $emp -> setId($registro["id_cliente"]);
+        $emp -> setId($registro["id_vendedor"]);
         $emp -> setEmail($registro["email"]);
         $emp -> setName($registro["nome"]);
         $emp -> setCpf($registro["CPF"]);
+        $emp -> setTel($registro['telefone']);
         
     }
     return $emp;
