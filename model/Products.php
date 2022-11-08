@@ -17,7 +17,7 @@ class Products {
     }
 
 
-    public function setAmount(int $amount) {
+    public function setAmount( $amount) {
         $this -> amount = $amount;
     }
     public function getAmount() {
