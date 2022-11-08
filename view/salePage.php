@@ -26,14 +26,14 @@ $productsList = search_products();
 </header>
 
 <!-- products list -->
-<main class="container mt-5">
+<main class="container mt-2">
+    <div class="row mx-0 prods">
     <?php if (  empty($productsList) == true) { ?>
         <h3>nenhum produto cadastrado para venda!</h3>
     <?php }else { foreach ($productsList as $prod) { ?>
-    <div class="row mx-0">
-        <div class="col-lg-4 col-md-6 pt-md-0 pt-3">
+        <div class="col-lg-4 col-md-6 pt-md-0 pt-3 mt-3">
             <div class="card d-flex flex-column align-items-center">
-                <div class="product-name">Nike Tshirts for Men</div>
+                <div class="product-name"> <?php echo $prod->getName(); ?> </div>
                 <div class="card-img">
                     <img class="img-fluid w-100" src="img/products/tenis 1.jpg" alt="">
                 </div>
@@ -47,8 +47,8 @@ $productsList = search_products();
                 </div>
             </div>
         </div>
+        <?php }} ?>
     </div>
-<?php }} ?>
 </main>
 
 
