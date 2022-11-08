@@ -2,7 +2,10 @@
 include_once "connection.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Providers.php";
 
+
+
 function search_provider () {
+
     $connection = connect();
 
     $stmt = $connection -> prepare("SELECT * FROM fornecedor");
@@ -22,7 +25,6 @@ function search_provider () {
 
         $resul_search[] = $prov;
     }
-
     return $resul_search;
 }
 
@@ -77,7 +79,9 @@ function delet_provider($prov) {
     }
 }
 
-function update_provider($prov){
+
+function update_provider($prov) {
+
     try{
 
         $PDO = connect();
@@ -109,7 +113,6 @@ function getProvider($id) {
     $stmt -> execute([$id]);
 
     $result = $stmt -> fetchAll();
-    $result_cliente = array();
     $prov = new Providers();
     foreach($result as $registro) {
         
@@ -118,8 +121,6 @@ function getProvider($id) {
         $prov -> setName($registro["nome"]);
         $prov -> setCnpj($registro["cnpj"]);
         $prov -> setTell($registro["telefone"]);
-
-
         
     }
     return $prov;

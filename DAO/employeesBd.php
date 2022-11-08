@@ -23,7 +23,6 @@ function search_employee() {
 
         $resul_search[] = $vendedor;
     }
-
     return $resul_search;
 }
 
@@ -78,36 +77,15 @@ function delet_employees($emp) {
 }
 
 
-function getEmploye($id) {
-    $connection = connect();
-
-    $stmt = $connection -> prepare("SELECT * FROM cliente WHERE id_cliente=?");
-    $stmt -> execute([$id]);
-
-    $result = $stmt -> fetchAll();
-    $result_cliente = array();
-    $emp = new Employees();
-    foreach($result as $registro) {
-        
-        $emp -> setId($registro["id_cliente"]);
-        $emp -> setEmail($registro["email"]);
-        $emp -> setName($registro["nome"]);
-        $emp -> setCpf($registro["CPF"]);
-
-        
-    }
-    return $emp;
-}
-
 function update_employee($emp){
     try{
 
         $PDO = connect();
 
-        $sqlReg = " UPDATE vendodor SET nome=?, CPF=?, email=?, WHERE id_cliente = ?";
+        $sqlReg = " UPDATE vendedor SET nome=?, CPF=?, email=? WHERE id_vendedor=?";
 
         $stmt = $PDO -> prepare($sqlReg);
-        $stmt -> execute([$prov->getName(), $prov->getCpf(), $prov->getEmail(), $prov->getId()]);
+        $stmt -> execute([$emp->getName(), $emp->getCpf(), $emp->getEmail(), $emp->getId()]);
     
         if($stmt) {
             return true;
@@ -121,4 +99,24 @@ function update_employee($emp){
         echo $e->getMessage();
         return false;
     }
+}
+
+
+function getEmploye($id) {
+    $connection = connect();
+
+    $stmt = $connection -> prepare("SELECT * FROM vendedor WHERE id_vendedor=?");
+    $stmt -> execute([$id]);
+
+    $result = $stmt -> fetchAll();
+    $emp = new Employees();
+    foreach($result as $registro) {
+        
+        $emp -> setId($registro["id_cliente"]);
+        $emp -> setEmail($registro["email"]);
+        $emp -> setName($registro["nome"]);
+        $emp -> setCpf($registro["CPF"]);
+        
+    }
+    return $emp;
 }

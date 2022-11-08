@@ -4,6 +4,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Customers.php";
 
 
 function search_customers() {
+
     $connection = connect();
 
     $stmt = $connection -> prepare("SELECT * FROM cliente");
@@ -14,21 +15,19 @@ function search_customers() {
 
     foreach($result as $registro) {
         $cliente = new Customers();
+        
         $cliente -> setId($registro["id_cliente"]);
         $cliente -> setEmail($registro["email"]);
         $cliente -> setName($registro["nome"]);
         $cliente -> setCpf($registro["CPF"]);
         $cliente -> setTell($registro["telefone"]);
 
-
         $result_cliente[] = $cliente;
     }
-
     return $result_cliente;
 }
 
 
-//registration
 function register_customers($cust) {
 
     try{
@@ -54,7 +53,7 @@ function register_customers($cust) {
     }
 }
 
-// deletion
+
 function delet_customers ($cust) {
 
     try {
@@ -80,36 +79,15 @@ function delet_customers ($cust) {
 }
 
 
-function getCustomer($id) {
-    $connection = connect();
+function update_customers($cust) {
 
-    $stmt = $connection -> prepare("SELECT * FROM cliente WHERE id_cliente=?");
-    $stmt -> execute([$id]);
-
-    $result = $stmt -> fetchAll();
-    $result_cliente = array();
-    $cust = new Customers();
-    foreach($result as $registro) {
-        
-        $cust -> setId($registro["id_cliente"]);
-        $cust -> setEmail($registro["email"]);
-        $cust -> setName($registro["nome"]);
-        $cust -> setCpf($registro["CPF"]);
-        $cust -> setTell($registro["telefone"]);
-
-        
-    }
-    return $cust;
-}
-
-function update_customers($cust){
     try{
 
         $PDO = connect();
 
-        $sqlReg = " UPDATE cliente SET nome=?, CPF=?, email=?, telefone=?, WHERE id_cliente = ?";
+        $sqlUpdate = "UPDATE cliente SET nome=?, CPF=?, email=?, telefone=? WHERE id_cliente = ?";
 
-        $stmt = $PDO -> prepare($sqlReg);
+        $stmt = $PDO -> prepare($sqlUpdate);
         $stmt -> execute([$cust->getName(), $cust->getCpf(), $cust->getEmail(), $cust->getTell(), $cust->getId()]);
     
         if($stmt) {
@@ -124,4 +102,26 @@ function update_customers($cust){
         echo $e->getMessage();
         return false;
     }
+}
+
+
+function getCustomer($id) {
+
+    $connection = connect();
+
+    $stmt = $connection -> prepare("SELECT * FROM cliente WHERE id_cliente=?");
+    $stmt -> execute([$id]);
+
+    $result = $stmt -> fetchAll();
+    $cust = new Customers();
+    foreach($result as $registro) {
+        
+        $cust -> setId($registro["id_cliente"]);
+        $cust -> setEmail($registro["email"]);
+        $cust -> setName($registro["nome"]);
+        $cust -> setCpf($registro["CPF"]);
+        $cust -> setTell($registro["telefone"]);
+        
+    }
+    return $cust;
 }
