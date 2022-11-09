@@ -3,6 +3,8 @@
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/employeesBd.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/employees.php";
 
+if (isset($_GET['id'])) {
+
 $id = $_GET['id'];
 
 $emp = new Employees();
@@ -16,4 +18,8 @@ if($result_delete == true) {
 }
 else {
     echo "falha ao deletar";
+}
+
+} else {
+    header('Location: ../view/Error404.html');
 }

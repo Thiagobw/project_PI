@@ -4,24 +4,30 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/connection.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/productsBd.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Products.php";
 
-$id = $_POST['idProductChange'];
-$name = $_POST['changeNameProduct'];
-$price = $_POST['changePriceProduct'];
-$amount = $_POST['changeAmountProviders'];
+if(isset($_POST['submitChangeProduct'])) {
 
-$prod = new Products();
+    $id = $_POST['idProductChange'];
+    $name = $_POST['changeNameProduct'];
+    $price = $_POST['changePriceProduct'];
+    $amount = $_POST['changeAmountProviders'];
 
-$prod ->setId($id);
-$prod ->setName($name);
-$prod ->setPrice($price);
-$prod ->setAmount($amount);
+    $prod = new Products();
+
+    $prod ->setId($id);
+    $prod ->setName($name);
+    $prod ->setPrice($price);
+    $prod ->setAmount($amount);
 
 
-$result_update = update_product($prod);
+    $result_update = update_product($prod);
 
-if ($result_update == true) {
-    header('Location: ../view/dashboard/productsPage.php');
-}
-else {
-    echo "falha ao falha ao atualizar dados";
+    if ($result_update == true) {
+        header('Location: ../view/dashboard/productsPage.php');
+    }
+    else {
+        echo "falha ao falha ao atualizar dados";
+    }
+
+} else {
+    header('Location: ../view/Error404.html');
 }

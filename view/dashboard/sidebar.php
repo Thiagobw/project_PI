@@ -18,7 +18,7 @@
                     </div>
                 </a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="" class="dropdown-item">Perfil</a>
+                    <a href="profile.php" class="dropdown-item">Perfil</a>
                     <a href="../../control/sair.php" class="dropdown-item">Sair</a>
                 </div>
             </div>

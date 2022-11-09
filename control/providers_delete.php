@@ -2,17 +2,23 @@
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/providersBd.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Providers.php";
 
-$id = $_GET['id'];
+if(isset($_GET['id'])) {
 
-$prov = new Providers();
+    $id = $_GET['id'];
 
-$prov->setId($id);
+    $prov = new Providers();
 
-$result_delete = delet_provider($prov);
+    $prov->setId($id);
 
-if($result_delete == true) {
-    header('Location: ../view/dashboard/providersPage.php');
-}
-else {
-    echo "falha ao deletar";
+    $result_delete = delet_provider($prov);
+
+    if($result_delete == true) {
+        header('Location: ../view/dashboard/providersPage.php');
+    }
+    else {
+        echo "falha ao deletar";
+    }
+
+} else {
+    header('Location: ../view/Error404.html');
 }
