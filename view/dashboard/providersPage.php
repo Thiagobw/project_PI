@@ -241,19 +241,5 @@ $providersList = search_provider();
             contentR.style.display = 'flex';
         })
     </script>
-    
-    <script>
-        var btn = document.querySelector('#btnAlterProv');
-        
-        btn.addEventListener('click', function() {
-            const ttl = document.querySelector('#ttlProv');
-            ttl.style.display = 'flex';
-            
-            const content = document.querySelector('#contentAlterProv');
-            content.style.display = 'flex';
-
-        })
-    </script>
 </body>
-
 </html>

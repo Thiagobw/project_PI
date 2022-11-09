@@ -238,19 +238,5 @@ $customersList = search_customers();
     })
 
 </script>
-
-<script>
-    var btn = document.querySelector('#btnAlterCust');
-
-     btn.addEventListener('click', function() {
-
-        const ttl = document.querySelector('#ttlCust');
-        ttl.style.display = 'flex';
-        const content = document.querySelector('#contentAlterCust');
-        content.style.display = 'flex';
-
-    })
-
-</script>
 </body>
 </html>

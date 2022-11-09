@@ -223,6 +223,11 @@ function getCustomerData(idCust) {
         $("#changeEmailCustomers").val(data['email']);
         $("#changeTellCustomers").val(data['tell']);
 
+        const ttl = document.querySelector('#ttlCust');
+        ttl.style.display = 'flex';
+        const content = document.querySelector('#contentAlterCust');
+        content.style.display = 'flex';
+
     });
 }
 
@@ -254,6 +259,12 @@ function getProductData(idProd) {
         $("#changePriceProduct").val(data['preco']);
         $("#changeAmountProviders").val(data['quantidade']);
 
+        const ttl = document.querySelector('#ttlProd');
+        ttl.style.display = 'flex';
+        
+        const content = document.querySelector('#contentAlterProd');
+        content.style.display = 'flex';
+
     })
 }
 
@@ -266,5 +277,12 @@ function getProviderData(idProv) {
         $("#changeCnpjProviders").val(data['cnpj']);
         $("#changeEmailProviders").val(data['email']);
         $("#changeTellProviders").val(data['tell']);
+
+        const ttl = document.querySelector('#ttlProv');
+        ttl.style.display = 'flex';
+        
+        const content = document.querySelector('#contentAlterProv');
+        content.style.display = 'flex';
+        
     })
 }

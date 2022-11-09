@@ -242,17 +242,6 @@ $productsList = search_products();
         })
     </script>
 
-<script>
-    var btn = document.querySelector('#btnAlterProd');
-    btn.addEventListener('click', function() {
-        const ttl = document.querySelector('#ttlProd');
-        ttl.style.display = 'flex';
-        
-        const content = document.querySelector('#contentAlterProd');
-        content.style.display = 'flex';
-    })
-</script>
-
     <script>
         let imgselected = document.querySelector('#imgSelected');
         let inputImage = document.querySelector('#imgProduct');
