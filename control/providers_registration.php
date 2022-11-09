@@ -4,7 +4,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/connection.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/providersBd.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Providers.php";
 
-if(isset($_POST['submitChangeProviders'])) {
+if(isset($_POST['submitProviders'])) {
 
     $name = $_POST['nameProviders'];
     $cnpj = $_POST['cnpjProviders'];
