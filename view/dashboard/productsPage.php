@@ -184,7 +184,6 @@ $productsList = search_products();
                                      foreach ($productsList as $prod) {
    
                                     ?>
-                                     
                                         <tr>
                                             <td> <?php echo $prod -> getName(); ?></td>
                                             <td> <?php echo $prod -> getAmount();?> </td>
