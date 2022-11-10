@@ -6,6 +6,7 @@ class Providers {
     private $email;
     private $tell;
     private $id;
+    
 
     public function setName(string $name) {
         $this -> name = $name;
