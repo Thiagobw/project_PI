@@ -38,7 +38,7 @@ $productsList = search_products();
                     <img class="img-fluid w-100" src="img/products/tenis 1.jpg" alt="">
                 </div>
                 <div class="row price">
-                    R$ <span> <?php echo $prod->getPrice(); ?></span>
+                    <h3>R$ <span> <?php echo $prod->getPrice(); ?></span></h3>
                 </div>
                 <div class="row">
                     <button class="btn w-100" id="btn-add">
