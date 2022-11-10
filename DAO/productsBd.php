@@ -19,6 +19,7 @@ function search_products() {
         $produto->setName($registro["nome_produto"]);
         $produto->setAmount($registro["quantidade"]);
         $produto->setPrice($registro["preco_produto"]);
+        $produto->setTamanho($registro["id_tamanho"]);
 
         $resul_produtos[] = $produto;
     }
@@ -29,23 +30,35 @@ function search_products() {
 function register_products($prod) {
 
     try{
-
         $PDO = connect();
 
-        $sqlReg = " INSERT INTO produtos (nome_produto,preco_produto,quantidade,Modelo_idModelo) Values (?,?,?,?)";
+        try{
+            $PDO->beginTransaction();
+            $sqlReg = " INSERT INTO produtos (nome_produto,preco_produto) Values (?,?)";
+            
+            $stmt = $PDO -> prepare($sqlReg);
+            $stmt -> execute([$prod->getName(), $prod->getPrice(), 2]);
+            
+            $id  = $PDO->lastInsertId();
 
-        $stmt = $PDO -> prepare($sqlReg);
-        $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getAmount(), 2]);
+            $sqlRegSize = "INSERT INTO tamanho (tamanhos, quantidade, id_produto) values (?,?,?)";
+            $stmt = $PDO -> prepare($sqlRegSize);
+            $stmt -> execute([$prod->getTamanho(), $prod->getAmount(), $id]);
 
-        if($stmt) {
-            return true;
-        }
-        else {
+            $PDO->commit();
+            if($stmt) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        } catch (Exception $e) {
+            $PDO->rollback();
+            echo $e->getMessage();
             return false;
         }
 
     } catch (Exception $e) {
-
         echo $e->getMessage();
         return false;
     }
