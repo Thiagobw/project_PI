@@ -107,14 +107,20 @@ body {
     font-size: large;
     font-weight: 700;
 }
+
+.sizeProd {
+    margin-top: 2%;
+}
+.sixeProd select {
+    color: #000000;
+}
 .price {
     margin-top: 2%;
     margin-bottom: 1%;
     font-size: large;
     font-weight: 700;
 }
-.price span {
-    font-size: larger;
+.price h5 span {
     color: #11c827;
 }
 

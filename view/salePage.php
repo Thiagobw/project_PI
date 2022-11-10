@@ -33,12 +33,23 @@ $productsList = search_products();
     <div class="row mx-0">
         <div class="col-lg-4 col-md-6 pt-md-0 pt-3">
             <div class="card d-flex flex-column align-items-center">
-                <div class="product-name">Nike Tshirts for Men</div>
+                <div class="product-name">
+                    <?php echo $prod ->getName(); ?>
+                </div>
+                
                 <div class="card-img">
                     <img class="img-fluid w-100" src="img/products/tenis 1.jpg" alt="">
                 </div>
+
+                <div class="row sizeProd">
+                    <select class="btn-sm custom-select" name="" id="">
+                        <option selected>Tamanho</option>
+                        <option value="1">Tam x</option>
+                    </select>
+                </div>
+
                 <div class="row price">
-                    <h3>R$ <span> <?php echo $prod->getPrice(); ?></span></h3>
+                    <h5>R$ <span> <?php echo $prod->getPrice(); ?></span></h5>
                 </div>
                 <div class="row">
                     <button class="btn w-100" id="btn-add">
