@@ -161,10 +161,10 @@ $productsList = search_products();
                                 <table class="table text-secondary">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Codigo</th>
                                             <th scope="col">Nome</th>
                                             <th scope="col">Quantidade em estoque</th>
                                             <th scope="col">Preço</th>
+                                            <th scope="col">Tamnhos</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
@@ -189,6 +189,8 @@ $productsList = search_products();
                                             <td> <?php echo $prod -> getName(); ?></td>
                                             <td> <?php echo $prod -> getAmount();?> </td>
                                             <td> <?php echo $prod -> getPrice();?> </td>
+                                            <td> <?php echo $prod -> getTamanho();?> </td>
+
                                             <td class="">
                                                 <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
                                                 <a class="btn btn-plus-options" href="../../control/products_delete.php?id=<?php echo $prod ->getId(); ?>"><i class="fa-solid fa-xmark"></i></a>

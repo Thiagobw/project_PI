@@ -8,6 +8,8 @@ class Products {
     private $manufacturer; /** fabricante */
     private $price;
     private $id;
+    private $tamanho;
+
 
     public function setName(string $name) {
         $this -> name = $name;
@@ -62,6 +64,13 @@ class Products {
     }
     public function getId() {
         return $this -> id;
+    }
+
+    public function setTamanho($tamanho) {
+        $this -> tamanho = $tamanho;
+    }
+    public function getTamanho() {
+        return $this -> tamanho;
     }
 
 }
