@@ -112,7 +112,7 @@ body {
     margin-top: 2%;
 }
 .sixeProd select {
-    color: #000000;
+    color: #000000 !important;
 }
 .price {
     margin-top: 2%;

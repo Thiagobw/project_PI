@@ -42,7 +42,7 @@ $productsList = search_products();
                 </div>
 
                 <div class="row sizeProd">
-                    <select class="btn-sm custom-select" name="" id="">
+                    <select class="btn-sm custom-select" name="" id="" style="background-color: #f8f9fa;">
                         <option selected>Tamanho</option>
                         <option value="1">Tam x</option>
                     </select>
