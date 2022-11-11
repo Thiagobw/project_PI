@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Nov-2022 às 01:11
+-- Tempo de geração: 11-Nov-2022 às 02:11
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `caracteristicas` (
-  `id_caracteristicas` int(11) NOT NULL,
+  `id_caracteristicas` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `fk_produtos_id_produtos` int(11) NOT NULL,
   `solado` varchar(20) NOT NULL,
   `lingueta` varchar(20) NOT NULL,
@@ -124,7 +124,7 @@ CREATE TABLE `produtos` (
   `nome_produto` varchar(100) NOT NULL,
   `preco_produto` int(11) NOT NULL,
   `quantidade_total` int(11) NOT NULL,
-  `id_tamanho` int(11) NOT NULL
+  `id_tamanho_produto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -162,7 +162,7 @@ CREATE TABLE `usuarios` (
 --
 
 CREATE TABLE `vendedor` (
-  `id_vendedor` int(11) NOT NULL,
+  `id_vendedor` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `CPF` varchar(14) NOT NULL,
   `email` varchar(40) NOT NULL,
@@ -179,7 +179,6 @@ CREATE TABLE `vendedor` (
 -- Índices para tabela `caracteristicas`
 --
 ALTER TABLE `caracteristicas`
-  ADD PRIMARY KEY (`id_caracteristicas`),
   ADD UNIQUE KEY `id_caracteristicas_UNIQUE` (`id_caracteristicas`);
 
 --
@@ -222,8 +221,7 @@ ALTER TABLE `pedido_produto`
 --
 ALTER TABLE `produtos`
   ADD PRIMARY KEY (`id_produtos`),
-  ADD UNIQUE KEY `id_produtos_UNIQUE` (`id_produtos`),
-  ADD KEY `Fk_id_tamanho` (`id_tamanho`);
+  ADD KEY `fk_id_tamanho` (`id_tamanho_produto`);
 
 --
 -- Índices para tabela `tamanho`
@@ -237,22 +235,6 @@ ALTER TABLE `tamanho`
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id_usuario`),
   ADD UNIQUE KEY `id_usuario_UNIQUE` (`id_usuario`);
-
---
--- Índices para tabela `vendedor`
---
-ALTER TABLE `vendedor`
-  ADD PRIMARY KEY (`id_vendedor`);
-
---
--- AUTO_INCREMENT de tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `caracteristicas`
---
-ALTER TABLE `caracteristicas`
-  MODIFY `id_caracteristicas` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de tabela `cliente`
@@ -303,26 +285,16 @@ ALTER TABLE `usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT de tabela `vendedor`
---
-ALTER TABLE `vendedor`
-  MODIFY `id_vendedor` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Restrições para despejos de tabelas
---
-
---
 -- Limitadores para a tabela `endereco`
 --
 ALTER TABLE `endereco`
-  ADD CONSTRAINT `fk_Endereco_Cliente1` FOREIGN KEY (`Cliente_id_cliente`) REFERENCES `cliente` (`id_cliente`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `fk_Endereco_Cliente1` FOREIGN KEY (`Cliente_id_cliente`) REFERENCES `cliente` (`id_cliente`);
 
 --
 -- Limitadores para a tabela `produtos`
 --
 ALTER TABLE `produtos`
-  ADD CONSTRAINT `Fk_id_tamanho` FOREIGN KEY (`id_tamanho`) REFERENCES `tamanho` (`id_tamanho`);
+  ADD CONSTRAINT `fk_id_tamanho` FOREIGN KEY (`id_tamanho_produto`) REFERENCES `tamanho` (`id_tamanho`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
