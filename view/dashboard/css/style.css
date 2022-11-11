@@ -22,6 +22,16 @@
     align-items: center !important;
     justify-content: center !important;
 }
+.right {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: right !important;
+}
+.left {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: left !important;
+}
 .me-2 {
     margin-right:.5rem !important;
 }
@@ -427,6 +437,11 @@
 }
 .modal-body::-webkit-scrollbar {
     display: none !important;
+}
+
+#contentInputSize1, #contentInputSize1 {
+    display: flex !important;
+    align-items: center !important;
 }
 
 /* aeration form */
