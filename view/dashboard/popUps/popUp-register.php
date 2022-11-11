@@ -121,8 +121,8 @@
                                         <label>Tamanhos</label>
                                     </div>
 
-                                    <div class="row center">
-                                    <div class="col-12 col-sm-10 col-md-9 col-lg-6 col-xl-6 mt-2" id="contentInputSize1">
+                                    <div class="row center" style="padding: 0;">
+                                        <div class="col-12 col-sm-10 col-md-9 col-lg-4 col-xl-4 mt-2" id="contentInputSize1">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="34">
                                                 <label class="form-check-label" for="inlineCheckbox1">34</label>
@@ -131,7 +131,7 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-8 col-sm-10 col-md-9 col-lg-6 col-xl-6 mt-2" id="contentInputSize2">
+                                        <div class="col-8 col-sm-10 col-md-9 col-lg-4 col-xl-4 mt-2" id="contentInputSize2">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="35">
                                                 <label class="form-check-label" for="inlineCheckbox2">35</label>
@@ -139,6 +139,7 @@
                                                     oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                             </div>
                                         </div>
+                                    </div>
 
                                         <div class="col-8 col-sm-10 col-md-9 col-lg-6 col-xl-6 mt-2" id="contentInputSize1">
                                             <div class="form-check form-check-inline">
@@ -203,6 +204,7 @@
                                             </div>
                                         </div>
 
+                                    <div class="row center">
                                         <div class="col-8 col-sm-10 col-md-9 col-lg-6 col-xl-6 mt-2" id="contentInputSize2">
                                             <div class="form-check form-check-inline">
                                                 <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="43">
