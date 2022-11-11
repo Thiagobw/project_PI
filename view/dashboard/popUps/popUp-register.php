@@ -1,6 +1,6 @@
 <div class="modal-dialog">
     <div class="modal fade" id="PopUp_register" role="dialog" aria-hidden="true" tabindex="-1">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="ttl-customers"> Cliente </h5>
@@ -116,61 +116,63 @@
                                     <input class=" form-control input-user" type="text" placeholder="Preço" id="priceProduct"  name="priceProduct" maxlength="14" autocomplete="off">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
+                                <div class="row mt-3">
+                                    <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8">
 
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                        <label class="form-check-label" for="inlineCheckbox1">34</label>
-                                        <input class=" form-control input-user w-40 ml-1" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
-                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
-                                    </div>
-                                    <div class="form-check form-check-inline mt-2">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                        <label class="form-check-label" for="inlineCheckbox2">35</label>
-                                        <input class=" form-control input-user w-40 ml-1" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
-                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
-                                    </div>
-                                
-                                    <div class="form-check form-check-inline mt-2">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                        <label class="form-check-label" for="inlineCheckbox2">36</label>
-                                        <input class=" form-control input-user w-40 ml-1" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
-                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
-                                    </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                            <label class="form-check-label" for="inlineCheckbox1">34</label>
+                                            <input class=" form-control input-user w-40 ml-1" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
+                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                        </div>
+                                        <div class="form-check form-check-inline mt-2">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox2">35</label>
+                                            <input class=" form-control input-user w-40 ml-1" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
+                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                        </div>
 
-                                    <div class="form-check form-check-inline mt-2">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                        <label class="form-check-label" for="inlineCheckbox2">37</label>
-                                        <input class=" form-control input-user w-40 ml-1" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
-                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
-                                    </div>
+                                        <div class="form-check form-check-inline mt-2">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox2">36</label>
+                                            <input class=" form-control input-user w-40 ml-1" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
+                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                        </div>
 
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                        <label class="form-check-label" for="inlineCheckbox2">38</label>
-                                        <input class=" form-control input-user w-40 ml-1" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
-                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
-                                    </div>
-                                    
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                        <label class="form-check-label" for="inlineCheckbox2">39</label>
-                                        <input class=" form-control input-user w-40 ml-1" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
-                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
-                                    </div>
+                                        <div class="form-check form-check-inline mt-2">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox2">37</label>
+                                            <input class=" form-control input-user w-40 ml-1" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
+                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                        </div>
 
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                        <label class="form-check-label" for="inlineCheckbox2">38</label>
-                                        <input class=" form-control input-user w-40 ml-1" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
-                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
-                                    </div>
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox2">38</label>
+                                            <input class=" form-control input-user w-40 ml-1" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
+                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                        </div>
 
-                                    <div class="form-check form-check-inline">
-                                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                                        <label class="form-check-label" for="inlineCheckbox2">43</label>
-                                        <input class=" form-control input-user w-40 ml-1" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
-                                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox2">39</label>
+                                            <input class=" form-control input-user w-40 ml-1" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
+                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox2">38</label>
+                                            <input class=" form-control input-user w-40 ml-1" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
+                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                        </div>
+
+                                        <div class="form-check form-check-inline">
+                                            <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                            <label class="form-check-label" for="inlineCheckbox2">43</label>
+                                            <input class=" form-control input-user w-40 ml-1" type="number" placeholder="quantidade" id="amountProduct"  name="amountProviders"
+                                                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                        </div>
                                     </div>
                                 </div>
 

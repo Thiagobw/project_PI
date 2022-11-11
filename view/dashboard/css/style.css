@@ -420,6 +420,14 @@
     }
 }
 
+.modal-body {
+    height: 90% !important;
+    max-height: 550px !important;
+    overflow-y: auto !important;
+}
+.modal-body::-webkit-scrollbar {
+    display: none !important;
+}
 
 /* aeration form */
 #ttlCust, #ttlProv, #ttlProd, #ttlEmploy,
