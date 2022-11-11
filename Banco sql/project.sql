@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 10-Nov-2022 às 17:09
--- Versão do servidor: 5.7.20-log
--- versão do PHP: 8.1.6
+-- Tempo de geração: 11-Nov-2022 às 01:11
+-- Versão do servidor: 10.4.25-MariaDB
+-- versão do PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -123,8 +123,7 @@ CREATE TABLE `produtos` (
   `id_produtos` int(11) NOT NULL,
   `nome_produto` varchar(100) NOT NULL,
   `preco_produto` int(11) NOT NULL,
-  `quantidade` int(11) NOT NULL,
-  `Modelo_idModelo` int(11) NOT NULL,
+  `quantidade_total` int(11) NOT NULL,
   `id_tamanho` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -136,7 +135,7 @@ CREATE TABLE `produtos` (
 
 CREATE TABLE `tamanho` (
   `id_tamanho` int(11) NOT NULL,
-  `tamanhos` int(11) NOT NULL,
+  `tamanho` int(11) NOT NULL,
   `quantidade` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -153,7 +152,7 @@ CREATE TABLE `usuarios` (
   `telefone` char(15) DEFAULT NULL,
   `email` varchar(60) DEFAULT NULL,
   `senha` varchar(260) DEFAULT NULL,
-  `tipo` int(1) NOT NULL DEFAULT '1'
+  `tipo` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -168,7 +167,7 @@ CREATE TABLE `vendedor` (
   `CPF` varchar(14) NOT NULL,
   `email` varchar(40) NOT NULL,
   `telefone` char(15) NOT NULL,
-  `tipo` int(11) DEFAULT '2',
+  `tipo` int(11) DEFAULT 2,
   `senha` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
