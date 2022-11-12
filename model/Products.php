@@ -2,13 +2,12 @@
 
 class Products {
     private $name;
-    private $amount; /* quantidade */
-    private $model; /* modelo */
-    private $productCharacteristics;
-    private $manufacturer; /** fabricante */
+    private $amount;
+    private $model;
+    private $manufacturer;
     private $price;
     private $id;
-    private $tamanho;
+    private $size;
 
 
     public function setName(string $name) {
@@ -32,14 +31,6 @@ class Products {
     }
     public function getModel () {
         return $this -> model;
-    }
-    
-
-    public function setProductCharacteristics (string $productCharacteristics) {
-        $this->productCharacteristics = $productCharacteristics;
-    }
-    public function getProductCharacteristics () {
-        return $this->productCharacteristics;
     }
 
 
@@ -66,11 +57,11 @@ class Products {
         return $this -> id;
     }
 
-    public function setTamanho($tamanho) {
-        $this -> tamanho = $tamanho;
+    public function setTamanho($size) {
+        $this -> size = $size;
     }
     public function getTamanho() {
-        return $this -> tamanho;
+        return $this -> size;
     }
 
 }

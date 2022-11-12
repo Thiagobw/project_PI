@@ -445,12 +445,12 @@
 #contentInputSize {
     padding: 0 !important;
 }
-#amountProduct {
+.amountProduct {
     width: 80% !important;
     margin-left: 1%;
 }
-#amountProduct::-webkit-outer-spin-button,
-#amountProduct::-webkit-inner-spin-button {
+.amountProduct::-webkit-outer-spin-button,
+.amountProduct::-webkit-inner-spin-button {
     display: none !important;
     margin: 0 !important;
 }

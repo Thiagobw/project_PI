@@ -127,7 +127,7 @@
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="checkSize34" value="34">
                                                     <label class="form-check-label" for="checkSize34">34</label>
-                                                    <input class=" form-control input-user" type="number" placeholder="quantidade" id="amountProduct34"  name="amountProdSize34" readonly
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct34"  name="amountProdSize34" 
                                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
@@ -136,7 +136,7 @@
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="checkSize35" value="35">
                                                     <label class="form-check-label" for="checkSize35">35</label>
-                                                    <input class=" form-control input-user" type="number" placeholder="quantidade" id="amountProduct35"  name="amountProdSize35" readonly
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct35"  name="amountProdSize35" disabled
                                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
@@ -147,7 +147,7 @@
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="checkSize36" value="36">
                                                     <label class="form-check-label" for="checkSize36">36</label>
-                                                    <input class=" form-control input-user" type="number" placeholder="quantidade" id="amountProduct36"  name="amountProdSize36" readonly
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct36"  name="amountProdSize36" 
                                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
@@ -156,7 +156,7 @@
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="checkSize37" value="37">
                                                     <label class="form-check-label" for="checkSize37">37</label>
-                                                    <input class=" form-control input-user" type="number" placeholder="quantidade" id="amountProduct37"  name="amountProdSize37" readonly
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct37"  name="amountProdSize37" disabled
                                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
@@ -167,7 +167,7 @@
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="checkSize38" value="38">
                                                     <label class="form-check-label" for="checkSize38">38</label>
-                                                    <input class=" form-control input-user" type="number" placeholder="quantidade" id="amountProduct38"  name="amountProdSize38" readonly
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct38"  name="amountProdSize38" disabled
                                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
@@ -176,7 +176,7 @@
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="checkSize39" value="39">
                                                     <label class="form-check-label" for="checkSize39">39</label>
-                                                    <input class=" form-control input-user" type="number" placeholder="quantidade" id="amountProduct39"  name="amountProdSize39" readonly
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct39"  name="amountProdSize39" disabled
                                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
@@ -187,7 +187,7 @@
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="checkSize40" value="40">
                                                     <label class="form-check-label" for="checkSize40">40</label>
-                                                    <input class=" form-control input-user" type="number" placeholder="quantidade" id="amountProduct40"  name="amountProdSize40" readonly
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct40"  name="amountProdSize40" disabled
                                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
@@ -196,7 +196,7 @@
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="checkSize41" value="41">
                                                     <label class="form-check-label" for="checkSize41">41</label>
-                                                    <input class=" form-control input-user" type="number" placeholder="quantidade" id="amountProduct41"  name="amountProdSize41" readonly
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct41"  name="amountProdSize41" disabled
                                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
@@ -207,7 +207,7 @@
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="checkSize42" value="42">
                                                     <label class="form-check-label" for="checkSize42">42</label>
-                                                    <input class=" form-control input-user" type="number" placeholder="quantidade" id="amountProduct42"  name="amountProdSize42" readonly
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct42"  name="amountProdSize42" disabled
                                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
@@ -216,7 +216,7 @@
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="checkSize43" value="43">
                                                     <label class="form-check-label" for="checkSize43">43</label>
-                                                    <input class=" form-control input-user" type="number" placeholder="quantidade" id="amountProduct43"  name="amountProdSize43" readonly
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct43"  name="amountProdSize43" disabled
                                                         oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
