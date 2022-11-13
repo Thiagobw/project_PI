@@ -6,9 +6,9 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Products.php";
 
 if(isset($_POST['submitProduct'])) {
 
-    if (!empty($_POST['nameProduct']) && !empty($_POST['priceProduct']) && isset($_POST['checkSize34']) || isset($_POST['checkSize35']) || 
+    if ((!empty($_POST['nameProduct']) && !empty($_POST['priceProduct'])) && (isset($_POST['checkSize34']) || isset($_POST['checkSize35']) || 
         isset($_POST['checkSize36']) || isset($_POST['checkSize37']) || isset($_POST['checkSize38']) || isset($_POST['checkSize39']) || 
-        isset($_POST['checkSize40']) || isset($_POST['checkSize41']) || isset($_POST['checkSize42']) || isset($_POST['checkSize43'])) {
+        isset($_POST['checkSize40']) || isset($_POST['checkSize41']) || isset($_POST['checkSize42']) || isset($_POST['checkSize43']))) {
 
             $img = $_POST['imgProduct'];
             $name = $_POST['nameProduct'];
