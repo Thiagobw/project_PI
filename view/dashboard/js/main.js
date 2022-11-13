@@ -288,7 +288,7 @@ function getProviderData(idProv) {
 }
 
 
-function teste(idCheck, idInput) {
+function selectOption(idCheck, idInput) {
     let checkboxSize = document.getElementById(idCheck);
     let inputAmount = document.getElementById(idInput);
     if(checkboxSize.checked) {
