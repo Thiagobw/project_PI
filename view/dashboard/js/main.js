@@ -294,7 +294,9 @@ function teste(idCheck, idInput) {
     if(checkboxSize.checked) {
 
         inputAmount.style.display = 'flex';
+        inputAmount.readOnly = false;
     } else {
         inputAmount.style.display = 'none';
+        inputAmount.readOnly = true;
     }
 }
