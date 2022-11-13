@@ -6,9 +6,9 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Products.php";
 
 if(isset($_POST['submitProduct'])) {
 
-    if (!empty($_POST['nameProduct']) && !is_null($_POST['amountProdSize34']) || !is_null($_POST['amountProdSize35']) || !is_null($_POST['amountProdSize36']) || 
-        !is_null($_POST['amountProdSize37']) || !is_null($_POST['amountProdSize38']) || !is_null($_POST['amountProdSize39']) || !is_null($_POST['amountProdSize40']) || 
-        !is_null($_POST['amountProdSize41']) || !is_null($_POST['amountProdSize42']) || !is_null($_POST['amountProdSize43'])) {
+    if (!empty($_POST['nameProduct']) && !empty($_POST['priceProduct']) && isset($_POST['checkSize34']) || isset($_POST['checkSize35']) || 
+        isset($_POST['checkSize36']) || isset($_POST['checkSize37']) || isset($_POST['checkSize38']) || isset($_POST['checkSize39']) || 
+        isset($_POST['checkSize40']) || isset($_POST['checkSize41']) || isset($_POST['checkSize42']) || isset($_POST['checkSize43'])) {
 
             $img = $_POST['imgProduct'];
             $name = $_POST['nameProduct'];
@@ -69,7 +69,6 @@ if(isset($_POST['submitProduct'])) {
                 $amount =+ $amount43 = $_POST['amountProdSize43'];
             }
 
-            die(var_dump($amount + $amount34 + $amount36));
 
         /*$img = "dunk.png"; //aqui a url da imagem que sera criada a miniatura
 
@@ -115,7 +114,7 @@ if(isset($_POST['submitProduct'])) {
         }
 
     } else {
-        echo "<br><h3>erro ao cadastrar!</h3> você deve informar:<br> O nome do produto.<br> Um tamanho e sua quantidade.";
+        echo "<br><h3>erro ao cadastrar!</h3> você deve informar: <br> O nome do produto. <br> O valor do produto. <br> Um tamanho e sua quantidade.";
     }
 
 } else {

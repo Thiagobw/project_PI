@@ -98,6 +98,7 @@
                     <div class="row" id="contentRegisterProd">
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formProd" action="../../control/products_registration.php" method="POST">
+
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <div class="row center">
                                         <label class="col-12 col-sm-10 col-md-11 col-lg-8 selectFileImgProduct center" for="imgProduct">
@@ -116,7 +117,7 @@
                                     <input class=" form-control input-user" type="text" placeholder="Preço" id="priceProduct"  name="priceProduct" maxlength="14" autocomplete="off">
                                 </div>
 
-                                <div class="row mt-3 center">
+                                <div class="row mt-3">
                                     <div class="col-12 center">
                                         <label class="text-center">Selecione os tamanhos e sua quantidade</label>
                                     </div>
@@ -125,19 +126,19 @@
                                         <div class="row center">
                                             <div class="col-8 col-sm-10 col-md-6 col-lg-4 col-xl-4 mt-3" id="contentInputSize">
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="checkSize34" value="34">
+                                                    <input class="form-check-input" type="checkbox" id="checkSize34" name="checkSize34" onclick="teste('checkSize34', 'amountProdSize34')">
                                                     <label class="form-check-label" for="checkSize34">34</label>
-                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct34"  name="amountProdSize34" 
-                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProdSize34"  name="amountProdSize34" value="0" readonly
+                                                    style="display: none;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
 
                                             <div class="col-8 col-sm-10 col-md-6 col-lg-4 col-xl-4 mt-3" id="contentInputSize">
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="checkSize35" value="35">
+                                                    <input class="form-check-input" type="checkbox" id="checkSize35" name="checkSize35" onclick="teste('checkSize35', 'amountProdSize35')">
                                                     <label class="form-check-label" for="checkSize35">35</label>
-                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct35"  name="amountProdSize35" disabled
-                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProdSize35"  name="amountProdSize35" value="0" readonly
+                                                    style="display: none;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
                                         </div>
@@ -145,19 +146,19 @@
                                         <div class="row center">
                                             <div class="col-8 col-sm-10 col-md-6 col-lg-4 col-xl-4 mt-3" id="contentInputSize">
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="checkSize36" value="36">
+                                                    <input class="form-check-input" type="checkbox" id="checkSize36" name="checkSize36" onclick="teste('checkSize36', 'amountProdSize36')">
                                                     <label class="form-check-label" for="checkSize36">36</label>
-                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct36"  name="amountProdSize36" 
-                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProdSize36"  name="amountProdSize36" value="0" readonly
+                                                    style="display: none;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
 
                                             <div class="col-8 col-sm-10 col-md-6 col-lg-4 col-xl-4 mt-3" id="contentInputSize">
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="checkSize37" value="37">
+                                                    <input class="form-check-input" type="checkbox" id="checkSize37" name="checkSize37" onclick="teste('checkSize37', 'amountProdSize37')">
                                                     <label class="form-check-label" for="checkSize37">37</label>
-                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct37"  name="amountProdSize37" disabled
-                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProdSize37"  name="amountProdSize37" value="0" readonly
+                                                    style="display: none;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
                                         </div>
@@ -165,19 +166,19 @@
                                         <div class="row center">
                                             <div class="col-8 col-sm-10 col-md-6 col-lg-4 col-xl-4 mt-3" id="contentInputSize">
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="checkSize38" value="38">
+                                                    <input class="form-check-input" type="checkbox" id="checkSize38" name="checkSize38" onclick="teste('checkSize38', 'amountProdSize38')">
                                                     <label class="form-check-label" for="checkSize38">38</label>
-                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct38"  name="amountProdSize38" disabled
-                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProdSize38"  name="amountProdSize38" value="0" readonly
+                                                    style="display: none;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
 
                                             <div class="col-8 col-sm-10 col-md-6 col-lg-4 col-xl-4 mt-3" id="contentInputSize">
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="checkSize39" value="39">
+                                                    <input class="form-check-input" type="checkbox" id="checkSize39" name="checkSize39" onclick="teste('checkSize39', 'amountProdSize39')">
                                                     <label class="form-check-label" for="checkSize39">39</label>
-                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct39"  name="amountProdSize39" disabled
-                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProdSize39"  name="amountProdSize39" value="0" readonly
+                                                    style="display: none;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
                                         </div>
@@ -185,19 +186,19 @@
                                         <div class="row center">
                                             <div class="col-8 col-sm-10 col-md-6 col-lg-4 col-xl-4 mt-3" id="contentInputSize">
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="checkSize40" value="40">
+                                                    <input class="form-check-input" type="checkbox" id="checkSize40" name="checkSize40" onclick="teste('checkSize40', 'amountProdSize40')">
                                                     <label class="form-check-label" for="checkSize40">40</label>
-                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct40"  name="amountProdSize40" disabled
-                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProdSize40"  name="amountProdSize40" value="0" readonly
+                                                    style="display: none;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
 
                                             <div class="col-8 col-sm-10 col-md-6 col-lg-4 col-xl-4 mt-3" id="contentInputSize">
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="checkSize41" value="41">
+                                                    <input class="form-check-input" type="checkbox" id="checkSize41" name="checkSize41" onclick="teste('checkSize41', 'amountProdSize41')">
                                                     <label class="form-check-label" for="checkSize41">41</label>
-                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct41"  name="amountProdSize41" disabled
-                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProdSize41"  name="amountProdSize41" value="0" readonly
+                                                    style="display: none;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
                                         </div>
@@ -205,27 +206,27 @@
                                         <div class="row center">
                                             <div class="col-8 col-sm-10 col-md-6 col-lg-4 col-xl-4 mt-3" id="contentInputSize">
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="checkSize42" value="42">
+                                                    <input class="form-check-input" type="checkbox" id="checkSize42" name="checkSize42" onclick="teste('checkSize42', 'amountProdSize42')">
                                                     <label class="form-check-label" for="checkSize42">42</label>
-                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct42"  name="amountProdSize42" disabled
-                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProdSize42"  name="amountProdSize42" value="0" readonly
+                                                    style="display: none;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
 
                                             <div class="col-8 col-sm-10 col-md-6 col-lg-4 col-xl-4 mt-3" id="contentInputSize">
                                                 <div class="form-check form-check-inline">
-                                                    <input class="form-check-input" type="checkbox" id="checkSize43" value="43">
+                                                    <input class="form-check-input" type="checkbox" id="checkSize43" name="checkSize43" onclick="teste('checkSize43', 'amountProdSize43')">
                                                     <label class="form-check-label" for="checkSize43">43</label>
-                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProduct43"  name="amountProdSize43" disabled
-                                                        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProdSize43"  name="amountProdSize43" value="0" readonly 
+                                                    style="display: none;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formProd" type="submit" name="submitProduct" value="Cadastrar Produto">
+                                <div class="col-7 mt-4 mb-2 center" style="padding: 0;">
+                                    <input class="btn btn-primary" form="formProd" type="submit" name="submitProduct" value="Cadastrar" id="inputSubmitProduct">
                                 </div>
                             </form>
                         </div>

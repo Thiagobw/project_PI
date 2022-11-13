@@ -455,6 +455,16 @@
     margin: 0 !important;
 }
 
+#inputSubmitProduct {
+    width: 75%;
+}
+
+@media (min-width: 575.98px) and (max-width: 320px) {
+    #inputSubmitProduct {
+        width: 100%;
+    }
+}
+
 /* aeration form */
 #ttlCust, #ttlProv, #ttlProd, #ttlEmploy,
 #contentAlterCust, #contentAlterProv, #contentAlterProd, #contentAlterEploy {
