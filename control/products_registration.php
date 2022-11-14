@@ -19,56 +19,6 @@ if(isset($_POST['submitProduct'])) {
             $amount35 = $_POST['amountProdSize35'];
             $amount36 = $_POST['amountProdSize36'];
 
-            if (!is_null($amount34)) {
-
-                $amount =+ $amount34;
-            }
-
-            if (!is_null($amount35)) {
-                
-                $amount =+ $amount35;
-            }
-
-            if (!is_null($amount36)) {
-
-                $amount =+ $amount36;
-            }
-            
-            else if (!is_null($_POST['amountProdSize37'])) {
-
-                $amount =+ $amount37 = $_POST['amountProdSize37'];
-            }
-
-            else if (!is_null($_POST['amountProdSize38'])) {
-
-                $amount =+ $amount38 = $_POST['amountProdSize38'];
-            }
-
-            else if (!is_null($_POST['amountProdSize39'])) {
-                
-                $amount =+ $amount39 = $_POST['amountProdSize39'];
-            }
-
-            else if (!is_null($_POST['amountProdSize40'])) {
-                
-                $amount =+ $amount40 = $_POST['amountProdSize40'];
-            }
-
-            else if (!is_null($_POST['amountProdSize41'])) {
-
-                $amount =+ $amount41 = $_POST['amountProdSize41'];                
-            }
-
-            else if (!is_null($_POST['amountProdSize42'])) {
-
-                $amount =+ $amount42 = $_POST['amountProdSize42'];
-            }
-            
-            else if (!is_null($_POST['amountProdSize43'])) {
-
-                $amount =+ $amount43 = $_POST['amountProdSize43'];
-            }
-
 
         /*$img = "dunk.png"; //aqui a url da imagem que sera criada a miniatura
 

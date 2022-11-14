@@ -295,8 +295,10 @@ function selectOption(idCheck, idInput) {
 
         inputAmount.style.display = 'flex';
         inputAmount.readOnly = false;
+        inputAmount.value = '';
     } else {
         inputAmount.style.display = 'none';
         inputAmount.readOnly = true;
+        inputAmount.value = 0;
     }
 }
