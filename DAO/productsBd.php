@@ -17,9 +17,7 @@ function search_products() {
 
         $produto->setId($registro["id_produtos"]);
         $produto->setName($registro["nome_produto"]);
-        $produto->setAmount($registro["quantidade"]);
         $produto->setPrice($registro["preco_produto"]);
-        $produto->setTamanho($registro["id_tamanho"]);
 
         $resul_produtos[] = $produto;
     }
@@ -128,7 +126,6 @@ function getProduct($id) {
         $prod -> setId($registro["id_produtos"]);
         $prod -> setName($registro["nome_produto"]);
         $prod -> setPrice($registro["preco_produto"]);
-        $prod ->setAmount($registro['quantidade']);
         
     }
     return $prod;

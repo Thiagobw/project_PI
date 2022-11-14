@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 11-Nov-2022 às 02:11
+-- Tempo de geração: 14-Nov-2022 às 17:00
 -- Versão do servidor: 10.4.25-MariaDB
 -- versão do PHP: 8.1.10
 
@@ -28,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `caracteristicas` (
-  `id_caracteristicas` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `id_caracteristicas` int(11) NOT NULL,
   `fk_produtos_id_produtos` int(11) NOT NULL,
   `solado` varchar(20) NOT NULL,
   `lingueta` varchar(20) NOT NULL,
@@ -139,6 +139,23 @@ CREATE TABLE `tamanho` (
   `quantidade` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Extraindo dados da tabela `tamanho`
+--
+
+INSERT INTO `tamanho` (`id_tamanho`, `tamanho`, `quantidade`) VALUES
+(1, 34, 0),
+(2, 35, 0),
+(3, 35, 0),
+(4, 36, 0),
+(5, 37, 0),
+(6, 38, 0),
+(7, 39, 0),
+(8, 40, 0),
+(9, 41, 0),
+(10, 42, 0),
+(11, 43, 0);
+
 -- --------------------------------------------------------
 
 --
@@ -155,6 +172,13 @@ CREATE TABLE `usuarios` (
   `tipo` int(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`, `tipo`) VALUES
+(1, 'thiago', '076.147.659-82', '(47) 99225-7589', 'thgleopoldo900@gmail.com', '$argon2i$v=19$m=2048,t=4,p=3$OGpHTHNOcGdiTlQuQlZ6Vg$U0Nd/v8sjBAY2Xchnxsfs8j1/rPzrV5xBkW5vB5sDR4', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -162,7 +186,7 @@ CREATE TABLE `usuarios` (
 --
 
 CREATE TABLE `vendedor` (
-  `id_vendedor` int(11) PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  `id_vendedor` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `CPF` varchar(14) NOT NULL,
   `email` varchar(40) NOT NULL,
@@ -179,6 +203,7 @@ CREATE TABLE `vendedor` (
 -- Índices para tabela `caracteristicas`
 --
 ALTER TABLE `caracteristicas`
+  ADD PRIMARY KEY (`id_caracteristicas`),
   ADD UNIQUE KEY `id_caracteristicas_UNIQUE` (`id_caracteristicas`);
 
 --
@@ -237,6 +262,22 @@ ALTER TABLE `usuarios`
   ADD UNIQUE KEY `id_usuario_UNIQUE` (`id_usuario`);
 
 --
+-- Índices para tabela `vendedor`
+--
+ALTER TABLE `vendedor`
+  ADD PRIMARY KEY (`id_vendedor`);
+
+--
+-- AUTO_INCREMENT de tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `caracteristicas`
+--
+ALTER TABLE `caracteristicas`
+  MODIFY `id_caracteristicas` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
@@ -276,13 +317,23 @@ ALTER TABLE `produtos`
 -- AUTO_INCREMENT de tabela `tamanho`
 --
 ALTER TABLE `tamanho`
-  MODIFY `id_tamanho` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_tamanho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de tabela `vendedor`
+--
+ALTER TABLE `vendedor`
+  MODIFY `id_vendedor` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Restrições para despejos de tabelas
+--
 
 --
 -- Limitadores para a tabela `endereco`
