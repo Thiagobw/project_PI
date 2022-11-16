@@ -52,6 +52,7 @@ if(isset($_POST['submitProduct'])) {
             if(isset($_POST['checkSize43'])) {
                 $SizeAmountList[] = [43, $_POST['amountProdSize43']];
             }
+            
             $img = $_POST['imgProduct'];
             $name = $_POST['nameProduct'];
             $price = $_POST['priceProduct'];

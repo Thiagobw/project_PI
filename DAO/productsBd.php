@@ -35,7 +35,7 @@ function register_products($prod) {
             $sqlReg = " INSERT INTO produtos (nome_produto,preco_produto) Values (?,?)";
             
             $stmt = $PDO -> prepare($sqlReg);
-            $stmt -> execute([$prod->getName(), $prod->getPrice(), 2]);
+            $stmt -> execute([$prod->getName(), $prod->getPrice()]);
             
             $id  = $PDO->lastInsertId();
 
