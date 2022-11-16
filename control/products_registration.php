@@ -10,37 +10,59 @@ if(isset($_POST['submitProduct'])) {
         isset($_POST['checkSize36']) || isset($_POST['checkSize37']) || isset($_POST['checkSize38']) || isset($_POST['checkSize39']) ||
         isset($_POST['checkSize40']) || isset($_POST['checkSize41']) || isset($_POST['checkSize42']) || isset($_POST['checkSize43']))) {
 
-        $img = $_POST['imgProduct'];
-        $name = $_POST['nameProduct'];
-        $price = $_POST['priceProduct'];
-        $amount34 = $_POST['amountProdSize34'];
-        $amount35 = $_POST['amountProdSize35'];
-        $amount36 = $_POST['amountProdSize36'];
-        $amount37 = $_POST['amountProdSize37'];
-        $amount38 = $_POST['amountProdSize38'];
-        $amount39 = $_POST['amountProdSize39'];
-        $amount40 = $_POST['amountProdSize40'];
-        $amount41 = $_POST['amountProdSize41'];
-        $amount42 = $_POST['amountProdSize42'];
-        $amount43 = $_POST['amountProdSize43'];
 
+            $SizeAmountList = array();
+            
+            if(isset($_POST['checkSize34'])) {
+                $SizeAmountList[] = [34, $_POST['amountProdSize34']];
+            }
 
-        $prod = new Products();
+            if(isset($_POST['checkSize35'])) {
+                $SizeAmountList[] = [35, $_POST['amountProdSize35']];
+            }
 
-        $prod ->setName($name);
-        $prod ->setPrice($price);
-        $prod ->setAmountTotal($amount34 + $amount35 + $amount36 + $amount37 + $amount38 + $amount39 + $amount40 + $amount41 + $amount42 + $amount43);
-        $prod ->setSz34($amount34);
-        $prod ->setSz35($amount35);
-        $prod ->setSz36($amount36);
-        $prod ->setSz37($amount37);
-        $prod ->setSz38($amount38);
-        $prod ->setSz39($amount39);
-        $prod ->setSz40($amount40);
-        $prod ->setSz41($amount41);
-        $prod ->setSz42($amount42);
-        $prod ->setSz43($amount43);
+            if(isset($_POST['checkSize36'])) {
+                $SizeAmountList[] = [36, $_POST['amountProdSize36']];
+            }
 
+            if(isset($_POST['checkSize37'])) {
+                $SizeAmountList[] = [37, $_POST['amountProdSize37']];
+            }
+
+            if(isset($_POST['checkSize38'])) {
+                $SizeAmountList[] = [38, $_POST['amountProdSize38']];
+            }
+
+            if(isset($_POST['checkSize39'])) {
+                $SizeAmountList[] = [39, $_POST['amountProdSize39']];
+            }
+
+            if(isset($_POST['checkSize40'])) {
+                $SizeAmountList[] = [40, $_POST['amountProdSize40']];
+            }
+
+            if(isset($_POST['checkSize41'])) {
+                $SizeAmountList[] = [41, $_POST['amountProdSize41']];
+            }
+
+            if(isset($_POST['checkSize42'])) {
+                $SizeAmountList[] = [42, $_POST['amountProdSize42']];
+            }
+
+            if(isset($_POST['checkSize43'])) {
+                $SizeAmountList[] = [43, $_POST['amountProdSize43']];
+            }
+            $img = $_POST['imgProduct'];
+            $name = $_POST['nameProduct'];
+            $price = $_POST['priceProduct'];
+            
+            $prod = new Products();
+            $prod ->setName($name);
+            $prod ->setPrice($price);
+            
+            $result_regist_id = register_products($prod);
+            
+            $result_regist_id = register_products_size($result_regist_id, $tamanhoQuant);
 
 
         $result_regist = register_products($prod);
