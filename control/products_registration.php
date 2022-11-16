@@ -52,7 +52,7 @@ if(isset($_POST['submitProduct'])) {
             if(isset($_POST['checkSize43'])) {
                 $SizeAmountList[] = [43, $_POST['amountProdSize43']];
             }
-            
+
             $img = $_POST['imgProduct'];
             $name = $_POST['nameProduct'];
             $price = $_POST['priceProduct'];
@@ -60,10 +60,11 @@ if(isset($_POST['submitProduct'])) {
             $prod = new Products();
             $prod ->setName($name);
             $prod ->setPrice($price);
-            
+            //recebe o id
             $result_regist_id = register_products($prod);
             
-            $result_regist_id = register_products_size($result_regist_id, $tamanhoQuant);
+            //chama a função de inserir os tamanhos, passando o id e o array
+            $result_regist_Size = register_products_size($result_regist_id, $SizeAmountList);
 
 
         $result_regist = register_products($prod);
