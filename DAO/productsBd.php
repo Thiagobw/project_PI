@@ -70,7 +70,12 @@ function delet_product ($prod) {
     try {
         $PDO = connect();
 
-        $sqlDel = "DELETE FROM produtos WHERE id_produtos=?";
+        $sqlDel = "DELETE FROM tamanho WHERE id_produto=?";
+
+        $stmt = $PDO -> prepare($sqlDel);
+        $stmt -> execute([$prod->getId()]);
+
+        $sqlDel = "DELETE FROM produtos WHERE id_produto=?";
 
         $stmt = $PDO -> prepare($sqlDel);
         $stmt -> execute([$prod->getId()]);
