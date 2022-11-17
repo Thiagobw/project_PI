@@ -189,7 +189,6 @@ $customersList = search_customers();
                                                 <td> <?php echo $cliente -> getTell();?> </td>
 
                                                 <td class="">
-                                                    <a class="btn btn-sm btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
                                                     <a class="btn btn-sm btn-plus-options" href="../../control/customers_delete.php?id=<?php echo $cliente -> getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
                                                     <a class="btn btn-sm btn-plus-options" id="btnAlterCust" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="#" onclick="getCustomerData(<?php echo $cliente -> getId(); ?>)"><i class="fa-solid fa-pen-to-square"></i></a>
                                                 </td>
