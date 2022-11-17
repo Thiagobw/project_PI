@@ -12,7 +12,7 @@ if(isset($_GET['id'])) {
     $result['quantidade'] = $prod -> getAmount();
     $result['preco'] = $prod -> getPrice();
     $result['id'] = $prod -> getId();
-
+    
     echo json_encode($result);
 
 } else {
