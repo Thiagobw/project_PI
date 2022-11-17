@@ -193,22 +193,13 @@ $productsList = search_products();
                                             <td class="">
                                                 <div class="nav-item dropdown">
                                                     <a href="#" class="nav-link dropdown-toggle active mb-1" data-bs-toggle="dropdown" id="accDropDown">
-                                                        <div class="d-flex align-items-center ms-1 mb-1 mt-1" style="align-items: center;">
-                                                            <div class="position-relative">
-                                                                <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                                                <div class="bg-success rounded-circle" id="icon-online"></div>
-                                                            </div>
-                                                            <div class="ms-3">
-                                                            </div>
-                                                        </div>
+                                                    txt
                                                     </a>
                                                     <div class="dropdown-menu bg-transparent border-0">
-                                                    <a href="profile.php" class="dropdown-item">Perfil</a>
-                    <a href="../../control/sair.php" class="dropdown-item">Sair</a>
-                </div>
-            </div>
-                                                <a class="btn btn-plus-options" href="../../control/products_delete.php?id=<?php echo $prod ->getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
-                                                <a class="btn btn-plus-options" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="getProductData(<?php echo $prod -> getId(); ?>)"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                    <a class="btn btn-plus-options" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="getProductData(<?php echo $prod -> getId(); ?>)">alterar</a>
+                                                        <a class="btn btn-plus-options" href="../../control/products_delete.php?id=<?php echo $prod ->getId(); ?>">excluir</a>
+                                                    </div>
+                                                </div>
                                             </td>
                                         </tr>
                                      
