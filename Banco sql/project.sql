@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 14-Nov-2022 às 17:00
--- Versão do servidor: 10.4.25-MariaDB
--- versão do PHP: 8.1.10
+-- Tempo de geração: 17-Nov-2022 às 12:30
+-- Versão do servidor: 5.7.20-log
+-- versão do PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -122,9 +122,7 @@ CREATE TABLE `pedido_produto` (
 CREATE TABLE `produtos` (
   `id_produtos` int(11) NOT NULL,
   `nome_produto` varchar(100) NOT NULL,
-  `preco_produto` int(11) NOT NULL,
-  `quantidade_total` int(11) NOT NULL,
-  `id_tamanho_produto` int(11) NOT NULL
+  `preco_produto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -136,25 +134,9 @@ CREATE TABLE `produtos` (
 CREATE TABLE `tamanho` (
   `id_tamanho` int(11) NOT NULL,
   `tamanho` int(11) NOT NULL,
-  `quantidade` int(11) NOT NULL
+  `quantidade` int(11) NOT NULL,
+  `id_produto` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Extraindo dados da tabela `tamanho`
---
-
-INSERT INTO `tamanho` (`id_tamanho`, `tamanho`, `quantidade`) VALUES
-(1, 34, 0),
-(2, 35, 0),
-(3, 35, 0),
-(4, 36, 0),
-(5, 37, 0),
-(6, 38, 0),
-(7, 39, 0),
-(8, 40, 0),
-(9, 41, 0),
-(10, 42, 0),
-(11, 43, 0);
 
 -- --------------------------------------------------------
 
@@ -169,7 +151,7 @@ CREATE TABLE `usuarios` (
   `telefone` char(15) DEFAULT NULL,
   `email` varchar(60) DEFAULT NULL,
   `senha` varchar(260) DEFAULT NULL,
-  `tipo` int(1) NOT NULL DEFAULT 1
+  `tipo` int(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -177,7 +159,7 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`, `tipo`) VALUES
-(1, 'thiago', '076.147.659-82', '(47) 99225-7589', 'thgleopoldo900@gmail.com', '$argon2i$v=19$m=2048,t=4,p=3$OGpHTHNOcGdiTlQuQlZ6Vg$U0Nd/v8sjBAY2Xchnxsfs8j1/rPzrV5xBkW5vB5sDR4', 1);
+(1, 'thiago', '021.174.540-54', '(47) 99225-7589', 'teste@gmail.com', '$argon2i$v=19$m=2048,t=4,p=3$WUtoQ3N4dHNjaGMwVkJNWA$3Kl0P5/e8OkaXPBjwvs23MpVd2CIirVdkbcYA+3sDds', 1);
 
 -- --------------------------------------------------------
 
@@ -191,7 +173,7 @@ CREATE TABLE `vendedor` (
   `CPF` varchar(14) NOT NULL,
   `email` varchar(40) NOT NULL,
   `telefone` char(15) NOT NULL,
-  `tipo` int(11) DEFAULT 2,
+  `tipo` int(11) DEFAULT '2',
   `senha` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -245,14 +227,14 @@ ALTER TABLE `pedido_produto`
 -- Índices para tabela `produtos`
 --
 ALTER TABLE `produtos`
-  ADD PRIMARY KEY (`id_produtos`),
-  ADD KEY `fk_id_tamanho` (`id_tamanho_produto`);
+  ADD PRIMARY KEY (`id_produtos`);
 
 --
 -- Índices para tabela `tamanho`
 --
 ALTER TABLE `tamanho`
-  ADD PRIMARY KEY (`id_tamanho`);
+  ADD PRIMARY KEY (`id_tamanho`),
+  ADD KEY `fk_id_produto_tamanho` (`id_produto`);
 
 --
 -- Índices para tabela `usuarios`
@@ -311,13 +293,13 @@ ALTER TABLE `pedido_produto`
 -- AUTO_INCREMENT de tabela `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produtos` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_produtos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `tamanho`
 --
 ALTER TABLE `tamanho`
-  MODIFY `id_tamanho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_tamanho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de tabela `usuarios`
@@ -342,10 +324,10 @@ ALTER TABLE `endereco`
   ADD CONSTRAINT `fk_Endereco_Cliente1` FOREIGN KEY (`Cliente_id_cliente`) REFERENCES `cliente` (`id_cliente`);
 
 --
--- Limitadores para a tabela `produtos`
+-- Limitadores para a tabela `tamanho`
 --
-ALTER TABLE `produtos`
-  ADD CONSTRAINT `fk_id_tamanho` FOREIGN KEY (`id_tamanho_produto`) REFERENCES `tamanho` (`id_tamanho`);
+ALTER TABLE `tamanho`
+  ADD CONSTRAINT `fk_id_produto_tamanho` FOREIGN KEY (`id_produto`) REFERENCES `produtos` (`id_produtos`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
