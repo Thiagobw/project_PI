@@ -141,10 +141,11 @@ function update_product($prod){
 function getProduct($id) {
     $connection = connect();
 
-    $stmt = $connection -> prepare("SELECT * FROM produtos WHERE id_produtos=?");
+    $stmt = $connection -> prepare("SELECT * FROM produtos p INNER JOIN tamanho t ON p.id_produtos = t.id_produto WHERE p.id_produtos = ?");
     $stmt -> execute([$id]);
 
     $result = $stmt -> fetchAll();
+    die(var_dump($result));
     $prod = new Products();
     foreach($result as $registro) {
         
