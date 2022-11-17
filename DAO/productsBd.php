@@ -25,7 +25,7 @@ function search_products() {
 }
 
 
-function register_products($prod) {
+function register_product($prod) {
 
     try{
         $PDO = connect();
@@ -60,6 +60,11 @@ function register_products($prod) {
         echo $e->getMessage();
         return false;
     }
+}
+
+
+function register_product_size($result_regist_id, $SizeAmountList) {
+
 }
 
 

@@ -53,28 +53,30 @@ if(isset($_POST['submitProduct'])) {
                 $SizeAmountList[] = [43, $_POST['amountProdSize43']];
             }
 
-            $img = $_POST['imgProduct'];
+            $img = $_POST['imgProduct']; // a fazer...
+
             $name = $_POST['nameProduct'];
             $price = $_POST['priceProduct'];
             
             $prod = new Products();
             $prod ->setName($name);
             $prod ->setPrice($price);
-            //recebe o id
-            $result_regist_id = register_products($prod);
-            
-            //chama a função de inserir os tamanhos, passando o id e o array
-            $result_regist_Size = register_products_size($result_regist_id, $SizeAmountList);
 
+            $result_regist_id = register_product($prod);
 
-        $result_regist = register_products($prod);
+            if (!is_null($result_regist_id)) {
 
-        if ($result_regist == true) {
-            header('Location: ../view/dashboard/productsPage.php');
-        }
-        else {
-            echo "falha ao cadastrar";
-        }
+                $result_regist_Size = register_product_size($result_regist_id, $SizeAmountList);
+
+                if ($result_regist_Size == true) {
+
+                    header('Location: ../view/dashboard/productsPage.php');
+                }
+                else {
+                    echo "falha ao cadastrar";
+                }
+
+            }
 
     } else {
         echo "<br><h3>erro ao cadastrar!</h3> 
