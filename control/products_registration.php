@@ -4,13 +4,26 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/connection.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/productsBd.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Products.php";
 
+/**
+ * check if the form was sent
+ */
 if(isset($_POST['submitProduct'])) {
 
-    if ((!empty($_POST['nameProduct']) && !empty($_POST['priceProduct'])) && (isset($_POST['checkSize34']) || isset($_POST['checkSize35']) ||
-        isset($_POST['checkSize36']) || isset($_POST['checkSize37']) || isset($_POST['checkSize38']) || isset($_POST['checkSize39']) ||
-        isset($_POST['checkSize40']) || isset($_POST['checkSize41']) || isset($_POST['checkSize42']) || isset($_POST['checkSize43']))) {
+    /**
+     * verifies that all the 
+     * necessary data of the form has been sent
+     */
+    if ((!empty($_POST['nameProduct']) && !empty($_POST['priceProduct'])) && 
+        (isset($_POST['checkSize34']) || isset($_POST['checkSize35']) || 
+        isset($_POST['checkSize36']) || isset($_POST['checkSize37']) || 
+        isset($_POST['checkSize38']) || isset($_POST['checkSize39']) ||
+        isset($_POST['checkSize40']) || isset($_POST['checkSize41']) || 
+        isset($_POST['checkSize42']) || isset($_POST['checkSize43']))) {
 
-
+            /**
+             * identifies which size will 
+             * be registered and adds it to the list
+             */
             $SizeAmountList = array();
             
             if(isset($_POST['checkSize34'])) {
@@ -53,7 +66,7 @@ if(isset($_POST['submitProduct'])) {
                 $SizeAmountList[] = [43, $_POST['amountProdSize43']];
             }
 
-            $img = $_POST['imgProduct']; // a fazer...
+            $img = $_POST['imgProduct']; // to do...
 
             $name = $_POST['nameProduct'];
             $price = $_POST['priceProduct'];
