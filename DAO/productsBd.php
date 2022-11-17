@@ -39,13 +39,9 @@ function register_product($prod) {
             
             $id  = $PDO->lastInsertId();
 
-            $sqlRegSize = "INSERT INTO tamanho (tamanhos, quantidade, id_produto) values (?,?,?)";
-            $stmt = $PDO -> prepare($sqlRegSize);
-            $stmt -> execute([$prod->getTamanho(), $prod->getAmount(), $id]);
-
             $PDO->commit();
             if($stmt) {
-                return true;
+                return $id ;
             }
             else {
                 return false;
@@ -64,7 +60,31 @@ function register_product($prod) {
 
 
 function register_product_size($result_regist_id, $SizeAmountList) {
+    try{
+        $PDO = connect();
 
+        try{
+            $PDO->beginTransaction();
+            $sqlRegSize = "INSERT INTO tamanho (tamanho, quantidade, id_produto) values (?,?,?)";
+            $stmt = $PDO -> prepare($sqlRegSize);
+
+            foreach ( $SizeAmountList as $list) {
+                 $stmt -> execute([$list[0], $list[1], $result_regist_id]);
+            }
+            $PDO->commit();
+            return true;
+
+
+        } catch (Exception $e) {
+            $PDO->rollback();
+            echo $e->getMessage();
+            return false;
+        }
+
+    } catch (Exception $e) {
+        echo $e->getMessage();
+        return false;
+    }
 }
 
 

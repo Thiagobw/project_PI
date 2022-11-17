@@ -186,9 +186,9 @@ $productsList = search_products();
                                     ?>
                                         <tr>
                                             <td> <?php echo $prod -> getName(); ?></td>
-                                            <td> <?php echo $prod -> getAmount();?> </td>
+                                            <td> <?php echo $prod -> getAmountTotal();?> </td>
                                             <td> <?php echo $prod -> getPrice();?> </td>
-                                            <td> <?php echo $prod -> getTamanho();?> </td>
+                                            <td> <?php //echo $prod -> getTamanho();?> </td>
 
                                             <td class="">
                                                 <a class="btn btn-plus-options" href=""><i class="fa-solid fa-plus"></i></a>
