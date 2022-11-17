@@ -133,3 +133,26 @@ function getProduct($id) {
     }
     return $prod;
 }
+function delet_tamanho ($tamanho) {
+
+    try {
+        $PDO = connect();
+
+        $sqlDel = "DELETE * FROM tamanho WHERE id_produtos=?";
+
+        $stmt = $PDO -> prepare($sqlDel);
+        $stmt -> execute([$tamanho->getId()]);
+        
+        if($stmt) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    } catch (Exception $e) {
+
+        echo $e->getMessage();
+        return false;
+    }
+}
