@@ -191,16 +191,22 @@ $productsList = search_products();
                                             <td> <?php //echo $prod -> getTamanho();?> </td>
 
                                             <td class="">
-                                                <div class="dropdown">
-                                                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                        Dropdown link
+                                                <div class="nav-item dropdown">
+                                                    <a href="#" class="nav-link dropdown-toggle active mb-1" data-bs-toggle="dropdown" id="accDropDown">
+                                                        <div class="d-flex align-items-center ms-1 mb-1 mt-1" style="align-items: center;">
+                                                            <div class="position-relative">
+                                                                <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                                                                <div class="bg-success rounded-circle" id="icon-online"></div>
+                                                            </div>
+                                                            <div class="ms-3">
+                                                            </div>
+                                                        </div>
                                                     </a>
-                                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                        <a class="dropdown-item" href="#">Action</a>
-                                                        <a class="dropdown-item" href="#">Another action</a>
-                                                        <a class="dropdown-item" href="#">Something else here</a>
-                                                    </div>
-                                                </div>
+                                                    <div class="dropdown-menu bg-transparent border-0">
+                                                    <a href="profile.php" class="dropdown-item">Perfil</a>
+                    <a href="../../control/sair.php" class="dropdown-item">Sair</a>
+                </div>
+            </div>
                                                 <a class="btn btn-plus-options" href="../../control/products_delete.php?id=<?php echo $prod ->getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
                                                 <a class="btn btn-plus-options" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="getProductData(<?php echo $prod -> getId(); ?>)"><i class="fa-solid fa-pen-to-square"></i></a>
                                             </td>
