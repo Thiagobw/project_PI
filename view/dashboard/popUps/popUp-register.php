@@ -32,35 +32,7 @@
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <input class=" form-control input-user" type="tel" placeholder="Telefone" id="tellCustomers"  name="tellCustomers" maxlength="15">
                                 </div>
-
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="rua" placeholder="Rua" id="ruaCustomers"  name="ruaCustomers" maxlength="45">
-                                </div>
-
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="bairro" placeholder="Bairro" id="bairroCustomers"  name="bairroCustomers" maxlength="45">
-                                </div>
                                 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="cidade" placeholder="Cidade" id="cidadeCustomers"  name="cidadeCustomers" maxlength="30">
-                                </div>
-
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="estado" placeholder="Estado" id="estadoCustomers"  name="estadoCustomers" maxlength="30">
-                                </div>
-
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="cep" placeholder="Cep" id="cepCustomers"  name="cepCustomers" maxlength="9">
-                                </div>
-                                
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="comple" placeholder="Complemento" id="compleCustomers"  name="compleCustomers" maxlength="11">
-                                </div>
-
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="num" placeholder="Numéro" id="numCustomers"  name="numCustomers" maxlength="11">
-                                </div>
-
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
                                     <input class="btn btn-primary w-100" form="formCustomers" type="submit" name="submitCustomers" value="Cadastrar">
                                 </div>
