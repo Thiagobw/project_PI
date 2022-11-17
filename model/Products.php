@@ -7,7 +7,11 @@ class Products {
     private $manufacturer;
     private $price;
     private $id;
+    private $sizes;
 
+    public function setSize(array $listSize) {
+        $this-> sizes = $listSize;
+    }
     public function setName(string $name) {
         $this -> name = $name;
     }

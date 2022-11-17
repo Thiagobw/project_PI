@@ -164,10 +164,6 @@ function getProduct($id) {
         }
         $prod->setSize($tam_list);
 
-
-
-
-
     }
     return $prod;
 }
