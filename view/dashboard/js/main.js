@@ -257,7 +257,6 @@ function getProductData(idProd) {
         $("#idProductChange").val(data['id']);
         $("#changeNameProduct").val(data['nome']);
         $("#changePriceProduct").val(data['preco']);
-        $("#changeAmountProviders").val(data['quantidade']);
 
         const ttl = document.querySelector('#ttlProd');
         ttl.style.display = 'flex';

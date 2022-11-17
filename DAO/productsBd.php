@@ -148,7 +148,7 @@ function update_product($prod){
 function getProduct($id) {
     $connection = connect();
 
-    $stmt = $connection -> prepare("SELECT * FROM produtos p INNER JOIN tamanho t ON p.id_produtos = t.id_produto WHERE p.id_produtos = ?");
+    $stmt = $connection -> prepare("SELECT * FROM produtos p WHERE p.id_produtos = ?");
     $stmt -> execute([$id]);
 
     $result = $stmt -> fetchAll();
@@ -160,6 +160,21 @@ function getProduct($id) {
         $prod -> setName($registro["nome_produto"]);
         $prod -> setPrice($registro["preco_produto"]);
         
+        $stmt2 = $connection -> prepare("SELECT * FROM tamanho p WHERE p.id_produto = ?");
+        $stmt2 -> execute([$id]);
+        $result2 = $stmt -> fetchAll();
+        $tam_list = [];
+        foreach($result2 as $registro) {
+            $tam = $registro['tamanho'];
+            $qt = $registro['quantidade'];
+            $tam_list[$tam] = $qt;
+        }
+        $prod->setSize($tam_list);
+
+
+
+
+
     }
     return $prod;
 }
