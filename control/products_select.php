@@ -6,12 +6,11 @@ if(isset($_GET['id'])) {
 
     $id = $_GET["id"];
     $prod = getProduct($id);
-
     $result = array();
     $result['nome'] = $prod -> getName();
-    $result['quantidade'] = $prod -> getAmount();
     $result['preco'] = $prod -> getPrice();
     $result['id'] = $prod -> getId();
+    $result['tamanhos'] = $prod -> getSize();
 
     echo json_encode($result);
 

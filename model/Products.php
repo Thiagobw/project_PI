@@ -12,6 +12,10 @@ class Products {
     public function setSize(array $listSize) {
         $this-> sizes = $listSize;
     }
+    public function getSize() {
+        return $this-> sizes;
+    }
+
     public function setName(string $name) {
         $this -> name = $name;
     }
