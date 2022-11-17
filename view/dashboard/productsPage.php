@@ -164,7 +164,7 @@ $productsList = search_products();
                                             <th scope="col">Nome</th>
                                             <th scope="col">Quantidade em estoque</th>
                                             <th scope="col">Preço</th>
-                                            <th scope="col">Tamnhos</th>
+                                            <th scope="col">Tamanhos</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>

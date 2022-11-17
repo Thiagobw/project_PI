@@ -9,7 +9,7 @@ if(isset($_GET['id'])) {
     $prod = new Products();
 
     $prod->setId($id);
-
+    
     $result_delete = delet_product($prod);
 
     if($result_delete == true) {
