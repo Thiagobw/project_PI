@@ -3,10 +3,10 @@
         <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="ttl-customers"> Cliente </h5>
-                    <h5 class="modal-title" id="ttl-providers"> Fornecedores </h5>
-                    <h5 class="modal-title" id="ttl-products"> Produtos </h5>
-                    <h5 class="modal-title" id="ttl-employees"> Funcionarios</h5>
+                    <h5 class="modal-title" id="ttl-customers"> Cadastrar Cliente </h5>
+                    <h5 class="modal-title" id="ttl-providers"> Cadastrar Fornecedor </h5>
+                    <h5 class="modal-title" id="ttl-products"> Cadastrar Produto </h5>
+                    <h5 class="modal-title" id="ttl-employees"> Cadastrar Funcionario </h5>
                     <button type="button" class="btn btn-danger btn-close" data-bs-dismiss="modal" aria-label="Close">
                     <i class="fa-solid fa-xmark"></i>
                     </button>
@@ -62,7 +62,7 @@
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formCustomers" type="submit" name="submitCustomers" value="Cadastrar Cliente">
+                                    <input class="btn btn-primary w-100" form="formCustomers" type="submit" name="submitCustomers" value="Cadastrar">
                                 </div>
                                 
                             </form>
@@ -89,7 +89,7 @@
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formProviders" type="submit" name="submitProviders" value="Cadastrar Fornecedor">
+                                    <input class="btn btn-primary w-100" form="formProviders" type="submit" name="submitProviders" value="Cadastrar">
                                 </div>
                             </form>
                         </div>
@@ -252,7 +252,7 @@
                                 </div>
 
                                 <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formEmployees" type="submit" name="submitEmployees" value="Cadastrar Fornecedor">
+                                    <input class="btn btn-primary w-100" form="formEmployees" type="submit" name="submitEmployees" value="Cadastrar">
                                 </div>
                             </form>
                         </div>
