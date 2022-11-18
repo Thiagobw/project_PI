@@ -258,12 +258,19 @@ function getProductData(idProd) {
         $("#changeNameProduct").val(data['nome']);
         $("#changePriceProduct").val(data['preco']);
 
+        const { tamanhos } = data;        
+
+        tamanhos.forEach((obj) => {
+            selectOption("checkSize" + obj.tamanho, "amountProdSize" + obj.tamanho)
+            $("#amountProdSize" + obj.tamanho)
+        });
+
+        
         const ttl = document.querySelector('#ttlProd');
         ttl.style.display = 'flex';
         
         const content = document.querySelector('#contentAlterProd');
         content.style.display = 'flex';
-
     })
 }
 
@@ -290,6 +297,10 @@ function getProviderData(idProv) {
 function selectOption(idCheck, idInput) {
     let checkboxSize = document.getElementById(idCheck);
     let inputAmount = document.getElementById(idInput);
+
+    console.log(checkboxSize);
+    
+
     if(checkboxSize.checked) {
 
         inputAmount.style.display = 'flex';

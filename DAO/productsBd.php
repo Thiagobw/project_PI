@@ -161,12 +161,18 @@ function getProduct($id) {
         $stmt2 = $connection -> prepare("SELECT * FROM tamanho p WHERE p.id_produto = ?");
         $stmt2 -> execute([$id]);
         $result2 = $stmt2 -> fetchAll();
-        $listSize = [];
+        $listSize = array();
         foreach($result2 as $registro) {
             $tam = $registro['tamanho'];
             $qt = $registro['quantidade'];
-            $listSize[$tam] = $qt;
+
+            $object = new stdClass();
+            $object->tamanho = $tam;
+            $object->qt = $qt;
+
+            array_push($listSize, $object);
         }
+
         $prod->setSize($listSize);
 
     }

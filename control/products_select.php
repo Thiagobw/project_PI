@@ -11,6 +11,7 @@ if(isset($_GET['id'])) {
     $result['preco'] = $prod -> getPrice();
     $result['id'] = $prod -> getId();
     $result['tamanhos'] = $prod -> getSize();
+    
 
     echo json_encode($result);
 
