@@ -67,11 +67,13 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
             <!-- Blank Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row vh-100 bg-secondary rounded align-items-center justify-content-center mx-0">
-                    <div class="col-md-6">
-                        <img src="img/testimonial-2.jpg" alt="">
+                    <div class="col-md-6 center">
+                        <div class="img-user-profile">
+                        <img class="img-fluid" src="img/testimonial-2.jpg" alt="image user">
+                        </div>
                     </div>
-                    <div class="col-12">
-                        txt
+                    <div class="col-md-6">
+                        <h3 class="text-white">nome</h3>
                     </div>
                 </div>
             </div>
