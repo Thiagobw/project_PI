@@ -470,3 +470,13 @@
 #contentAlterCust, #contentAlterProv, #contentAlterProd, #contentAlterEploy {
     display: none;
 }
+
+.img-profile {
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: #ffffff;
+    outline: 2px solid #191C24;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
