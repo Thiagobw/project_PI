@@ -1,10 +1,9 @@
 <?php
-session_start();
+@session_start();
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
 include_once ('../../DAO/customersBd.php');
 
 $customersList = search_customers();
-//die(var_dump($customersList));
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
