@@ -71,6 +71,7 @@ function register_product_size($result_regist_id, $SizeAmountList) {
             foreach ( $SizeAmountList as $list) {
                  $stmt -> execute([$list[0], $list[1], $result_regist_id]);
             }
+
             $PDO->commit();
             return true;
 
@@ -119,16 +120,40 @@ function delet_product ($prod) {
 }
 
 
-function update_product($prod){
+function update_product($prod) {
     try{
 
         $PDO = connect();
 
-        $sqlReg = " UPDATE produtos SET nome_produto=?, preco_produto=?, quantidade=? WHERE id_produtos=?";
-
-        $stmt = $PDO -> prepare($sqlReg);
-        $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getAmount(), $prod->getId()]);
+        $stmt = $PDO -> prepare("UPDATE produtos SET nome_produto=?, preco_produto=? WHERE id_produtos=?");
+        $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getId()]);
     
+        if($stmt) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    } catch (Exception $e) {
+
+        echo $e->getMessage();
+        return false;
+    }
+}
+
+
+function update_product_size($SizeAmountList, $idProd) {
+    try{
+
+        $PDO = connect();
+
+        $stmt = $PDO -> prepare("UPDATE tamanho SET tamanho=?, quantidade=? WHERE id_produto=?");
+        
+        foreach ( $SizeAmountList as $list) {
+            $stmt -> execute([$list[0], $list[1], $idProd]);
+        }
+        
         if($stmt) {
             return true;
         }
