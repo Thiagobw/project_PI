@@ -313,18 +313,30 @@ function selectOption(idCheck, idInput) {
 }
 
 function selectOptionChangeData(idCheck, idInput, value) {
+
     let checkboxSize = document.getElementById(idCheck);
     let imputAmount = document.getElementById(idInput);
     let amount = value;
     
-    if (amount === null) {
-        
+    if (amount === null && checkboxSize.checked && imputAmount.value == 0) {
+            imputAmount.style.display = 'flex';
+            imputAmount.readOnly = false;
+            imputAmount.value = "";
     }
-    else {
+    if (amount === null && checkboxSize.checked == false && imputAmount.value == "") {
+        imputAmount.style.display = 'none';
+        imputAmount.readOnly = true;
+    }
+    
+    if (amount === null && checkboxSize.checked == false && imputAmount.style.display == 'flex' && imputAmount.value != "") {
+        checkboxSize.checked = true;
+    }
+    
+    if (amount != null && checkboxSize.checked == false) {
 
         checkboxSize.checked = true;
         imputAmount.style.display = 'flex';
-            imputAmount.readOnly = false;
-            imputAmount.value = amount
+        imputAmount.readOnly = false;
+        imputAmount.value = amount
     }
 }
