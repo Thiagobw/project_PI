@@ -147,7 +147,7 @@ function update_product($prod){
 function getProduct($id) {
     $connection = connect();
 
-    $stmt = $connection -> prepare("SELECT * FROM produtos p WHERE p.id_produtos = ?");
+    $stmt = $connection -> prepare("SELECT * FROM produtos WHERE id_produtos = ?");
     $stmt -> execute([$id]);
 
     $result = $stmt -> fetchAll();
@@ -161,20 +161,21 @@ function getProduct($id) {
         $stmt2 = $connection -> prepare("SELECT * FROM tamanho p WHERE p.id_produto = ?");
         $stmt2 -> execute([$id]);
         $result2 = $stmt2 -> fetchAll();
+
         $listSize = array();
+
         foreach($result2 as $registro) {
-            $tam = $registro['tamanho'];
-            $qt = $registro['quantidade'];
+            $sizeProduct = $registro['tamanho'];
+            $amountProduct = $registro['quantidade'];
 
             $object = new stdClass();
-            $object->tamanho = $tam;
-            $object->qt = $qt;
+            $object->size = $sizeProduct;
+            $object->amount = $amountProduct;
 
             array_push($listSize, $object);
         }
 
         $prod->setSize($listSize);
-
     }
     return $prod;
 }

@@ -255,14 +255,15 @@ function getProductData(idProd) {
     $.get( BASE_URL+"/control/products_select.php?id="+idProd, function( data ) {
         data = JSON.parse(data);
         $("#idProductChange").val(data['id']);
-        $("#changeNameProduct").val(data['nome']);
-        $("#changePriceProduct").val(data['preco']);
+        $("#changeNameProduct").val(data['name']);
+        $("#changePriceProduct").val(data['price']);
 
-        const { tamanhos } = data;        
+        const { sizes } = data;
 
-        tamanhos.forEach((obj) => {
-            selectOption("checkSize" + obj.tamanho, "amountProdSize" + obj.tamanho)
-            $("#amountProdSize" + obj.tamanho)
+        sizes.forEach((obj) => {
+            console.log(obj.amount)
+            // call the function to display on the screen(checkbox id, imput id and value)
+            selectOptionChangeData("changeCheckSize" + obj.size, "changeAmountProdSize" + obj.size, obj.amount)
         });
 
         
@@ -297,8 +298,6 @@ function getProviderData(idProv) {
 function selectOption(idCheck, idInput) {
     let checkboxSize = document.getElementById(idCheck);
     let inputAmount = document.getElementById(idInput);
-
-    console.log(checkboxSize);
     
 
     if(checkboxSize.checked) {
@@ -310,5 +309,22 @@ function selectOption(idCheck, idInput) {
         inputAmount.style.display = 'none';
         inputAmount.readOnly = true;
         inputAmount.value = 0;
+    }
+}
+
+function selectOptionChangeData(idCheck, idInput, value) {
+    let checkboxSize = document.getElementById(idCheck);
+    let imputAmount = document.getElementById(idInput);
+    let amount = value;
+    
+    if (amount === null) {
+        
+    }
+    else {
+
+        checkboxSize.checked = true;
+        imputAmount.style.display = 'flex';
+            imputAmount.readOnly = false;
+            imputAmount.value = amount
     }
 }

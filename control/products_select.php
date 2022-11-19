@@ -7,10 +7,10 @@ if(isset($_GET['id'])) {
     $id = $_GET["id"];
     $prod = getProduct($id);
     $result = array();
-    $result['nome'] = $prod -> getName();
-    $result['preco'] = $prod -> getPrice();
+    $result['name'] = $prod -> getName();
+    $result['price'] = $prod -> getPrice();
     $result['id'] = $prod -> getId();
-    $result['tamanhos'] = $prod -> getSize();
+    $result['sizes'] = $prod -> getSize();
     
 
     echo json_encode($result);
