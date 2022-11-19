@@ -29,7 +29,9 @@ $productsList = search_products();
 <main class="container mt-5">
     <?php if (  empty($productsList) == true) { ?>
         <h3>nenhum produto cadastrado para venda!</h3>
-    <?php }else { foreach ($productsList as $prod) { ?>
+    <?php } else { 
+        foreach ($productsList as $prod) { 
+    ?>
     <div class="row mx-0">
         <div class="col-lg-4 col-md-6 pt-md-0 pt-3">
             <div class="card d-flex flex-column align-items-center">

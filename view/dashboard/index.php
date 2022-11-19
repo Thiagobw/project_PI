@@ -1,5 +1,5 @@
 <?php
-session_start();
+@session_start();
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
 ?>
 <!DOCTYPE html>
