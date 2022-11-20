@@ -29,9 +29,7 @@
 
                 <div class=" navbar-nav mb-2 mb-lg-0 mr-3">
                     <li class="nav-item mr-1">
-                      <a class="nav-link cart" href="#">
-                        <img class="img-fluid" src="img/icons/shopping_cart_FILL0_wght400_GRAD0_opsz40.svg" alt="" height='27' width='27'> Carrinho
-                      </a>
+                      <a class="nav-link cart" href="../../view/cart.php"><i class="fa-solid fa-cart-shopping"></i> Carrinho</a>
                     </li>
 
                     <h6 class="userName">
