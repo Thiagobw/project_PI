@@ -186,8 +186,9 @@ $productsList = search_products();
                                     ?>
                                         <tr>
                                             <td> <?php echo $prod -> getName(); ?></td>
-                                            <td> <?php echo $prod -> getAmountTotal();?> </td>
+                                            <td> <?php echo $prod -> getSize(); ?></td>
                                             <td> <?php echo "R$ ".$prod -> getPrice().",00";?> </td>
+                                            <td> <?php echo $prod -> getAmountTotal();?> </td>
                                             <td> </td>
 
                                             <td>
