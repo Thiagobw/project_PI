@@ -22,63 +22,53 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
 </header>
 
 <main class="container">
-            <div class="row">
-                <div class="col-12 col-md-7 cart-body">
-
-                <!-- product product in cart -->
-                    <div class="cart-item">
-
-                        <!-- Product information -->
-                        <div class="row cart-row">
-                            <div class="cart-row-cell pic">
-                                
-                            <!-- btn btn to remove product -->
-                                <a class="btn btn-danger center" id="btnRemove" href="#">X</a>
-
-                                <span>
-                                    <!-- product image -->
-                                    <img src="img/products/tenis 1.jpg" alt="">
-                                </span>
-                            </div>
-
-                            <!-- name product -->
-                            <div class="cart-row-cell desc">
-                                <h6> Nome do produto</h6>
-                            </div>
-
-                            <div class="cart-row-cell quant">
-
-                                <ul>
-                                    <li><a href="#">-</a></li>
-
-                                    <li>2</li>
-
-                                    <li><a href="#">+</a></li>
-                                </ul>
-                            </div>
-
-                            <div class="cart-row-cell amount">
-                                <p>R$ <span>13,87</span></p>
-                            </div>
-                        </div>
+    <div class="row">
+        <div class="col-12 col-md-7 cart-body">
+        <!-- product product in cart -->
+            <div class="cart-item">
+                <!-- Product information -->
+                <div class="row cart-row">
+                    <div class="cart-row-cell pic">
+                        
+                    <!-- btn btn to remove product -->
+                        <a class="btn btn-danger center" id="btnRemove" href="#">X</a>
+                        <span>
+                            <!-- product image -->
+                            <img src="img/products/tenis 1.jpg" alt="">
+                        </span>
+                    </div>
+                    <!-- name product -->
+                    <div class="cart-row-cell desc">
+                        <h6> Nome do produto</h6>
+                    </div>
+                    <div class="cart-row-cell quant">
+                        <ul>
+                            <li><a href="#">-</a></li>
+                            <li>2</li>
+                            <li><a href="#">+</a></li>
+                        </ul>
+                    </div>
+                    <div class="cart-row-cell amount">
+                        <p>R$ <span>13,87</span></p>
                     </div>
                 </div>
-
-                <!--  -->
-                <footer class="col-12 col-md-5">
-                    <div class="row center">
-                        <div class="col-10 col-sm-9 col-md-8 totals">
-                            <p class="total-label">Total</p>
-                            <p class="total-amount">R$ 
-                                <span>13,87</span>
-                            </p>
-                        </div>
-                    </div>
-
-                    <a class="btn btn-primary mt-3" href="">Finalizar a compra</a>
-                </footer>
             </div>
-            
+        </div>
+        <!-- full cart information -->
+        <footer class="col-12 col-md-5">
+            <div class="row center">
+                <div class="col-10 col-sm-9 col-md-8 totals">
+                    <p class="total-label">Total</p>
+                    <p class="total-amount">R$ 
+                        
+                        <!-- total value of items in cart -->
+                        <span>13,87</span>
+                    </p>
+                </div>
+            </div>
+            <a class="btn btn-primary mt-3" href="">Finalizar a venda</a>
+        </footer>
+    </div>
 </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" 
