@@ -1,5 +1,5 @@
 <?php
-session_start();
+@session_start();
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/productsBd.php";
 
@@ -43,9 +43,9 @@ $productsList = search_products();
                     R$ <span> <?php echo $prod->getPrice(); ?></span>
                 </div>
                 <div class="row">
-                    <button class="btn w-100" id="btn-add">
-                        <i class="fa-solid fa-cart-plus"></i> Adicionar
-                    </button>
+                    <a class="btn btn-success w-100" href="productSelected.php" id="btn-add">
+                        <i class="fa-solid fa-cart-plus"></i> Selecionar
+                    </a>
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
 <body>
 <header class="row mb-3 mt-2 ml-0 mr-0">
     <div class="col-12 center">
-    <h3>Carrinho de Compras</h3>
+        <h3>Carrinho de Compras</h3>
     </div>
 </header>
 
