@@ -28,7 +28,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
             <div class="cart-item">
                 <!-- Product information -->
                 <div class="row cart-row">
-                    <div class="cart-row-cell pic">
+                    <div class="col-12 col-sm-2 pic">
                         
                     <!-- btn btn to remove product -->
                         <a class="btn btn-danger center" id="btnRemove" href="#">X</a>
@@ -38,7 +38,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
                         </span>
                     </div>
                     <!-- name product -->
-                    <div class="cart-row-cell desc">
+                    <div class="col-12 col-sm-10 desc">
                         <h6> Nome do produto</h6>
                     </div>
                     <div class="cart-row-cell quant">

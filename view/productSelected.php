@@ -19,23 +19,35 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
         <h3>Produto selecionado</h3>
     </div>
 </header>
+
 <main class="container">
     <div class="row">
-        <div class="col-12 cart-body">
+        <form class="col-12 cart-body" id="productSelected">
         <!-- product product in cart -->
             <div class="cart-item">
                 <!-- Product information -->
                 <div class="row cart-row">
-                    <div class="cart-row-cell pic">
+                    <div class="col-12 col-sm-2 pic">
                         <span>
                             <!-- product image -->
-                            <img src="img/products/tenis 1.jpg" alt="">
+                            <img class="img-fluid" src="img/products/tenis 1.jpg" alt="">
                         </span>
                     </div>
                     <!-- name product -->
-                    <div class="cart-row-cell desc">
+                    <div class="col-12 col-sm-10 desc">
                         <h6> Nome do produto</h6>
+                        <p>Selecione o tamanho</p>
+
+                        <!-- available sizes -->
+                        <label>
+                        <input type="checkbox" name="" id=""> 34
+                        </label>
+                        <label>
+                        <input type="checkbox" name="" id=""> 35
+                        </label>
                     </div>
+
+                    <!-- price product selected -->
                     <div class="cart-row-cell amount">
                         <p>R$ <span>13,87</span></p>
                     </div>
@@ -52,11 +64,12 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
 
                     <!-- button to confirm selection -->
                     <div class="col-12 col-sm-4 center mt-2 mb-1">
-                        <a href="" class="btn btn-success">Confirmar</a>
+                        <input type="submit" form="productSelected" class="btn btn-success" value="Confirmar">
                     </div>
                 </div>
             </div>
-        </div>
+
+        </form>
     </div>
 </main>
 </body>
