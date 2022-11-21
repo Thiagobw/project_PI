@@ -59,7 +59,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
 
                     <!-- button to cancel selection -->
                     <div class="col-12 col-sm-4 center mt-3 mb-1">
-                        <a href="" class="btn btn-danger">Cancelar</a>
+                        <a href="salePage.php" class="btn btn-danger">Cancelar</a>
                     </div>
 
                     <!-- button to confirm selection -->
