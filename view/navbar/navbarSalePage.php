@@ -20,16 +20,22 @@
                 <!-- Left space -->
 
                 <!-- Search form -->
-                <form class="d-flex input-group w-auto pesquisa">
+                <form class="d-flex input-group w-auto search">
                     <input type="search" class="form-control w-auto h-auto" placeholder="Pesquisar" aria-label="Search"/>
                     <button class="btn" type="button" data-mdb-ripple-color="dark">
-                        <img class="img-fluid" src="img/icons/search_Icon.png" alt="" height='22' width='22'>
+                    <i class="fa-solid fa-magnifying-glass"></i>
                     </button>
                 </form>
 
+                <!-- cart of selected products -->
                 <div class=" navbar-nav mb-2 mb-lg-0 mr-3">
                     <li class="nav-item mr-1">
-                      <a class="nav-link cart" href="../../view/cart.php"><i class="fa-solid fa-cart-shopping"></i> Carrinho</a>
+                        <a class="btn btn-danger nav-link cart" href="cart.php"><i class="fa-solid fa-cart-shopping"></i> Carrinho
+
+                        <!-- quantity of selected products -->
+                        <!-- Note! if you don't have any, don't show badge(span tag) -->
+                        <span class="badge text-bg-secondary bg-light text-dark"> 4 </span>
+                        </a>
                     </li>
 
                     <h6 class="userName">

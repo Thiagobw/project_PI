@@ -36,51 +36,41 @@ body {
 
 
 /*navbar*/
-.pesquisa {
-    border: 1px solid #818081;
-    background-color: #ced4da;
-    border-radius: 1.1rem;
+.search input::placeholder {
+    color: #00000098;
 }
 
-.pesquisa input::placeholder {
-    color: #000000;
+.search input {
+    border-radius: 1.07rem 0 0 1.07rem !important;
 }
 
-.pesquisa input {
-    border: none !important;
-    border-radius: 1.1rem 0 0 1.1rem !important;
-    background-color: #ced4da !important;
-}
-.pesquisa input:focus {
-    border: 1.5px solid #11c827 !important;
-    box-shadow: none !important;
+.search button {
+    border-top-left-radius: none !important;
+    border-bottom-left-radius: none !important;
 }
 
-.pesquisa button {
-    background-color: #ced4da !important;
-    border-bottom: none !important;
-    border-top: none !important;
-    border-right: none !important;
-    border-left: 1.5px solid #818081 !important;
-    padding: .4rem 1.3rem .4rem !important;
-    border-radius: 0 1.1rem 1.1rem 0;
-}
-
-.pesquisa button:focus {
-    box-shadow: 0 0 0 0.2rem rgba(26, 204, 20, 0.25) !important;
-    border: 1.5px solid #11c827 !important;
-}
-
-.cart, .userName {
-    color: #ff0000 !important;
+.cart,.userName {
     font-size: 16.5px;
     letter-spacing: 1px;
 }
-
-.cart:hover {
-    background-color: rgba(0, 0, 0, 0.029);
-    font-size: 16.7px;
+.userName {
+    color: #ff0000;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0.25rem;
 }
+
 
 /*pagination*/
 .page-link {
