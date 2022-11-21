@@ -160,11 +160,11 @@ $providersList = search_provider();
                                 <table class="table text-secondary">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Nome</th>
+                                            <th scope="col">Nome do fornecedor</th>
                                             <th scope="col">CNPJ</th>
                                             <th scope="col">Email</th>
                                             <th scope="col">Telefone</th>
-
+                                            <th scope="col">Ações</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -192,8 +192,10 @@ $providersList = search_provider();
 
 
                                         <td>
-                                            <a class="btn btn-plus-options" href="../../control/providers_delete.php?id=<?php echo $prov->getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
-                                            <a class="btn btn-plus-options" id="btnAlterProv" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="getProviderData(<?php echo $prov -> getId(); ?>)"><i class="fa-solid fa-pen-to-square"></i></a>
+                                            <div class="btn-group" role="group" aria-label="Basic example">
+                                                <a class="btn btn-sm btn-plus-action" id="btnAlterProv" data-bs-toggle="modal" data-bs-target="#PopUp_alter" onclick="getProviderData(<?php echo $prov -> getId(); ?>)">alterar</a>
+                                                <a class="btn btn-sm btn-plus-action" href="../../control/providers_delete.php?id=<?php echo $prov->getId(); ?>">Excluir</a>
+                                            </div>
                                         </td>
                                     </tr>
 

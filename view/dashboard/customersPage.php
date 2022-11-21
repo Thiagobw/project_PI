@@ -157,11 +157,11 @@ $customersList = search_customers();
                                 <table class="table text-secondary">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Nome</th>
+                                            <th scope="col">Nome do cliente</th>
                                             <th scope="col">CPF</th>
                                             <th scope="col">Email</th>
                                             <th scope="col">Telefone</th>
-                                            <th scope="col"></th>
+                                            <th scope="col">Ações</th>
                                         </tr>
                                     </thead>
 
@@ -187,9 +187,11 @@ $customersList = search_customers();
                                                 <td> <?php echo $cliente -> getEmail();?> </td>
                                                 <td> <?php echo $cliente -> getTell();?> </td>
 
-                                                <td class="">
-                                                    <a class="btn btn-sm btn-plus-options" href="../../control/customers_delete.php?id=<?php echo $cliente -> getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
-                                                    <a class="btn btn-sm btn-plus-options" id="btnAlterCust" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="#" onclick="getCustomerData(<?php echo $cliente -> getId(); ?>)"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <td>
+                                                    <div class="btn-group" role="group" aria-label="Basic example">
+                                                        <a class="btn btn-sm btn-plus-action" id="btnAlterCust" data-bs-toggle="modal" data-bs-target="#PopUp_alter" onclick="getCustomerData(<?php echo $cliente -> getId(); ?>)">alterar</a>
+                                                        <a class="btn btn-sm btn-plus-action" href="../../control/customers_delete.php?id=<?php echo $cliente -> getId(); ?>">Excluir</a>
+                                                    </div>
                                                 </td>
                                             </tr>
 

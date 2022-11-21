@@ -394,16 +394,18 @@
 }
 
 /*btn more customer and product options*/
-.btn-plus-options {
+.btn-plus-action {
     background-color: var(--dark);
     color: var(--light);
     font-size: 19px !important;
 }
-.btn-plus-options:hover {
+.btn-plus-action:hover {
     color: var(--primary);
     border: 0.5px solid var(--primary);
 }
-
+.btn-plus-action:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255, 0, 0, 0.25) !important;
+}
 /* form registration products*/
 #ttl-customers, #ttl-providers, #ttl-products, #ttl-employees, 
 #contentRegisterCust, #contentRegisterProv, #contentRegisterProd, #contentRegisterEploy {

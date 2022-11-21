@@ -158,11 +158,11 @@ $employeesList = search_employee();
                                 <table class="table text-secondary">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Nome</th>
+                                            <th scope="col">Nome do funcionario</th>
                                             <th scope="col">CPF</th>
                                             <th scope="col">Cargo</th>
                                             <th scope="col">Email</th>
-                                            <th scope="col"></th>
+                                            <th scope="col">Ações</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -190,8 +190,10 @@ $employeesList = search_employee();
 
                                             <td> <?php echo $vendedor->getEmail();?> </td>
                                             <td>
-                                                <a class="btn btn-plus-options" href="../../control/employees_delete.php?id=<?php echo $vendedor -> getId(); ?>"><i class="fa-solid fa-xmark"></i></a>
-                                                <a class="btn btn-plus-options" id="btnAlterEmploy" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="getEmployeerData(<?php echo $vendedor -> getId(); ?>)"><i class="fa-solid fa-pen-to-square"></i></a>
+                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                    <a class="btn btn-sm btn-plus-action" id="btnAlterEmploy" data-bs-toggle="modal" data-bs-target="#PopUp_alter" onclick="getEmployeerData(<?php echo $vendedor -> getId(); ?>)">alterar</a>
+                                                    <a class="btn btn-sm btn-plus-action" href="../../control/employees_delete.php?id=<?php echo $vendedor -> getId(); ?>">Excluir</a>
+                                                </div>
                                             </td>
                                         </tr>
                                      

@@ -22,7 +22,6 @@ if(isset($_POST['submitChangeEmployees'])) {
 
 
     $result_regist = update_employee($emp);
-    die(var_dump($result_regist));
     if ($result_regist == true) {
         header('Location: ../view/dashboard/employeesPage.php');
     }

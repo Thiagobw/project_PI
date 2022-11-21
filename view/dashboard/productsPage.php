@@ -161,11 +161,11 @@ $productsList = search_products();
                                 <table class="table text-secondary">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Nome</th>
-                                            <th scope="col">Quantidade em estoque</th>
+                                            <th scope="col">Nome do produto</th>
+                                            <th scope="col">estoque</th>
                                             <th scope="col">Preço</th>
                                             <th scope="col">Tamanhos</th>
-                                            <th scope="col"></th>
+                                            <th scope="col">Ações</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -187,18 +187,13 @@ $productsList = search_products();
                                         <tr>
                                             <td> <?php echo $prod -> getName(); ?></td>
                                             <td> <?php echo $prod -> getAmountTotal();?> </td>
-                                            <td> <?php echo $prod -> getPrice();?> </td>
-                                            <td> <?php //echo $prod -> getTamanho();?> </td>
+                                            <td> <?php echo "R$ ".$prod -> getPrice().",00";?> </td>
+                                            <td> </td>
 
-                                            <td class="">
-                                                <div class="nav-item dropdown">
-                                                    <a href="#" class="nav-link dropdown-toggle active mb-1" data-bs-toggle="dropdown" id="accDropDown">
-                                                    txt
-                                                    </a>
-                                                    <div class="dropdown-menu bg-transparent border-0">
-                                                    <a class="btn btn-plus-options" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="getProductData(<?php echo $prod -> getId(); ?>)">alterar</a>
-                                                        <a class="btn btn-plus-options" href="../../control/products_delete.php?id=<?php echo $prod ->getId(); ?>">excluir</a>
-                                                    </div>
+                                            <td>
+                                                <div class="btn-group" role="group" aria-label="Basic example">
+                                                    <a class="btn btn-sm btn-plus-action" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="getProductData(<?php echo $prod -> getId(); ?>)">alterar</a>
+                                                    <a class="btn btn-sm btn-plus-action" href="../../control/products_delete.php?id=<?php echo $prod ->getId(); ?>">Excluir</a>
                                                 </div>
                                             </td>
                                         </tr>
