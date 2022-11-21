@@ -1,31 +1,29 @@
--- phpMyAdmin SQL Dump
--- version 5.2.0
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Tempo de geração: 17-Nov-2022 às 12:30
--- Versão do servidor: 5.7.20-log
--- versão do PHP: 8.1.6
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
+# ************************************************************
+# Sequel Pro SQL dump
+# Vers�o 4541
+#
+# http://www.sequelpro.com/
+# https://github.com/sequelpro/sequelpro
+#
+# Host: localhost (MySQL 5.5.5-10.4.21-MariaDB)
+# Base de Dados: project_Pl
+# Tempo de Gera��o: 2022-11-21 16:27:03 +0000
+# ************************************************************
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
---
--- Banco de dados: `project`
---
 
--- --------------------------------------------------------
+# Dump da tabela caracteristicas
+# ------------------------------------------------------------
 
---
--- Estrutura da tabela `caracteristicas`
---
+DROP TABLE IF EXISTS `caracteristicas`;
 
 CREATE TABLE `caracteristicas` (
   `id_caracteristicas` int(11) NOT NULL,
@@ -38,25 +36,27 @@ CREATE TABLE `caracteristicas` (
   `entresola` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
 
---
--- Estrutura da tabela `cliente`
---
+
+# Dump da tabela cliente
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `cliente`;
 
 CREATE TABLE `cliente` (
   `id_cliente` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `CPF` char(14) NOT NULL,
-  `email` varchar(40) NOT NULL DEFAULT 'não informado',
+  `email` varchar(40) NOT NULL DEFAULT 'nC#o informado',
   `telefone` char(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
 
---
--- Estrutura da tabela `endereco`
---
+
+# Dump da tabela endereco
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `endereco`;
 
 CREATE TABLE `endereco` (
   `id_endereco` int(11) NOT NULL,
@@ -70,102 +70,156 @@ CREATE TABLE `endereco` (
   `Cliente_id_cliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
 
---
--- Estrutura da tabela `fornecedor`
---
+
+# Dump da tabela fornecedor
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `fornecedor`;
 
 CREATE TABLE `fornecedor` (
   `id_fornecedor` int(11) NOT NULL,
   `nome` varchar(100) NOT NULL,
   `cnpj` char(18) NOT NULL,
-  `email` varchar(40) NOT NULL DEFAULT 'não informado',
+  `email` varchar(40) NOT NULL DEFAULT 'nC#o informado',
   `telefone` char(15) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
 
---
--- Estrutura da tabela `pedido`
---
+
+# Dump da tabela pedido
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pedido`;
 
 CREATE TABLE `pedido` (
   `id_pedido` int(11) NOT NULL,
   `valor_pedido` varchar(20) NOT NULL,
   `forma_pagamento` varchar(10) NOT NULL,
-  `data` varchar(10) NOT NULL,
+  `data` varchar(10) NOT NULL DEFAULT '',
   `Vendedor_id_vendedor` int(11) NOT NULL,
   `Cliente_id_cliente` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- --------------------------------------------------------
 
---
--- Estrutura da tabela `pedido_produto`
---
+
+# Dump da tabela pedido_produto
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `pedido_produto`;
 
 CREATE TABLE `pedido_produto` (
-  `idPedido_Produto` int(11) NOT NULL,
-  `quantidade` int(11) NOT NULL,
-  `valor` int(11) NOT NULL,
-  `Pedido_id_pedido` int(11) NOT NULL,
-  `Produtos_idProdutos` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `produtos`
---
-
-CREATE TABLE `produtos` (
-  `id_produtos` int(11) NOT NULL,
-  `nome_produto` varchar(100) NOT NULL,
-  `preco_produto` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Estrutura da tabela `tamanho`
---
-
-CREATE TABLE `tamanho` (
-  `id_tamanho` int(11) NOT NULL,
+  `idPedido_Produto` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `tamanho` int(11) NOT NULL,
   `quantidade` int(11) NOT NULL,
-  `id_produto` int(11) NOT NULL
+  `valor` int(11) NOT NULL,
+  `Pedido_id` int(11) DEFAULT NULL,
+  `Produtos_idProdutos` int(11) NOT NULL,
+  `usuario_id` int(11) NOT NULL,
+  PRIMARY KEY (`idPedido_Produto`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+LOCK TABLES `pedido_produto` WRITE;
+/*!40000 ALTER TABLE `pedido_produto` DISABLE KEYS */;
+
+INSERT INTO `pedido_produto` (`idPedido_Produto`, `tamanho`, `quantidade`, `valor`, `Pedido_id`, `Produtos_idProdutos`, `usuario_id`)
+VALUES
+	(7,36,1,300,NULL,2,2),
+	(11,43,5,300,NULL,2,2),
+	(12,37,2,300,NULL,2,2),
+	(14,43,2,300,NULL,2,2);
+
+/*!40000 ALTER TABLE `pedido_produto` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump da tabela produtos
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `produtos`;
+
+CREATE TABLE `produtos` (
+  `id_produtos` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `nome_produto` varchar(100) NOT NULL,
+  `preco_produto` int(11) NOT NULL,
+  PRIMARY KEY (`id_produtos`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+LOCK TABLES `produtos` WRITE;
+/*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
+
+INSERT INTO `produtos` (`id_produtos`, `nome_produto`, `preco_produto`)
+VALUES
+	(2,'Yezzy Zebra',300);
+
+/*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump da tabela tamanho
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `tamanho`;
+
+CREATE TABLE `tamanho` (
+  `id_tamanho` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `tamanho` int(11) NOT NULL,
+  `quantidade` int(11) NOT NULL,
+  `id_produto` int(11) NOT NULL,
+  PRIMARY KEY (`id_tamanho`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+LOCK TABLES `tamanho` WRITE;
+/*!40000 ALTER TABLE `tamanho` DISABLE KEYS */;
 
---
--- Estrutura da tabela `usuarios`
---
+INSERT INTO `tamanho` (`id_tamanho`, `tamanho`, `quantidade`, `id_produto`)
+VALUES
+	(1,34,5,2),
+	(2,35,5,2),
+	(3,36,5,2),
+	(4,37,5,2),
+	(5,38,5,2),
+	(6,39,5,2),
+	(7,40,5,2),
+	(8,41,5,2),
+	(9,42,5,2),
+	(10,43,5,2);
+
+/*!40000 ALTER TABLE `tamanho` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump da tabela usuarios
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `usuarios`;
 
 CREATE TABLE `usuarios` (
-  `id_usuario` int(11) NOT NULL,
+  `id_usuario` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) DEFAULT NULL,
   `cpf` char(14) DEFAULT NULL,
   `telefone` char(15) DEFAULT NULL,
   `email` varchar(60) DEFAULT NULL,
   `senha` varchar(260) DEFAULT NULL,
-  `tipo` int(1) NOT NULL DEFAULT '1'
+  `tipo` int(1) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id_usuario`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Extraindo dados da tabela `usuarios`
---
+LOCK TABLES `usuarios` WRITE;
+/*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
 
-INSERT INTO `usuarios` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`, `tipo`) VALUES
-(1, 'thiago', '021.174.540-54', '(47) 99225-7589', 'teste@gmail.com', '$argon2i$v=19$m=2048,t=4,p=3$WUtoQ3N4dHNjaGMwVkJNWA$3Kl0P5/e8OkaXPBjwvs23MpVd2CIirVdkbcYA+3sDds', 1);
+INSERT INTO `usuarios` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`, `tipo`)
+VALUES
+	(1,'thiago','021.174.540-54','(47) 99225-7589','teste@gmail.com','$argon2i$v=19$m=2048,t=4,p=3$WUtoQ3N4dHNjaGMwVkJNWA$3Kl0P5/e8OkaXPBjwvs23MpVd2CIirVdkbcYA+3sDds',1);
 
--- --------------------------------------------------------
+/*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
+UNLOCK TABLES;
 
---
--- Estrutura da tabela `vendedor`
---
+
+# Dump da tabela vendedor
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `vendedor`;
 
 CREATE TABLE `vendedor` (
   `id_vendedor` int(11) NOT NULL,
@@ -173,163 +227,16 @@ CREATE TABLE `vendedor` (
   `CPF` varchar(14) NOT NULL,
   `email` varchar(40) NOT NULL,
   `telefone` char(15) NOT NULL,
-  `tipo` int(11) DEFAULT '2',
+  `tipo` int(11) DEFAULT 2,
   `senha` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Índices para tabelas despejadas
---
 
---
--- Índices para tabela `caracteristicas`
---
-ALTER TABLE `caracteristicas`
-  ADD PRIMARY KEY (`id_caracteristicas`),
-  ADD UNIQUE KEY `id_caracteristicas_UNIQUE` (`id_caracteristicas`);
 
---
--- Índices para tabela `cliente`
---
-ALTER TABLE `cliente`
-  ADD PRIMARY KEY (`id_cliente`),
-  ADD UNIQUE KEY `CPF` (`CPF`);
 
---
--- Índices para tabela `endereco`
---
-ALTER TABLE `endereco`
-  ADD PRIMARY KEY (`id_endereco`),
-  ADD UNIQUE KEY `id_endereco_UNIQUE` (`id_endereco`),
-  ADD KEY `fk_Endereco_Cliente1_idx` (`Cliente_id_cliente`);
-
---
--- Índices para tabela `fornecedor`
---
-ALTER TABLE `fornecedor`
-  ADD PRIMARY KEY (`id_fornecedor`);
-
---
--- Índices para tabela `pedido`
---
-ALTER TABLE `pedido`
-  ADD PRIMARY KEY (`id_pedido`);
-
---
--- Índices para tabela `pedido_produto`
---
-ALTER TABLE `pedido_produto`
-  ADD PRIMARY KEY (`idPedido_Produto`),
-  ADD KEY `fk_Pedido_Produto_Pedido1_idx` (`Pedido_id_pedido`),
-  ADD KEY `fk_Pedido_Produto_Produtos1_idx` (`Produtos_idProdutos`);
-
---
--- Índices para tabela `produtos`
---
-ALTER TABLE `produtos`
-  ADD PRIMARY KEY (`id_produtos`);
-
---
--- Índices para tabela `tamanho`
---
-ALTER TABLE `tamanho`
-  ADD PRIMARY KEY (`id_tamanho`),
-  ADD KEY `fk_id_produto_tamanho` (`id_produto`);
-
---
--- Índices para tabela `usuarios`
---
-ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id_usuario`),
-  ADD UNIQUE KEY `id_usuario_UNIQUE` (`id_usuario`);
-
---
--- Índices para tabela `vendedor`
---
-ALTER TABLE `vendedor`
-  ADD PRIMARY KEY (`id_vendedor`);
-
---
--- AUTO_INCREMENT de tabelas despejadas
---
-
---
--- AUTO_INCREMENT de tabela `caracteristicas`
---
-ALTER TABLE `caracteristicas`
-  MODIFY `id_caracteristicas` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `cliente`
---
-ALTER TABLE `cliente`
-  MODIFY `id_cliente` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `endereco`
---
-ALTER TABLE `endereco`
-  MODIFY `id_endereco` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `fornecedor`
---
-ALTER TABLE `fornecedor`
-  MODIFY `id_fornecedor` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `pedido`
---
-ALTER TABLE `pedido`
-  MODIFY `id_pedido` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `pedido_produto`
---
-ALTER TABLE `pedido_produto`
-  MODIFY `idPedido_Produto` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT de tabela `produtos`
---
-ALTER TABLE `produtos`
-  MODIFY `id_produtos` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT de tabela `tamanho`
---
-ALTER TABLE `tamanho`
-  MODIFY `id_tamanho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- AUTO_INCREMENT de tabela `usuarios`
---
-ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT de tabela `vendedor`
---
-ALTER TABLE `vendedor`
-  MODIFY `id_vendedor` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- Restrições para despejos de tabelas
---
-
---
--- Limitadores para a tabela `endereco`
---
-ALTER TABLE `endereco`
-  ADD CONSTRAINT `fk_Endereco_Cliente1` FOREIGN KEY (`Cliente_id_cliente`) REFERENCES `cliente` (`id_cliente`);
-
---
--- Limitadores para a tabela `tamanho`
---
-ALTER TABLE `tamanho`
-  ADD CONSTRAINT `fk_id_produto_tamanho` FOREIGN KEY (`id_produto`) REFERENCES `produtos` (`id_produtos`);
-COMMIT;
-
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -188,7 +188,6 @@ function getProduct($id) {
         $result2 = $stmt2 -> fetchAll();
 
         $listSize = array();
-        $amountProductTotal;
 
         foreach($result2 as $registro) {
             $sizeProduct = $registro['tamanho'];
@@ -198,12 +197,8 @@ function getProduct($id) {
             $object->size = $sizeProduct;
             $object->amount = $amountProduct;
 
-            $amountProductTotal = $amountProduct + $amountProductTotal;
-
             array_push($listSize, $object);
         }
-        $prod-> setAmountTotal($amountProductTotal);
-
         $prod->setSize($listSize);
     }
     return $prod;
