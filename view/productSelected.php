@@ -1,6 +1,11 @@
 <?php
 @session_start();
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
+include_once '../DAO/productsBd.php';
+// $sizes = getProduct($_SESSION['product_id']);
+$sizes = seeSizeAvaliable($_SESSION['product_id']);
+$prod = getProduct($_SESSION['product_id']);
+// $price = isset($_SESSION['quantity'],$_SESSION['product_id']) ? :
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,7 +16,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
     <link rel="stylesheet" href="img/icons/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styleSelected.css">
-    <title>Document</title>
+    <title>LA Imports - Tamanho Disponíveis</title>
 </head>
 <body>
 <header class="row mb-3 mt-2 ml-0 mr-0">
@@ -22,7 +27,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
 
 <main class="container">
     <div class="row">
-        <form class="col-12 cart-body" id="productSelected">
+        <form class="col-12 cart-body" id="productSelected" method="POST" action="/project_PI/control/control_cart.php">
         <!-- product product in cart -->
             <div class="cart-item">
                 <!-- Product information -->
@@ -35,21 +40,24 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
                     </div>
                     <!-- name product -->
                     <div class="col-12 col-sm-10 desc">
-                        <h6> Nome do produto</h6>
+                        <h6><?php echo $prod->getName()//using object example?></h6>
                         <p>Selecione o tamanho</p>
-
+                        <?php //echo var_dump($sizes) ?>
                         <!-- available sizes -->
-                        <label>
-                        <input type="checkbox" name="" id=""> 34
-                        </label>
-                        <label>
-                        <input type="checkbox" name="" id=""> 35
-                        </label>
+                        <?php foreach ($sizes as $size) {
+                            if($size['quantidade'] == 0){ ?>
+                            <?php }else{ ?>
+                                <label>
+                                    <input type="checkbox" name="sizeSelected[]" value="<?php echo $size['tamanho'] //this to send correctly id by "auto_increment" id of database ?>"> <?php echo $size['tamanho'];?>
+                                </label>
+                                <?php } ?>
+                            <?php
+                        } ?>
                     </div>
 
                     <!-- price product selected -->
                     <div class="cart-row-cell amount">
-                        <p>R$ <span>13,87</span></p>
+                        <p>R$ <span><?php echo $prod->getPrice()* $_SESSION['quantity']; ?></span></p>
                     </div>
                 </div>
             </div>
@@ -64,7 +72,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
 
                     <!-- button to confirm selection -->
                     <div class="col-12 col-sm-4 center mt-2 mb-1">
-                        <input type="submit" form="productSelected" class="btn btn-success" value="Confirmar">
+                        <input type="submit" class="btn btn-success" value="Confirmar">
                     </div>
                 </div>
             </div>

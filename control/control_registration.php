@@ -10,7 +10,8 @@ $tell = $_POST['tell'];
 $email = $_POST['email'];
 $pass_sent = $_POST['pass'];
 $passCounter = strlen($pass_sent);
-$pass = password_hash($pass_sent, PASSWORD_ARGON2I, ['memory_cost' => 2048, 'time_cost' => 4, 'threads' => 3]);
+// $pass = password_hash($pass_sent, PASSWORD_ARGON2I, ['memory_cost' => 2048, 'time_cost' => 4, 'threads' => 3]);
+$pass = password_hash($pass_sent, PASSWORD_DEFAULT);
 
 $Users = new Users();
 
@@ -34,6 +35,7 @@ if($passCounter > 6){
 				    'telefone' => $tell,
 				    'email' => $email,
 				    'senha' => $pass,
+					// 'id_usuario' => 2
 				];
 
 				$conexao = connect();

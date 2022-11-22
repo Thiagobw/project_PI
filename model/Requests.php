@@ -5,6 +5,7 @@ class Requests{
     private $valor_pedido;
     private $forma_pagamento;
     private $data;
+    private $id;
 
 
     public function setValor_pedido($valor_pedido){
@@ -18,6 +19,12 @@ class Requests{
     }
     public function getForma_pagamento(){
         return $this->forma_pagamento;
+    }
+    public function setId($id){
+        return $this->id = $id;
+    }
+    public function getId(){
+        return $this->id;
     }
     public function setData($data){
         return $this->data = $data;

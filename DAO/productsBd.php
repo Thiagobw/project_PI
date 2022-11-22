@@ -23,7 +23,13 @@ function search_products() {
     }
     return $resul_produtos;
 }
-
+function find_products_names($id){
+    $conexao = connect();
+    $stmt = $conexao->prepare("SELECT nome_produto FROM produtos WHERE id_produtos = :id");
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetch();
+}
 
 function register_product($prod) {
 
@@ -71,7 +77,6 @@ function register_product_size($result_regist_id, $SizeAmountList) {
             foreach ( $SizeAmountList as $list) {
                  $stmt -> execute([$list[0], $list[1], $result_regist_id]);
             }
-
             $PDO->commit();
             return true;
 
@@ -89,7 +94,8 @@ function register_product_size($result_regist_id, $SizeAmountList) {
 }
 
 
-function delet_product ($prod) {
+function delet_product ($prod): bool
+ {
 
     try {
         $PDO = connect();
@@ -119,14 +125,25 @@ function delet_product ($prod) {
     }
 }
 
-
-function update_product($prod) {
+function seeSizeAvaliable($id): array
+{
+    //this not same getProduct because his get relaction with tamanho table
+    $conexao = connect();
+    $stmt = $conexao->prepare("SELECT tamanho, id_tamanho, quantidade FROM tamanho WHERE id_produto = :id");
+    $stmt->bindValue(':id', $id);
+    $stmt->execute();
+    return $stmt->fetchAll();
+}
+function update_product($prod): bool
+{
     try{
 
         $PDO = connect();
 
-        $stmt = $PDO -> prepare("UPDATE produtos SET nome_produto=?, preco_produto=? WHERE id_produtos=?");
-        $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getId()]);
+        $sqlReg = " UPDATE produtos SET nome_produto=?, preco_produto=?, quantidade=? WHERE id_produtos=?";
+
+        $stmt = $PDO -> prepare($sqlReg);
+        $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getAmount(), $prod->getId()]);
     
         if($stmt) {
             return true;
@@ -143,36 +160,11 @@ function update_product($prod) {
 }
 
 
-function update_product_size($SizeAmountList, $idProd) {
-    try{
-
-        $PDO = connect();
-
-        $stmt = $PDO -> prepare("UPDATE tamanho SET tamanho=?, quantidade=? WHERE id_produto=?");
-        
-        foreach ( $SizeAmountList as $list) {
-            $stmt -> execute([$list[0], $list[1], $idProd]);
-        }
-        
-        if($stmt) {
-            return true;
-        }
-        else {
-            return false;
-        }
-
-    } catch (Exception $e) {
-
-        echo $e->getMessage();
-        return false;
-    }
-}
-
-
-function getProduct($id) {
+function getProduct($id): Products
+{
     $connection = connect();
 
-    $stmt = $connection -> prepare("SELECT * FROM produtos WHERE id_produtos = ?");
+    $stmt = $connection -> prepare("SELECT * FROM produtos p WHERE p.id_produtos = ?");
     $stmt -> execute([$id]);
 
     $result = $stmt -> fetchAll();
@@ -186,20 +178,15 @@ function getProduct($id) {
         $stmt2 = $connection -> prepare("SELECT * FROM tamanho p WHERE p.id_produto = ?");
         $stmt2 -> execute([$id]);
         $result2 = $stmt2 -> fetchAll();
-
-        $listSize = array();
-
+        $listSize = [];
         foreach($result2 as $registro) {
-            $sizeProduct = $registro['tamanho'];
-            $amountProduct = $registro['quantidade'];
-
-            $object = new stdClass();
-            $object->size = $sizeProduct;
-            $object->amount = $amountProduct;
-
-            array_push($listSize, $object);
+            $tam = $registro['tamanho'];
+            $qt = $registro['quantidade'];
+            $id_tam = $registro['id_tamanho'];
+            $listSize[$tam] = $qt;
         }
         $prod->setSize($listSize);
+
     }
     return $prod;
 }

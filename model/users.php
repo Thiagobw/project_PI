@@ -7,6 +7,7 @@ class Users {
     private $tell;
     private $email;
     private $password;
+    private $id;
 
     public function setName($name) {
         return $this->name = $name;
@@ -14,6 +15,14 @@ class Users {
 
     public function getName() {
         return $this->name;
+    }
+
+    public function setId($id) {
+        return $this->id = $id;
+    }
+
+    public function getId() {
+        return $this->id;
     }
 
     public function setEmail($email) {
