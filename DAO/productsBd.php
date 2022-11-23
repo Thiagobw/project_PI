@@ -190,3 +190,44 @@ function getProduct($id): Products
     }
     return $prod;
 }
+
+
+function selectProductToChange($id) {
+    try{
+        $PDO = connect();
+
+        $stmt = $PDO -> prepare("SELECT * FROM produtos WHERE id_produtos = ?");
+        $stmt -> execute([$id]);
+        $result = $stmt -> fetchAll();
+        
+        $prod = new Products();
+        
+        foreach($result as $registro) {
+            $prod -> setId($registro["id_produtos"]);
+            $prod -> setName($registro["nome_produto"]);
+            $prod -> setPrice($registro["preco_produto"]);
+            
+            $stmt2 = $PDO -> prepare("SELECT * FROM tamanho p WHERE p.id_produto = ?");
+            $stmt2 -> execute([$id]);
+            $result2 = $stmt2 -> fetchAll();
+            $listSize = array();
+            
+            foreach($result2 as $registro) {
+                $sizeProduct = $registro['tamanho'];
+                $amountProduct = $registro['quantidade'];
+                $object = new stdClass();
+                $object->size = $sizeProduct;
+                $object->amount = $amountProduct;
+                
+                array_push($listSize, $object);
+            }
+            $prod->setSize($listSize);
+        }
+        return $prod;
+        
+} catch (Exception $e) {
+
+    echo $e->getMessage();
+    return false;
+}
+}

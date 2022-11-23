@@ -5,13 +5,13 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/productsBd.php";
 if(isset($_GET['id'])) {
 
     $id = $_GET["id"];
-    $prod = getProduct($id);
+    $prod = selectProductToChange($id);
     $result = array();
     $result['name'] = $prod -> getName();
     $result['price'] = $prod -> getPrice();
     $result['id'] = $prod -> getId();
     $result['sizes'] = $prod -> getSize();
-    
+    die(var_dump($prod->getSize()));
 
     echo json_encode($result);
 
