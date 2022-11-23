@@ -206,27 +206,28 @@ function selectProductToChange($id) {
             $prod -> setId($registro["id_produtos"]);
             $prod -> setName($registro["nome_produto"]);
             $prod -> setPrice($registro["preco_produto"]);
-        }
-        
-        $stmt2 = $PDO -> prepare("SELECT * FROM tamanho p WHERE p.id_produto = ?");
-        $stmt2 -> execute([$id]);
-        $result2 = $stmt2 -> fetchAll();
-        $listSize = array();
-        
-        foreach($result2 as $registro) {
-            $sizeProduct = $registro['tamanho'];
-            $amountProduct = $registro['quantidade'];
+            
+            $stmt2 = $PDO -> prepare("SELECT * FROM tamanho p WHERE p.id_produto = ?");
+            $stmt2 -> execute([$id]);
+            $result2 = $stmt2 -> fetchAll();
+            $listSize = array();
+            
+            foreach($result2 as $registro) {
+                $sizeProduct = $registro['tamanho'];
+                $amountProduct = $registro['quantidade'];
+                $object = new stdClass();
+                $object->size = $sizeProduct;
+                $object->amount = $amountProduct;
                 
-            $object = new stdClass();
-            $object->tamanho = $tam;
-            $object->qt = $qt;
-    
-            array_push($listSize, $object);
+                array_push($listSize, $object);
+            }
+            $prod->setSize($listSize);
         }
         return $prod;
         
-    } catch (Exception $e) {
-        echo $e->getMessage();
-        return false;
-    }
+} catch (Exception $e) {
+
+    echo $e->getMessage();
+    return false;
+}
 }
