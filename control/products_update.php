@@ -69,16 +69,19 @@ if(isset($_POST['submitChangeProduct']) && isset($_POST['idProductChange'])) {
 
         if ($result_update == true) {
 
-            if (update_product_size($SizeAmountList, $prod->getId())) {
-                header('Location: ../view/dashboard/productsPage.php');
-            } 
-            else {
+            if (delet_product_sizes($id)) {
 
+                if (update_product_size($SizeAmountList, $prod->getId())) {
+                    header('Location: ../view/dashboard/productsPage.php');
+                } 
+                else {
+                    echo "<br>falha ao falha ao atualizar os dados do tamanho do produto";
+                }
+            } else {
+                echo "<br>falha ao falha ao atualizar os dados do tamanho do produto";
             }
-            
-        }
-        else {
-            echo "falha ao falha ao atualizar dados";
+        } else {
+            echo "<br>falha ao falha ao atualizar os dados";
         }
     } else {
         echo "<br><h3>erro ao alterar informações!</h3> 

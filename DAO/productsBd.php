@@ -140,10 +140,8 @@ function update_product($prod): bool
 
         $PDO = connect();
 
-        $sqlReg = " UPDATE produtos SET nome_produto=?, preco_produto=?, quantidade=? WHERE id_produtos=?";
-
-        $stmt = $PDO -> prepare($sqlReg);
-        $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getAmount(), $prod->getId()]);
+        $stmt = $PDO -> prepare("UPDATE produtos SET nome_produto=?, preco_produto=? WHERE id_produtos=?");
+        $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getId()]);
     
         if($stmt) {
             return true;
@@ -224,10 +222,8 @@ function selectProductToChange($id) {
             $prod->setSize($listSize);
         }
         return $prod;
-        
-} catch (Exception $e) {
-
-    echo $e->getMessage();
-    return false;
-}
+    } catch (Exception $e) {
+        echo $e->getMessage();
+        return false;
+    }
 }
