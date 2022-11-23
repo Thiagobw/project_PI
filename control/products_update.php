@@ -15,44 +15,44 @@ if(isset($_POST['submitChangeProduct']) && isset($_POST['idProductChange'])) {
 
         $SizeAmountList = array();
         
-        if(isset($_POST['checkSize34'])) {
-            $SizeAmountList[] = [34, $_POST['amountProdSize34']];
+        if(isset($_POST['changeCheckSize34'])) {
+            $SizeAmountList[] = [34, $_POST['changeAmountProdSize34']];
         }
 
-        if(isset($_POST['checkSize35'])) {
-            $SizeAmountList[] = [35, $_POST['amountProdSize35']];
+        if(isset($_POST['changeCheckSize35'])) {
+            $SizeAmountList[] = [35, $_POST['changeAmountProdSize35']];
         }
 
-        if(isset($_POST['checkSize36'])) {
-            $SizeAmountList[] = [36, $_POST['amountProdSize36']];
+        if(isset($_POST['changeCheckSize36'])) {
+            $SizeAmountList[] = [36, $_POST['changeAmountProdSize36']];
         }
 
-        if(isset($_POST['checkSize37'])) {
-            $SizeAmountList[] = [37, $_POST['amountProdSize37']];
+        if(isset($_POST['changeCheckSize37'])) {
+            $SizeAmountList[] = [37, $_POST['changeAmountProdSize37']];
         }
 
-        if(isset($_POST['checkSize38'])) {
-            $SizeAmountList[] = [38, $_POST['amountProdSize38']];
+        if(isset($_POST['changeCheckSize38'])) {
+            $SizeAmountList[] = [38, $_POST['changeAmountProdSize38']];
         }
 
-        if(isset($_POST['checkSize39'])) {
-            $SizeAmountList[] = [39, $_POST['amountProdSize39']];
+        if(isset($_POST['changeCheckSize39'])) {
+            $SizeAmountList[] = [39, $_POST['changeAmountProdSize39']];
         }
 
-        if(isset($_POST['checkSize40'])) {
-            $SizeAmountList[] = [40, $_POST['amountProdSize40']];
+        if(isset($_POST['changeCheckSize40'])) {
+            $SizeAmountList[] = [40, $_POST['changeAmountProdSize40']];
         }
 
-        if(isset($_POST['checkSize41'])) {
-            $SizeAmountList[] = [41, $_POST['amountProdSize41']];
+        if(isset($_POST['changeCheckSize41'])) {
+            $SizeAmountList[] = [41, $_POST['changeAmountProdSize41']];
         }
 
-        if(isset($_POST['checkSize42'])) {
-            $SizeAmountList[] = [42, $_POST['amountProdSize42']];
+        if(isset($_POST['changeCheckSize42'])) {
+            $SizeAmountList[] = [42, $_POST['changeAmountProdSize42']];
         }
 
-        if(isset($_POST['checkSize43'])) {
-            $SizeAmountList[] = [43, $_POST['amountProdSize43']];
+        if(isset($_POST['changeCheckSize43'])) {
+            $SizeAmountList[] = [43, $_POST['changeAmountProdSize43']];
         }
 
         $id = $_POST['idProductChange'];
@@ -65,20 +65,21 @@ if(isset($_POST['submitChangeProduct']) && isset($_POST['idProductChange'])) {
         $prod ->setName($name);
         $prod ->setPrice($price);
 
-        $result_update = update_product($prod);
+        if (update_product($prod)) { // changes product name and price and returns true or false
 
-        if ($result_update == true) {
+            if (delet_product_sizes($id)) { // delete the sizes already registered and returns true or false
 
-            if (update_product_size($SizeAmountList, $prod->getId())) {
-                header('Location: ../view/dashboard/productsPage.php');
-            } 
-            else {
-
+                if (register_product_size($id, $SizeAmountList)) { // register new sizes and quantities and returns true or false
+                    header('Location: ../view/dashboard/productsPage.php');
+                } 
+                else {
+                    echo "<br>falha ao falha ao atualizar os dados do tamanho do produto";
+                }
+            } else {
+                echo "<br>falha ao falha ao atualizar os dados do tamanho do produto";
             }
-            
-        }
-        else {
-            echo "falha ao falha ao atualizar dados";
+        } else {
+            echo "<br>falha ao falha ao atualizar os dados";
         }
     } else {
         echo "<br><h3>erro ao alterar informações!</h3> 
