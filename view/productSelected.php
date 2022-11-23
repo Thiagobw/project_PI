@@ -2,10 +2,9 @@
 @session_start();
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
 include_once '../DAO/productsBd.php';
-// $sizes = getProduct($_SESSION['product_id']);
 $sizes = seeSizeAvaliable($_SESSION['product_id']);
 $prod = getProduct($_SESSION['product_id']);
-// $price = isset($_SESSION['quantity'],$_SESSION['product_id']) ? :
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -42,7 +41,6 @@ $prod = getProduct($_SESSION['product_id']);
                     <div class="col-12 col-sm-10 desc">
                         <h6><?php echo $prod->getName()//using object example?></h6>
                         <p>Selecione o tamanho</p>
-                        <?php //echo var_dump($sizes) ?>
                         <!-- available sizes -->
                         <?php foreach ($sizes as $size) {
                             if($size['quantidade'] == 0){ ?>
@@ -50,9 +48,8 @@ $prod = getProduct($_SESSION['product_id']);
                                 <label>
                                     <input type="checkbox" name="sizeSelected[]" value="<?php echo $size['tamanho'] //this to send correctly id by "auto_increment" id of database ?>"> <?php echo $size['tamanho'];?>
                                 </label>
-                                <?php } ?>
-                            <?php
-                        } ?>
+                                
+                            <?php }} ?>
                     </div>
 
                     <!-- price product selected -->
