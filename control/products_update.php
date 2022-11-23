@@ -65,11 +65,11 @@ if(isset($_POST['submitChangeProduct']) && isset($_POST['idProductChange'])) {
         $prod ->setName($name);
         $prod ->setPrice($price);
 
-        if (update_product($prod)) {
+        if (update_product($prod)) { // changes product name and price and returns true or false
 
-            if (delet_product_sizes($id)) {
+            if (delet_product_sizes($id)) { // delete the sizes already registered and returns true or false
 
-                if (register_product_size($id, $SizeAmountList)) {
+                if (register_product_size($id, $SizeAmountList)) { // register new sizes and quantities and returns true or false
                     header('Location: ../view/dashboard/productsPage.php');
                 } 
                 else {
