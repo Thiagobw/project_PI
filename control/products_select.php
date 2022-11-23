@@ -11,7 +11,7 @@ if(isset($_GET['id'])) {
     $result['price'] = $prod -> getPrice();
     $result['id'] = $prod -> getId();
     $result['sizes'] = $prod -> getSize();
-    die(var_dump($prod->getSize()));
+   // die(var_dump($prod->getSize()));
 
     echo json_encode($result);
 
