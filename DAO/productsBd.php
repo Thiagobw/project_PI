@@ -23,6 +23,8 @@ function search_products() {
     }
     return $resul_produtos;
 }
+
+
 function find_products_names($id){
     $conexao = connect();
     $stmt = $conexao->prepare("SELECT nome_produto FROM produtos WHERE id_produtos = :id");
@@ -30,6 +32,7 @@ function find_products_names($id){
     $stmt->execute();
     return $stmt->fetch();
 }
+
 
 function register_product($prod) {
 
@@ -65,7 +68,7 @@ function register_product($prod) {
 }
 
 
-function register_product_size($result_regist_id, $SizeAmountList) {
+function register_product_size($id, $SizeAmountList) {
     try{
         $PDO = connect();
 
@@ -75,7 +78,7 @@ function register_product_size($result_regist_id, $SizeAmountList) {
             $stmt = $PDO -> prepare($sqlRegSize);
 
             foreach ( $SizeAmountList as $list) {
-                 $stmt -> execute([$list[0], $list[1], $result_regist_id]);
+                 $stmt -> execute([$list[0], $list[1], $id]);
             }
             $PDO->commit();
             return true;
@@ -222,6 +225,27 @@ function selectProductToChange($id) {
             $prod->setSize($listSize);
         }
         return $prod;
+    } catch (Exception $e) {
+        echo $e->getMessage();
+        return false;
+    }
+}
+
+
+function delet_product_sizes ($id) {
+    try {
+        $PDO = connect();
+
+        $stmt = $PDO -> prepare("DELETE FROM tamanho WHERE id_produto=?");
+        $stmt -> execute([$id]);
+        
+        if($stmt) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
     } catch (Exception $e) {
         echo $e->getMessage();
         return false;
