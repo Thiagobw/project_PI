@@ -236,7 +236,21 @@ $customersList = search_customers();
         const ttlR = document.querySelector('#ttl-customers');
         ttlR.style.display = 'flex';
     })
+</script>
 
+<script>
+
+    let cpf = document.querySelector('#cpfCustomers');
+
+    cpf.addEventListener('input', () => {
+        let cpfRegistLength = cpfRegist.value.length;
+
+        if (cpfRegistLength == 3 || cpfRegistLength == 7) {
+            cpfRegist.value += '.';
+        } else if (cpfRegistLength == 11) {
+            cpfRegist.value += '-';
+        }
+    })
 </script>
 </body>
 </html>
