@@ -7,11 +7,12 @@ $password = $_POST['pass'];
 
 $user= new Users();
 $user->setCpf($cpf);
-$user->setPassword(password_hash($password, PASSWORD_DEFAULT));
+$user->setPassword($password);
 
 $result = autenticar($user);
 $answer = array();
-if ($result) {
+
+if (count($result)>0) {
 
     $answer['status'] = true;
     session_start();
