@@ -70,23 +70,9 @@ $productsList = search_products();
                                     </label>
                                     <input type="number" name="quantity" value="1" min="1">
                                 </div>
-                                <!-- <div>
-                                    <label for="size">
-                                        Tamanho
-                                    </label>
-                                    <input type="number"
-                                    name="size" 
-                                    min="36" 
-                                    minlength="2" 
-                                    value="36" 
-                                    aria-valuemax="49">
-                                </div> -->
+
                                 <div class="row">
-                                    <button name="product_id" 
-                                    class="btn w-100"
-                                    id="btn-add" 
-                                    value="<?php echo $prod->getId()?>"
-                                    name="selectSize">
+                                    <button class="btn w-100" id="btn-add" name="product_id" name="selectSize" value="<?php echo $prod->getId()?>">
                                         <i class="fa-solid fa-cart-plus"></i> Adicionar
                                     </button>
                                 </div>

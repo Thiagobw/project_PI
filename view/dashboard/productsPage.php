@@ -5,7 +5,6 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/Productsbd.php";
 
 $productsList = search_products();
 
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -178,6 +177,7 @@ $productsList = search_products();
                                     </tr>
 
                                     <?php 
+                                    
                                     
                                     } else{
 
