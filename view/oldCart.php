@@ -145,9 +145,34 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : seeCartItems($user['id_us
 
                       <div class="col-11">
                         <label>
-                          <input type="radio"> transf cart. credt/debt boleto money
+                          <input type="radio"> transferência
                         </label>
                       </div>
+
+                      <div class="col-11">
+                          <label for="">
+                            <input type="radio" name="" id=""> cart. credito
+                          </label>
+                      </div>
+
+                      <div class="col-11">
+                          <label for="">
+                            <input type="radio" name="" id=""> cart. debito
+                          </label>
+                      </div>
+
+                      <div class="col-11">
+                          <label for="">
+                          <input type="radio" name="" id=""> boleto
+                          </label>
+                      </div>
+
+                      <div class="col-11">
+                          <label for="">
+                            <input type="radio" name="" id=""> dinheiro
+                          </label>
+                      </div>
+                      
                         <div class="form-outline form-white mb-4">
                           <input type="text" id="typeName" class="form-control" siez="17" placeholder="" />
                         </div>
