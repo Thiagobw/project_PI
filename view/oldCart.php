@@ -33,7 +33,7 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : seeCartItems($user['id_us
   <link rel="stylesheet" href="img/icons/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-  <title>Cart & Checkout - LA Imports</title>
+  <title>LA Imports - Carrinho</title>
 </head>
 
 <body>
@@ -44,7 +44,8 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : seeCartItems($user['id_us
     include "../view/pop-upAccount.php";
     ?>
   </header>
-  <section class="h-100 h-custom" style="background-color: #eee;">
+
+  <section class="h-100 h-custom">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col">
@@ -132,33 +133,40 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : seeCartItems($user['id_us
                         <img src="./dashboard/img/user.jpg" class="img-fluid rounded-3" style="width: 45px;" alt="Avatar">
                       </div>
 
-                      <p class="small mb-2">Tipo do Cartão</p>
-                      <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-mastercard fa-2x me-2"></i></a>
-                      <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-visa fa-2x me-2"></i></a>
-                      <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-amex fa-2x me-2"></i></a>
-                      <a href="#!" type="submit" class="text-white"><i class="fab fa-cc-paypal fa-2x"></i></a>
+                      <p>Selecione o metodo de pagamento</p>
 
                       <form class="mt-4">
+
+                      <div class="col-11">
+                      <label for="">
+                        <input type="radio" name="" id=""> <i class="fa-brands fa-pix"></i> Pix
+                      </label>
+                      </div>
+
+                      <div class="col-11">
+                        <label for="">
+                          <input type="radio"> transf cart. credt/debt boleto money
+                        </label>
+                      </div>
                         <div class="form-outline form-white mb-4">
-                          <input type="text" id="typeName" class="form-control form-control-lg" siez="17" placeholder="Cardholder's Name" />
-                          <label class="form-label" for="typeName">Nome no Cartão</label>
+                          <input type="text" id="typeName" class="form-control" siez="17" placeholder="" />
                         </div>
 
                         <div class="form-outline form-white mb-4">
-                          <input type="text" id="typeText" class="form-control form-control-lg" siez="17" placeholder="1234 5678 9012 3457" minlength="19" maxlength="19" />
+                          <input type="text" id="typeText" class="form-control" siez="17" placeholder="1234 5678 9012 3457" minlength="19" maxlength="19" />
                           <label class="form-label" for="typeText">Numero do Cartão</label>
                         </div>
 
                         <div class="row mb-4">
                           <div class="col-md-6">
                             <div class="form-outline form-white">
-                              <input type="text" id="typeExp" class="form-control form-control-lg" placeholder="MM/YYYY" size="7" id="exp" minlength="7" maxlength="7" />
+                              <input type="text" id="typeExp" class="form-control" placeholder="MM/YYYY" size="7" id="exp" minlength="7" maxlength="7" />
                               <label class="form-label" for="typeExp">Data</label>
                             </div>
                           </div>
                           <div class="col-md-6">
                             <div class="form-outline form-white">
-                              <input type="password" id="typeText" class="form-control form-control-lg" placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
+                              <input type="password" id="typeText" class="form-control" placeholder="&#9679;&#9679;&#9679;" size="1" minlength="3" maxlength="3" />
                               <label class="form-label" for="typeText">Cvv</label>
                             </div>
                           </div>
