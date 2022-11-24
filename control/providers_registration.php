@@ -18,9 +18,7 @@ if(isset($_POST['submitProviders'])) {
     $prov ->setEmail($email);
     $prov ->setTell($tel);
 
-    $result_regist = register_providers($prov);
-
-    if ($result_regist == true) {
+    if (register_providers($prov)) {
         header('Location: ../view/dashboard/providersPage.php');
     }
     else {

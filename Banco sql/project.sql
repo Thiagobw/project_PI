@@ -26,14 +26,15 @@
 DROP TABLE IF EXISTS `caracteristicas`;
 
 CREATE TABLE `caracteristicas` (
-  `id_caracteristicas` int(11) NOT NULL,
+  `id_caracteristicas` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `fk_produtos_id_produtos` int(11) NOT NULL,
   `solado` varchar(20) NOT NULL,
   `lingueta` varchar(20) NOT NULL,
   `palmilha` varchar(20) NOT NULL,
   `material_forro` varchar(25) NOT NULL,
   `tipo_amarracao` varchar(20) NOT NULL,
-  `entresola` varchar(20) NOT NULL
+  `entresola` varchar(20) NOT NULL,
+  PRIMARY KEY (`id_caracteristicas`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -44,11 +45,12 @@ CREATE TABLE `caracteristicas` (
 DROP TABLE IF EXISTS `cliente`;
 
 CREATE TABLE `cliente` (
-  `id_cliente` int(11) NOT NULL,
+  `id_cliente` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `CPF` char(14) NOT NULL,
-  `email` varchar(40) NOT NULL DEFAULT 'nC#o informado',
-  `telefone` char(15) NOT NULL
+  `email` varchar(40) NOT NULL DEFAULT 'nao informado',
+  `telefone` char(15) NOT NULL,
+  PRIMARY KEY (`id_cliente`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -59,7 +61,7 @@ CREATE TABLE `cliente` (
 DROP TABLE IF EXISTS `endereco`;
 
 CREATE TABLE `endereco` (
-  `id_endereco` int(11) NOT NULL,
+  `id_endereco` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `numero_endereco` int(11) DEFAULT NULL,
   `rua` varchar(45) DEFAULT NULL,
   `bairro` varchar(45) DEFAULT NULL,
@@ -67,7 +69,8 @@ CREATE TABLE `endereco` (
   `estado` varchar(30) DEFAULT NULL,
   `cep` varchar(9) NOT NULL,
   `complemento` int(11) NOT NULL,
-  `Cliente_id_cliente` int(11) NOT NULL
+  `Cliente_id_cliente` int(11) NOT NULL,
+  PRIMARY KEY (`id_endereco`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -78,11 +81,12 @@ CREATE TABLE `endereco` (
 DROP TABLE IF EXISTS `fornecedor`;
 
 CREATE TABLE `fornecedor` (
-  `id_fornecedor` int(11) NOT NULL,
+  `id_fornecedor` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `cnpj` char(18) NOT NULL,
-  `email` varchar(40) NOT NULL DEFAULT 'nC#o informado',
-  `telefone` char(15) NOT NULL
+  `email` varchar(40) NOT NULL DEFAULT 'nao informado',
+  `telefone` char(15) NOT NULL,
+  PRIMARY KEY (`id_fornecedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -201,13 +205,14 @@ UNLOCK TABLES;
 DROP TABLE IF EXISTS `vendedor`;
 
 CREATE TABLE `vendedor` (
-  `id_vendedor` int(11) NOT NULL,
+  `id_vendedor` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `CPF` varchar(14) NOT NULL,
   `email` varchar(40) NOT NULL,
   `telefone` char(15) NOT NULL,
   `tipo` int(11) DEFAULT 2,
-  `senha` varchar(300) DEFAULT NULL
+  `senha` varchar(300) DEFAULT NULL,
+  PRIMARY KEY (`id_vendedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
