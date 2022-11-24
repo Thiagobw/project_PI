@@ -144,7 +144,7 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : seeCartItems($user['id_us
                       </div>
 
                       <div class="col-11">
-                        <label for="">
+                        <label>
                           <input type="radio"> transf cart. credt/debt boleto money
                         </label>
                       </div>
