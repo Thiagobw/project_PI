@@ -36,39 +36,13 @@ body {
 
 
 /*navbar*/
-.pesquisa {
-    border: 1px solid #818081;
-    background-color: #ced4da;
-    border-radius: 1.1rem;
-}
 
-.pesquisa input::placeholder {
-    color: #000000;
+.search input {
+    border-radius: 1.07rem 0 0 1.07rem !important;
 }
-
-.pesquisa input {
-    border: none !important;
-    border-radius: 1.1rem 0 0 1.1rem !important;
-    background-color: #ced4da !important;
-}
-.pesquisa input:focus {
-    border: 1.5px solid #11c827 !important;
-    box-shadow: none !important;
-}
-
-.pesquisa button {
-    background-color: #ced4da !important;
-    border-bottom: none !important;
-    border-top: none !important;
-    border-right: none !important;
-    border-left: 1.5px solid #818081 !important;
-    padding: .4rem 1.3rem .4rem !important;
-    border-radius: 0 1.1rem 1.1rem 0;
-}
-
-.pesquisa button:focus {
-    box-shadow: 0 0 0 0.2rem rgba(26, 204, 20, 0.25) !important;
-    border: 1.5px solid #11c827 !important;
+.search button {
+    border-top-left-radius: none !important;
+    border-bottom-left-radius: none !important;
 }
 
 .cart, .userName {
@@ -76,10 +50,11 @@ body {
     font-size: 16.5px;
     letter-spacing: 1px;
 }
-
+.cart i {
+    color: #000000;
+}
 .cart:hover {
-    background-color: rgba(0, 0, 0, 0.029);
-    font-size: 16.7px;
+    background-color: rgba(0, 0, 0, 0.030);
 }
 
 /*pagination*/

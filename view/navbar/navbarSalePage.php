@@ -32,21 +32,18 @@ endif;
             <!-- Left space -->
 
             <!-- Search form -->
-            <form class="d-flex input-group w-auto pesquisa">
+            <form class="d-flex input-group w-auto search">
                 <input type="search" class="form-control w-auto h-auto" placeholder="Pesquisar" aria-label="Search" />
                 <button class="btn" type="button" data-mdb-ripple-color="dark">
-                    <img class="img-fluid" src="img/icons/search_Icon.png" alt="" height='22' width='22'>
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </button>
             </form>
 
             <div class=" navbar-nav mb-2 mb-lg-0 mr-3">
                 <li class="nav-item mr-1">
                     <a class="nav-link cart" href="/project_PI/view/oldCart.php">
-                        <img class="img-fluid" src="img/icons/shopping_cart_FILL0_wght400_GRAD0_opsz40.svg" alt="" height='27' width='27'>
-                        <span class="badge badge-danger">
-                            <?php echo $count; ?>
-                        </span>
-                        Carrinho
+                    <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="badge badge-danger"><?php echo $count; ?></span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">
