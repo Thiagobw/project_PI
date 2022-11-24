@@ -30,7 +30,6 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : seeCartItems($user['id_us
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/bootstrap.css">
-  <!--link rel="stylesheet" href="css/styleHomePage.css" -->
   <link rel="stylesheet" href="img/icons/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
@@ -57,7 +56,7 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : seeCartItems($user['id_us
                 <div class="col-lg-7">
                   <h5 class="mb-3"><a href="/project_PI/view/salePage.php" class="text-body">
                       <i class="fas fa-long-arrow-alt-left me-2">
-                      </i>Continue shopping</a>
+                      </i>Continue comprando</a>
                   </h5>
                   <hr>
 

@@ -4,7 +4,9 @@ include_once "../model/users.php";
 include_once "../model/Products.php";
 include_once "../DAO/productsBd.php";
 include_once "connection.php";
-function seeCartItems($user)
+
+
+function seeCartItems($user): array
 {
     $conexao = connect();
 
@@ -12,19 +14,51 @@ function seeCartItems($user)
     $stmt->bindValue(':id', $user);
     $stmt->execute();
     $result = $stmt->fetchAll();
-    foreach ($result as $registro) {
-        $cart = new Cart();
+    //verifyng returns anything for make loop
+    if (!empty($result)) {
+        foreach ($result as $registro) {
+            $cart = new Cart();
 
-        $cart->setId($registro["idPedido_Produto"]);
-        $cart->setTamanho($registro["tamanho"]);
-        $cart->setValor($registro["valor"]);
-        $cart->setQuantidade($registro["quantidade"]);
-        $cart->setProdutosId($registro['Produtos_idProdutos']);
+            $cart->setId($registro["idPedido_Produto"]);
+            $cart->setTamanho($registro["tamanho"]);
+            $cart->setValor($registro["valor"]);
+            $cart->setQuantidade($registro["quantidade"]);
+            $cart->setProdutosId($registro['Produtos_idProdutos']);
 
-        $resul_cart[] = $cart;
+            $result_cart[] = $cart;
+        }
+        //create empty array! this function need return array declared on side of param ": array"
+    } else {
+        $result_cart = array();
     }
-    return $resul_cart;
+    return $result_cart;
 }
+
+
+function seeOneCartItems($id): Cart
+{
+    $conexao = connect();
+
+    $stmt = $conexao->prepare("SELECT * FROM pedido_produto WHERE idPedido_Produto = ?");
+    $stmt->execute([$id]);
+    $results = $stmt->fetch();
+    if (!empty($results)) {
+        foreach ($results as $result){
+            $cart = new Cart();
+        
+            $cart->setId($result["idPedido_Produto"]);
+            $cart->setTamanho($result["tamanho"]);
+            $cart->setValor($result["valor"]);
+            $cart->setQuantidade($result["quantidade"]);
+            $cart->setProdutosId($result['Produtos_idProdutos']);
+        }
+        //create empty array! this function need return array declared on side of param ": array"
+    } else {
+        $cart = new Cart();
+    }
+    return $cart;
+}
+
 
 function addToCart($prod, $user, $quantity, $sizes)
 {
@@ -64,6 +98,7 @@ function addToCart($prod, $user, $quantity, $sizes)
     }
 }
 
+
 function deleteItemCart($id)
 {
     try {
@@ -93,6 +128,8 @@ function deleteItemCart($id)
         return false;
     }
 }
+
+
 function updateCartItemQuantity($id, $operator)
 {
     try {

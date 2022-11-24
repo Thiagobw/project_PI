@@ -21,6 +21,7 @@ if (checkAuth()) {
     }
 }
 $productsList = search_products();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -41,6 +42,7 @@ $productsList = search_products();
     <header>
         <?php
         require_once "navbar/navbarSalePage.php";
+        include "../view/pop-upAccount.php";
         ?>
     </header>
 
@@ -51,7 +53,8 @@ $productsList = search_products();
             <?php if (empty($productsList) == true) { ?>
                 <h3>nenhum produto cadastrado para venda!</h3>
                 <?php } else {
-                foreach ($productsList as $prod) { ?>
+                foreach ($productsList as $prod) {
+                    $sizes = seeSizeAvaliable($prod->getId()) ?>
                     <div class="row mx-0">
                         <div class="col-lg-4 col-md-6 pt-md-0 pt-3">
                             <div class="card d-flex flex-column align-items-center">
@@ -70,9 +73,23 @@ $productsList = search_products();
                                     </label>
                                     <input type="number" name="quantity" value="1" min="1">
                                 </div>
-
+                                <div>
+                                    <label for="size">
+                                        Tamanhos disponiveis:
+                                    </label>
+                                    <p>
+                                        <?php foreach ($sizes as $size) { ?>
+                                            <?php if ($size['quantidade'] <= 0) {
+                                            } else { ?>
+                                                <a class="small" is="size">
+                                                    <?php echo $size['tamanho']; ?>
+                                                </a>
+                                            <?php } ?>
+                                        <?php } ?>
+                                    </p>
+                                </div>
                                 <div class="row">
-                                    <button class="btn w-100" id="btn-add" name="product_id" name="selectSize" value="<?php echo $prod->getId()?>">
+                                    <button name="product_id" class="btn w-100" id="btn-add" value="<?php echo $prod->getId() ?>" name="selectSize">
                                         <i class="fa-solid fa-cart-plus"></i> Adicionar
                                     </button>
                                 </div>
