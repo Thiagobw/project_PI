@@ -148,10 +148,6 @@ CREATE TABLE `produtos` (
 LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
 
-INSERT INTO `produtos` (`id_produtos`, `nome_produto`, `preco_produto`)
-VALUES
-	(2,'Yezzy Zebra',300);
-
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,19 +167,6 @@ CREATE TABLE `tamanho` (
 
 LOCK TABLES `tamanho` WRITE;
 /*!40000 ALTER TABLE `tamanho` DISABLE KEYS */;
-
-INSERT INTO `tamanho` (`id_tamanho`, `tamanho`, `quantidade`, `id_produto`)
-VALUES
-	(1,34,5,2),
-	(2,35,5,2),
-	(3,36,5,2),
-	(4,37,5,2),
-	(5,38,5,2),
-	(6,39,5,2),
-	(7,40,5,2),
-	(8,41,5,2),
-	(9,42,5,2),
-	(10,43,5,2);
 
 /*!40000 ALTER TABLE `tamanho` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -207,10 +190,6 @@ CREATE TABLE `usuarios` (
 
 LOCK TABLES `usuarios` WRITE;
 /*!40000 ALTER TABLE `usuarios` DISABLE KEYS */;
-
-INSERT INTO `usuarios` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`, `tipo`)
-VALUES
-	(1,'thiago','021.174.540-54','(47) 99225-7589','teste@gmail.com','$argon2i$v=19$m=2048,t=4,p=3$WUtoQ3N4dHNjaGMwVkJNWA$3Kl0P5/e8OkaXPBjwvs23MpVd2CIirVdkbcYA+3sDds',1);
 
 /*!40000 ALTER TABLE `usuarios` ENABLE KEYS */;
 UNLOCK TABLES;
