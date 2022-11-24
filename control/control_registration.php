@@ -10,8 +10,7 @@ $tell = $_POST['tell'];
 $email = $_POST['email'];
 $pass_sent = $_POST['pass'];
 $passCounter = strlen($pass_sent);
-// $pass = password_hash($pass_sent, PASSWORD_ARGON2I, ['memory_cost' => 2048, 'time_cost' => 4, 'threads' => 3]);
-$pass = password_hash($pass_sent, PASSWORD_DEFAULT);
+$pass = password_hash($pass_sent, PASSWORD_ARGON2I, ['memory_cost' => 2048, 'time_cost' => 4, 'threads' => 3]);
 
 $Users = new Users();
 
@@ -21,21 +20,21 @@ $Users->setTell($tell);
 $Users->setEmail($email);
 $Users->setPassword($pass_sent);
 
-if($passCounter > 6){
+if($passCounter > 6) {
+
 	if(filter_var($email, FILTER_VALIDATE_EMAIL)) {
 		$result_email = autenticar_email($Users);
-		if(count($result_email)<1){
-			
+		
+		if(count($result_email)<1) {
 			$result_cpf = autenticar_cpf($Users);
-			if(count($result_cpf)<1){
 
+			if(count($result_cpf)<1) {
 				$data = [
 				    'nome' => $name,
 				    'cpf' => $cpf,
 				    'telefone' => $tell,
 				    'email' => $email,
 				    'senha' => $pass,
-					// 'id_usuario' => 2
 				];
 
 				$conexao = connect();
