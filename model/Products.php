@@ -24,10 +24,10 @@ class Products {
     }
 
 
-    public function setAmountTotal( $amountTotal) {
+    public function setAmount( $amountTotal) {
         $this -> amountTotal = $amountTotal;
     }
-    public function getAmountTotal() {
+    public function getAmount() {
         return $this -> amountTotal;
     }
 

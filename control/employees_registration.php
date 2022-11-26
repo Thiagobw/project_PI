@@ -19,9 +19,7 @@ if(isset($_POST['submitEmployees'])) {
     $emp ->setTel($tel);
     $emp ->setType(2);
 
-    $result_regist = register_employees($emp);
-
-    if ($result_regist == true) {
+    if (register_employees($emp)) {
         header('Location: ../view/dashboard/employeesPage.php');
     }
     else {

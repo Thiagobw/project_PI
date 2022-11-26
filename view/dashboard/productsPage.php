@@ -186,9 +186,9 @@ $productsList = search_products();
                                     ?>
                                         <tr>
                                             <td> <?php echo $prod -> getName(); ?></td>
-                                            <td> <?php echo $prod -> getSize(); ?></td>
+                                            <td> fazer aqui!! </td>
                                             <td> <?php echo "R$ ".$prod -> getPrice().",00";?> </td>
-                                            <td> <?php echo $prod -> getAmountTotal();?> </td>
+                                            <td> fazer aqui!! </td>
                                             <td>
                                                 <div class="btn-group" role="group" aria-label="Basic example">
                                                     <a class="btn btn-sm btn-plus-action" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="getProductData(<?php echo $prod -> getId(); ?>)">alterar</a>
