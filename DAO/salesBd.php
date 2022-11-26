@@ -1,26 +1,26 @@
 <?php
 
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/connection.php";
-include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Products.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Sales.php";
 
 
-function search_products() {
+function search_sales() {
     $conexao = connect();
 
-    $stmt = $conexao->prepare("SELECT * FROM produtos");
+    $stmt = $conexao->prepare("SELECT * FROM pedido");
     $stmt->execute();
 
     $result = $stmt->fetchAll();
-    $resul_produtos = array();
+    $result_sales = array();
 
     foreach($result as $registro) {
-        $produto = new Products();
+        $sale = new Sales();
 
-        $produto->setId($registro["id_produtos"]);
-        $produto->setName($registro["nome_produto"]);
-        $produto->setPrice($registro["preco_produto"]);
+        $sale->setId($registro["id_pedido"]);
+        $sale->setValueOrder($registro["valor_pedido"]);
+        $sale->setPaymentMethod($registro["forma_pagamento"]);
 
-        $resul_produtos[] = $produto;
+        $result_sales[] = $sale;
     }
-    return $resul_produtos;
+    return $result_sales;
 }
