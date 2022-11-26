@@ -1,7 +1,6 @@
 <?php
-
-include_once "connection.php";
-include_once "../model/users.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/users.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/connection.php";
 
 
 function autenticar (Users $user) {

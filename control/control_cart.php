@@ -1,7 +1,7 @@
 <?php
-include_once '../DAO/cartBd.php';
-include_once '../DAO/usuarioBd.php';
-session_start();
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/cartBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/usuarioBd.php";
+@session_start();
 
 //controller route to add after selected
 if (isset($_POST['sizeSelected'])) {

@@ -1,9 +1,4 @@
 <?php 
-/* LUCAS
-I do this model(its for me is a base class) for e-commerce future expansion
-because when this system on web we need make sure data consistency, security and
-better of them the productivity of developer!
-*/
 class Cart {
     private $tamanho;
     private $quantidade;

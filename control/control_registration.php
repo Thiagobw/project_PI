@@ -1,8 +1,7 @@
 <?php
-
-include_once "../DAO/usuarioBd.php";
-include_once "../model/users.php";
-include_once "../DAO/connection.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/usuarioBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/users.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/connection.php";
 
 $name = $_POST['name'];
 $cpf = $_POST['cpf'];

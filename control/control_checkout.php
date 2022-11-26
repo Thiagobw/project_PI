@@ -1,6 +1,6 @@
 <?php
-include_once '../DAO/requestsBd.php';
-session_start();
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/requestsBd.php";
+@session_start();
 //see you come through cart button!
 if (!empty($_GET['checkout'])) {
     if($_SESSION['can_checkout']){

@@ -1,11 +1,11 @@
 <?php
-include_once "../model/Cart.php";
-include_once "../model/users.php";
-include_once "../model/Products.php";
-include_once "productsBd.php";
-include_once "cartBd.php";
-include_once "usuarioBd.php";
-include_once "connection.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Cart.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/users.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Products.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/productsBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/cartBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/usuarioBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/connection.php";
 
 // Parameters is good way to corretly do something without error or mistakes
 // This is an example!
