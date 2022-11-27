@@ -69,7 +69,8 @@
 
                     <div class="row" id="contentRegisterProd">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formProd" action="../../control/products_registration.php" method="POST">
+                            <!-- changes the type! -->
+                            <form enctype="multipart/form-data" class="input-group center" id="formProd" action="../../control/products_registration.php" method="POST">
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <div class="row center">

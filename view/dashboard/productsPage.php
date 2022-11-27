@@ -1,9 +1,10 @@
 <?php
-@session_start();
+session_start();
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/Productsbd.php";
 
 $productsList = search_products();
+
 
 ?>
 <!DOCTYPE html>
@@ -160,11 +161,11 @@ $productsList = search_products();
                                 <table class="table text-secondary">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Nome do produto</th>
-                                            <th scope="col">estoque</th>
+                                            <th scope="col">Nome</th>
+                                            <th scope="col">Quantidade em estoque</th>
                                             <th scope="col">Preço</th>
                                             <th scope="col">Tamanhos</th>
-                                            <th scope="col">Ações</th>
+                                            <th scope="col"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -178,7 +179,6 @@ $productsList = search_products();
 
                                     <?php 
                                     
-                                    
                                     } else{
 
                                      foreach ($productsList as $prod) {
@@ -186,13 +186,19 @@ $productsList = search_products();
                                     ?>
                                         <tr>
                                             <td> <?php echo $prod -> getName(); ?></td>
-                                            <td> fazer aqui!! </td>
-                                            <td> <?php echo "R$ ".$prod -> getPrice().",00";?> </td>
-                                            <td> fazer aqui!! </td>
-                                            <td>
-                                                <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <a class="btn btn-sm btn-plus-action" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="getProductData(<?php echo $prod -> getId(); ?>)">alterar</a>
-                                                    <a class="btn btn-sm btn-plus-action" href="../../control/products_delete.php?id=<?php echo $prod ->getId(); ?>">Excluir</a>
+                                            <td> <?php echo $prod -> getAmount();?> </td>
+                                            <td> <?php echo $prod -> getPrice();?> </td>
+                                            <td> <?php //echo $prod -> getTamanho();?> </td>
+
+                                            <td class="">
+                                                <div class="nav-item dropdown">
+                                                    <a href="#" class="nav-link dropdown-toggle active mb-1" data-bs-toggle="dropdown" id="accDropDown">
+                                                    txt
+                                                    </a>
+                                                    <div class="dropdown-menu bg-transparent border-0">
+                                                    <a class="btn btn-plus-options" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="getProductData(<?php echo $prod -> getId(); ?>)">alterar</a>
+                                                        <a class="btn btn-plus-options" href="../../control/products_delete.php?id=<?php echo $prod ->getId(); ?>">excluir</a>
+                                                    </div>
                                                 </div>
                                             </td>
                                         </tr>

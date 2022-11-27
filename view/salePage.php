@@ -2,6 +2,7 @@
 session_start();
 // include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/control/control_cart.php";
 include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/DAO/productsBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/DAO/imagesBd.php";
 function checkAuth()
 {
     if (isset($_SESSION['autenticado']) && $_SESSION['autenticado'] == true) {
@@ -54,13 +55,16 @@ $productsList = search_products();
                 <h3>nenhum produto cadastrado para venda!</h3>
                 <?php } else {
                 foreach ($productsList as $prod) {
+                    $image = selectImage($prod->getImagemId());
                     $sizes = seeSizeAvaliable($prod->getId()) ?>
                     <div class="row mx-0">
                         <div class="col-lg-4 col-md-6 pt-md-0 pt-3">
                             <div class="card d-flex flex-column align-items-center">
                                 <div class="product-name"><?php echo $prod->getName() ?></div>
                                 <div class="card-img">
-                                    <img class="img-fluid w-100" src="img/products/tenis 1.jpg" alt="">
+                                    <img class="img-fluid w-100" 
+                                    src="/project_PI/uploads/<?php echo $image->getName(); ?>" 
+                                    alt="">
                                 </div>
                                 <div class="row price">
                                     R$ <span>

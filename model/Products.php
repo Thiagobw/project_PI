@@ -4,11 +4,17 @@ class Products {
     private $name;
     private $amountTotal;
     private $model;
-    private $manufacturer;
     private $price;
     private $id;
     private $sizes;
+    private $imageId;
 
+    public function setImagemId(int $imageId) {
+        $this-> imageId = $imageId;
+    }
+    public function getImagemId() {
+        return $this-> imageId;
+    }
     public function setSize(array $listSize) {
         $this-> sizes = $listSize;
     }
@@ -37,14 +43,6 @@ class Products {
     }
     public function getModel () {
         return $this -> model;
-    }
-
-
-    public function setManufacturer (string $manufacturer) {
-        $this -> manufacturer = $manufacturer;
-    }
-    public function getManufacturer () {
-        return $this -> manufacturer;
     }
     
     

@@ -1,13 +1,13 @@
 # ************************************************************
 # Sequel Pro SQL dump
-# Versï¿½o 4541
+# Versão 4541
 #
 # http://www.sequelpro.com/
 # https://github.com/sequelpro/sequelpro
 #
 # Host: localhost (MySQL 5.5.5-10.4.21-MariaDB)
 # Base de Dados: project_Pl
-# Tempo de Geraï¿½ï¿½o: 2022-11-21 16:27:03 +0000
+# Tempo de Geração: 2022-11-24 11:39:30 +0000
 # ************************************************************
 
 
@@ -18,6 +18,24 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+
+# Dump da tabela caracteristicas
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `caracteristicas`;
+
+CREATE TABLE `caracteristicas` (
+  `id_caracteristicas` int(11) NOT NULL,
+  `fk_produtos_id_produtos` int(11) NOT NULL,
+  `solado` varchar(20) NOT NULL,
+  `lingueta` varchar(20) NOT NULL,
+  `palmilha` varchar(20) NOT NULL,
+  `material_forro` varchar(25) NOT NULL,
+  `tipo_amarracao` varchar(20) NOT NULL,
+  `entresola` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 
 # Dump da tabela cliente
@@ -44,7 +62,6 @@ VALUES
 
 /*!40000 ALTER TABLE `cliente` ENABLE KEYS */;
 UNLOCK TABLES;
-
 
 
 # Dump da tabela endereco
@@ -120,7 +137,6 @@ VALUES
 UNLOCK TABLES;
 
 
-
 # Dump da tabela pedido_produto
 # ------------------------------------------------------------
 
@@ -137,18 +153,6 @@ CREATE TABLE `pedido_produto` (
   PRIMARY KEY (`idPedido_Produto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-LOCK TABLES `pedido_produto` WRITE;
-/*!40000 ALTER TABLE `pedido_produto` DISABLE KEYS */;
-
-INSERT INTO `pedido_produto` (`idPedido_Produto`, `tamanho`, `quantidade`, `valor`, `Pedido_id`, `Produtos_idProdutos`, `usuario_id`)
-VALUES
-	(7,36,1,300,NULL,2,2),
-	(11,43,5,300,NULL,2,2),
-	(12,37,2,300,NULL,2,2),
-	(14,43,2,300,NULL,2,2);
-
-/*!40000 ALTER TABLE `pedido_produto` ENABLE KEYS */;
-UNLOCK TABLES;
 
 
 # Dump da tabela produtos

@@ -2,7 +2,9 @@
 
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/connection.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/productsBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/imagesBd.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Products.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Images.php";
 
 /**
  * check if the form was sent
@@ -65,16 +67,36 @@ if(isset($_POST['submitProduct'])) {
             if(isset($_POST['checkSize43'])) {
                 $SizeAmountList[] = [43, $_POST['amountProdSize43']];
             }
-
-            $img = $_POST['imgProduct']; // to do...
-
             $name = $_POST['nameProduct'];
             $price = $_POST['priceProduct'];
             
             $prod = new Products();
             $prod ->setName($name);
             $prod ->setPrice($price);
-
+            
+            // set a path to the images
+            $imgPath = $_SERVER["DOCUMENT_ROOT"].'/project_PI/uploads/';
+            //$img = $_POST['imgProduct']; to do...
+            //handle the post of img
+            $imgPost = $_FILES['imgProduct'];
+            //here its a other var. "type" because html itself!
+            if(!empty($imgPost['name'])){
+                $imgFileName = basename($imgPost['name']);
+                $tagetImgPath = $imgPath . $imgFileName;
+                // get and move the file has uploaded to server
+                //with a tmp server file name
+                if(move_uploaded_file($imgPost['tmp_name'], $tagetImgPath)){
+                    $image = new Images;
+                    //$image->setPath($tagetImgPath); when if have some pic, makes inverse relationship
+                    $image->setName($imgFileName);
+                    //retrieve the id its going on upload for db
+                    $imgId = uploadImage($image);
+                    $prod->setImagemId($imgId);
+                    //handle another error, if stay on tmp will be exclude
+                }else{
+                    echo 'não consegui mover o arquivo para o app';
+                }
+            }
             $result_regist_id = register_product($prod);
 
             if (!is_null($result_regist_id)) {
