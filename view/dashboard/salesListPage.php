@@ -67,7 +67,7 @@ $sales = search_sales();
                     <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
                 </a>
 
-                <a href="#" class="sidebar-toggler flex-shrink-0 mt-3 mb-2">
+                <a href="#" class="sidebar-toggler flex-shrink-0 mt-2 mb-2">
                     <i class="fa fa-bars"></i>
                 </a>
             </nav>
@@ -140,7 +140,7 @@ $sales = search_sales();
 
                                                     <td>
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <a class="btn btn-sm btn-plus-action" href="../../control/sales_delete.php?id=<?php echo $sale->getId(); ?>">Excluir</a>
+                                                            <a class="btn btn-sm btn-plus-action" href="../../control/">Excluir</a>
                                                         </div>
                                                     </td>
                                                 </tr>

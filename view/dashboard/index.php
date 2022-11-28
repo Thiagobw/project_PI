@@ -58,75 +58,9 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
                     <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
                 </a>
 
-                <a href="#" class="sidebar-toggler flex-shrink-0 text-primary">
+                <a href="#" class="sidebar-toggler flex-shrink-0 text-primary mt-2 mb-2">
                     <i class="fa fa-bars"></i>
                 </a>
-
-                <div class="navbar-nav align-items-center ms-auto">
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-envelope me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Mensagem</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon te mandou uma mensagem</h6>
-                                        <small>Há 12 minutos</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon te mandou uma mensagem</h6>
-                                        <small>Há 15 minutos</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <div class="d-flex align-items-center">
-                                    <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
-                                    <div class="ms-2">
-                                        <h6 class="fw-normal mb-0">Jhon te mandou uma mensagem</h6>
-                                        <small>Há 20 minutos</small>
-                                    </div>
-                                </div>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">Ver todas mensagem</a>
-                        </div>
-                    </div>
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-bell me-lg-2"></i>
-                            <span class="d-none d-lg-inline-flex">Notificações</span>
-                        </a>
-                        <div class="dropdown-menu dropdown-menu-end bg-secondary border-0 rounded-0 rounded-bottom m-0">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Perfil alterado</h6>
-                                <small>Há 15 minutos</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Novo usuario adicionado</h6>
-                                <small>Há 15 minutos</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item">
-                                <h6 class="fw-normal mb-0">Senha alterada</h6>
-                                <small>Há 15 minutos</small>
-                            </a>
-                            <hr class="dropdown-divider">
-                            <a href="#" class="dropdown-item text-center">Ver todas notificações</a>
-                        </div>
-                    </div>
-                </div>
             </nav>
             <!-- Navbar End -->
 
@@ -199,78 +133,6 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
                 </div>
             </div>
             <!-- Sales Chart End -->
-
-
-            <!-- Recent Sales Start -->
-            <div class="container-fluid pt-4 px-4">
-                <div class="bg-secondary text-center rounded p-4">
-                    <div class="d-flex align-items-center justify-content-between mb-4">
-                        <h6 class="mb-0 text-white">Venda recente</h6>
-                        <a class="btn btn-all" href="">Tudo</a>
-                    </div>
-                    <div class="table-responsive border-table-sales">
-                        <table class="table text-start align-middle table-bordered table-hover mb-0">
-                            <thead>
-                                <tr class="text-white">
-                                    <th scope="col">Data</th>
-                                    <th scope="col">Fatura</th>
-                                    <th scope="col">Cliente</th>
-                                    <th scope="col">Quantia</th>
-                                    <th scope="col">Status</th>
-                                    <th scope="col">Ação</th>
-                                </tr>
-                            </thead>
-                            <tbody class="text-secondary">
-                                <tr>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Cliente A</td>
-                                    <td>$123</td>
-                                    <td>Pago</td>
-                                    <td><a class="btn btn-sm btn-danger" href="">Detalhes</a></td>
-                                </tr>
-
-                                <tr>    
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Cliente B</td>
-                                    <td>$123</td>
-                                    <td>Pago</td>
-                                    <td><a class="btn btn-sm btn-danger" href="">Detalhes</a></td>
-                                </tr>
-
-                                <tr>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Cliente C</td>
-                                    <td>$123</td>
-                                    <td>Pago</td>
-                                    <td><a class="btn btn-sm btn-danger" href="">Detalhes</a></td>
-                                </tr>
-
-                                <tr>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Cliente D</td>
-                                    <td>$123</td>
-                                    <td>Pago</td>
-                                    <td><a class="btn btn-sm btn-danger" href="">Detalhes</a></td>
-                                </tr>
-
-                                <tr>
-                                    <td>01 Jan 2045</td>
-                                    <td>INV-0123</td>
-                                    <td>Cliente E</td>
-                                    <td>$123</td>
-                                    <td>Pago</td>
-                                    <td><a class="btn btn-sm btn-danger" href="">Detalhes</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <!-- Recent Sales End -->
         </div>
         <!-- Content End -->
 
