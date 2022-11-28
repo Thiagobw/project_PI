@@ -1,13 +1,13 @@
 # ************************************************************
 # Sequel Pro SQL dump
-# Versão 4541
+# Versï¿½o 4541
 #
 # http://www.sequelpro.com/
 # https://github.com/sequelpro/sequelpro
 #
 # Host: localhost (MySQL 5.5.5-10.4.21-MariaDB)
 # Base de Dados: project_Pl
-# Tempo de Geração: 2022-11-24 11:39:30 +0000
+# Tempo de Geraï¿½ï¿½o: 2022-11-24 11:39:30 +0000
 # ************************************************************
 
 
@@ -111,9 +111,6 @@ CREATE TABLE `pedido` (
   `usuario_id` int(11) NOT NULL,
   `cliente_id` int(11) NOT NULL,
   `vendedor_id` int(11) NOT NULL,
-  `numero_cartao` int(11) DEFAULT NULL,
-  `cvv_cartao` int(11) DEFAULT NULL,
-  `data_cartao` int(11) DEFAULT NULL,
   `endereco` varchar(64) DEFAULT NULL,
   `endereco_numero` int(9) DEFAULT NULL,
   `endereco_cep` int(11) DEFAULT NULL,
@@ -124,14 +121,14 @@ CREATE TABLE `pedido` (
 LOCK TABLES `pedido` WRITE;
 /*!40000 ALTER TABLE `pedido` DISABLE KEYS */;
 
-INSERT INTO `pedido` (`id_pedido`, `valor_pedido`, `forma_pagamento`, `data`, `usuario_id`, `cliente_id`, `vendedor_id`, `numero_cartao`, `cvv_cartao`, `data_cartao`, `endereco`, `endereco_numero`, `endereco_cep`, `complemento`)
+INSERT INTO `pedido` (`id_pedido`, `valor_pedido`, `forma_pagamento`, `data`, `usuario_id`, `cliente_id`, `vendedor_id`, `endereco`, `endereco_numero`, `endereco_cep`, `complemento`)
 VALUES
-	(7,'2700','card','23/11/2022-20:59:07',3,2,2,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-	(8,'1500','card','01/01/2001-01:16:01',3,1,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-	(9,'300','card','01/01/2001-01:17:20',3,1,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-	(10,'300','card','24/11/2022-12:25:39',3,1,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-	(11,'300','card','24/11/2022-12:32:46',3,1,1,NULL,NULL,NULL,NULL,NULL,NULL,NULL),
-	(12,'300','card','24/11/2022-12:38:18',3,1,1,NULL,NULL,NULL,'rua dos bobos',0,0,'');
+	(1, '2700', 'card', '23/11/2022-20:59:07', 3, 2, 2, NULL, NULL, NULL, NULL),
+	(2, '1500', 'card', '01/01/2001-01:16:01', 3, 1, 1, NULL, NULL, NULL, NULL),
+	(3, '300', 'card', '01/01/2001-01:17:20', 3, 1, 1, NULL, NULL, NULL, NULL),
+	(4, '300', 'card', '24/11/2022-12:25:39', 3, 1, 1, NULL, NULL, NULL, NULL),
+	(5, '300', 'card', '24/11/2022-12:32:46', 3, 1, 1, NULL, NULL, NULL, NULL),
+	(6, '300', 'card', '24/11/2022-12:38:18', 3, 1, 1, NULL, NULL, NULL, NULL);
 
 /*!40000 ALTER TABLE `pedido` ENABLE KEYS */;
 UNLOCK TABLES;

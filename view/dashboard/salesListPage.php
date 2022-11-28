@@ -98,12 +98,11 @@ $sales = search_sales();
                                 <table class="table text-secondary">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Nome do Usuario</th>
-                                            <th scope="col">Nome do Vendedor</th>
-                                            <th scope="col">Nome do Comprador</th>
                                             <th scope="col">Data</th>
                                             <th scope="col">Valor</th>
                                             <th scope="col">Forma de Pagamento</th>
+                                            <th scope="col">Nome do Vendedor</th>
+                                            <th scope="col">Nome do Comprador</th>
                                             <th scope="col">Ações</th>
                                         </tr>
                                     </thead>
@@ -125,20 +124,22 @@ $sales = search_sales();
 
                                             ?>
                                                 <tr>
-                                                    <td> <?php echo "deu b.o" //getUserInfo($sale->getUserId())->getName(); ?></td>
-                                                    <td> <?php echo getEmploye($sale->getEmployeeId())->getName(); ?> </td>
-                                                    <td> <?php echo getCustomer($sale->getCustomerId())->getName(); ?> </td>
+                                                    <!-- <td> <?php echo "deu b.o aqui" //getUserInfo($sale->getUserId())->getName(); ?></td> -->
                                                     <td> <?php echo $sale->getDate(); ?> </td>
                                                     <td> <?php echo "R$ " . $sale->getValueOrder() . ",00"; ?> </td>
-                                                    <td> <?php if ($sale->getPaymentMethod() == 'card') {
-                                                                echo 'Cartão';
-                                                            } elseif ($sale->getPaymentMethod() == 'boleto') {
-                                                                echo 'Boleto';
-                                                            } ?>
+                                                    
+                                                    <td> <?php if ($sale->getPaymentMethod() == 'card') { echo 'Cartão';
+                                                        } elseif ($sale->getPaymentMethod() == 'boleto') { echo 'Boleto';
+                                                        } ?>
                                                     </td>
+                                                    
+                                                    <td> <?php echo getEmploye($sale->getEmployeeId())->getName(); ?> </td>
+                                                    <td> <?php echo getCustomer($sale->getCustomerId())->getName(); ?> </td>
+
+                                                    
+
                                                     <td>
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <!-- <a class="btn btn-sm btn-plus-action" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="getProductData(<?php echo $sale->getId(); ?>)">alterar</a> -->
                                                             <a class="btn btn-sm btn-plus-action" href="../../control/sales_delete.php?id=<?php echo $sale->getId(); ?>">Excluir</a>
                                                         </div>
                                                     </td>
