@@ -125,7 +125,7 @@ $sales = search_sales();
 
                                             ?>
                                                 <tr>
-                                                    <td> <?php echo getUserInfo($sale->getUserId())->getName(); ?></td>
+                                                    <td> <?php echo "deu b.o" //getUserInfo($sale->getUserId())->getName(); ?></td>
                                                     <td> <?php echo getEmploye($sale->getEmployeeId())->getName(); ?> </td>
                                                     <td> <?php echo getCustomer($sale->getCustomerId())->getName(); ?> </td>
                                                     <td> <?php echo $sale->getDate(); ?> </td>
