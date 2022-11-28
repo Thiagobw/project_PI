@@ -2,10 +2,10 @@
 session_start();
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/Productsbd.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/providersBd.php";
 
 $productsList = search_products();
-
-
+$providers = search_provider();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -60,7 +60,7 @@ $productsList = search_products();
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-                <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="index.php" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
                 </a>
 
@@ -165,6 +165,7 @@ $productsList = search_products();
                                             <th scope="col">Quantidade em estoque</th>
                                             <th scope="col">Preço</th>
                                             <th scope="col">Tamanhos</th>
+                                            <th scope="col">Fornecedor</th>
                                             <th scope="col"></th>
                                         </tr>
                                     </thead>
@@ -182,13 +183,15 @@ $productsList = search_products();
                                     } else{
 
                                      foreach ($productsList as $prod) {
-   
+                                        
                                     ?>
                                         <tr>
                                             <td> <?php echo $prod -> getName(); ?></td>
                                             <td> <?php echo $prod -> getAmount();?> </td>
                                             <td> <?php echo $prod -> getPrice();?> </td>
                                             <td> <?php //echo $prod -> getTamanho();?> </td>
+                                            <!-- getting the provider name with relation of these models -->
+                                            <td> <?php echo getProvider($prod->getProviderId())->getName();?> </td>
 
                                             <td class="">
                                                 <div class="nav-item dropdown">

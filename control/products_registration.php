@@ -96,9 +96,20 @@ if(isset($_POST['submitProduct'])) {
                 }else{
                     echo 'não consegui mover o arquivo para o app';
                 }
+            }else{
+                //the default "image.png" <
+                echo 'cadastrando foto genérica';
+                $image = new Images;
+                $image->setName('image.png'); //here get a "image" on uploads folder on root
+                $imgId = uploadImage($image);
+                $prod->setImagemId($imgId);
             }
+            //check if the provider has selected
+            if(isset($_POST['provider']) and $_POST['provider'] != 'null'){
+                $prod->setProviderId($_POST['provider']);
+            }
+            //register
             $result_regist_id = register_product($prod);
-
             if (!is_null($result_regist_id)) {
 
                 $result_regist_Size = register_product_size($result_regist_id, $SizeAmountList);

@@ -76,10 +76,10 @@ $employees = search_employee();
                       <form action="/project_PI/control/control_checkout.php" method="GET" class="mt-4">
                         <p class="small mb-2">Forma de Pagamento</p>
                         <label for="card">Cartão</label>
-                        <input type="radio" name="method"<?php if($_SESSION['method_selected'] == 'card'){?>
+                        <input type="radio" name="method"<?php if(isset($_SESSION['method_selected']) && $_SESSION['method_selected'] == 'card'){?>
                           checked <?php } ?> value="card">
                         <label for="boleto">Boleto</label>
-                        <input type="radio" name="method" <?php if($_SESSION['method_selected'] == 'boleto'){?>
+                        <input type="radio" name="method" <?php if(isset($_SESSION['method_selected']) && $_SESSION['method_selected'] == 'boleto'){?>
                           checked<?php } ?> value="boleto">
                         <button type="submit">Escolher</button>
                       </form>
@@ -154,7 +154,7 @@ $employees = search_employee();
                           <p class="mb-2">R$<?php echo $_SESSION['checkout_subtotal'] ?></p>
                         </div>
                         <!-- prevents you get here without items on cart! -->
-                        <?php if (null !== $_SESSION['method_selected']) { ?>
+                        <?php if (isset($_SESSION['method_selected']) and null !== $_SESSION['method_selected']) { ?>
                           <button type="submit" name="makeOrder" class="btn btn-info btn-block btn-lg">
                             <div class="d-flex justify-content-between">
                               <span>R$<?php echo $_SESSION['checkout_subtotal'] ?></span>

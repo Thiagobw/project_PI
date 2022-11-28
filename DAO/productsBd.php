@@ -19,7 +19,12 @@ function search_products() {
         $produto->setId($registro["id_produtos"]);
         $produto->setName($registro["nome_produto"]);
         $produto->setPrice($registro["preco_produto"]);
-        $produto->setImagemId($registro["imagens_id"]);
+        if(!empty($registro['imagens_id'])){
+            $produto->setImagemId($registro["imagens_id"]);
+        }
+        if(!empty($registro['fornecedor_id'])){
+            $produto->setProviderId($registro['fornecedor_id']);
+        }
         //added imagemId();
         $resul_produtos[] = $produto;
     }
@@ -40,10 +45,17 @@ function register_product($prod) {
 
         try{
             $PDO->beginTransaction();
-            $sqlReg = " INSERT INTO produtos (nome_produto,preco_produto, imagens_id) Values (?,?,?)";
+            $sqlReg = " INSERT INTO produtos 
+                (nome_produto,preco_produto, imagens_id, fornecedor_id)
+                Values (?,        ?,            ?,           ?)"; //increasing the product for the relationship tables
             
             $stmt = $PDO -> prepare($sqlReg);
-            $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getImagemId()]);
+            $stmt -> execute([
+                $prod->getName(),
+                $prod->getPrice(),
+                $prod->getImagemId(),
+                $prod->getProviderId(),
+            ]);
             
             $id  = $PDO->lastInsertId();
 
@@ -181,6 +193,7 @@ function getProduct($id): Products
         $prod -> setName($registro["nome_produto"]);
         $prod -> setPrice($registro["preco_produto"]);
         $prod -> setImagemId($registro["imagens_id"]);
+        $prod -> setProviderId($registro["fornecedor_id"]);
         
         $stmt2 = $connection -> prepare("SELECT * FROM tamanho p WHERE p.id_produto = ?");
         $stmt2 -> execute([$id]);

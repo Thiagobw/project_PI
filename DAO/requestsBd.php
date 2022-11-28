@@ -21,7 +21,7 @@ function makeOrder(
     ?string $address_complement = '' ): bool //here i'm using the total funcionality of PSR to turn code more understoodable'
 //You can remove all references of var. behide of them
 {
-    $dataTime = date('d/m/Y-H:i:s');
+    $dataTime = date('d/m/Y-H:i:s'); //set the format of date
     $cart = seeCartItems($user_id);
     //this only verify the method but we can make response API verify to conclude action, UPDATE: and verify the address be set
     if(is_string($payment_method) && empty($address)){

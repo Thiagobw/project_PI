@@ -8,7 +8,14 @@ class Products {
     private $id;
     private $sizes;
     private $imageId;
+    private $providerId;
 
+    public function setProviderId(int $providerId) {
+        $this-> providerId = $providerId;
+    }
+    public function getProviderId() {
+        return $this-> providerId;
+    }
     public function setImagemId(int $imageId) {
         $this-> imageId = $imageId;
     }
@@ -21,39 +28,30 @@ class Products {
     public function getSize() {
         return $this-> sizes;
     }
-
     public function setName(string $name) {
         $this -> name = $name;
     }
     public function getName() {
         return $this -> name;
     }
-
-
     public function setAmount( $amountTotal) {
         $this -> amountTotal = $amountTotal;
     }
     public function getAmount() {
         return $this -> amountTotal;
     }
-
-    
     public function setModel (string $model) {
         $this-> model -> $model;
     }
     public function getModel () {
         return $this -> model;
     }
-    
-    
     public function setPrice(string $price) {
         $this -> price = $price;
     }
     public function getPrice() {
         return $this -> price;
     }
-    
-    
     public function setId (int $id) {
         $this -> id = $id;
     }

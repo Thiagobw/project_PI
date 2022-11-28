@@ -1,10 +1,14 @@
 <?php
 @session_start();
-include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
-include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/Productsbd.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/control/checkAuth.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/DAO/productsbd.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/DAO/salesBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/DAO/usuarioBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/DAO/customersBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/DAO/employeesBd.php";
 
-$productsList = search_products();
-
+$products = search_products();
+$sales = search_sales();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -19,8 +23,8 @@ $productsList = search_products();
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"> 
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap">
+
     <!-- Icon Font Stylesheet -->
     <link rel="stylesheet" href="../img/icons/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
@@ -31,7 +35,7 @@ $productsList = search_products();
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    
+
 
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -50,7 +54,7 @@ $productsList = search_products();
 
         <!-- Sidebar Start -->
         <?php
-            require_once "sidebar.php";
+        require_once "sidebar.php";
         ?>
         <!-- Sidebar End -->
 
@@ -71,13 +75,13 @@ $productsList = search_products();
 
             <!-- Importing popup file -->
             <?php
-                require_once "popUps/popUp-register.php";
-                include_once "popUps/popUp-change.php";
+            require_once "popUps/popUp-register.php";
+            include_once "popUps/popUp-change.php";
             ?>
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    
+
                     <div class="col-12">
                         <div class="bg-secondary rounded h-100 p-4">
                             <div class="row top-table">
@@ -94,44 +98,54 @@ $productsList = search_products();
                                 <table class="table text-secondary">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Nome do produto</th>
-                                            <th scope="col">estoque</th>
-                                            <th scope="col">Preço</th>
-                                            <th scope="col">Tamanhos</th>
+                                            <th scope="col">Nome do Usuario</th>
+                                            <th scope="col">Nome do Vendedor</th>
+                                            <th scope="col">Nome do Comprador</th>
+                                            <th scope="col">Data</th>
+                                            <th scope="col">Valor</th>
+                                            <th scope="col">Forma de Pagamento</th>
                                             <th scope="col">Ações</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php 
-                                        if (  empty($productsList) == true) {
-                                    ?>
-                                    
-                                    <tr>
-                                        <td class="text-white text-center" colspan="6">Nenhum produto cadastrado!</td>
-                                    </tr>
+                                        <?php
+                                        if (empty($sales) == true) {
+                                        ?>
 
-                                    <?php 
-                                    
-                                    
-                                    } else{
+                                            <tr>
+                                                <td class="text-white text-center" colspan="6">Nenhuma venda cadastrada!</td>
+                                            </tr>
 
-                                     foreach ($productsList as $prod) {
-   
-                                    ?>
-                                        <tr>
-                                            <td> <?php echo $prod -> getName(); ?></td>
-                                            <td> fazer aqui!! </td>
-                                            <td> <?php echo "R$ ".$prod -> getPrice().",00";?> </td>
-                                            <td> fazer aqui!! </td>
-                                            <td>
-                                                <div class="btn-group" role="group" aria-label="Basic example">
-                                                    <a class="btn btn-sm btn-plus-action" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="getProductData(<?php echo $prod -> getId(); ?>)">alterar</a>
-                                                    <a class="btn btn-sm btn-plus-action" href="../../control/products_delete.php?id=<?php echo $prod ->getId(); ?>">Excluir</a>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                     
-                                     <?php }} ?>
+                                            <?php
+
+
+                                        } else {
+
+                                            foreach ($sales as $sale) {
+
+                                            ?>
+                                                <tr>
+                                                    <td> <?php echo getUserInfo($sale->getUserId())->getName(); ?></td>
+                                                    <td> <?php echo getEmploye($sale->getEmployeeId())->getName(); ?> </td>
+                                                    <td> <?php echo getCustomer($sale->getCustomerId())->getName(); ?> </td>
+                                                    <td> <?php echo $sale->getDate(); ?> </td>
+                                                    <td> <?php echo "R$ " . $sale->getValueOrder() . ",00"; ?> </td>
+                                                    <td> <?php if ($sale->getPaymentMethod() == 'card') {
+                                                                echo 'Cartão';
+                                                            } elseif ($sale->getPaymentMethod() == 'boleto') {
+                                                                echo 'Boleto';
+                                                            } ?>
+                                                    </td>
+                                                    <td>
+                                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                                            <!-- <a class="btn btn-sm btn-plus-action" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="getProductData(<?php echo $sale->getId(); ?>)">alterar</a> -->
+                                                            <a class="btn btn-sm btn-plus-action" href="../../control/sales_delete.php?id=<?php echo $sale->getId(); ?>">Excluir</a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                        <?php }
+                                        } ?>
 
                                     </tbody>
                                 </table>
@@ -141,7 +155,7 @@ $productsList = search_products();
                 </div>
             </div>
             <!-- Table End -->
-            
+
         </div>
         <!-- Content End -->
 
@@ -165,9 +179,9 @@ $productsList = search_products();
     <script src="js/main.js"></script>
 
     <script>
-            var btn = document.querySelector('#btnRegisterProd');
+        var btn = document.querySelector('#btnRegisterProd');
 
-            btn.addEventListener('click', function() {
+        btn.addEventListener('click', function() {
 
             const contentR = document.querySelector('#contentRegisterProd');
             contentR.style.display = 'flex';
@@ -185,15 +199,16 @@ $productsList = search_products();
             inputImage.click();
         });
         inputImage.addEventListener('change', (e) => {
-            
-        let reader = new FileReader();
-        reader.onload = () => {
-            imgselected.src = reader.result;
-            imgSelect.style.display = 'none';
-            imgselected.style.display = 'flex';
-        }
-        reader.readAsDataURL(inputImage.files[0]);
+
+            let reader = new FileReader();
+            reader.onload = () => {
+                imgselected.src = reader.result;
+                imgSelect.style.display = 'none';
+                imgselected.style.display = 'flex';
+            }
+            reader.readAsDataURL(inputImage.files[0]);
         })
     </script>
 </body>
+
 </html>

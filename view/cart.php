@@ -1,6 +1,7 @@
 <?php
 include_once '../DAO/cartBd.php';
 include_once '../DAO/productsBd.php';
+include_once '../DAO/imagesBd.php';
 session_start();
 function checkAuth()
 {
@@ -72,7 +73,7 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : seeCartItems($user['id_us
                                                     </p>
                                                 <?php } else { ?>
                                                     <?php foreach ($cart as $item) {
-                                                        $name = find_products_names($item->getProdutosId());
+                                                        $prod = getProduct($item->getProdutosId());
                                                         //deletar quando chegar a 0
                                                         if($item->getQuantidade() == 0){
                                                             deleteItemCart($item->getId());
@@ -85,13 +86,13 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : seeCartItems($user['id_us
                                                                     <!-- btn btn to remove product -->
                                                                     <button class="btn btn-danger center" id="btnRemove" href="/project_PI/control/control_cart.php" value="<?php echo $item->getId(); ?>" name="removeItem">X</button>
                                                                     <span>
-                                                                        <!-- product image -->
-                                                                        <img src="img/products/tenis 1.jpg" alt="">
+                                                                        <!-- product image, have an disclamer for this in productSelected -->
+                                                                        <img src="../uploads/<?php echo selectImage($prod->getImagemId())->getName() ?>" alt="">
                                                                     </span>
                                                                 </div>
                                                                 <!-- name product -->
                                                                 <div class="col-12 col-sm-10 desc">
-                                                                    <h6><?php echo $name['nome_produto']; ?></h6>
+                                                                    <h6><?php echo $prod->getName(); ?></h6>
                                                                     <p class="small mb-0">
                                                                         Tamanho: <?php echo $item->getTamanho(); ?>
                                                                     </p>
