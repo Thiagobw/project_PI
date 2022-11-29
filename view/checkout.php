@@ -73,7 +73,7 @@ $employees = search_employee();
                         <img src="./dashboard/img/user.jpg" class="img-fluid rounded-3" style="width: 45px;" alt="Avatar">
                       </div>
                           <!-- old form to get already use method of user -->
-                      <!-- <form action="/project_PI/control/control_checkout.php" method="GET" class="mt-4"> -->
+                      <form action="/project_PI/control/control_checkout.php" method="GET" class="mt-4">
                         <p class="small mb-2">Forma de Pagamento</p>
                         <label for="card">Cartão</label>
                         <input type="radio" name="method" checked value="card">

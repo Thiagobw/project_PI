@@ -73,7 +73,6 @@ DROP TABLE IF EXISTS `fornecedor`;
 
 CREATE TABLE `fornecedor` (
   `id_fornecedor` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `id_fornecedor` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `cnpj` char(18) NOT NULL,
   `email` varchar(40) NOT NULL DEFAULT 'nao informado',
