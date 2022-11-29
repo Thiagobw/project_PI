@@ -46,9 +46,9 @@ $employees = search_employee();
   <header>
     <?php
     include "../view/navbar/navbarHomePage.php";
-    include "../view/pop-upAccount.php";
     ?>
   </header>
+
   <section class="h-100 h-custom" style="background-color: #eee;">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
@@ -58,100 +58,103 @@ $employees = search_employee();
 
               <div class="row">
                 <div class="col-lg-7">
-                  <h5 class="mb-3"><a href="/project_PI/view/salePage.php" class="text-body">
-                      <i class="fas fa-long-arrow-alt-left me-2">
-                      </i>Continuar Comprando!!</a>
-                  </h5>
-                  <hr>
+                    <a href="/project_PI/view/salePage.php" class="btn btn-dark">
+                      <i class="fas fa-long-arrow-alt-left me-2"></i> Adicionar mais produtos
+                    </a>
+                    <hr>
                 </div>
                 <div class="col-lg-5">
+                  <form action="/project_PI/control/control_checkout.php" method="POST">
+                    <div class="card bg-primary text-white rounded-3">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                          <h5 class="mb-0">Informações da Venda</h5>
+                        </div>
+                        <hr class="my-4">
+                        
+                        <form action="/project_PI/control/control_checkout.php" method="GET" class="mt-4">
+                          <p class="small mb-2">Forma de Pagamento</p>
+                          <div class="row">
+                            <div class="col-12 col-md-6">
+                              <label for="card">
+                                <input type="radio" name="method"<?php if(isset($_SESSION['method_selected']) && $_SESSION['method_selected'] == 'card'){?> checked <?php } ?> value="card">
+                                 Cartão
+                              </label>
+                            </div>
 
-                  <div class="card bg-primary text-white rounded-3">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h5 class="mb-0">Informações de Compra</h5>
-                        <img src="./dashboard/img/user.jpg" class="img-fluid rounded-3" style="width: 45px;" alt="Avatar">
-                      </div>
+                            <div class="col-12 col-md-6">
+                              <label for="boleto">
+                                <input type="radio" name="method" <?php if(isset($_SESSION['method_selected']) && $_SESSION['method_selected'] == 'boleto'){?> checked <?php } ?> value="boleto">
+                                 Boleto
+                              </label>
+                            </div>
 
-                      <form action="/project_PI/control/control_checkout.php" method="GET" class="mt-4">
-                        <p class="small mb-2">Forma de Pagamento</p>
-                        <label for="card">Cartão</label>
-                        <input type="radio" name="method"<?php if(isset($_SESSION['method_selected']) && $_SESSION['method_selected'] == 'card'){?>
-                          checked <?php } ?> value="card">
-                        <label for="boleto">Boleto</label>
-                        <input type="radio" name="method" <?php if(isset($_SESSION['method_selected']) && $_SESSION['method_selected'] == 'boleto'){?>
-                          checked<?php } ?> value="boleto">
-                        <button type="submit">Escolher</button>
-                      </form>
+                            <div class="col-12 col-md-6">
+                              <label for="tB">
+                                <input type="radio" name="method" <?php if(isset($_SESSION['method_selected']) && $_SESSION['method_selected'] == 'tB'){?> checked <?php } ?> value="tB">
+                                 Transf. Bancária
+                              </label>
+                            </div>
+
+                            <div class="col-md-6">
+                              <label for="money">
+                                <input type="radio" name="method" <?php if(isset($_SESSION['method_selected']) && $_SESSION['method_selected'] == 'money'){?> checked <?php } ?> value="money">
+                                 Dinheiro
+                              </label>
+                            </div>
+
+                            <div class="col-md-6">
+                              <label for="pix">
+                                <input type="radio" name="method" <?php if(isset($_SESSION['method_selected']) && $_SESSION['method_selected'] == 'pix'){?> checked <?php } ?> value="pix">
+                                 Pix
+                              </label>
+                            </div>
+                          </div>
+                          
+                          <button type="submit">Escolher</button>
+                        </form>
                       
                         <!-- here grab subtotal to send valor_pedido -->
                         <input min="<?php echo $_SESSION['checkout_subtotal']; ?>" max="<?php echo $_SESSION['checkout_subtotal']; ?>" type="number" hidden name="subtotal" value="<?php echo $_SESSION['checkout_subtotal']; ?>">
 
-                        <!-- shipping details, his can get old values by session too -->
-                        <hr class="my-4">
-                        <div class="form-outline form-white mb-4">
-                          <input type="text" class="form-control" name="inputAddress" size="17"></input>
-                          <label for="inputAddress" class="form-label">Endereço</label>
-                        </div>
+                        <!-- shipping details, his can get old values by session too --> 
                         <div class="row mb-4">
-                          <div class="col-md-6">
-                            <div class="form-outline form-white">
-                              <input type="text" class="form-control form-control-lg" placeholder="00000-000" name="address_cep" size="7" id="cep" minlength="9" maxlength="9" />
-                              <label class="form-label" for="typeExp">Cep</label>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-outline form-white">
-                              <input type="text" id="address_number" class="form-control form-control-lg" placeholder="000" name="address_number" size="1" minlength="1" maxlength="10" />
-                              <label class="form-label" for="typeText">Numero</label>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-outline form-white">
-                              <input type="text" id="address_complement" class="form-control form-control-lg" placeholder="Lt:65" name="address_complement" size="7" minlength="1" maxlength="10" />
-                              <label class="form-label" for="typeText">Complemento</label>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-outline form-white">
-                              <select name="employe" class="form-select">
+                          <div class="col-12 mt-2">
+                            <div class="form-group">
+                              <select class="form-control" name="employe">
+                                <option selected>Vendedor</option>
                                 <?php foreach ($employees as $employe) { ?>
                                   <option value="<?php echo $employe->getId(); ?>">
                                   <?php echo $employe->getName(); ?>
                                   </option>
                                 <?php } ?>
                               </select>
-                              <label class="form-label" for="typeText">Vendedor</label>
                             </div>
                           </div>
-                          <div class="col-md-6">
-                            <div class="form-outline form-white">
-                            <select name="customer" class="form-select">
-                                <?php foreach ($customers as $customer) { ?>
-                                  <option value="<?php echo $customer->getId(); ?>">
-                                  <?php echo $customer->getName(); ?>
-                                  </option>
-                                <?php } ?>
+
+                          <div class="col-12 mt-1">
+                            <div class="form-group">
+                              <select class="form-control" name="customer">
+                                <option selected>Comprador</option>
+                                  <?php foreach ($customers as $customer) { ?>
+                                    <option value="<?php echo $customer->getId(); ?>">
+                                    <?php echo $customer->getName(); ?>
+                                    </option>
+                                  <?php } ?>
                               </select>
-                              <label class="form-label" for="typeText">Comprador</label>
                             </div>
                           </div>
                         </div>
+
                         <hr class="my-4">
                         <div class="d-flex justify-content-between">
                           <p class="mb-2">Subtotal</p>
-                          <p class="mb-2">R$<?php echo $_SESSION['checkout_subtotal'] ?></p>
-                        </div>
-
-                        <!-- you can make! -->
-                        <div class="d-flex justify-content-between">
-                          <p class="mb-2">Entrega(implementar!!)</p>
-                          <p class="mb-2">R$20.00</p>
+                          <p class="mb-2">R$ <?php echo $_SESSION['checkout_subtotal'].",00" ?></p>
                         </div>
 
                         <div class="d-flex justify-content-between mb-4">
-                          <p class="mb-2">Total(Incl. entrega)</p>
-                          <p class="mb-2">R$<?php echo $_SESSION['checkout_subtotal'] ?></p>
+                          <p class="mb-2">Total</p>
+                          <p class="mb-2">R$ <?php echo $_SESSION['checkout_subtotal'].",00" ?></p>
                         </div>
                         <!-- prevents you get here without items on cart! -->
                         <?php if (isset($_SESSION['method_selected']) and null !== $_SESSION['method_selected']) { ?>
