@@ -10,28 +10,15 @@ if (!empty($_GET['checkout'])) {
     }
 //control view method
 }elseif(isset($_GET['method'])) {
-
-    if($_GET['method'] == 'card') {
-        $_SESSION['method_selected'] = 'cartão';
+    if($_GET['method'] == 'card'){
+        $_SESSION['method_selected'] = 'card';
         return header("Location: /project_PI/view/checkout.php");
-
-    }elseif($_GET['method'] == 'boleto') {
-
+    }elseif($_GET['method'] == 'boleto'){
         $_SESSION['method_selected'] = 'boleto';
         return header("Location: /project_PI/view/checkout.php");
-
-    }elseif($_GET['method'] == 'tB') {
-
-        $_SESSION['method_selected'] = 'transferencia bancaria';
-        return header("Location: /project_PI/view/checkout.php");
-
-    }elseif ($_GET['method'] == 'money') {
-
-
-    } else {
-        return header("Location: /project_PI/view/cart.php");
+    }else{
+        return header("Location: /project_PI/view/card.php");
     }
-
 }elseif(isset($_POST['makeOrder'])and !empty($_POST['inputAddress'])) {
     if(makeOrder($_SESSION['id_usuario'],
     $_SESSION['method_selected'],
