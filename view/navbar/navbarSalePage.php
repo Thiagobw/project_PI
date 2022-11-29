@@ -9,6 +9,7 @@ elseif (isset($user['id_usuario'])) :
 else :
     $count = '0';
 endif;
+// $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : seeCartItems($user['id_usuario']);
 ?>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
@@ -32,7 +33,7 @@ endif;
             <!-- Left space -->
 
             <!-- Search form -->
-            <form class="d-flex input-group w-auto search">
+            <form class="d-flex input-group w-auto pesquisa">
                 <input type="search" class="form-control w-auto h-auto" placeholder="Pesquisar" aria-label="Search" />
                 <button class="btn" type="button" data-mdb-ripple-color="dark">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -40,10 +41,12 @@ endif;
             </form>
 
             <div class=" navbar-nav mb-2 mb-lg-0 mr-3">
-                <li class="nav-item mr-1">
-                    <a class="nav-link cart" href="/project_PI/view/oldCart.php">
+                <li class="nav-item mr-5">
+                    <a class="nav-link cart" href="/project_PI/view/cart.php">
                     <i class="fa-solid fa-cart-shopping"></i>
-                        <span class="badge badge-danger"><?php echo $count; ?></span>
+                        <span class="badge badge-danger">
+                            <?php echo $count; ?>
+                        </span>
                     </a>
                 </li>
                 <li class="nav-item dropdown">

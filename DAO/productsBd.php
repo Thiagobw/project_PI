@@ -1,5 +1,6 @@
 <?php
 include_once "connection.php";
+include_once "imagesBd.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Products.php";
 
 
@@ -18,13 +19,17 @@ function search_products() {
         $produto->setId($registro["id_produtos"]);
         $produto->setName($registro["nome_produto"]);
         $produto->setPrice($registro["preco_produto"]);
-
+        if(!empty($registro['imagens_id'])){
+            $produto->setImagemId($registro["imagens_id"]);
+        }
+        if(!empty($registro['fornecedor_id'])){
+            $produto->setProviderId($registro['fornecedor_id']);
+        }
+        //added imagemId();
         $resul_produtos[] = $produto;
     }
     return $resul_produtos;
 }
-
-
 function find_products_names($id){
     $conexao = connect();
     $stmt = $conexao->prepare("SELECT nome_produto FROM produtos WHERE id_produtos = :id");
@@ -33,7 +38,6 @@ function find_products_names($id){
     return $stmt->fetch();
 }
 
-
 function register_product($prod) {
 
     try{
@@ -41,10 +45,17 @@ function register_product($prod) {
 
         try{
             $PDO->beginTransaction();
-            $sqlReg = " INSERT INTO produtos (nome_produto,preco_produto) Values (?,?)";
+            $sqlReg = " INSERT INTO produtos 
+                (nome_produto,preco_produto, imagens_id, fornecedor_id)
+                Values (?,        ?,            ?,           ?)"; //increasing the product for the relationship tables
             
             $stmt = $PDO -> prepare($sqlReg);
-            $stmt -> execute([$prod->getName(), $prod->getPrice()]);
+            $stmt -> execute([
+                $prod->getName(),
+                $prod->getPrice(),
+                $prod->getImagemId(),
+                $prod->getProviderId(),
+            ]);
             
             $id  = $PDO->lastInsertId();
 
@@ -68,7 +79,7 @@ function register_product($prod) {
 }
 
 
-function register_product_size($id, $SizeAmountList) {
+function register_product_size($result_regist_id, $SizeAmountList) {
     try{
         $PDO = connect();
 
@@ -78,7 +89,7 @@ function register_product_size($id, $SizeAmountList) {
             $stmt = $PDO -> prepare($sqlRegSize);
 
             foreach ( $SizeAmountList as $list) {
-                 $stmt -> execute([$list[0], $list[1], $id]);
+                 $stmt -> execute([$list[0], $list[1], $result_regist_id]);
             }
             $PDO->commit();
             return true;
@@ -114,6 +125,10 @@ function delet_product ($prod): bool
         $stmt = $PDO -> prepare($sqlDel);
         $stmt -> execute([$prod->getId()]);
         
+        $sqlDel = "DELETE FROM imagens WHERE id_imagens=?";
+        
+        $stmt = $PDO -> prepare($sqlDel);
+        $stmt->execute([$prod->getImagemId()]);
         if($stmt) {
             return true;
         }
@@ -143,8 +158,10 @@ function update_product($prod): bool
 
         $PDO = connect();
 
-        $stmt = $PDO -> prepare("UPDATE produtos SET nome_produto=?, preco_produto=? WHERE id_produtos=?");
-        $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getId()]);
+        $sqlReg = " UPDATE produtos SET nome_produto=?, preco_produto=?, quantidade=? WHERE id_produtos=?";
+
+        $stmt = $PDO -> prepare($sqlReg);
+        $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getAmount(), $prod->getId()]);
     
         if($stmt) {
             return true;
@@ -175,6 +192,8 @@ function getProduct($id): Products
         $prod -> setId($registro["id_produtos"]);
         $prod -> setName($registro["nome_produto"]);
         $prod -> setPrice($registro["preco_produto"]);
+        $prod -> setImagemId($registro["imagens_id"]);
+        $prod -> setProviderId($registro["fornecedor_id"]);
         
         $stmt2 = $connection -> prepare("SELECT * FROM tamanho p WHERE p.id_produto = ?");
         $stmt2 -> execute([$id]);
@@ -190,64 +209,4 @@ function getProduct($id): Products
 
     }
     return $prod;
-}
-
-
-function selectProductToChange($id) {
-    try{
-        $PDO = connect();
-
-        $stmt = $PDO -> prepare("SELECT * FROM produtos WHERE id_produtos = ?");
-        $stmt -> execute([$id]);
-        $result = $stmt -> fetchAll();
-        
-        $prod = new Products();
-        
-        foreach($result as $registro) {
-            $prod -> setId($registro["id_produtos"]);
-            $prod -> setName($registro["nome_produto"]);
-            $prod -> setPrice($registro["preco_produto"]);
-            
-            $stmt2 = $PDO -> prepare("SELECT * FROM tamanho p WHERE p.id_produto = ?");
-            $stmt2 -> execute([$id]);
-            $result2 = $stmt2 -> fetchAll();
-            $listSize = array();
-            
-            foreach($result2 as $registro) {
-                $sizeProduct = $registro['tamanho'];
-                $amountProduct = $registro['quantidade'];
-                $object = new stdClass();
-                $object->size = $sizeProduct;
-                $object->amount = $amountProduct;
-                
-                array_push($listSize, $object);
-            }
-            $prod->setSize($listSize);
-        }
-        return $prod;
-    } catch (Exception $e) {
-        echo $e->getMessage();
-        return false;
-    }
-}
-
-
-function delet_product_sizes ($id) {
-    try {
-        $PDO = connect();
-
-        $stmt = $PDO -> prepare("DELETE FROM tamanho WHERE id_produto=?");
-        $stmt -> execute([$id]);
-        
-        if($stmt) {
-            return true;
-        }
-        else {
-            return false;
-        }
-
-    } catch (Exception $e) {
-        echo $e->getMessage();
-        return false;
-    }
 }

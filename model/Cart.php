@@ -5,7 +5,14 @@ class Cart {
     private $valor;
     private $id;
     private $produtosId;
+    private $pedidoId;
 
+    public function getPedidoId(){
+        return $this->pedidoId;
+    }
+    public function setPedidoId($pedidoId){
+        return $this->pedidoId = $pedidoId;
+    }
     public function getProdutosId(){
         return $this->produtosId;
     }

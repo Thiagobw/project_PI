@@ -5,10 +5,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Products.php";
 if(isset($_GET['id'])) {
 
     $id = $_GET['id'];
-
-    $prod = new Products();
-
-    $prod->setId($id);
+    $prod = getProduct($id);
     
     $result_delete = delet_product($prod);
 

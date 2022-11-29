@@ -1,18 +1,21 @@
 <?php
-session_start();
-include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
-include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/Productsbd.php";
-include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/providersBd.php";
+@session_start();
+include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/control/checkAuth.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/DAO/productsbd.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/DAO/salesBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/DAO/usuarioBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/DAO/customersBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/DAO/employeesBd.php";
 
-$productsList = search_products();
-$providers = search_provider();
+$products = search_products();
+$sales =  search_sales();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
     <meta charset="utf-8">
-    <title>LA Imports - Produtos</title>
+    <title>LA Imports - lista de vendas</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -20,8 +23,8 @@ $providers = search_provider();
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap"> 
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@500;700&display=swap">
+
     <!-- Icon Font Stylesheet -->
     <link rel="stylesheet" href="../img/icons/fontawesome/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css">
@@ -32,7 +35,7 @@ $providers = search_provider();
 
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-    
+
 
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
@@ -51,7 +54,7 @@ $providers = search_provider();
 
         <!-- Sidebar Start -->
         <?php
-            require_once "sidebar.php";
+        require_once "sidebar.php";
         ?>
         <!-- Sidebar End -->
 
@@ -60,7 +63,7 @@ $providers = search_provider();
         <div class="content">
             <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
-                <a href="index.php" class="navbar-brand d-flex d-lg-none me-4">
+                <a href="#" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
                 </a>
 
@@ -72,19 +75,19 @@ $providers = search_provider();
 
             <!-- Importing popup file -->
             <?php
-                require_once "popUps/popUp-register.php";
-                include_once "popUps/popUp-change.php";
+            require_once "popUps/popUp-register.php";
+            include_once "popUps/popUp-change.php";
             ?>
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
-                    
+
                     <div class="col-12">
                         <div class="bg-secondary rounded h-100 p-4">
                             <div class="row top-table">
                                 <div class="col-12 col-xl-12" style="padding: 0;">
                                     <div class="col-12 col-xl-10 mb-3">
-                                        <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Produtos</h6>
+                                        <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Vendas</h6>
                                     </div>
                                     <div class="col-1 btn-register mb-2">
                                         <button type="button" id="btnRegisterProd" data-bs-toggle="modal" data-bs-target="#PopUp_register"><i class="fa-solid fa-gift"></i> +</button>
@@ -95,52 +98,54 @@ $providers = search_provider();
                                 <table class="table text-secondary">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Nome</th>
-                                            <th scope="col">Quantidade em estoque</th>
-                                            <th scope="col">Preço</th>
-                                            <th scope="col">Tamanhos</th>
-                                            <th scope="col">Fornecedor</th>
-                                            <th scope="col"></th>
+                                            <th scope="col">Data</th>
+                                            <th scope="col">Valor</th>
+                                            <th scope="col">Forma de Pagamento</th>
+                                            <th scope="col">Nome do Vendedor</th>
+                                            <th scope="col">Nome do Comprador</th>
+                                            <th scope="col">Ações</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <?php 
-                                        if (  empty($productsList) == true) {
-                                    ?>
-                                    
-                                    <tr>
-                                        <td class="text-white text-center" colspan="6">Nenhum produto cadastrado!</td>
-                                    </tr>
+                                        <?php
+                                        if (empty($sales) == true) {
+                                        ?>
 
-                                    <?php 
-                                    
-                                    } else{
+                                            <tr>
+                                                <td class="text-white text-center" colspan="6">Nenhuma venda cadastrada!</td>
+                                            </tr>
 
-                                     foreach ($productsList as $prod) {
-                                        
-                                    ?>
-                                        <tr>
-                                            <td> <?php echo $prod -> getName(); ?></td>
-                                            <td> <?php echo $prod -> getAmount();?> </td>
-                                            <td> <?php echo $prod -> getPrice();?> </td>
-                                            <td> <?php //echo $prod -> getTamanho();?> </td>
-                                            <!-- getting the provider name with relation of these models -->
-                                            <td> <?php echo getProvider($prod->getProviderId())->getName();?> </td>
+                                            <?php
 
-                                            <td class="">
-                                                <div class="nav-item dropdown">
-                                                    <a href="#" class="nav-link dropdown-toggle active mb-1" data-bs-toggle="dropdown" id="accDropDown">
-                                                    txt
-                                                    </a>
-                                                    <div class="dropdown-menu bg-transparent border-0">
-                                                    <a class="btn btn-plus-options" id="btnAlterProd" data-bs-toggle="modal" data-bs-target="#PopUp_alter" href="" onclick="getProductData(<?php echo $prod -> getId(); ?>)">alterar</a>
-                                                        <a class="btn btn-plus-options" href="../../control/products_delete.php?id=<?php echo $prod ->getId(); ?>">excluir</a>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                     
-                                     <?php }} ?>
+
+                                        } else {
+
+                                            foreach ($sales as $sale) {
+
+                                            ?>
+                                                <tr>
+                                                    <td> <?php echo $sale->getDate(); ?> </td>
+                                                    <td> <?php echo "R$ " . $sale->getValueOrder() . ",00"; ?> </td>
+                                                    
+                                                    <td> <?php if ($sale->getPaymentMethod() == 'card') { echo 'Cartão';
+                                                        } elseif ($sale->getPaymentMethod() == 'boleto') { echo 'Boleto';
+                                                        } ?>
+                                                    </td>
+                                                    
+                                                    <td> <?php echo getEmploye($sale->getEmployeeId())->getName(); ?> </td>
+                                                    <td> <?php echo getCustomer($sale->getCustomerId())->getName(); ?> </td>
+
+                                                    
+
+                                                    <td>
+                                                        <div class="btn-group" role="group" aria-label="Basic example">
+                                                            <a class="btn btn-sm btn-plus-action" href="../../control/sales_delete.php?id=<?php echo $sale->getId(); ?>">Excluir</a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                        <?php }
+                                        } ?>
 
                                     </tbody>
                                 </table>
@@ -150,7 +155,7 @@ $providers = search_provider();
                 </div>
             </div>
             <!-- Table End -->
-            
+
         </div>
         <!-- Content End -->
 
@@ -174,9 +179,9 @@ $providers = search_provider();
     <script src="js/main.js"></script>
 
     <script>
-            var btn = document.querySelector('#btnRegisterProd');
+        var btn = document.querySelector('#btnRegisterProd');
 
-            btn.addEventListener('click', function() {
+        btn.addEventListener('click', function() {
 
             const contentR = document.querySelector('#contentRegisterProd');
             contentR.style.display = 'flex';
@@ -194,15 +199,16 @@ $providers = search_provider();
             inputImage.click();
         });
         inputImage.addEventListener('change', (e) => {
-            
-        let reader = new FileReader();
-        reader.onload = () => {
-            imgselected.src = reader.result;
-            imgSelect.style.display = 'none';
-            imgselected.style.display = 'flex';
-        }
-        reader.readAsDataURL(inputImage.files[0]);
+
+            let reader = new FileReader();
+            reader.onload = () => {
+                imgselected.src = reader.result;
+                imgSelect.style.display = 'none';
+                imgselected.style.display = 'flex';
+            }
+            reader.readAsDataURL(inputImage.files[0]);
         })
     </script>
 </body>
+
 </html>

@@ -1,6 +1,7 @@
 <?php
 include_once '../DAO/cartBd.php';
 include_once '../DAO/productsBd.php';
+include_once '../DAO/imagesBd.php';
 session_start();
 function checkAuth()
 {
@@ -22,6 +23,7 @@ if (checkAuth()) {
 }
 $sizes = seeSizeAvaliable($_SESSION['product_id']);
 $prod = getProduct($_SESSION['product_id']);
+$img = selectImage($prod->getImagemId()); //get the img object->name
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -62,8 +64,8 @@ $prod = getProduct($_SESSION['product_id']);
                     <div class="row cart-row">
                       <div class="col-12 col-sm-2 pic">
                         <span>
-                          <!-- product image -->
-                          <img class="img-fluid" src="img/products/tenis 1.jpg" alt="">
+                          <!-- product image, his geting the name of file intended on uploads folder -->
+                          <img class="img-fluid" src="../uploads/<?php echo $img->getName() ?>" alt="">
                         </span>
                       </div>
                       <!-- name product -->

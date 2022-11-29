@@ -15,15 +15,15 @@
             <!-- log in form -->
             <div class="modal-body">
                 <div class="row" id="account">
-                    <div class="col-12 input-group">
-                        <form class="input-group center" id="form1" action="/project_PI/control/autenticacao.php"  method="post">
+                    <div class="col-12 a-group">
+                        <form class="input-group center" id="form1" action="/project_PI/control/authentication.php"  method="post">
                             <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8">
                                 <label for="Email"><i class="fa-regular fa-address-card"></i></label>
-                                <input class=" form-control input-user" type="text" placeholder="CPF" id="CpfLog"  name="CpfLog" maxlength="14" autocomplete="off">
+                                <input class=" form-control input-user" type="text" placeholder="CPF" id="CpfLog"  name="cpf" maxlength="14" autocomplete="off">
                             </div>
                             <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                 <label for="Senha"><i class="bi bi-key"></i></label>
-                                <input class="form-control input-user" type="password" placeholder="Senha" id="passLog"  name="passLog">
+                                <input class="form-control input-user" type="password" placeholder="Senha" id="passLog"  name="pass">
                                 <button type="button" class="btnView" id="btnViewPL" onclick="alterViewPassL()"><i class="fa-solid fa-eye"></i></button>
                             </div>
                             <div class="col-5 col-sm-5 col-lg-5 mt-3 center">
@@ -65,7 +65,8 @@
                                 <button type="button" class="btnView" id="btnViewP" onclick="alterViewPass()"><i class="fa-solid fa-eye"></i></button>
                             </div>
                             <div class="col-12 col-sml-10 col-md-11 col-lg-5 mt-3 center">
-                                <input class="btn btn-primary w-75 btn-log btn-success" form="form2" type="submit" name="" value="Criar conta">
+                                <button type="submit" class="btn btn-primary w-75 btn-log btn-success">Criar Conta</button>
+                                <!-- <a class="btn btn-primary w-75 btn-log btn-success" form="form2" type="submit">Criar conta</a> -->
                             </div>
                         </form>
                     </div>

@@ -1,7 +1,6 @@
 <?php
-
-include_once "connection.php";
-include_once "../model/users.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/users.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/connection.php";
 
 
 function autenticar (Users $user) {
@@ -29,7 +28,7 @@ function autenticar (Users $user) {
 
 }
 
- function autenticar_email(Users $user){
+ function autenticar_email(Users $user) {
     $email=$user->getEmail();
 
     $conexao = connect();
@@ -55,4 +54,19 @@ function autenticar (Users $user) {
     $result = $stmt->fetchAll();
 
     return $result;
+}
+function getUserInfo($id){
+    $PDO = connect();
+    $query = "SELECT * FROM usuarios WHERE id_usuario = ?";
+    $stmt = $PDO->prepare($query);
+    $stmt->execute([$id]);
+    foreach ($stmt->fetchAll() as $result) {
+        $user = new Users;
+
+        $user->setName($result['nome']);
+        $user->setCpf($result['cpf']);
+        $user->setTell($result['telefone']);
+        $user->setEmail($result['email']);
+    }
+    return $user;
 }

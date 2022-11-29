@@ -1,6 +1,5 @@
 <?php
-
-include_once "../DAO/usuarioBd.php";
+include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/usuarioBd.php";
 
 $cpf = $_POST['cpf'];
 $password = $_POST['pass'];
