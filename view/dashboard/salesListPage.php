@@ -8,7 +8,7 @@ include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/DAO/customersBd.php";
 include_once $_SERVER["DOCUMENT_ROOT"] . "/project_PI/DAO/employeesBd.php";
 
 $products = search_products();
-$sales = search_sales();
+$sales =  search_sales();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -124,7 +124,6 @@ $sales = search_sales();
 
                                             ?>
                                                 <tr>
-                                                    <!-- <td> <?php echo "deu b.o aqui" //getUserInfo($sale->getUserId())->getName(); ?></td> -->
                                                     <td> <?php echo $sale->getDate(); ?> </td>
                                                     <td> <?php echo "R$ " . $sale->getValueOrder() . ",00"; ?> </td>
                                                     
@@ -140,7 +139,7 @@ $sales = search_sales();
 
                                                     <td>
                                                         <div class="btn-group" role="group" aria-label="Basic example">
-                                                            <a class="btn btn-sm btn-plus-action" href="../../control/">Excluir</a>
+                                                            <a class="btn btn-sm btn-plus-action" href="../../control/sales_delete.php?id=<?php echo $sale->getId(); ?>">Excluir</a>
                                                         </div>
                                                     </td>
                                                 </tr>

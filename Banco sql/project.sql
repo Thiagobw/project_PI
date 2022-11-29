@@ -6,8 +6,8 @@
 # https://github.com/sequelpro/sequelpro
 #
 # Host: localhost (MySQL 5.5.5-10.4.21-MariaDB)
-# Base de Dados: project_Pl
-# Tempo de Gera��o: 2022-11-24 11:39:30 +0000
+# Base de Dados: project
+# Tempo de Gera��o: 2022-11-28 13:42:23 +0000
 # ************************************************************
 
 
@@ -18,24 +18,6 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-
-
-# Dump da tabela caracteristicas
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `caracteristicas`;
-
-CREATE TABLE `caracteristicas` (
-  `id_caracteristicas` int(11) NOT NULL,
-  `fk_produtos_id_produtos` int(11) NOT NULL,
-  `solado` varchar(20) NOT NULL,
-  `lingueta` varchar(20) NOT NULL,
-  `palmilha` varchar(20) NOT NULL,
-  `material_forro` varchar(25) NOT NULL,
-  `tipo_amarracao` varchar(20) NOT NULL,
-  `entresola` varchar(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 
 
 # Dump da tabela cliente
@@ -89,13 +71,45 @@ CREATE TABLE `endereco` (
 DROP TABLE IF EXISTS `fornecedor`;
 
 CREATE TABLE `fornecedor` (
-  `id_fornecedor` int(11) NOT NULL,
+  `id_fornecedor` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nome` varchar(100) NOT NULL,
   `cnpj` char(18) NOT NULL,
   `email` varchar(40) NOT NULL DEFAULT 'nC#o informado',
-  `telefone` char(15) NOT NULL
+  `telefone` char(15) NOT NULL,
+  PRIMARY KEY (`id_fornecedor`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+LOCK TABLES `fornecedor` WRITE;
+/*!40000 ALTER TABLE `fornecedor` DISABLE KEYS */;
+
+INSERT INTO `fornecedor` (`id_fornecedor`, `nome`, `cnpj`, `email`, `telefone`)
+VALUES
+	(1,'Naian Web Sollution','28.329.387/0001-43','contato@naian.com.br','999999999');
+
+/*!40000 ALTER TABLE `fornecedor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+
+# Dump da tabela imagens
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `imagens`;
+
+CREATE TABLE `imagens` (
+  `id_imagens` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `nome` text NOT NULL,
+  PRIMARY KEY (`id_imagens`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+LOCK TABLES `imagens` WRITE;
+/*!40000 ALTER TABLE `imagens` DISABLE KEYS */;
+
+INSERT INTO `imagens` (`id_imagens`, `nome`)
+VALUES
+	(7,'image.png');
+
+/*!40000 ALTER TABLE `imagens` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump da tabela pedido
@@ -123,12 +137,8 @@ LOCK TABLES `pedido` WRITE;
 
 INSERT INTO `pedido` (`id_pedido`, `valor_pedido`, `forma_pagamento`, `data`, `usuario_id`, `cliente_id`, `vendedor_id`, `endereco`, `endereco_numero`, `endereco_cep`, `complemento`)
 VALUES
-	(1, '2700', 'card', '23/11/2022-20:59:07', 3, 2, 2, NULL, NULL, NULL, NULL),
-	(2, '1500', 'card', '01/01/2001-01:16:01', 3, 1, 1, NULL, NULL, NULL, NULL),
-	(3, '300', 'card', '01/01/2001-01:17:20', 3, 1, 1, NULL, NULL, NULL, NULL),
-	(4, '300', 'card', '24/11/2022-12:25:39', 3, 1, 1, NULL, NULL, NULL, NULL),
-	(5, '300', 'card', '24/11/2022-12:32:46', 3, 1, 1, NULL, NULL, NULL, NULL),
-	(6, '300', 'card', '24/11/2022-12:38:18', 3, 1, 1, NULL, NULL, NULL, NULL);
+	(14,'500','boleto','28/11/2022-03:49:34',3,1,1,NULL,NULL,NULL,NULL),
+	(15,'250','boleto','28/11/2022-13:53:12',3,1,1,NULL,NULL,NULL,NULL);
 
 /*!40000 ALTER TABLE `pedido` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -146,10 +156,24 @@ CREATE TABLE `pedido_produto` (
   `valor` int(11) NOT NULL,
   `Pedido_id` int(11) DEFAULT NULL,
   `Produtos_idProdutos` int(11) NOT NULL,
-  `usuario_id` int(11) NOT NULL,
+  `usuario_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`idPedido_Produto`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+LOCK TABLES `pedido_produto` WRITE;
+/*!40000 ALTER TABLE `pedido_produto` DISABLE KEYS */;
+
+INSERT INTO `pedido_produto` (`idPedido_Produto`, `tamanho`, `quantidade`, `valor`, `Pedido_id`, `Produtos_idProdutos`, `usuario_id`)
+VALUES
+	(3,34,1,250,13,9,NULL),
+	(5,34,1,250,14,9,NULL),
+	(6,34,1,250,14,9,NULL),
+	(7,34,1,250,15,9,NULL),
+	(8,34,1,250,16,9,NULL),
+	(9,34,1,250,16,9,NULL);
+
+/*!40000 ALTER TABLE `pedido_produto` ENABLE KEYS */;
+UNLOCK TABLES;
 
 
 # Dump da tabela produtos
@@ -161,15 +185,17 @@ CREATE TABLE `produtos` (
   `id_produtos` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nome_produto` varchar(100) NOT NULL,
   `preco_produto` int(11) NOT NULL,
+  `imagens_id` int(11) DEFAULT NULL,
+  `fornecedor_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_produtos`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 LOCK TABLES `produtos` WRITE;
 /*!40000 ALTER TABLE `produtos` DISABLE KEYS */;
 
-INSERT INTO `produtos` (`id_produtos`, `nome_produto`, `preco_produto`)
+INSERT INTO `produtos` (`id_produtos`, `nome_produto`, `preco_produto`, `imagens_id`, `fornecedor_id`)
 VALUES
-	(1,'Yezzy Zebra',300);
+	(9,'Painel kk',250,7,1);
 
 /*!40000 ALTER TABLE `produtos` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -202,7 +228,9 @@ VALUES
 	(7,40,1,1),
 	(8,41,0,1),
 	(9,42,2,1),
-	(10,43,3,1);
+	(10,43,3,1),
+	(24,34,4,7),
+	(26,34,2,9);
 
 /*!40000 ALTER TABLE `tamanho` ENABLE KEYS */;
 UNLOCK TABLES;
