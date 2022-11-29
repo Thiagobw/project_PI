@@ -110,8 +110,7 @@ $employees = search_employee();
                               </label>
                             </div>
                           </div>
-                          
-                          <button type="submit">Escolher</button>
+                          <input type="submit" value="selecionar">
                         </form>
                       
                         <!-- here grab subtotal to send valor_pedido -->
