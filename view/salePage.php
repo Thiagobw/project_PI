@@ -48,50 +48,54 @@ $productsList = search_products();
     </header>
 
     <!-- products list -->
-    <form method="POST" action="/project_PI/control/control_cart.php">
-
-        <main class="container mt-5">
-            <?php if (empty($productsList) == true) { ?>
+    <main class="container mt-5">
+        <form method="POST" action="/project_PI/control/control_cart.php">
+            <div class="row mx-0">
+                <?php if (empty($productsList) == true) { ?>
                 <h3>nenhum produto cadastrado para venda!</h3>
+                    
                 <?php } else {
-                foreach ($productsList as $prod) {
-                    $image = selectImage($prod->getImagemId());
-                    $sizes = seeSizeAvaliable($prod->getId()) ?>
-                    <div class="row mx-0">
+                    foreach ($productsList as $prod) {
+                        $image = selectImage($prod->getImagemId());
+                        $sizes = seeSizeAvaliable($prod->getId()) ?>
+                        
                         <div class="col-lg-4 col-md-6 pt-md-0 pt-3">
                             <div class="card d-flex flex-column align-items-center">
                                 <div class="product-name"><?php echo $prod->getName() ?></div>
                                 <div class="card-img">
-                                    <img class="img-fluid w-100" 
-                                    src="/project_PI/uploads/<?php echo $image->getName(); ?>" 
-                                    alt="">
+                                    <img class="img-fluid w-100" src="/project_PI/uploads/<?php echo $image->getName(); ?>" alt="">
                                 </div>
+                                
                                 <div class="row price">
-                                    R$ <span>
-                                        <?php echo $prod->getPrice(); ?>
-                                    </span>
+                                    R$ <span> <?php echo $prod->getPrice(); ?> </span>
                                 </div>
+                                    
                                 <div>
                                     <label for="quantity">
                                         Quantidade
                                     </label>
+                                    
                                     <input type="number" name="quantity" value="1" min="1">
                                 </div>
+                                
                                 <div>
                                     <label for="size">
                                         Tamanhos disponiveis:
                                     </label>
+                                        
                                     <p>
                                         <?php foreach ($sizes as $size) { ?>
-                                            <?php if ($size['quantidade'] <= 0) {
-                                            } else { ?>
-                                                <a class="small" is="size">
-                                                    <?php echo $size['tamanho']; ?>
-                                                </a>
-                                            <?php } ?>
+                                        <?php if ($size['quantidade'] <= 0) {  
+                                        } else { ?>
+                                            
+                                        <a class="small" is="size">
+                                            <?php echo $size['tamanho']; ?>
+                                        </a>
+                                        <?php } ?>
                                         <?php } ?>
                                     </p>
                                 </div>
+                                    
                                 <div class="row">
                                     <button name="product_id" class="btn w-100" id="btn-add" value="<?php echo $prod->getId() ?>" name="selectSize">
                                         <i class="fa-solid fa-cart-plus"></i> Adicionar
@@ -100,14 +104,14 @@ $productsList = search_products();
                             </div>
                         </div>
                     </div>
-            <?php }
-            } ?>
-        </main>
-    </form>
+                <?php }} ?>
+        </form>
+    </main>
+    
 
 
     <!-- product pagination -->
-    <footer class="container-fluid mt-4 mb-1">
+    <!--<footer class="container-fluid mt-4 mb-1">
         <div class="col-12 center">
             <nav style="border: none !important;">
                 <ul class="pagination">
@@ -127,7 +131,7 @@ $productsList = search_products();
                 </ul>
             </nav>
         </div>
-    </footer>
+    </footer>-->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
