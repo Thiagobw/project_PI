@@ -109,7 +109,7 @@ INSERT INTO `imagens` (`id_imagens`, `nome`) VALUES
 CREATE TABLE `pedido` (
   `id_pedido` int(11) UNSIGNED NOT NULL,
   `valor_pedido` varchar(20) NOT NULL,
-  `forma_pagamento` varchar(10) NOT NULL,
+  `forma_pagamento` varchar(20) NOT NULL,
   `data` varchar(20) NOT NULL DEFAULT '',
   `usuario_id` int(11) NOT NULL,
   `cliente_id` int(11) NOT NULL,

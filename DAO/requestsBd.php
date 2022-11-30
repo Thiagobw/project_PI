@@ -9,11 +9,12 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/connection.php";
 
 // Parameters is good way to corretly do something without error or mistakes
 // This is an example!
-function makeOrder( $user_id, string $payment_method, int $subtotal, int $employe_id, int $customer_id, ?string $address = '', ?int $address_cep = 0, ?int $address_number = 0, ?string $address_complement = '' ): bool //here i'm using the total funcionality of PSR to turn code more understoodable'
+function makeOrder( $user_id, string $payment_method, int $subtotal, int $employe_id, int $customer_id, ?string $address = '',
+                    ?int $address_cep = 0, ?int $address_number = 0, ?string $address_complement = '' ): bool //here i'm using the total funcionality of PSR to turn code more understoodable'
 //You can remove all references of var. behide of them
 {
 
-    $dataTime = date('d/m/Y-H:i:s'); //set the format of date
+    $dataTime = date('d/m/Y-H:i:s');
     $cart = seeCartItems($user_id);
     //this only verify the method but we can make response API verify to conclude action, UPDATE: and verify the address be set
     if(is_string($payment_method) && empty($address)) {
@@ -36,9 +37,10 @@ function makeOrder( $user_id, string $payment_method, int $subtotal, int $employ
                     $stmt = $PDO->prepare("UPDATE pedido_produto SET Pedido_id = ? WHERE idPedido_Produto = ?");
                     $stmt->execute([$id, $item->getId()]);
 
+
                     $stmt = $PDO->prepare("UPDATE tamanho SET quantidade = quantidade - ? WHERE tamanho = ? and id_produto = ?");
-                    //using the object to referece query
                     $stmt->execute([$item->getQuantidade(), $item->getTamanho(), $item->getProdutosId()]);
+
 
                     $stmt = $PDO->prepare("DELETE FROM pedido_produto WHERE idPedido_Produto = ?");
                     $stmt->execute([$item->getId()]);
@@ -81,7 +83,6 @@ function makeOrder( $user_id, string $payment_method, int $subtotal, int $employ
 
 
                     $stmt = $PDO->prepare("UPDATE tamanho SET quantidade = quantidade - ? WHERE tamanho = ? and id_produto = ?");
-                    //using the object to referece query
                     $stmt->execute([$item->getQuantidade(), $item->getTamanho(), $item->getProdutosId()]);
 
 
@@ -95,7 +96,7 @@ function makeOrder( $user_id, string $payment_method, int $subtotal, int $employ
                 echo $e->getMessage();
             }
         }catch (Exception $e) {
-            
+
             $PDO->rollBack();
             echo $e->getMessage();
         }
