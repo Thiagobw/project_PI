@@ -17,7 +17,7 @@ if (!empty($_GET['checkout'])) {
         $_SESSION['method_selected'] = 'boleto';
         return header("Location: /project_PI/view/checkout.php");
     }else{
-        return header("Location: /project_PI/view/card.php");
+        return header("Location: /project_PI/view/cart.php");
     }
 }elseif(isset($_POST['makeOrder'])and !empty($_POST['inputAddress'])) {
     if(makeOrder($_SESSION['id_usuario'],
