@@ -38,7 +38,7 @@ $employees = search_employee();
   <link rel="stylesheet" href="img/icons/fontawesome/css/all.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 
-  <title>Checkout - LA Imports</title>
+  <title> LA Imports - Concluir venda</title>
 </head>
 
 <body>
@@ -46,117 +46,120 @@ $employees = search_employee();
   <header>
     <?php
     include "../view/navbar/navbarHomePage.php";
-    include "../view/pop-upAccount.php";
     ?>
   </header>
+
   <section class="h-100 h-custom" style="background-color: #eee;">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col">
           <div class="card">
-            <div class="card-body p-4">
+            <div class="card-body justify-content-center align-items-center">
 
-              <div class="row">
-                <div class="col-lg-7">
-                  <h5 class="mb-3"><a href="/project_PI/view/salePage.php" class="text-body">
-                      <i class="fas fa-long-arrow-alt-left me-2">
-                      </i>Continuar Comprando!!</a>
-                  </h5>
-                  <hr>
-                </div>
-                <div class="col-lg-5">
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-6 col-lg-8">
 
-                  <div class="card bg-primary text-white rounded-3">
-                    <div class="card-body">
-                      <div class="d-flex justify-content-between align-items-center mb-4">
-                        <h5 class="mb-0">Informações de Compra</h5>
-                        <img src="./dashboard/img/user.jpg" class="img-fluid rounded-3" style="width: 45px;" alt="Avatar">
-                      </div>
+                    <a href="/project_PI/view/salePage.php" class="btn btn-warning btn-block">
+                      <i class="fas fa-long-arrow-alt-left me-2"></i> 
+                      Adicionar mais produtos
+                    </a>
+                    
+                    <div class="card bg-dark text-white rounded-3 mt-2">
+                      <div class="card-body">
+                        <div class="d-flex justify-content-center align-items-center mb-4">
+                          <h5 class="mb-0">Informações da Venda</h5>
+                        </div>
+                        <hr class="my-4">
+
                           <!-- old form to get already use method of user -->
                       <form action="/project_PI/control/control_checkout.php" method="GET" class="mt-4">
-                        <p class="small mb-2">Forma de Pagamento</p>
-                        <label for="card">Cartão</label>
-                        <input type="radio" name="method" checked value="card">
-                        <label for="boleto">Boleto</label>
-                        <input type="radio" name="method" value="boleto">
-                      <!-- </form> -->
-                      
+                        <div class="row">
+                          <div class="col-12">
+                            <p class="small">Forma de Pagamento</p>
+                          </div>
+                          
+                          <div class="col-12 col-md-6 mt-2">
+                            <label for="pix">
+                              <input type="radio" name="method" value="pix" id="pix">
+                               Pix
+                            </label>
+                          </div>
+
+                          <div class="col-12 col-md-6 mt-2">
+                            <label for="boleto">
+                              <input type="radio" name="method" value="boleto" id="boleto">
+                               Boleto
+                            </label>
+                          </div>
+
+                          <div class="col-12 col-md-6 mt-2">
+                            <label for="card">
+                              <input type="radio" name="method" value="card" id="card">
+                               Cartão
+                            </label>
+                          </div>
+
+                          <div class="col-12 col-md-6 mt-2">
+                            <label for="tB">
+                              <input type="radio" name="method" value="tB" id="tB">
+                               Transf. Bancária
+                            </label>
+                          </div>
+
+                          <div class="col-12 col-md-6 mt-2">
+                            <label for="money">
+                              <input type="radio" name="method" value="money" id="money">
+                               Dinheiro
+                            </label>
+                          </div>
+                        </div>
+                          
                         <!-- here grab subtotal to send valor_pedido -->
                         <input min="<?php echo $_SESSION['checkout_subtotal']; ?>" max="<?php echo $_SESSION['checkout_subtotal']; ?>" type="number" hidden name="subtotal" value="<?php echo $_SESSION['checkout_subtotal']; ?>">
 
                         <!-- shipping details, his can get old values by session too -->
-                        <hr class="my-4">
-                        <div class="form-outline form-white mb-4">
-                          <input type="text" class="form-control" name="inputAddress" size="17"></input>
-                          <label for="inputAddress" class="form-label">Endereço</label>
-                        </div>
-                        <div class="row mb-4">
-                          <div class="col-md-6">
-                            <div class="form-outline form-white">
-                              <input type="text" class="form-control form-control-lg" placeholder="00000-000" name="address_cep" size="7" id="cep" minlength="9" maxlength="9" />
-                              <label class="form-label" for="typeExp">Cep</label>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-outline form-white">
-                              <input type="text" id="address_number" class="form-control form-control-lg" placeholder="000" name="address_number" size="1" minlength="1" maxlength="10" />
-                              <label class="form-label" for="typeText">Numero</label>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-outline form-white">
-                              <input type="text" id="address_complement" class="form-control form-control-lg" placeholder="Lt:65" name="address_complement" size="7" minlength="1" maxlength="10" />
-                              <label class="form-label" for="typeText">Complemento</label>
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="form-outline form-white">
-                              <select name="employe" class="form-select">
-                                <?php foreach ($employees as $employe) { ?>
-                                  <option value="<?php echo $employe->getId(); ?>">
+                        <div class="row mb-4 mt-3">
+                          <div class="form-group col-md-6">
+                            <label for="employe">Vendedor</label>
+                            <select name="employe" id="employe" class="form-control">
+                              <?php foreach ($employees as $employe) { ?>
+                                <option value="<?php echo $employe->getId(); ?>">
                                   <?php echo $employe->getName(); ?>
-                                  </option>
-                                <?php } ?>
-                              </select>
-                              <label class="form-label" for="typeText">Vendedor</label>
-                            </div>
+                                </option>
+                              <?php } ?>
+                            </select>
                           </div>
-                          <div class="col-md-6">
-                            <div class="form-outline form-white">
-                            <select name="customer" class="form-select">
+
+                          <div class="form-group col-md-6">
+                              <label for="customer">Cliente</label>
+                              <select name="customer" id="customer" class="form-control">
                                 <?php foreach ($customers as $customer) { ?>
                                   <option value="<?php echo $customer->getId(); ?>">
                                   <?php echo $customer->getName(); ?>
                                   </option>
                                 <?php } ?>
                               </select>
-                              <label class="form-label" for="typeText">Comprador</label>
-                            </div>
                           </div>
                         </div>
+                        
                         <hr class="my-4">
-                        <div class="d-flex justify-content-between">
+
+                        <div class="d-flex justify-content-around mb-2">
                           <p class="mb-2">Subtotal</p>
-                          <p class="mb-2">R$<?php echo $_SESSION['checkout_subtotal'] ?></p>
+                          <p class="mb-2">R$ <?php echo $_SESSION['checkout_subtotal'].',00' ?></p>
                         </div>
 
-                        <!-- you can make! -->
-                        <div class="d-flex justify-content-between">
-                          <p class="mb-2">Entrega(implementar!!)</p>
-                          <p class="mb-2">R$20.00</p>
+                        <div class="d-flex justify-content-around mb-4">
+                          <p class="mb-2 font-weight-bold">Total</p>
+                          <p class="mb-2 font-weight-bold">R$ <?php echo $_SESSION['checkout_subtotal'].',00' ?></p>
                         </div>
 
-                        <div class="d-flex justify-content-between mb-4">
-                          <p class="mb-2">Total(Incl. entrega)</p>
-                          <p class="mb-2">R$<?php echo $_SESSION['checkout_subtotal'] ?></p>
-                        </div>
                         <!-- prevents you get here without items on cart! -->
-                          <button type="submit" name="makeOrder" class="btn btn-info btn-block btn-lg">
-                            <div class="d-flex justify-content-between">
-                              <span>R$<?php echo $_SESSION['checkout_subtotal'] ?></span>
-                              <span>Checkout<i class="fas fa-long-arrow-alt-right ms-2"></i></span>
-                            </div>
-                          </button>
+                        <button type="submit" name="makeOrder" class="btn btn-success btn-block btn-lg">
+                          <div class="d-flex justify-content-center">
+                            <span>Realizar venda</span>
+                          </div>
+                        </button>
                       </form>
                     </div>
                   </div>
