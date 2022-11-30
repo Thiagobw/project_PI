@@ -80,35 +80,35 @@ $employees = search_employee();
                           
                           <div class="col-12 col-md-6 mt-2">
                             <label for="pix">
-                              <input type="radio" name="method" value="pix" id="pix">
+                              <input type="radio" name="method" value="pix" id="Pix">
                                Pix
                             </label>
                           </div>
 
                           <div class="col-12 col-md-6 mt-2">
                             <label for="boleto">
-                              <input type="radio" name="method" value="boleto" id="boleto">
+                              <input type="radio" name="method" value="boleto" id="Boleto">
                                Boleto
                             </label>
                           </div>
 
                           <div class="col-12 col-md-6 mt-2">
                             <label for="card">
-                              <input type="radio" name="method" value="card" id="card">
+                              <input type="radio" name="method" value="Cartão" id="card">
                                Cartão
                             </label>
                           </div>
 
                           <div class="col-12 col-md-6 mt-2">
                             <label for="tB">
-                              <input type="radio" name="method" value="tB" id="tB">
+                              <input type="radio" name="method" value="Transf bancária" id="tB">
                                Transf. Bancária
                             </label>
                           </div>
 
                           <div class="col-12 col-md-6 mt-2">
                             <label for="money">
-                              <input type="radio" name="method" value="money" id="money">
+                              <input type="radio" name="method" value="Dinheiro" id="money">
                                Dinheiro
                             </label>
                           </div>
