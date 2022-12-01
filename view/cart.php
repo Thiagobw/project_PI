@@ -39,7 +39,7 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : seeCartItems($user['id_us
     <title>Checkout - LA Imports</title>
 </head>
 
-<body>
+<body class="bg-secondary">
 
     <header>
         <?php
@@ -47,122 +47,113 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : seeCartItems($user['id_us
         ?>
     </header>
     
-    <section class="h-100 h-custom" style="background-color: #eee;">
-        <div class="container py-5 h-100">
-            <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body p-4">
-                            <div class="row">
-                                <div class="col-lg-7">
-                                    <h5 class="mb-3"><a href="/project_PI/view/salePage.php" class="text-body">
-                                            <i class="fas fa-long-arrow-alt-left me-2">
-                                            </i>Continuar Comprando!!</a>
-                                    </h5>    
-                                    <hr>
-                                </div>
-                                
-                                <div class="col-lg-7">
-                                    <form method="POST" action="/project_PI/control/control_cart.php">
-                                        <div class="col-12 col-md-7 cart-body">
-                                            <!-- product product in cart -->
-                                            <div class="cart-item">
-                                                <?php if (!isset($cart) || $cart == 0 || empty($cart)) { ?>
+    <section class="container">
+        <div class="row center">
+            <div class="col-12 bg-white mt-5 rounded-bottom shadow-lg">
+                <div class="row mt-2 center">
+                    <div class="col-12">
+                        <a href="/project_PI/view/salePage.php" class="btn btn-block btn-warning">
+                            <i class="fas fa-long-arrow-alt-left me-2"></i>
+                            Continuar Comprando!
+                        </a>
+                    </div>
+                    
+                    <div class="col-lg-8">
+                        <form method="POST" action="/project_PI/control/control_cart.php">
+                            <div class="col-12 col-md-7">
+
+                                <!-- product in cart -->
+                                <div class="row">
+                                    <?php if (!isset($cart) || $cart == 0 || empty($cart)) { ?>
                                                     
-                                                    <p class="alert alert-danger mb-0">
-                                                        Nenhum item no carrinho
-                                                    </p>
+                                    <div class="col-12 alert alert-danger center"> Nenhum item no carrinho! </div>
+                                        
+                                    <?php } else { ?>
+                                    <?php foreach ($cart as $item) {
+                                        $prod = getProduct($item->getProdutosId());
 
-                                                <?php } else { ?>
-                                                <?php foreach ($cart as $item) {
-                                                    $prod = getProduct($item->getProdutosId());
-                                                    //deletar quando chegar a 0
-                                                    if($item->getQuantidade() == 0) {
-                                                        deleteItemCart($item->getId());
-                                                    }
-                                                ?>
-                                                
-                                                <div class="cart-item">
-                                                    <!-- Product information -->
-                                                    <div class="row cart-row">
-                                                        <div class="col-12 col-sm-2 pic">
-                                                            <!-- btn btn to remove product -->
-                                                            <button class="btn btn-danger center" id="btnRemove" href="/project_PI/control/control_cart.php" value="<?php echo $item->getId(); ?>" name="removeItem">X</button>
-                                                            <span>
-                                                                <!-- product image, have an disclamer for this in productSelected -->
-                                                                <img src="../uploads/<?php echo selectImage($prod->getImagemId())->getName() ?>" alt="">
-                                                            </span>
-                                                        </div>
+                                        //deletar quando chegar a 0
+                                        if($item->getQuantidade() == 0) { deleteItemCart($item->getId()); }
+                                        ?>
 
-
-                                                        <!-- name product -->
-                                                        <div class="col-12 col-sm-10 desc">
-                                                            <h6><?php echo $prod->getName(); ?></h6>
-                                                            <p class="small mb-0">
-                                                                Tamanho: <?php echo $item->getTamanho(); ?>
-                                                            </p>
-                                                        </div>
-                                                        
-
-                                                        <div class="cart-row-cell quant">
-                                                            <ul> <!-- Apagar quando chegar a 0 -->
-                                                                <?php if($item->getQuantidade() < 1){
-                                                                    }else{?>                                                                        <li><button name="decreaseItem" value="<?php echo $item->getId(); ?>" href="/project_PI/control/control_cart.php">-</button></li>
-                                                                <?php } ?>
-                                                                <li><?php echo $item->getQuantidade(); ?></li>
-                                                                
-                                                                <li>
-                                                                    <button name="increaseItem" value="<?php echo $item->getId(); ?>" href="/project_PI/control/control_cart.php">+</button>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-
-
-                                                        <div class="cart-row-cell amount">
-                                                            <p>R$ <span>
-                                                                    <?php $multi_item = $item->getValor() * $item->getQuantidade();
-                                                                        $sub_total[] = $multi_item;
-                                                                        echo $multi_item;
-                                                                    ?>
-                                                                </span>
-                                                            </p>
-                                                        </div>
-                                                    </div>
+                                        <div class="cart-item">
+                                            <!-- Product information -->
+                                            <div class="row">
+                                                <div class="col-12 col-sm-2">
+                                                    <!-- btn btn to remove product -->
+                                                    <button class="btn btn-danger center" id="btnRemove" href="/project_PI/control/control_cart.php" value="<?php echo $item->getId(); ?>" name="removeItem">X</button>
+                                                        <!-- product image, have an disclamer for this in productSelected -->
+                                                        <img class="img-fluid h-100" src="../uploads/<?php echo selectImage($prod->getImagemId())->getName() ?>" alt="">
                                                 </div>
-                                                <?php } ?>
+
+                                                <!-- name product -->
+                                                <div class="col-12 col-sm-7">
+                                                    <h6><?php echo $prod->getName(); ?></h6>
+                                                    <p class="small"> Tamanho: <?php echo $item->getTamanho(); ?></p>
+                                                </div>
+                                                
+                                                <div class="col-12 col-sm-3">
+                                                        <?php if($item->getQuantidade() < 1) {
+                                                            } else {
+                                                        ?>
+                                                        <button name="decreaseItem" value="<?php echo $item->getId(); ?>" href="/project_PI/control/control_cart.php">-</button>
+
+                                                        <?php } ?>
+
+                                                        <li><?php echo $item->getQuantidade(); ?></li>
+                                                        
+                                                        <button name="increaseItem" value="<?php echo $item->getId(); ?>" href="/project_PI/control/control_cart.php">+</button>
+                                                </div>
+                                            </div>
+
+                                            
+                                            <div class="row">
+                                                <div class="cart-row-cell amount">
+                                                    <p>R$ 
+                                                        <span>
+                                                            <?php $multi_item = $item->getValor() * $item->getQuantidade();
+                                                                $sub_total[] = $multi_item;
+                                                                echo $multi_item;
+                                                            ?>
+                                                        </span>
+                                                    </p>
+                                                </div>
                                             </div>
                                         </div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+
+                            <?php } ?>
+
+                        </form>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <form action="/project_PI/control/control_checkout.php" method="GET">
+                            <footer class="col-12 col-md-5">
+                                <div class="row center">
+                                    <div class="col-10 col-sm-9 col-md-8 totals">
+                                        <p class="total-label">Total</p>
+                                        <p class="total-amount">R$
+                                            <!-- total value of items in cart -->
+                                            <?php if (empty($sub_total)) { ?>
+                                            <?php } else {
+                                                $_SESSION['checkout_subtotal'] = array_sum($sub_total);
+                                                $_SESSION['can_checkout'] = isset($_SESSION['checkout_subtotal']) ? true : false; ?>
+                                                <span><?php echo array_sum($sub_total); ?></span>
+                                            <?php } ?>
+                                        </p>
+                                    </div>
+                                </div>
+                                <?php if($_SESSION['can_checkout']){ ?>
+                                    <button value="true" class="btn btn-primary mt-3" name="checkout">Finalizar a venda</button>
                                     <?php } ?>
-                                    </form>
-                                </div>
-                                <div class="col-lg-4">
-                                    <form action="/project_PI/control/control_checkout.php" method="GET">
-                                        <footer class="col-12 col-md-5">
-                                            <div class="row center">
-                                                <div class="col-10 col-sm-9 col-md-8 totals">
-                                                    <p class="total-label">Total</p>
-                                                    <p class="total-amount">R$
-                                                        <!-- total value of items in cart -->
-                                                        <?php if (empty($sub_total)) { ?>
-                                                        <?php } else {
-                                                            $_SESSION['checkout_subtotal'] = array_sum($sub_total);
-                                                            $_SESSION['can_checkout'] = isset($_SESSION['checkout_subtotal']) ? true : false; ?>
-                                                            <span><?php echo array_sum($sub_total); ?></span>
-                                                        <?php } ?>
-                                                    </p>
-                                                </div>
-                                            </div>
-                                            <?php if($_SESSION['can_checkout']){ ?>
-                                                <button value="true" class="btn btn-primary mt-3" name="checkout">Finalizar a venda</button>
-                                                <?php } ?>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
+                            </footer>
+                        </form>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </section>
 </body>
