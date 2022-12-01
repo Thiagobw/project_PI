@@ -38,7 +38,7 @@ $productsList = search_products();
     <title>LA Imports - Vender</title>
 </head>
 
-<body>
+<body class="bg-secondary">
 
     <header>
         <?php
@@ -68,7 +68,7 @@ $productsList = search_products();
 
 
                         <div class="col-lg-4 col-md-6 pt-md-0 pt-3">
-                            <form method="POST" action="/project_PI/control/control_cart.php">
+                            <form class="shadow" method="POST" action="/project_PI/control/control_cart.php">
                                 <div class="card d-flex flex-column align-items-center">
                                     <div class="product-name">
                                         <?php echo $prod->getName() ?>

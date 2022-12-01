@@ -164,3 +164,129 @@ footer .totals p{
 	flex: 1;
 	text-align: right;
 }
+
+@media (min-width: 240px) and (max-width: 320px) {
+    #btnRemove {
+        left: 60px !important;
+    }
+  }
+  @media (min-width: 321px) and (max-width: 335px) {
+    #btnRemove {
+        left: 65px !important;
+    }
+  }
+  @media (min-width: 336px) and (max-width: 345px) {
+    #btnRemove {
+        left: 70px !important;
+    }
+  }
+  @media (min-width: 346px) and (max-width: 355px) {
+    #btnRemove {
+        left: 75px !important;
+    }
+  } 
+  @media (min-width: 355px) and (max-width: 365px) {
+    #btnRemove {
+        left: 80px !important;
+    }
+  }
+  @media (min-width: 366px) and (max-width: 375px) {
+    #btnRemove {
+        left: 86px !important;
+    }
+  } 
+  @media (min-width: 376px) and (max-width: 386px) {
+    #btnRemove {
+        left: 92px !important;
+    }
+  }
+  @media (min-width: 387px) and (max-width: 397px) {
+    #btnRemove {
+        left: 97px !important;
+    }
+  }
+  @media (min-width: 398px) and (max-width: 408px) {
+    #btnRemove {
+        left: 100px !important;
+    }
+  }
+  @media (min-width: 409px) and (max-width: 419px) {
+    #btnRemove {
+        left: 108px !important;
+    }
+  } 
+  @media (min-width: 420px) and (max-width: 430px) {
+    #btnRemove {
+        left: 114px !important;
+    }
+  }
+  @media (min-width: 431px) and (max-width: 441px) {
+    #btnRemove {
+        left: 119px !important;
+    }
+  }
+  @media (min-width: 442px) and (max-width: 452px) {
+    #btnRemove {
+        left: 125px !important;
+    }
+  } 
+  @media (min-width: 453px) and (max-width: 463px) {
+    #btnRemove {
+        left: 129px !important;
+    }
+  }
+  @media (min-width: 464px) and (max-width: 474px) {
+    #btnRemove {
+        left: 135px !important;
+    }
+  }
+  @media (min-width: 475px) and (max-width: 485px) {
+    #btnRemove {
+        left: 140px !important;
+    }
+  }
+  @media (min-width: 486px) and (max-width: 496px) {
+    #btnRemove {
+        left: 145px !important;
+    }
+  }
+  @media (min-width: 497px) and (max-width: 507px) {
+    #btnRemove {
+        left: 150px !important;
+    }
+  }
+  @media (min-width: 508px) and (max-width: 518px) {
+    #btnRemove {
+        left: 155px !important;
+    }
+  }
+  @media (min-width: 519px) and (max-width: 529px) {
+    #btnRemove {
+        left: 160px !important;
+    }
+  }
+  @media (min-width: 530px) and (max-width: 540px) {
+    #btnRemove {
+        left: 165px !important;
+    }
+  }
+  @media (min-width: 541px) and (max-width: 551px) {
+    #btnRemove {
+        left: 170px !important;
+    }
+  } 
+  @media (min-width: 552px) and (max-width: 562px) {
+    #btnRemove {
+        left: 175px !important;
+    }
+  } 
+  @media (min-width: 563px) and (max-width: 573px) {
+    #btnRemove {
+        left: 180px !important;
+    }
+  }
+  @media (min-width: 574px) and (max-width: 575px) {
+    #btnRemove {
+        left: 188px !important;
+    }
+  }
