@@ -73,10 +73,13 @@ $providers = search_provider();
 
                     <div class="row" id="contentRegisterProd">
                         <div class="col-12 input-group">
-                            <!-- changes the type! vvvv LUCAS -->
                             <form enctype="multipart/form-data" class="input-group center" id="formProd" action="../../control/products_registration.php" method="POST">
 
+                                <!-- image for the product -->
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
+                                    <div class="row center">
+                                    <label class="text-center">Selecione uma foto</label>
+                                    </div>
                                     <div class="row center">
                                         <label class="col-12 col-sm-10 col-md-11 col-lg-8 selectFileImgProduct center" for="imgProduct">
                                             <i class="fa-solid fa-file-image fa-4x" id="imgSelect"></i>
@@ -85,12 +88,15 @@ $providers = search_provider();
                                     </div>
                                     <input class=" form-control input-user" type="file" accept="image/*" id="imgProduct" name="imgProduct" style="display: none;">
                                 </div>
+                                <!-- image for the product -->
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4">
+                                    <label class="ml-1" for="nameProduct">Nome do produto</label>
                                     <input class=" form-control input-user" type="text" placeholder="Nome" id="nameProduct" name="nameProduct" maxlength="100">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4">
+                                <label class="ml-1" for="priceProduct">Preço do produto</label>
                                     <input class=" form-control input-user" type="text" placeholder="Preço" id="priceProduct" name="priceProduct" maxlength="14" autocomplete="off">
                                 </div>
 
@@ -188,10 +194,14 @@ $providers = search_provider();
                                                     <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="amountProdSize43" name="amountProdSize43" value="0" readonly style="display: none;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>
-                                            <!-- provider selector -->
-                                            <div class="col-8 col-sm-10 col-md-6 col-lg-4 col-xl-4 mt-3" id="contentInputSize">
-                                                <div class="form-select form-select-inline">
-                                                    <select name="provider">
+                                        </div>
+
+                                        <!-- provider selector -->
+                                        <div class="row center">
+                                            <div class="col-9 col-sm-10 col-md-6 col-lg-4 col-xl-4 mt-4" id="contentInputSize">
+                                                <div class="form-group">
+                                                    <label class="ml-1" for="">Fornecedor do produto</label>
+                                                    <select class="form-control" name="provider">
                                                         <option selected value="null">Nennhum</option>
                                                         <!-- Iterates the object -->
                                                         <?php foreach ($providers as $provider) { ?>
@@ -203,6 +213,7 @@ $providers = search_provider();
                                                 </div>
                                             </div>
                                         </div>
+                                        <!-- provider selector -->
                                     </div>
                                 </div>
 
