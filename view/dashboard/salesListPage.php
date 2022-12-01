@@ -89,9 +89,6 @@ $sales =  search_sales();
                                     <div class="col-12 col-xl-10 mb-3">
                                         <h6 class=" ml-1 text-center text-white" style="font-size: larger;">Lista de Vendas</h6>
                                     </div>
-                                    <div class="col-1 btn-register mb-2">
-                                        <button type="button" id="btnRegisterProd" data-bs-toggle="modal" data-bs-target="#PopUp_register"><i class="fa-solid fa-gift"></i> +</button>
-                                    </div>
                                 </div>
                             </div>
                             <div class="table-responsive">
