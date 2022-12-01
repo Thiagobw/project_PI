@@ -23,16 +23,16 @@ if(isset($_GET['makeOrder'])) {
     if(makeOrder($_SESSION['id_usuario'], $_SESSION['method_selected'], $_GET['subtotal'], $_GET['employe'],
     $_GET['customer'])) {
 
-        echo "deu certo"; //return header("Location: /project_PI/view/salePage.php");
+        return header("Location: /project_PI/view/dashboard/");
     }else{
         echo "n deu"; //return header("Location: /project_PI/view/cart.php");
     }
     
     if(makeOrder($_SESSION['id_usuario'], $_SESSION['method_selected'], $_GET['subtotal'], $_GET['employe'], $_GET['customer']))
     {
-        echo "true";//return header("Location: /project_PI/view/salePage.php");
+        return header("Location: /project_PI/view/dashboard/");
     }else {
-        echo "false"; //return header("Location: /project_PI/view/cart.php");
+        return header("Location: /project_PI/view/cart.php");
     }
 
 }else {
