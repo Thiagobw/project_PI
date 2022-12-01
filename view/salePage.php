@@ -49,63 +49,80 @@ $productsList = search_products();
 
     <!-- products list -->
     <main class="container mt-5">
-        <form method="POST" action="/project_PI/control/control_cart.php">
-            <div class="row mx-0">
-                <?php if (empty($productsList) == true) { ?>
-                <h3>nenhum produto cadastrado para venda!</h3>
-                    
+        <div class="row">
+            <?php if (empty($productsList) == true) { ?>
+
+                <!-- message of no product available for sale -->
+                <div class="col-12 center">
+                    <div class="alert alert-danger" role="alert">
+                        <h3 class="text-center">nenhum produto cadastrado para venda!</h3>
+                    </div>
+                </div>
+                <!-- message of no product available for sale -->
+
                 <?php } else {
                     foreach ($productsList as $prod) {
                         $image = selectImage($prod->getImagemId());
-                        $sizes = seeSizeAvaliable($prod->getId()) ?>
-                        
+                        $sizes = seeSizeAvaliable($prod->getId());
+                        ?>
+
+
                         <div class="col-lg-4 col-md-6 pt-md-0 pt-3">
-                            <div class="card d-flex flex-column align-items-center">
-                                <div class="product-name"><?php echo $prod->getName() ?></div>
-                                <div class="card-img">
-                                    <img class="img-fluid w-100" src="/project_PI/uploads/<?php echo $image->getName(); ?>" alt="">
-                                </div>
-                                
-                                <div class="row price">
-                                    R$ <span> <?php echo $prod->getPrice(); ?> </span>
-                                </div>
+                            <form method="POST" action="/project_PI/control/control_cart.php">
+                                <div class="card d-flex flex-column align-items-center">
+                                    <div class="product-name">
+                                        <?php echo $prod->getName() ?>
+                                    </div>
                                     
-                                <div>
-                                    <label for="quantity">
-                                        Quantidade
-                                    </label>
-                                    
-                                    <input type="number" name="quantity" value="1" min="1">
-                                </div>
-                                
-                                <div>
-                                    <label for="size">
-                                        Tamanhos disponiveis:
-                                    </label>
+                                    <div class="card-img">
+                                        <img class="img-fluid w-100" src="/project_PI/uploads/<?php echo $image->getName(); ?>" alt="">
+                                    </div>
                                         
-                                    <p>
-                                        <?php foreach ($sizes as $size) { ?>
-                                        <?php if ($size['quantidade'] <= 0) {  
-                                        } else { ?>
-                                            
-                                        <a class="small" is="size">
-                                            <?php echo $size['tamanho']; ?>
-                                        </a>
-                                        <?php } ?>
-                                        <?php } ?>
-                                    </p>
-                                </div>
+                                    <div class="row price">
+                                         R$ <span> <?php echo $prod->getPrice().',00'; ?> </span>
+                                    </div>
+
+                                    <div class="row mt-2">
+                                        <div class="col-12 form-group">
+                                        <label class="ml-1" for="quantity">Quantidade </label>
+                                        <input class="form-control" type="number" name="quantity" value="1" min="1">
+                                        </div>
+                                    </div>
+                                
+                                    <div class="row mt-1">
+                                        <div class="col-12">
+                                            <label class="small font-weight-bold" for="size">
+                                                Tamanhos disponiveis:
+                                            </label>
+                                        </div>
+                                        <div class="col-12">
+                                            <p>
+                                                <?php foreach ($sizes as $size) { ?>
+                                                <?php if ($size['quantidade'] <= 0) {
+
+                                                    } else { ?>
+
+                                                        <a class="small" id="size">
+                                                            <?php echo $size['tamanho']; ?>
+                                                        </a>
+
+                                                <?php } ?>
+                                                <?php } ?>
+                                            </p>
+                                        </div>
+                                    </div>
                                     
-                                <div class="row">
-                                    <button name="product_id" class="btn w-100" id="btn-add" value="<?php echo $prod->getId() ?>" name="selectSize">
-                                        <i class="fa-solid fa-cart-plus"></i> Adicionar
-                                    </button>
+                                    <div class="row">
+                                        <button name="product_id" class="btn w-100" id="btn-add" value="<?php echo $prod->getId() ?>" name="selectSize">
+                                            <i class="fa-solid fa-cart-plus"></i> Adicionar
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
-                    </div>
+
                 <?php }} ?>
-        </form>
+        </div>
     </main>
     
 
