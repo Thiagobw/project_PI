@@ -182,7 +182,7 @@
                                                 <div class="form-check form-check-inline">
                                                     <input class="form-check-input" type="checkbox" id="changeCheckSize42" name="changeCheckSize42" onclick="selectOptionChangeData('changeCheckSize42', 'changeAmountProdSize42', null)">
                                                     <label class="form-check-label" for="changeCheckSize42">42</label>
-                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="changeAmountProdSize42"  name="amountProdSize42" value="0" readonly
+                                                    <input class=" form-control input-user amountProduct" type="number" placeholder="quantidade" id="changeAmountProdSize42"  name="changeAmountProdSize42" value="0" readonly
                                                     style="display: none;" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="6">
                                                 </div>
                                             </div>

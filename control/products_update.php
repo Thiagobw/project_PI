@@ -46,7 +46,7 @@ if(isset($_POST['submitChangeProduct']) && isset($_POST['idProductChange'])) {
         if(isset($_POST['changeCheckSize41'])) {
             $SizeAmountList[] = [41, $_POST['changeAmountProdSize41']];
         }
-
+        
         if(isset($_POST['changeCheckSize42'])) {
             $SizeAmountList[] = [42, $_POST['changeAmountProdSize42']];
         }
@@ -68,7 +68,7 @@ if(isset($_POST['submitChangeProduct']) && isset($_POST['idProductChange'])) {
         if (update_product($prod)) { // changes product name and price and returns true or false
 
             if (delet_product_sizes($id)) { // delete the sizes already registered and returns true or false
-
+                
                 if (register_product_size($id, $SizeAmountList)) { // register new sizes and quantities and returns true or false
                     header('Location: ../view/dashboard/productsPage.php');
                 } 

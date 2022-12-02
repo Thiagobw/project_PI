@@ -25,7 +25,7 @@ function search_products() {
         if(!empty($registro['fornecedor_id'])){
             $produto->setProviderId($registro['fornecedor_id']);
         }
-        //added imagemId();
+
         $resul_produtos[] = $produto;
     }
     return $resul_produtos;
@@ -96,12 +96,14 @@ function register_product_size($result_regist_id, $SizeAmountList) {
 
 
         } catch (Exception $e) {
+
             $PDO->rollback();
             echo $e->getMessage();
             return false;
         }
 
     } catch (Exception $e) {
+
         echo $e->getMessage();
         return false;
     }
@@ -158,10 +160,10 @@ function update_product($prod): bool
 
         $PDO = connect();
 
-        $sqlReg = " UPDATE produtos SET nome_produto=?, preco_produto=?, quantidade=? WHERE id_produtos=?";
+        $sqlReg = " UPDATE produtos SET nome_produto=?, preco_produto=? WHERE id_produtos=?";
 
         $stmt = $PDO -> prepare($sqlReg);
-        $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getAmount(), $prod->getId()]);
+        $stmt -> execute([$prod->getName(), $prod->getPrice(), $prod->getId()]);
     
         if($stmt) {
             return true;
@@ -247,6 +249,27 @@ function selectProductToChange($id) {
         return $prod;
     } catch (Exception $e) {
         
+        echo $e->getMessage();
+        return false;
+    }
+}
+
+
+function delet_product_sizes ($id) {
+    try {
+        $PDO = connect();
+
+        $stmt = $PDO -> prepare("DELETE FROM tamanho WHERE id_produto=?");
+        $stmt -> execute([$id]);
+        
+        if($stmt) {
+            return true;
+        }
+        else {
+            return false;
+        }
+
+    } catch (Exception $e) {
         echo $e->getMessage();
         return false;
     }
