@@ -182,6 +182,9 @@ $providers = search_provider();
     </script>
 
     <script>
+
+        //product image to register
+
         let imgselected = document.querySelector('#imgSelected');
         let inputImage = document.querySelector('#imgProduct');
         var imgSelect = document.querySelector('#imgSelect');
@@ -197,6 +200,28 @@ $providers = search_provider();
             imgselected.style.display = 'flex';
         }
         reader.readAsDataURL(inputImage.files[0]);
+        })
+
+        /**
+         * =====================================================
+         * 
+         * image that will be changed for the product
+         */
+        let changeImgselected = document.querySelector('#changeImgSelected');
+        let changeInputImage = document.querySelector('#changeImgProduct');
+        var changeImgSelect = document.querySelector('#changeImgSelect');
+        changeInputImage.addEventListener('click', () => {
+            changeInputImage.click();
+        });
+        changeInputImage.addEventListener('change', (e) => {
+            
+        let reader = new FileReader();
+        reader.onload = () => {
+            changeImgselected.src = reader.result;
+            changeImgSelect.style.display = 'none';
+            changeImgselected.style.display = 'flex';
+        }
+        reader.readAsDataURL(changeInputImage.files[0]);
         })
     </script>
 </body>

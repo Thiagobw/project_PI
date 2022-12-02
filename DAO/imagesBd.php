@@ -25,6 +25,8 @@ function selectImage($id)
         echo $e->getMessage();
     }
 }
+
+
 function deleteImage($id)
 {
     try {
@@ -46,6 +48,8 @@ function deleteImage($id)
         return false;
     }
 }
+
+
 function uploadImage(Images $image) // hes id
 {
     try {
@@ -66,4 +70,8 @@ function uploadImage(Images $image) // hes id
         $PDO->rollBack();
         echo $e->getMessage();
     }
+}
+
+function getIdImageBd () {
+    
 }

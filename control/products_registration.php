@@ -76,34 +76,40 @@ if(isset($_POST['submitProduct'])) {
             
             // set a path to the images
             $imgPath = $_SERVER["DOCUMENT_ROOT"].'/project_PI/uploads/';
-            //$img = $_POST['imgProduct']; to do...
+
             //handle the post of img
             $imgPost = $_FILES['imgProduct'];
             //here its a other var. "type" because html itself!
-            if(!empty($imgPost['name'])){
+            if(!empty($imgPost['name'])) {
+
                 $imgFileName = basename($imgPost['name']);
                 $tagetImgPath = $imgPath . $imgFileName;
                 // get and move the file has uploaded to server
                 //with a tmp server file name
-                if(move_uploaded_file($imgPost['tmp_name'], $tagetImgPath)){
+                if(move_uploaded_file($imgPost['tmp_name'], $tagetImgPath)) {
+
                     $image = new Images;
-                    //$image->setPath($tagetImgPath); when if have some pic, makes inverse relationship
+                    
                     $image->setName($imgFileName);
                     //retrieve the id its going on upload for db
                     $imgId = uploadImage($image);
                     $prod->setImagemId($imgId);
+
                     //handle another error, if stay on tmp will be exclude
                 }else{
                     echo 'não consegui mover o arquivo para o app';
                 }
-            }else{
+                
+            }else {
+
                 //the default "image.png" <
-                echo 'cadastrando foto genérica';
+                
                 $image = new Images;
                 $image->setName('image.png'); //here get a "image" on uploads folder on root
                 $imgId = uploadImage($image);
                 $prod->setImagemId($imgId);
             }
+            
             //check if the provider has selected
             if(isset($_POST['provider']) and $_POST['provider'] != 'null'){
                 $prod->setProviderId($_POST['provider']);

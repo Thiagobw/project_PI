@@ -71,16 +71,18 @@
 
                     <div class="row" id="contentAlterProd">
                         <div class="col-12 input-group">
-                            <form class="input-group center" id="formChangeProd" action="../../control/products_update.php" method="POST">
+                            <form enctype="multipart/form-data" class="input-group center" id="formChangeProd" action="../../control/products_update.php" method="POST">
                             <input class=" form-control input-user" type="hidden" id="idProductChange" name="idProductChange">
+
+
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
                                     <div class="row center">
-                                        <label class="col-12 col-sm-10 col-md-11 col-lg-8 selectFileImgProduct center" for="imgProduct">
-                                            <i class="fa-solid fa-file-image fa-4x" id="imgSelect"></i>
-                                            <img src="" id="imgSelected" alt="image selected" style="display: none;">
+                                        <label class="col-12 col-sm-10 col-md-11 col-lg-8 selectFileImgProduct center" for="changeImgProduct">
+                                            <i class="fa-solid fa-file-image fa-4x" id="changeImgSelect"></i>
+                                            <img class="img-fluid w-100" src="" id="changeImgSelected" alt="image selected for change" style="display: none;">
                                         </label>
                                     </div>
-                                    <input class=" form-control input-user" type="file" accept="image/*" id="imgProduct" name="changeImgProduct" style="display: none;">
+                                    <input class=" form-control input-user" type="file" accept="image/*" id="changeImgProduct" name="changeImgProd" style="display: none;">
                                 </div>
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
@@ -96,6 +98,7 @@
                                         <label class="text-center">Selecione os tamanhos e sua quantidade</label>
                                     </div>
 
+                                    <!-- sizes and quantities to update -->
                                     <div class="col-12">
                                         <div class="row center">
                                             <div class="col-8 col-sm-10 col-md-6 col-lg-4 col-xl-4 mt-3" id="contentInputSize">
