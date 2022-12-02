@@ -8,7 +8,16 @@ class Products {
     private $id;
     private $sizes;
     private $imageId;
+    private $imgName;
     private $providerId;
+
+    function setImgName(string $nameImg) {
+        $this->imgName = $nameImg;
+    }
+
+    function getImgName () {
+        return $this->imgName;
+    }
 
     public function setProviderId(int $providerId) {
         $this-> providerId = $providerId;

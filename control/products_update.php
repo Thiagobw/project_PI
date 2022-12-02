@@ -73,9 +73,10 @@ if(isset($_POST['submitChangeProduct']) && isset($_POST['idProductChange'])) {
                 
                 
                 if (register_product_size($id, $SizeAmountList)) { // register new sizes and quantities and returns true or false
-
                     
+                    header('Location: ../view/dashboard/productsPage.php');
                     
+                    /*
                     //handle the post of img
                     if(isset($_FILES)) {
 
@@ -111,7 +112,7 @@ if(isset($_POST['submitChangeProduct']) && isset($_POST['idProductChange'])) {
                     $imgId = uploadImage($image);
                     $prod->setImagemId($imgId);
                 }
-
+                */
 
                 } 
                 else {

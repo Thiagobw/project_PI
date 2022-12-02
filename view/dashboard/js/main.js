@@ -255,6 +255,7 @@ function getProductData(idProd) {
     $.get( BASE_URL+"/control/products_select.php?id="+idProd, function( data ) {
         data = JSON.parse(data);
         $("#idProductChange").val(data['id']);
+        $("#idImage").val(data['idImg']);
         $("#changeNameProduct").val(data['name']);
         $("#changePriceProduct").val(data['price']);
 

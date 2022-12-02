@@ -72,7 +72,8 @@
                     <div class="row" id="contentAlterProd">
                         <div class="col-12 input-group">
                             <form enctype="multipart/form-data" class="input-group center" id="formChangeProd" action="../../control/products_update.php" method="POST">
-                            <input class=" form-control input-user" type="hidden" id="idProductChange" name="idProductChange">
+                            <input type="hidden" id="idProductChange" name="idProductChange">
+                            <input type="hidden" id="idImage" name="idImg">
 
 
                                 <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">

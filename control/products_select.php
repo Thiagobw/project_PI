@@ -11,6 +11,7 @@ if(isset($_GET['id'])) {
     $result['price'] = $prod -> getPrice();
     $result['id'] = $prod -> getId();
     $result['sizes'] = $prod -> getSize();
+    $result['idImg'] = $prod -> getImagemId();
 
     echo json_encode($result);
 
