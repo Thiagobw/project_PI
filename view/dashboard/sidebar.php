@@ -27,7 +27,7 @@
             <a href="providersPage.php" class="nav-item nav-link"><i class="fa-solid fa-handshake-simple"></i> Fornecedores</a>
             <a href="employeesPage.php" class="nav-item nav-link"><i class="fa-solid fa-users"></i> Funcionarios</a>
             <a href="customersPage.php" class="nav-item nav-link"><i class="fa-solid fa-users"></i> Clientes</a>
-            <a href="salesListPage.php" class="nav-item nav-link"><i class="fa-solid fa-users"></i> Vendas</a>
+            <a href="salesListPage.php" class="nav-item nav-link"><i class="fa-solid fa-boxes-stacked"></i> Vendas</a>
             <a href="../salePage.php" class="nav-item nav-link"><i class="fa-solid fa-bag-shopping"></i> Realizar venda</a>
         </div>
     </nav>
