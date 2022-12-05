@@ -10,13 +10,13 @@ if(isset($_GET['id'])) {
 
     $prov->setId($id);
 
-    $result_delete = delet_provider($prov);
-
-    if($result_delete == true) {
-        header('Location: ../view/dashboard/providersPage.php');
+    if(delet_provider($prov)) {
+        $success = "Excluido com sucesso!";
+        header('Location: ../view/dashboard/providersPage.php?successDelete='.$success);
     }
     else {
-        echo "falha ao deletar";
+        $error = "Erro ao excluir!";
+        header('Location: ../view/dashboard/providersPage.php?ErrorDelete='.$error);
     }
 
 } else {

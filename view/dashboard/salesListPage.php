@@ -84,6 +84,25 @@ $sales =  search_sales();
 
                     <div class="col-12">
                         <div class="bg-secondary rounded h-100 p-4">
+                            <div class="row center">
+                                <!-- 
+                                    ===========================================================================================
+                                    
+                                    sales message
+                                 -->
+                                <!-- successful sale message -->
+                                <?php if (isset($_GET['SuccessSale'])) { ?>
+                                        <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
+                                            <i class="fa-solid fa-check d-flex align-items-center mr-2"></i>
+                                            <strong> <?php echo $_GET['SuccessSale']; ?> </strong>
+                                            <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                <?php } ?>
+                                <!-- successful sale message -->
+                            </div>
+
                             <div class="row top-table">
                                 <div class="col-12 col-xl-12" style="padding: 0;">
                                     <div class="col-12 col-xl-10 mb-3">
@@ -124,9 +143,7 @@ $sales =  search_sales();
                                                     <td> <?php echo $sale->getDate(); ?> </td>
                                                     <td> <?php echo "R$ " . $sale->getValueOrder() . ",00"; ?> </td>
                                                     
-                                                    <td> <?php if ($sale->getPaymentMethod() == 'card') { echo 'Cartão';
-                                                        } elseif ($sale->getPaymentMethod() == 'boleto') { echo 'Boleto';
-                                                        } ?>
+                                                    <td> <?php echo $sale->getPaymentMethod(); ?>
                                                     </td>
                                                     
                                                     <td> <?php echo getEmploye($sale->getEmployeeId())->getName(); ?> </td>

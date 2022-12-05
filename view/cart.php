@@ -160,7 +160,7 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : seeCartItems($user['id_us
                                         <?php } else {
                                             $_SESSION['checkout_subtotal'] = array_sum($sub_total);
                                             $_SESSION['can_checkout'] = isset($_SESSION['checkout_subtotal']) ? true : false; ?>
-                                            <span><?php echo array_sum($sub_total); ?></span>
+                                            <span><?php echo array_sum($sub_total).',00'; ?></span>
                                         <?php } ?>
                                     </p>
                                 </div>

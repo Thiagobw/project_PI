@@ -6,6 +6,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/providersBd.php";
 
 $productsList = search_products();
 $providers = search_provider();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -81,6 +82,161 @@ $providers = search_provider();
                     
                     <div class="col-12">
                         <div class="bg-secondary rounded h-100 p-4">
+                            <div class="row center">
+                                <!-- 
+                                    ===========================================================================================
+                                    
+                                    product registration message
+                                 -->
+                                <!-- successful registration message -->
+                                <?php if (isset($_GET['SuccessRegister'])) { ?>
+                                        <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
+                                            <i class="fa-solid fa-check d-flex align-items-center mr-2"></i>
+                                            <strong> <?php echo $_GET['SuccessRegister']; ?> </strong>
+                                            <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                <?php } ?>
+                                <!-- successful registration message -->
+
+
+                                <!-- error message when registering the product, because of the database -->
+                                <?php if (isset($_GET['ErrorRegister'])) { ?>
+                                        <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center" role="alert">
+                                            <i class="fa-solid fa-triangle-exclamation d-flex align-items-center mr-2"></i>
+                                            <strong> <?php echo $_GET['ErrorRegister']; ?> </strong>
+                                            <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                <?php } ?>
+                                <!-- error message when registering the product, because of the database -->
+
+
+                                <!-- Error when registering because I did not inform the necessary data -->
+                                <?php if (isset($_GET['ErrorRegister2'])) { ?>
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <div class="row center">
+                                                <i class="fa-solid fa-triangle-exclamation d-flex align-items-center mr-2"></i>
+                                                <strong> Erro ao cadastrar! </strong>
+                                                <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="row center mt-1">
+                                            <p class="text-justify text-center font-weight-normal mb-0"><?php echo $_GET['ErrorRegister2']; ?></p>
+                                            </div>
+                                        </div>
+                                <?php } ?>
+                                <!-- Error when registering because I did not inform the necessary data -->
+
+
+                                <!-- 
+                                    ===========================================================================================
+                                    
+                                    product delete message
+                                 -->
+                                <!-- successful deletion message -->
+                                <?php if (isset($_GET['successDelete'])) { ?>
+                                        <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
+                                            <i class="fa-solid fa-check d-flex d-flex align-items-center mr-2"></i>
+                                            <strong> <?php echo $_GET['successDelete']; ?> </strong>
+                                            <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                <?php } ?>
+                                <!-- successful deletion message -->
+
+
+                                <!-- error message when deleting product -->
+                                <?php if (isset($_GET['errorDelete'])) { ?>
+                                        <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center" role="alert">
+                                            <i class="fa-solid fa-triangle-exclamation d-flex align-items-center mr-2"></i>
+                                            <strong> <?php echo $_GET['errorDelete']; ?> </strong>
+                                            <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                <?php } ?>
+                                <!-- error message when deleting product -->
+
+                                <!-- 
+                                    ===========================================================================================
+                                    
+                                    product update message
+                                 -->
+                                <!-- successful update message -->
+                                <?php if (isset($_GET['successUpdate'])) { ?>
+                                        <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
+                                            <i class="fa-solid fa-check d-flex d-flex align-items-center mr-2"></i>
+                                            <strong> <?php echo $_GET['successUpdate']; ?> </strong>
+                                            <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                <?php } ?>
+                                <!-- successful update message -->
+
+
+                                <!-- database error message -->
+                                <?php if (isset($_GET['errorUpdate'])) { ?>
+                                        <div class="alert alert-danger alert-dismissible fade show center" role="alert">                
+                                            <i class="fa-solid fa-triangle-exclamation d-flex align-items-center mr-2"></i>
+                                            <strong class="text-justify text-center"> <?php echo $_GET['errorUpdate']; ?> </strong>
+                                            <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                <?php } ?>
+                                <!-- database error message -->
+                                
+
+                                <!-- database error message - 2 -->
+                                <?php if (isset($_GET['errorUpdate2'])) { ?>
+                                        <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center" role="alert">
+                                            <i class="fa-solid fa-triangle-exclamation d-flex align-items-center mr-2"></i>
+                                            <strong> <?php echo $_GET['errorUpdate2']; ?> </strong>
+                                            <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                <?php } ?>
+                                <!-- database error message - 2 -->
+
+
+                                <!-- error message when updating product data -->
+                                <?php if (isset($_GET['errorUpdate3'])) { ?>
+                                        <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center" role="alert">
+                                            <i class="fa-solid fa-triangle-exclamation d-flex align-items-center mr-2"></i>
+                                            <strong> <?php echo $_GET['errorUpdate3']; ?> </strong>
+                                            <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                <?php } ?>
+                                <!-- error message when updating product data -->
+
+
+                                <!-- error message for not having any fields filled in -->
+                                <?php if (isset($_GET['errorUpdate4'])) { ?>
+                                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                            <div class="row center">
+                                                <i class="fa-solid fa-triangle-exclamation d-flex align-items-center mr-2"></i>
+                                                <strong class="text-center">Erro ao alterar informações!</strong>
+                                                <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="row center mt-1">
+                                            <p class="text-justify text-center font-weight-normal mb-0"><?php echo $_GET['errorUpdate4']; ?></p>
+                                            </div>
+                                        </div>
+                                <?php } ?>
+                                <!-- error message for not having any fields filled in -->
+                            </div>
+
                             <div class="row top-table">
                                 <div class="col-12 col-xl-12" style="padding: 0;">
                                     <div class="col-12 col-xl-10 mb-3">
@@ -157,6 +313,7 @@ $providers = search_provider();
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <script src="lib/chart/chart.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>

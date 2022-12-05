@@ -121,21 +121,20 @@ if(isset($_POST['submitProduct'])) {
                 $result_regist_Size = register_product_size($result_regist_id, $SizeAmountList);
 
                 if ($result_regist_Size == true) {
-
-                    header('Location: ../view/dashboard/productsPage.php');
+                    $success = "Produto cadastrado com sucesso!";
+                    header('Location: ../view/dashboard/productsPage.php?SuccessRegister='.$success);
                 }
                 else {
-                    echo "falha ao cadastrar";
+                    $error = "Erro ao cadastrar o produto!";
+                    header('Location: ../view/dashboard/productsPage.php?ErrorRegister='.$error);
                 }
 
             }
 
     } else {
-        echo "<br><h3>erro ao cadastrar!</h3> 
-                    você deve informar: <br> 
-                    O nome do produto. <br> 
-                    O valor do produto. <br> 
-                    Um tamanho e sua quantidade.";
+        $error2 = "você deve informar: O nome do produto, O valor do produto, Um tamanho e sua quantidade.";
+        header('Location: ../view/dashboard/productsPage.php?ErrorRegister2='.$error2);
+
     }
 
 } else {

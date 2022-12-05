@@ -3,23 +3,31 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/requestsBd.php";
 @session_start();
 //see you come through cart button!
 
+if (isset($_GET['checkout'])) {
 
-if(isset($_GET['method'])) {
-    $_SESSION['method_selected'] = 'Transf bancária';
+    die("deu bom");
 
-}else {
-    return header("Location: /project_PI/view/checkout.php");
+
+
+} else {
+    header("Location: /project_PI/view/Error404.html");
 }
 
+
+
+
+
 if(isset($_GET['makeOrder'])) {
+    
     
     if(isset($_GET['method'])) {
         $_SESSION['method_selected'] = 'Transf bancária';
     }else {
-        return header("Location: /project_PI/view/checkout.php");
+        // return header("Location: /project_PI/view/checkout.php");
     }
 
     
+
     if(makeOrder($_SESSION['id_usuario'], $_SESSION['method_selected'], $_GET['subtotal'], $_GET['employe'],
     $_GET['customer'])) {
 
@@ -36,7 +44,7 @@ if(isset($_GET['makeOrder'])) {
     }
 
 }else {
-    return header("Location: /project_PI/view/Error404.html");
+    header("Location: /project_PI/view/Error404.html");
 }
 
 ?>

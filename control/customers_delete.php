@@ -10,13 +10,13 @@ if(isset($_GET['id'])) {
 
     $cust->setId($id);
 
-    $result_delete = delet_customers($cust);
-
-    if($result_delete == true) {
-        header('Location: ../view/dashboard/customersPage.php');
+    if(delet_customers($cust)) {
+        $success = "Excluido com sucesso!";
+        header('Location: ../view/dashboard/customersPage.php?successDelete='.$success);
     }
     else {
-        echo "falha ao deletar";
+        $error = "Erro ao excluir!";
+        header('Location: ../view/dashboard/customersPage.php?errorDelete='.$error);
     }
 } else {
     header('Location: ../view/Error404.html');

@@ -6,14 +6,14 @@ if(isset($_GET['id'])) {
 
     $id = $_GET['id'];
     $prod = getProduct($id);
-    
-    $result_delete = delet_product($prod);
 
-    if($result_delete == true) {
-        header('Location: ../view/dashboard/productsPage.php');
+    if(delet_product($prod)) {
+        $success = "Produto Excluido com sucesso!";
+        header('Location: ../view/dashboard/productsPage.php?successDelete='.$success);
     }
     else {
-        echo "falha ao deletar";
+        $error = "Erro ao Excluir!";
+        header('Location: ../view/dashboard/productsPage.php?errorDelete='.$error);
     }
 
 } else {

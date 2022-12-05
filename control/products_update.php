@@ -73,9 +73,9 @@ if(isset($_POST['submitChangeProduct']) && isset($_POST['idProductChange'])) {
                 
                 
                 if (register_product_size($id, $SizeAmountList)) { // register new sizes and quantities and returns true or false
-                    
-                    header('Location: ../view/dashboard/productsPage.php');
-                    
+                    $success = "Dados do produto atualizados com sucesso!";
+                    header('Location: ../view/dashboard/productsPage.php?successUpdate='.$success);
+
                     /*
                     //handle the post of img
                     if(isset($_FILES)) {
@@ -102,39 +102,27 @@ if(isset($_POST['submitChangeProduct']) && isset($_POST['idProductChange'])) {
                     }else{
                         echo 'não consegui mover o arquivo para o app';
                     }
-                
+                    */
+
                 } else {
-
-                    //the default "image.png" <
-                    
-                    $image = new Images;
-                    $image->setName('image.png'); //here get a "image" on uploads folder on root
-                    $imgId = uploadImage($image);
-                    $prod->setImagemId($imgId);
-                }
-                */
-
-                } 
-                else {
-                    echo "<br>falha ao falha ao atualizar os dados do tamanho do produto";
+                    $error = "Erro ao atualizar os dados do tamanho do produto!";
+                    header('Location: ../view/dashboard/productsPage.php?errorUpdate='.$error);
                 }
 
             } else {
-                echo "<br>falha ao falha ao atualizar os dados do tamanho do produto";
+                $error2 = "Erro ao atualizar os dados do tamanho do produto!";
+                header('Location: ../view/dashboard/productsPage.php?errorUpdate2='.$error2);
             }
 
         } else {
-            echo "<br>falha ao falha ao atualizar os dados";
+            $error3 = "Erro ao atualizar os dados!";
+            header('Location: ../view/dashboard/productsPage.php?errorUpdate3='.$error3);
         }
 
 
     } else {
-        echo "<br><h3>erro ao alterar informações!</h3> 
-        você deve informar: <br>
-        O nome do produto. <br>
-        O valor do produto. <br>
-        Um tamanho e sua quantidade. <br>
-        <a href='../view/dashboard/productsPage.php'> click aqui para voltar e tentar novamente</a>";
+        $error4 = "você deve informar: O nome do produto, O valor do produto, Um tamanho e sua quantidade.";
+        header('Location: ../view/dashboard/productsPage.php?errorUpdate4='.$error4);
     }
 } else {
     header('Location: ../view/Error404.html');

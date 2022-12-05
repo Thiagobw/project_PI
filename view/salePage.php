@@ -67,7 +67,7 @@ $productsList = search_products();
                         ?>
 
 
-                        <div class="col-lg-4 col-md-6 pt-md-0 pt-3">
+                        <div class="col-lg-4 col-md-6 pl-3 pr-3 pb-3">
                             <form class="shadow" method="POST" action="/project_PI/control/control_cart.php">
                                 <div class="card d-flex flex-column align-items-center">
                                     <div class="product-name">
@@ -79,7 +79,7 @@ $productsList = search_products();
                                     </div>
                                         
                                     <div class="row price">
-                                         R$ <span> <?php echo $prod->getPrice().',00'; ?> </span>
+                                         R$ <span> <?php echo $prod->getPrice().',00'; ?></span>
                                     </div>
 
                                     <div class="row mt-2">
@@ -90,19 +90,19 @@ $productsList = search_products();
                                     </div>
                                 
                                     <div class="row mt-1">
-                                        <div class="col-12">
+                                        <div class="col-12 center">
                                             <label class="small font-weight-bold" for="size">
                                                 Tamanhos disponiveis:
                                             </label>
                                         </div>
-                                        <div class="col-12">
+                                        <div class="col-12 center">
                                             <p>
                                                 <?php foreach ($sizes as $size) { ?>
                                                 <?php if ($size['quantidade'] <= 0) {
 
                                                     } else { ?>
 
-                                                        <a class="small" id="size">
+                                                        <a class="small m-1" id="size">
                                                             <?php echo $size['tamanho']; ?>
                                                         </a>
 
