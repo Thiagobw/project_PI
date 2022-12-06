@@ -7,13 +7,13 @@ if(isset($_GET['id'])) {
     $id = $_GET['id'];
     $sales = getSale($id); //handle var to object
 
-    $result_delete = deleteSale($sales);//send object, NO string or int to refer id
-
-    if($result_delete == true) {
-        header('Location: ../view/dashboard/salesListPage.php');
+    if(deleteSale($sales)) { //send object, NO string or int to refer id
+        $success = "Venda excluida com sucesso!";
+        header('Location: ../view/dashboard/salesListPage.php?successDelete='.$success);
     }
     else {
-        echo "falha ao deletar";
+        $error = "Erro ao excluir!";
+        header('Location: ../view/dashboard/salesListPage.php?errorDelete='.$error);
     }
 
 } else {
