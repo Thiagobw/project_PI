@@ -4,9 +4,9 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/requestsBd.php";
 //see you come through cart button!
 
 if (isset($_GET['checkout']) || isset($_GET['makeOrder'])) {
-
+    
     if (isset($_GET['checkout'])) {
-        header("Location: /project_PI/view/checkout.php");
+        return header("Location: /project_PI/view/checkout.php");
     }
     
     if (isset($_GET['makeOrder'])) {
