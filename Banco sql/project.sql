@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 4.8.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 30-Nov-2022 às 09:00
--- Versão do servidor: 10.4.25-MariaDB
--- versão do PHP: 8.1.10
+-- Host: localhost
+-- Generation Time: 06-Dez-2022 às 14:42
+-- Versão do servidor: 5.7.27-log
+-- PHP Version: 7.3.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `project`
+-- Database: `project`
 --
 
 -- --------------------------------------------------------
@@ -80,7 +81,10 @@ CREATE TABLE `fornecedor` (
 --
 
 INSERT INTO `fornecedor` (`id_fornecedor`, `nome`, `cnpj`, `email`, `telefone`) VALUES
-(1, 'Naian Web Sollution', '28.329.387/0001-43', 'contato@naian.com.br', '999999999');
+(1, 'Adidas', '42.274.696/0045-55', 'atendimentoadidas@adidas.com', '(11) 5546-3700'),
+(2, 'Nike', '59.546.515/0045-55', 'atendimento@lojanike.com', '(11) 4004-9994'),
+(3, 'Louis Vuitton', '11.098.433/0014-62', 'brazil@contact.louisvuitton.com', '(11) 3060-5099'),
+(4, 'New Balance', '11.098.433/0014-62', 'atendimento@nbbrasil.com', '(11) 3003-7779');
 
 -- --------------------------------------------------------
 
@@ -98,7 +102,23 @@ CREATE TABLE `imagens` (
 --
 
 INSERT INTO `imagens` (`id_imagens`, `nome`) VALUES
-(10, 'atvdd.png');
+(11, 'BadBunnyBlack.jpeg'),
+(12, 'airForce1.png'),
+(13, 'airJordanChicago.png'),
+(14, 'BadBunnyBlue.jpeg'),
+(15, 'Blazermid.jpeg'),
+(16, 'DunkLowBenJerry.jpeg'),
+(17, 'DunkLowNatal.jpeg'),
+(18, 'DunkLowTrevo.jpeg'),
+(19, 'Jordan4off.jpeg'),
+(20, 'LVtrainer.jpeg'),
+(21, 'New550laranja.jpeg'),
+(22, 'NewBal550Verde.jpeg'),
+(23, 'NikeAir.jpeg'),
+(24, 'UltraBoost22.jpeg'),
+(25, 'YezzyOreo.jpeg'),
+(26, 'YezzyOreo.jpeg'),
+(27, 'YezzyZebra.jpeg');
 
 -- --------------------------------------------------------
 
@@ -117,7 +137,7 @@ CREATE TABLE `pedido` (
   `endereco` varchar(64) DEFAULT NULL,
   `endereco_numero` int(9) DEFAULT NULL,
   `endereco_cep` int(11) DEFAULT NULL,
-  `complemento` text DEFAULT NULL
+  `complemento` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -176,7 +196,23 @@ CREATE TABLE `produtos` (
 --
 
 INSERT INTO `produtos` (`id_produtos`, `nome_produto`, `preco_produto`, `imagens_id`, `fornecedor_id`) VALUES
-(12, 'testeado', 9000, 10, 1);
+(13, 'Adidas Forum Low X Bad Bunny Back To School', 440, 11, 1),
+(14, 'Nike Air Force 1 white', 400, 12, 2),
+(15, 'Nike Air Jordan 1 â€œChicago Reimaginedâ€', 400, 13, 2),
+(16, 'Adidas Forum Low x Bad Bunny Blue Tint', 440, 14, 1),
+(17, 'Nike SB Zoom Blazer Mid', 420, 15, 2),
+(18, 'Nike Ben & Jerry\'s X Nike Sb Dunk Low Chunky Dunky', 420, 16, 2),
+(19, 'Sean Cliver X Nike Sb Dunk Holiday', 420, 17, 2),
+(20, 'Nike SB Dunk Low Pro St. Patrick\'s Day 2022', 420, 18, 2),
+(21, 'Nike Off-White x Air Jordan 4', 500, 19, 2),
+(22, 'Louis Vuitton Trainer, preÃ§o', 480, 20, 3),
+(23, 'New Balance 550 Au Lait', 420, 21, 4),
+(24, 'New Balance 550 White Green', 420, 22, 4),
+(25, 'Nike Air More Uptempo 96', 500, 23, 2),
+(26, 'Adidas Ultraboost 22', 400, 24, 1),
+(27, 'Adidas Yeezy Boost 350 V2 Oreo', 420, 25, NULL),
+(28, 'Adidas Yeezy Boost 350 V2 Oreo', 420, 26, 1),
+(29, 'Adidas Yeezy Boost 350 V2 Zebra', 420, 27, 1);
 
 -- --------------------------------------------------------
 
@@ -207,7 +243,149 @@ INSERT INTO `tamanho` (`id_tamanho`, `tamanho`, `quantidade`, `id_produto`) VALU
 (9, 42, 2, 1),
 (10, 43, 3, 1),
 (24, 34, 4, 7),
-(29, 34, 90, 12);
+(30, 36, 2, 13),
+(31, 37, 3, 13),
+(32, 38, 3, 13),
+(33, 39, 7, 13),
+(34, 40, 5, 13),
+(35, 41, 5, 13),
+(36, 42, 4, 13),
+(37, 34, 4, 14),
+(38, 35, 5, 14),
+(39, 36, 4, 14),
+(40, 37, 5, 14),
+(41, 38, 5, 14),
+(42, 39, 8, 14),
+(43, 40, 10, 14),
+(44, 41, 6, 14),
+(45, 42, 5, 14),
+(46, 43, 3, 14),
+(47, 36, 4, 15),
+(48, 37, 6, 15),
+(49, 38, 5, 15),
+(50, 39, 8, 15),
+(51, 40, 10, 15),
+(52, 41, 4, 15),
+(53, 42, 5, 15),
+(54, 37, 5, 16),
+(55, 38, 2, 16),
+(56, 39, 3, 16),
+(57, 40, 3, 16),
+(58, 41, 3, 16),
+(59, 42, 2, 16),
+(60, 34, 4, 17),
+(61, 35, 5, 17),
+(62, 36, 3, 17),
+(63, 39, 4, 17),
+(64, 40, 5, 17),
+(65, 41, 4, 17),
+(66, 42, 3, 17),
+(67, 43, 3, 17),
+(68, 34, 2, 18),
+(69, 35, 2, 18),
+(70, 36, 2, 18),
+(71, 37, 3, 18),
+(72, 38, 2, 18),
+(73, 39, 3, 18),
+(74, 40, 3, 18),
+(75, 41, 3, 18),
+(76, 42, 2, 18),
+(77, 43, 2, 18),
+(78, 35, 3, 19),
+(79, 38, 2, 19),
+(80, 39, 2, 19),
+(81, 40, 2, 19),
+(82, 41, 2, 19),
+(83, 42, 2, 19),
+(84, 43, 2, 19),
+(85, 34, 3, 20),
+(86, 35, 3, 20),
+(87, 39, 2, 20),
+(88, 40, 6, 20),
+(89, 41, 6, 20),
+(90, 42, 4, 20),
+(91, 43, 5, 20),
+(92, 34, 7, 21),
+(93, 35, 7, 21),
+(94, 39, 6, 21),
+(95, 40, 6, 21),
+(96, 41, 6, 21),
+(97, 42, 4, 21),
+(98, 43, 3, 21),
+(99, 34, 4, 22),
+(100, 35, 7, 22),
+(101, 39, 6, 22),
+(102, 40, 6, 22),
+(103, 41, 6, 22),
+(104, 42, 4, 22),
+(105, 43, 3, 22),
+(106, 34, 5, 23),
+(107, 35, 5, 23),
+(108, 36, 5, 23),
+(109, 37, 5, 23),
+(110, 38, 6, 23),
+(111, 39, 7, 23),
+(112, 40, 7, 23),
+(113, 41, 6, 23),
+(114, 42, 5, 23),
+(115, 43, 3, 23),
+(116, 34, 3, 24),
+(117, 35, 4, 24),
+(118, 36, 3, 24),
+(119, 37, 3, 24),
+(120, 38, 3, 24),
+(121, 39, 7, 24),
+(122, 40, 6, 24),
+(123, 41, 4, 24),
+(124, 42, 4, 24),
+(125, 43, 3, 24),
+(126, 37, 3, 25),
+(127, 38, 3, 25),
+(128, 39, 4, 25),
+(129, 40, 6, 25),
+(130, 41, 5, 25),
+(131, 42, 3, 25),
+(132, 43, 3, 25),
+(133, 34, 6, 26),
+(134, 35, 6, 26),
+(135, 36, 6, 26),
+(136, 37, 6, 26),
+(137, 38, 6, 26),
+(138, 39, 5, 26),
+(139, 40, 8, 26),
+(140, 41, 5, 26),
+(141, 42, 6, 26),
+(142, 43, 6, 26),
+(145, 34, 5, 27),
+(146, 35, 4, 27),
+(147, 36, 5, 27),
+(148, 37, 5, 27),
+(149, 38, 6, 27),
+(150, 39, 9, 27),
+(151, 40, 10, 27),
+(152, 41, 5, 27),
+(153, 42, 4, 27),
+(154, 43, 5, 27),
+(155, 34, 5, 28),
+(156, 35, 5, 28),
+(157, 36, 5, 28),
+(158, 37, 5, 28),
+(159, 38, 6, 28),
+(160, 39, 6, 28),
+(161, 40, 10, 28),
+(162, 41, 8, 28),
+(163, 42, 6, 28),
+(164, 43, 4, 28),
+(165, 34, 2, 29),
+(166, 35, 3, 29),
+(167, 36, 8, 29),
+(168, 37, 6, 29),
+(169, 38, 7, 29),
+(170, 39, 8, 29),
+(171, 40, 8, 29),
+(172, 41, 4, 29),
+(173, 42, 5, 29),
+(174, 43, 3, 29);
 
 -- --------------------------------------------------------
 
@@ -222,8 +400,15 @@ CREATE TABLE `usuarios` (
   `telefone` char(15) DEFAULT NULL,
   `email` varchar(60) NOT NULL DEFAULT '',
   `senha` varchar(260) NOT NULL DEFAULT '',
-  `tipo` int(1) NOT NULL DEFAULT 1
+  `tipo` int(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Extraindo dados da tabela `usuarios`
+--
+
+INSERT INTO `usuarios` (`id_usuario`, `nome`, `cpf`, `telefone`, `email`, `senha`, `tipo`) VALUES
+(5, 'Rafael Bressanini', '103.725.339-65', '(47) 99686-7053', 'laimportsloja@gmail.com', '$argon2i$v=19$m=2048,t=4,p=3$eXQyRW85N1NlWmJ0UnJIcQ$1+9neyXFK7A0K5hWq60V0/u183Hs3JaAdz5SuHe5a7M', 1);
 
 -- --------------------------------------------------------
 
@@ -237,7 +422,7 @@ CREATE TABLE `vendedor` (
   `CPF` varchar(14) NOT NULL,
   `email` varchar(40) NOT NULL,
   `telefone` char(15) NOT NULL,
-  `tipo` int(11) DEFAULT 2,
+  `tipo` int(11) DEFAULT '2',
   `senha` varchar(300) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -250,117 +435,117 @@ INSERT INTO `vendedor` (`id_vendedor`, `nome`, `CPF`, `email`, `telefone`, `tipo
 (2, 'Vendedora', '145.232.321-41', 'vendedora@gmail.com', '21997998016', 2, NULL);
 
 --
--- Índices para tabelas despejadas
+-- Indexes for dumped tables
 --
 
 --
--- Índices para tabela `cliente`
+-- Indexes for table `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id_cliente`);
 
 --
--- Índices para tabela `fornecedor`
+-- Indexes for table `fornecedor`
 --
 ALTER TABLE `fornecedor`
   ADD PRIMARY KEY (`id_fornecedor`);
 
 --
--- Índices para tabela `imagens`
+-- Indexes for table `imagens`
 --
 ALTER TABLE `imagens`
   ADD PRIMARY KEY (`id_imagens`);
 
 --
--- Índices para tabela `pedido`
+-- Indexes for table `pedido`
 --
 ALTER TABLE `pedido`
   ADD PRIMARY KEY (`id_pedido`);
 
 --
--- Índices para tabela `pedido_produto`
+-- Indexes for table `pedido_produto`
 --
 ALTER TABLE `pedido_produto`
   ADD PRIMARY KEY (`idPedido_Produto`);
 
 --
--- Índices para tabela `produtos`
+-- Indexes for table `produtos`
 --
 ALTER TABLE `produtos`
   ADD PRIMARY KEY (`id_produtos`);
 
 --
--- Índices para tabela `tamanho`
+-- Indexes for table `tamanho`
 --
 ALTER TABLE `tamanho`
   ADD PRIMARY KEY (`id_tamanho`);
 
 --
--- Índices para tabela `usuarios`
+-- Indexes for table `usuarios`
 --
 ALTER TABLE `usuarios`
   ADD PRIMARY KEY (`id_usuario`);
 
 --
--- Índices para tabela `vendedor`
+-- Indexes for table `vendedor`
 --
 ALTER TABLE `vendedor`
   ADD PRIMARY KEY (`id_vendedor`);
 
 --
--- AUTO_INCREMENT de tabelas despejadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `cliente`
+-- AUTO_INCREMENT for table `cliente`
 --
 ALTER TABLE `cliente`
   MODIFY `id_cliente` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT de tabela `fornecedor`
+-- AUTO_INCREMENT for table `fornecedor`
 --
 ALTER TABLE `fornecedor`
-  MODIFY `id_fornecedor` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_fornecedor` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT de tabela `imagens`
+-- AUTO_INCREMENT for table `imagens`
 --
 ALTER TABLE `imagens`
-  MODIFY `id_imagens` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_imagens` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
--- AUTO_INCREMENT de tabela `pedido`
+-- AUTO_INCREMENT for table `pedido`
 --
 ALTER TABLE `pedido`
   MODIFY `id_pedido` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT de tabela `pedido_produto`
+-- AUTO_INCREMENT for table `pedido_produto`
 --
 ALTER TABLE `pedido_produto`
   MODIFY `idPedido_Produto` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT de tabela `produtos`
+-- AUTO_INCREMENT for table `produtos`
 --
 ALTER TABLE `produtos`
-  MODIFY `id_produtos` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id_produtos` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
--- AUTO_INCREMENT de tabela `tamanho`
+-- AUTO_INCREMENT for table `tamanho`
 --
 ALTER TABLE `tamanho`
-  MODIFY `id_tamanho` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id_tamanho` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=175;
 
 --
--- AUTO_INCREMENT de tabela `usuarios`
+-- AUTO_INCREMENT for table `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_usuario` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de tabela `vendedor`
+-- AUTO_INCREMENT for table `vendedor`
 --
 ALTER TABLE `vendedor`
   MODIFY `id_vendedor` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
