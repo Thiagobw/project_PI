@@ -8,7 +8,7 @@ if(isset($_GET['id'])) {
     $prod = getProduct($id);
 
     if(delet_product($prod)) {
-        $success = "Produto Excluido com sucesso!";
+        $success = "Produto excluido com sucesso!";
         header('Location: ../view/dashboard/productsPage.php?successDelete='.$success);
     }
     else {

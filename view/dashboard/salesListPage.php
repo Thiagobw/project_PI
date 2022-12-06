@@ -73,11 +73,7 @@ $sales =  search_sales();
             </nav>
             <!-- Navbar End -->
 
-            <!-- Importing popup file -->
-            <?php
-            require_once "popUps/popUp-register.php";
-            include_once "popUps/popUp-change.php";
-            ?>
+
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -101,6 +97,36 @@ $sales =  search_sales();
                                         </div>
                                 <?php } ?>
                                 <!-- successful sale message -->
+
+                                <!-- 
+                                    ===========================================================================================
+                                    
+                                    sales delete message
+                                 -->
+                                <!-- successful deletion message -->
+                                <?php if (isset($_GET['successDelete'])) { ?>
+                                        <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
+                                            <i class="fa-solid fa-check d-flex d-flex align-items-center mr-2"></i>
+                                            <strong> <?php echo $_GET['successDelete']; ?> </strong>
+                                            <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                <?php } ?>
+                                <!-- successful deletion message -->
+
+
+                                <!-- error message when deleting sale -->
+                                <?php if (isset($_GET['errorDelete'])) { ?>
+                                        <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center" role="alert">
+                                            <i class="fa-solid fa-triangle-exclamation d-flex align-items-center mr-2"></i>
+                                            <strong> <?php echo $_GET['errorDelete']; ?> </strong>
+                                            <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                <?php } ?>
+                                <!-- error message when deleting sale -->
                             </div>
 
                             <div class="row top-table">
@@ -176,11 +202,17 @@ $sales =  search_sales();
 
         <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- Importing popup file -->
+    <?php
+        require_once "popUps/popUp-register.php";
+        include_once "popUps/popUp-change.php";
+    ?>
     </div>
 
     <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
     <script src="lib/chart/chart.min.js"></script>
     <script src="lib/easing/easing.min.js"></script>
     <script src="lib/waypoints/waypoints.min.js"></script>

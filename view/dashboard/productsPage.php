@@ -71,11 +71,7 @@ $providers = search_provider();
             </nav>
             <!-- Navbar End -->
 
-            <!-- Importing popup file -->
-            <?php
-                require_once "popUps/popUp-register.php";
-                include_once "popUps/popUp-change.php";
-            ?>
+            
             <!-- Table Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -306,8 +302,13 @@ $providers = search_provider();
         <!-- Content End -->
 
 
-        <!-- Back to Top -->
+ <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+    <!-- Importing popup file -->
+    <?php
+        require_once "popUps/popUp-register.php";
+        include_once "popUps/popUp-change.php";
+    ?>
     </div>
 
     <!-- JavaScript Libraries -->
