@@ -30,6 +30,7 @@ $(document).ready(function () {
 
 
 
+
     /* log in */
     $('#form1').submit(function (e) {
         e.preventDefault();
@@ -37,7 +38,18 @@ $(document).ready(function () {
         var passLog = $('#passLog').val();
 
         if (cpfLog.length == 0 || passLog.length == 0) {
-            alert("preencha todos os campos para poder fazer log in!");
+            
+            if (cpfLog.length == 0) {
+                $("#CpfLog").css('border', '1px solid #ff0700');
+                $("#CpfLog").css('background-color', '#ffe4e9');
+            }
+            if (passLog.length == 0) {
+                $("#passLog").css('border', '1px solid #ff0700');
+                $("#passLog").css('background-color', '#ffe4e9');
+            }
+            $("#alertDanger").css('display', 'flex');
+            $("#alertDanger").css('justify-content', 'center');
+            $("#isEmpty").css('display', 'flex');
         } else {
 
             if (checkCPF(cpfLog)) {
@@ -53,16 +65,24 @@ $(document).ready(function () {
                         if (data.status == true) {
                             window.location.replace(window.location.pathname + 'dashboard/');
                         } else {
-                            alert(data.msg);
+                            //alert(data.msg);
+                            $("#alertDanger").css('display', 'flex');
+                            $("#alertDanger").css('justify-content', 'center');
                         }
                     },
                     error: function (data) {
-                        alert('Erro: contate o suporte')
+                        //alert('Erro: contate o suporte')
+                        $("#alertDanger").css('display', 'flex');
+                            $("#alertDanger").css('align-items', 'center');
+                            $("#alertDanger").css('justify-content', 'center');
+                            $("#errorData").css('display', 'flex');
                     }
                 });
 
             } else {
-                alert('CPF invalido');
+                $("#alertDanger").css('display', 'flex');
+                $("#alertDanger").css('justify-content', 'center');
+                $("#cpfInvalid").css('display', 'flex');
             }
         }
     })

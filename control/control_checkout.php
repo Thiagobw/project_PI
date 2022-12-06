@@ -28,11 +28,12 @@ if (isset($_GET['checkout']) || isset($_GET['makeOrder'])) {
             } else {
                 header("Location: /project_PI/view/checkout.php");
             }
-        }
-        
-        else {
+        } else {
             header("Location: /project_PI/view/checkout.php");
         }
+
+    } else {
+        return header("Location: /project_PI/view/cart.php");
     }
 
 

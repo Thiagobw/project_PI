@@ -17,7 +17,7 @@
                 <div class="row" id="account">
                     <div class="col-12 a-group">
                         <form class="input-group center" id="form1" action="/project_PI/control/authentication.php"  method="post">
-                            <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8">
+                        <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8">
                                 <label for="Email"><i class="fa-regular fa-address-card"></i></label>
                                 <input class=" form-control input-user" type="text" placeholder="CPF" id="CpfLog"  name="cpf" maxlength="14" autocomplete="off">
                             </div>
@@ -25,6 +25,18 @@
                                 <label for="Senha"><i class="bi bi-key"></i></label>
                                 <input class="form-control input-user" type="password" placeholder="Senha" id="passLog"  name="pass">
                                 <button type="button" class="btnView" id="btnViewPL" onclick="alterViewPassL()"><i class="fa-solid fa-eye"></i></button>
+                            </div>
+                            <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 alert alert-danger mb-0" role="alert" id="alertDanger" style="display: none;">
+                                <strong class="text-center" id="isEmpty" style="display: none;"> Preencha todos os campos! </strong>
+                                <strong class="text-center" id="cpfInvalid" style="display: none;"> CPF invalido! </strong>
+                                <span class="row center" id="errorData" style="display: none;">
+                                    <div class="col-12 col-md-8 center p-0">
+                                        <strong class="text-center"> Erro inesperado! </strong>
+                                    </div>
+                                    <div class="col-12 col-md-8 center p-0">
+                                        <p class="mb-0"> Contate o suporte. </p>
+                                    </div>
+                                </span>
                             </div>
                             <div class="col-5 col-sm-5 col-lg-5 mt-3 center">
                                 <input class="btn btn-primary w-100 btn-log" form="form1" type="submit" name="log-in" value="Entrar">
