@@ -19,17 +19,21 @@ if (isset($_GET['checkout']) || isset($_GET['makeOrder'])) {
 
 
                 if(makeOrder($_SESSION['id_usuario'], $_SESSION['method_selected'], $_GET['subtotal'], $_GET['employe'], $_GET['customer'])) {
-            
-                    return header("Location: /project_PI/view/dashboard/salesListPage.php");
+                    $success = "Venda efetuada com sucesso!";
+                    return header("Location: /project_PI/view/dashboard/salesListPage.php?successSale=".$success);
+
                 }else{
-                    return header("Location: /project_PI/view/cart.php");
+                    $error = "Erro ao efetuar a venda!";
+                    return header("Location: /project_PI/view/dashboard/salesListPage.php?errorSale=".$error);
                 }
 
             } else {
-                header("Location: /project_PI/view/checkout.php");
+                return header("Location: /project_PI/view/checkout.php");
             }
+
         } else {
-            header("Location: /project_PI/view/checkout.php");
+            $error2 = "para concluir a venda é necessario selecionar um metodo de pagamento.";
+            header("Location: /project_PI/view/checkout.php?errorMethod=".$error2);
         }
 
     } else {
@@ -38,7 +42,7 @@ if (isset($_GET['checkout']) || isset($_GET['makeOrder'])) {
 
 
 } else {
-    header("Location: /project_PI/view/Error404.html");
+    return header("Location: /project_PI/view/Error404.html");
 }
 
 

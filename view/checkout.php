@@ -81,7 +81,23 @@ $employees = search_employee();
                     <hr class="my-3">
                         <!-- old form to get already use method of user -->
                     <form action="/project_PI/control/control_checkout.php" method="GET" class="mt-4">
-                      <div class="row">
+                      <div class="row center">
+                        <!-- 
+                          ===========================================================================================
+                          sales message
+                        -->
+                        <!-- successful sale message -->
+                        <?php if (isset($_GET['errorMethod'])) { ?>
+                          <div class="col-10 alert alert-warning alert-dismissible fade show d-flex align-items-center" role="alert">
+                            <i class="fa-solid fa-check d-flex align-items-center mr-2"></i>
+                            <p class="m-0"> <?php echo $_GET['errorMethod']; ?> </p>
+                            <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                        <?php } ?>
+                                <!-- successful sale message -->
+
                         <div class="col-12">
                           <p class="small">Forma de Pagamento</p>
                         </div>
@@ -170,7 +186,9 @@ $employees = search_employee();
     </div>
   </section>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 <script src="js/pop-upDisplayControl.js"></script>
 <script src="js/login-register.js"></script>

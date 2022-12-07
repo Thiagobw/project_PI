@@ -203,7 +203,7 @@ INSERT INTO `produtos` (`id_produtos`, `nome_produto`, `preco_produto`, `imagens
 (17, 'Nike SB Zoom Blazer Mid', 420, 15, 2),
 (18, 'Nike Ben & Jerry\'s X Nike Sb Dunk Low Chunky Dunky', 420, 16, 2),
 (19, 'Sean Cliver X Nike Sb Dunk Holiday', 420, 17, 2),
-(20, 'Nike SB Dunk Low Pro St. Patrick\'s Day 2022', 420, 18, 2),
+(20, 'Nike SB Dunk Low Pro St. Patrick\'s Day', 420, 18, 2),
 (21, 'Nike Off-White x Air Jordan 4', 500, 19, 2),
 (22, 'Louis Vuitton Trainer, preÃ§o', 480, 20, 3),
 (23, 'New Balance 550 Au Lait', 420, 21, 4),

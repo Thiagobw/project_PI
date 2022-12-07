@@ -77,7 +77,7 @@ $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : seeCartItems($user['id_us
                     <div class="col-12">
                         <a href="/project_PI/view/salePage.php" class="btn btn-block btn-warning">
                             <i class="fas fa-long-arrow-alt-left me-2"></i>
-                            Continuar Comprando!
+                            Adicionar produtos!
                         </a>
                     </div>
                 </div>

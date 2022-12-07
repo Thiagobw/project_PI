@@ -87,16 +87,34 @@ $sales =  search_sales();
                                     sales message
                                  -->
                                 <!-- successful sale message -->
-                                <?php if (isset($_GET['SuccessSale'])) { ?>
+                                <?php if (isset($_GET['successSale'])) { ?>
                                         <div class="alert alert-success alert-dismissible fade show d-flex align-items-center" role="alert">
                                             <i class="fa-solid fa-check d-flex align-items-center mr-2"></i>
-                                            <strong> <?php echo $_GET['SuccessSale']; ?> </strong>
+                                            <strong> <?php echo $_GET['successSale']; ?> </strong>
                                             <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                 <?php } ?>
                                 <!-- successful sale message -->
+
+
+                                <!-- error message when registering the product, because of the database -->
+                                <?php if (isset($_GET['errorSale'])) { ?>
+                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                        <div class="row center">
+                                            <i class="fa-solid fa-triangle-exclamation d-flex align-items-center mr-2"></i>
+                                            <strong> <?php echo $_GET['errorSale']; ?> </strong>
+                                            <button type="button" class="btn close" data-dismiss="alert" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="row center mt-1">
+                                            <p class="text-justify text-center font-weight-normal mb-0"> Se o erro persistir contate o suporte! </p>
+                                        </div>
+                                    </div>
+                                <?php } ?>
+                                <!-- error message when registering the product, because of the database -->
 
                                 <!-- 
                                     ===========================================================================================
