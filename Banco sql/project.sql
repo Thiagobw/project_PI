@@ -201,18 +201,17 @@ INSERT INTO `produtos` (`id_produtos`, `nome_produto`, `preco_produto`, `imagens
 (15, 'Nike Air Jordan 1 â€œChicago Reimaginedâ€', 400, 13, 2),
 (16, 'Adidas Forum Low x Bad Bunny Blue Tint', 440, 14, 1),
 (17, 'Nike SB Zoom Blazer Mid', 420, 15, 2),
-(18, 'Nike Ben & Jerry\'s X Nike Sb Dunk Low Chunky Dunky', 420, 16, 2),
+(18, 'Nike Ben & Jerry\s X Nike Sb Dunk Low Chunky Dunky', 420, 16, 2),
 (19, 'Sean Cliver X Nike Sb Dunk Holiday', 420, 17, 2),
-(20, 'Nike SB Dunk Low Pro St. Patrick\'s Day', 420, 18, 2),
+(20, 'Nike SB Dunk Low Pro St. Patrick\s Day', 420, 18, 2),
 (21, 'Nike Off-White x Air Jordan 4', 500, 19, 2),
 (22, 'Louis Vuitton Trainer, preÃ§o', 480, 20, 3),
 (23, 'New Balance 550 Au Lait', 420, 21, 4),
 (24, 'New Balance 550 White Green', 420, 22, 4),
 (25, 'Nike Air More Uptempo 96', 500, 23, 2),
 (26, 'Adidas Ultraboost 22', 400, 24, 1),
-(27, 'Adidas Yeezy Boost 350 V2 Oreo', 420, 25, NULL),
-(28, 'Adidas Yeezy Boost 350 V2 Oreo', 420, 26, 1),
-(29, 'Adidas Yeezy Boost 350 V2 Zebra', 420, 27, 1);
+(27, 'Adidas Yeezy Boost 350 V2 Oreo', 420, 26, 1),
+(28, 'Adidas Yeezy Boost 350 V2 Zebra', 420, 27, 1);
 
 -- --------------------------------------------------------
 
