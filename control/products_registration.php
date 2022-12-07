@@ -5,6 +5,7 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/productsBd.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/imagesBd.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Products.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/model/Images.php";
+    
 
 /**
  * check if the form was sent
@@ -20,14 +21,12 @@ if(isset($_POST['submitProduct'])) {
         isset($_POST['checkSize36']) || isset($_POST['checkSize37']) || 
         isset($_POST['checkSize38']) || isset($_POST['checkSize39']) ||
         isset($_POST['checkSize40']) || isset($_POST['checkSize41']) || 
-        isset($_POST['checkSize42']) || isset($_POST['checkSize43']))) {
-
+        isset($_POST['checkSize42']) || isset($_POST['checkSize43'])) && (isset($_POST['provider']) && is_numeric($_POST['provider']))) {
             /**
              * identifies which size will 
              * be registered and adds it to the list
              */
-            $SizeAmountList = array();
-            
+            $SizeAmountList = array();  
             if(isset($_POST['checkSize34'])) {
                 $SizeAmountList[] = [34, $_POST['amountProdSize34']];
             }
@@ -67,6 +66,7 @@ if(isset($_POST['submitProduct'])) {
             if(isset($_POST['checkSize43'])) {
                 $SizeAmountList[] = [43, $_POST['amountProdSize43']];
             }
+            
             $name = $_POST['nameProduct'];
             $price = $_POST['priceProduct'];
             
@@ -109,11 +109,7 @@ if(isset($_POST['submitProduct'])) {
                 $imgId = uploadImage($image);
                 $prod->setImagemId($imgId);
             }
-            
-            //check if the provider has selected
-            if(isset($_POST['provider']) and $_POST['provider'] != 'null'){
-                $prod->setProviderId($_POST['provider']);
-            }
+
             //register
             $result_regist_id = register_product($prod);
             if (!is_null($result_regist_id)) {
@@ -132,7 +128,7 @@ if(isset($_POST['submitProduct'])) {
             }
 
     } else {
-        $error2 = "você deve informar: O nome do produto, O valor do produto, Um tamanho e sua quantidade.";
+        $error2 = "você deve informar: O nome do produto, O valor do produto, um fornecedor, um tamanho e sua quantidade.";
         header('Location: ../view/dashboard/productsPage.php?ErrorRegister2='.$error2);
 
     }

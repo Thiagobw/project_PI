@@ -1,11 +1,10 @@
 <?php
-session_start();
+@session_start();
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/control/checkAuth.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/Productsbd.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/providersBd.php";
 
 $productsList = search_products();
-$providers = search_provider();
 
 ?>
 <!DOCTYPE html>
@@ -274,7 +273,7 @@ $providers = search_provider();
                                         <tr>
                                             <td> <?php echo $prod -> getName(); ?></td>
                                             <td> <?php echo $prod -> getAmount();?> </td>
-                                            <td> <?php echo $prod -> getPrice();?> </td>
+                                            <td> <?php echo "R$ ".$prod -> getPrice().",00";?> </td>
                                             <td> <?php //echo $prod -> getTamanho();?> </td>
                                             <!-- getting the provider name with relation of these models -->
                                             <td> <?php echo getProvider($prod->getProviderId())->getName();?> </td>
