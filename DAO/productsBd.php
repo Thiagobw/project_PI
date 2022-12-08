@@ -11,7 +11,7 @@ function search_products() {
     $stmt->execute();
 
     $result = $stmt->fetchAll();
-    $resul_produtos = array();
+    $result_produtos = array();
 
     foreach($result as $registro) {
         $produto = new Products();
@@ -26,11 +26,24 @@ function search_products() {
             $produto->setProviderId($registro['fornecedor_id']);
         }
 
-        $resul_produtos[] = $produto;
+
+        $stmt2 = $conexao->prepare("SELECT * FROM tamanho WHERE id_produto=?");
+        $stmt2 ->execute([$registro["id_produtos"]]);
+        $result2 = $stmt2->fetchAll();
+        $sizes_amounts = array();
+        foreach ($result2 as $registro2) {
+            $sizes = $registro2['tamanho'];
+            $amounts = $registro2['quantidade'];
+            $sizes_amounts[] = [$sizes, $amounts];
+        }
+        $produto->setSizes_Amounts($sizes_amounts);
+        $result_produtos[] = $produto;
     }
-    return $resul_produtos;
+    return $result_produtos;
 }
-function find_products_names($id){
+
+
+function find_products_names($id) {
     $conexao = connect();
     $stmt = $conexao->prepare("SELECT nome_produto FROM produtos WHERE id_produtos = :id");
     $stmt->bindValue(':id', $id);

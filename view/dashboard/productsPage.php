@@ -5,7 +5,6 @@ include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/Productsbd.php";
 include_once $_SERVER["DOCUMENT_ROOT"]."/project_PI/DAO/providersBd.php";
 
 $productsList = search_products();
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -246,9 +245,9 @@ $productsList = search_products();
                                 <table class="table text-secondary">
                                     <thead>
                                         <tr>
-                                            <th scope="col">Nome</th>
-                                            <th scope="col">Quantidade em estoque</th>
-                                            <th scope="col">Preço</th>
+                                            <th scope="col"> Nome </th>
+                                            <th scope="col"> Preço </th>
+                                            <th scope="col"> Quantidade em estoque</th>
                                             <th scope="col">Tamanhos</th>
                                             <th scope="col">Fornecedor</th>
                                             <th scope="col">Ações</th>
@@ -272,9 +271,9 @@ $productsList = search_products();
                                     ?>
                                         <tr>
                                             <td> <?php echo $prod -> getName(); ?></td>
-                                            <td> <?php echo $prod -> getAmount();?> </td>
                                             <td> <?php echo "R$ ".$prod -> getPrice().",00";?> </td>
-                                            <td> <?php //echo $prod -> getTamanho();?> </td>
+                                            <td> <?php $amountTotal = 0; foreach ($prod -> getSizes_Amounts() as $listAm) { $amountTotal += $listAm[1]."  ";} echo $amountTotal; ?> </td>
+                                            <td> <?php foreach ($prod -> getSizes_Amounts() as $listSz) { echo $listSz[0]."  ";} ?> </td>
                                             <!-- getting the provider name with relation of these models -->
                                             <td> <?php echo getProvider($prod->getProviderId())->getName();?> </td>
 

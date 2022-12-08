@@ -75,11 +75,6 @@ $productsList = search_products();
                                     </div>
                                     
                                     <div class="card-img">
-                                        <?php list($l, $a) = getimagesize("../uploads/".$image->getName());
-                                        echo "dimensões: ".$l."X".$a;
-                                        
-                                        ?>
-
                                         <img class="img-fluid w-100" src="/project_PI/uploads/<?php echo $image->getName(); ?>" alt="">
                                     </div>
                                         

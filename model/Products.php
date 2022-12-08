@@ -10,7 +10,14 @@ class Products {
     private $imageId;
     private $imgName;
     private $providerId;
+    private $Sizes_Amounts;
 
+    function setSizes_Amounts( array $sizes_amounts) {
+        $this->Sizes_Amounts = $sizes_amounts;
+    }
+    function getSizes_Amounts () {
+        return $this->Sizes_Amounts;
+    }
     function setImgName(string $nameImg) {
         $this->imgName = $nameImg;
     }
@@ -43,7 +50,7 @@ class Products {
     public function getName() {
         return $this -> name;
     }
-    public function setAmount( $amountTotal) {
+    public function setAmount(array $amountTotal) {
         $this -> amountTotal = $amountTotal;
     }
     public function getAmount() {
