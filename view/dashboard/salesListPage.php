@@ -155,8 +155,8 @@ $sales =  search_sales();
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table text-secondary">
-                                    <thead>
+                                <table class="table table-hover text-secondary">
+                                    <thead class="text-center">
                                         <tr>
                                             <th scope="col">Data</th>
                                             <th scope="col">Valor</th>
@@ -166,7 +166,7 @@ $sales =  search_sales();
                                             <th scope="col">Ações</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <?php
                                         if (empty($sales) == true) {
                                         ?>

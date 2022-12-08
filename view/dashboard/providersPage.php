@@ -215,8 +215,8 @@ $providersList = search_provider();
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table text-secondary">
-                                    <thead>
+                                <table class="table table-hover text-secondary">
+                                    <thead class="text-center">
                                         <tr>
                                             <th scope="col">Nome do fornecedor</th>
                                             <th scope="col">CNPJ</th>
@@ -225,7 +225,7 @@ $providersList = search_provider();
                                             <th scope="col">Ações</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody class="text-center">
                                     <?php
                                     if(empty($providersList) == true) {
                                     ?>

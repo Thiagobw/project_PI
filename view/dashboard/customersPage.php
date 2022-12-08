@@ -206,8 +206,8 @@ $customersList = search_customers();
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table text-secondary">
-                                    <thead>
+                                <table class="table table-hover text-secondary">
+                                    <thead class="text-center">
                                         <tr>
                                             <th scope="col">Nome do cliente</th>
                                             <th scope="col">CPF</th>
@@ -217,7 +217,7 @@ $customersList = search_customers();
                                         </tr>
                                     </thead>
 
-                                    <tbody>
+                                    <tbody class="text-center">
                                         <?php
                                         if (empty($customersList) == true) {
                                         ?>

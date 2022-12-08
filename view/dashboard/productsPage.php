@@ -242,18 +242,18 @@ $productsList = search_products();
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table text-secondary">
-                                    <thead>
+                                <table class="table table-hover text-secondary">
+                                    <thead class="text-center">
                                         <tr>
                                             <th scope="col"> Nome </th>
                                             <th scope="col"> Preço </th>
-                                            <th scope="col"> Quantidade em estoque</th>
+                                            <th scope="col"> Em estoque </th>
                                             <th scope="col">Tamanhos</th>
                                             <th scope="col">Fornecedor</th>
                                             <th scope="col">Ações</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody class="text-center">
                                     <?php 
                                         if (  empty($productsList) == true) {
                                     ?>

@@ -216,8 +216,8 @@ $employeesList = search_employee();
                                 </div>
                             </div>
                             <div class="table-responsive">
-                                <table class="table text-secondary">
-                                    <thead>
+                                <table class="table table-hover text-secondary">
+                                    <thead class="text-center">
                                         <tr>
                                             <th scope="col">Nome do funcionario</th>
                                             <th scope="col">CPF</th>
@@ -226,7 +226,7 @@ $employeesList = search_employee();
                                             <th scope="col">Ações</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
+                                    <tbody class="text-center">
                                     <?php
                                     if (  empty($employeesList) == true) {
                                     ?>
