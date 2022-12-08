@@ -73,6 +73,7 @@ if(isset($_POST['submitProduct'])) {
             $prod = new Products();
             $prod ->setName($name);
             $prod ->setPrice($price);
+            $prod ->setProviderId($_POST['provider']);
             
             // set a path to the images
             $imgPath = $_SERVER["DOCUMENT_ROOT"].'/project_PI/uploads/';
