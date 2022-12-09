@@ -21,24 +21,28 @@ $providers = search_provider();
                     <div class="row" id="contentRegisterCust">
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formCustomers" action="../../control/customers_registration.php" method="POST">
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome do cliente" id="nameCustomers" name="nameCustomers" maxlength="100">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3 p-0">
+                                    <label class="ml-1" for="nameCustomers">Nome do cliente</label>
+                                    <input class=" form-control input-user" type="text" placeholder="Digite o nome" id="nameCustomers" name="nameCustomers" maxlength="100">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="CPF" id="cpfCustomers" name="cpfCustomers" maxlength="14" autocomplete="off">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="cpfCustomers">CPF</label>
+                                    <input class=" form-control input-user" type="text" placeholder="EX: 60038190060" id="cpfCustomers" name="cpfCustomers" maxlength="14" autocomplete="off">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="email" placeholder="Email" id="emailCustomers" name="emailCustomers" maxlength="40">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="emailCustomers"></label>
+                                    <input class=" form-control input-user" type="email" placeholder="Digite o email" id="emailCustomers" name="emailCustomers" maxlength="40">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="tel" placeholder="Telefone" id="tellCustomers" name="tellCustomers" maxlength="15">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="tellCustomers">Telefone</label>
+                                    <input class=" form-control input-user" type="tel" placeholder="EX: 48148996766" id="tellCustomers" name="tellCustomers" maxlength="15">
                                 </div>
 
-                                <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formCustomers" type="submit" name="submitCustomers" value="Cadastrar">
+                                <div class="col-10 col-sm-6 col-lg-5 mt-4 mb-2 center p-0">
+                                    <input class="btn btn-primary btn-block" form="formCustomers" type="submit" name="submitCustomers" value="Cadastrar" style="font-size: larger;">
                                 </div>
 
                             </form>
@@ -48,24 +52,28 @@ $providers = search_provider();
                     <div class="row" id="contentRegisterProv">
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formProviders" action="../../control/providers_registration.php" method="POST">
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome do fornecedor" id="nameProviders" name="nameProviders" maxlength="100">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3 p-0">
+                                    <label class="ml-1" for="nameProviders">Nome do fornecedor</label>
+                                    <input class=" form-control input-user" type="text" placeholder="Digite o nome" id="nameProviders" name="nameProviders" maxlength="100">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="CNPJ" id="cnpjProviders" name="cnpjProviders" maxlength="18" autocomplete="off">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="cnpjProviders">CNPJ</label>
+                                    <input class=" form-control input-user" type="text" placeholder="EX: 41608257000108" id="cnpjProviders" name="cnpjProviders" maxlength="18" autocomplete="off">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="email" placeholder="Email" id="emailProviders" name="emailProviders" maxlength="40">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="emailProviders">Email</label>
+                                    <input class=" form-control input-user" type="email" placeholder="Digite o email" id="emailProviders" name="emailProviders" maxlength="40">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="tel" placeholder="Telefone" id="tellProviders" name="tellProviders" maxlength="15">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-0" for="tellProviders">Telefone</label>
+                                    <input class=" form-control input-user" type="tel" placeholder="EX: 48148996766" id="tellProviders" name="tellProviders" maxlength="15">
                                 </div>
 
-                                <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formProviders" type="submit" name="submitProviders" value="Cadastrar">
+                                <div class="col-10 col-sm-6 col-lg-5 mt-4 mb-2 center p-0">
+                                    <input class="btn btn-primary btn-block" form="formProviders" type="submit" name="submitProviders" value="Cadastrar" style="font-size: larger;">
                                 </div>
                             </form>
                         </div>
@@ -76,12 +84,12 @@ $providers = search_provider();
                             <form enctype="multipart/form-data" class="input-group center" id="formProd" action="../../control/products_registration.php" method="POST">
 
                                 <!-- image for the product -->
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
+                                <div class="col-11 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3 p-0">
                                     <div class="row center">
-                                    <label class="text-center">Selecione uma foto</label>
+                                        <label class="text-center">Selecione uma foto</label>
                                     </div>
                                     <div class="row center">
-                                        <label class="col-12 col-sm-10 col-md-11 col-lg-8 selectFileImgProduct center" for="imgProduct">
+                                        <label class="col-12 col-sm-10 col-md-11 col-lg-9 selectFileImgProduct center m-0 rounded" for="imgProduct">
                                             <i class="fa-solid fa-file-image fa-4x" id="imgSelect"></i>
                                             <img src="" id="imgSelected" alt="image selected" style="display: none;">
                                         </label>
@@ -90,22 +98,22 @@ $providers = search_provider();
                                 </div>
                                 <!-- image for the product -->
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
                                     <label class="ml-1" for="nameProduct">Nome do produto</label>
-                                    <input class=" form-control input-user" type="text" placeholder="Nome" id="nameProduct" name="nameProduct" maxlength="100">
+                                    <input class=" form-control input-user" type="text" placeholder="Digite o nome" id="nameProduct" name="nameProduct" maxlength="100">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
                                 <label class="ml-1" for="priceProduct">Preço do produto</label>
-                                    <input class=" form-control input-user" type="text" placeholder="Preço" id="priceProduct" name="priceProduct" maxlength="14" autocomplete="off">
+                                    <input class=" form-control input-user" type="text" placeholder="EX: 800" id="priceProduct" name="priceProduct" maxlength="14" autocomplete="off">
                                 </div>
 
-                                <div class="row mt-3">
+                                <div class="row mt-3 center">
                                     <div class="col-12 center">
                                         <label class="text-center">Selecione os tamanhos e sua quantidade</label>
                                     </div>
 
-                                    <div class="col-12">
+                                    <div class="col-11 pl-4 pr-0">
                                         <div class="row center">
                                             <div class="col-8 col-sm-10 col-md-6 col-lg-4 col-xl-4 mt-3" id="contentInputSize">
                                                 <div class="form-check form-check-inline">
@@ -195,30 +203,30 @@ $providers = search_provider();
                                                 </div>
                                             </div>
                                         </div>
-
-                                        <!-- provider selector -->
-                                        <div class="row center">
-                                            <div class="col-9 col-sm-10 col-md-6 col-lg-4 col-xl-4 mt-4" id="contentInputSize">
-                                                <div class="form-group">
-                                                    <label class="ml-1" for="">Fornecedor do produto</label>
-                                                    <select class="form-control" name="provider">
-                                                        <option selected value="null">Nennhum</option>
-                                                        <!-- Iterates the object -->
-                                                        <?php foreach ($providers as $provider) { ?>
-                                                            <option value="<?php echo $provider->getId(); ?>">
-                                                                <?php echo $provider->getName(); ?>
-                                                            </option>
-                                                        <?php } ?>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- provider selector -->
                                     </div>
                                 </div>
 
-                                <div class="col-7 mt-4 mb-2 center" style="padding: 0;">
-                                    <input class="btn btn-primary" form="formProd" type="submit" name="submitProduct" value="Cadastrar" id="inputSubmitProduct">
+                                <!-- provider selector -->
+                                
+                                    <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0" id="contentInputSize">
+                                        <div class="form-group">
+                                            <label class="ml-1" for="">Fornecedor do produto</label>
+                                            <select class="form-control" name="provider">
+                                                <option selected value="null">Nennhum</option>
+                                                <!-- Iterates the object -->
+                                                <?php foreach ($providers as $provider) { ?>
+                                                    <option value="<?php echo $provider->getId(); ?>">
+                                                        <?php echo $provider->getName(); ?>
+                                                    </option>
+                                                <?php } ?>
+                                            </select>
+                                        </div>
+                                    </div>
+                                
+                                <!-- provider selector -->
+
+                                <div class="col-10 col-sm-6 col-lg-5 mt-4 mb-2 center p-0">
+                                    <input class="btn btn-primary btn-block" form="formProd" type="submit" name="submitProduct" value="Cadastrar" id="inputSubmitProduct" style="font-size: larger;">
                                 </div>
                             </form>
                         </div>
@@ -227,24 +235,28 @@ $providers = search_provider();
                     <div class="row" id="contentRegisterEploy">
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formEmployees" action="../../control/employees_registration.php" method="POST">
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome do Funcionario" id="nameEmployees" name="nameEmployees" maxlength="100">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3 p-0">
+                                    <label class="ml-1" for="nameEmployees">Nome do funcionario</label>
+                                    <input class=" form-control input-user" type="text" placeholder="Digite o nome" id="nameEmployees" name="nameEmployees" maxlength="100">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="CPF" id="cpfEmployees" name="cpfEmployees" maxlength="14" autocomplete="off">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="cpfEmployees">CPF</label>
+                                    <input class=" form-control input-user" type="text" placeholder="EX: 60038190060" id="cpfEmployees" name="cpfEmployees" maxlength="14" autocomplete="off">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="email" placeholder="Email" id="emailEmployees" name="emailEmployees" maxlength="40">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="emailEmployees">Email</label>
+                                    <input class=" form-control input-user" type="email" placeholder="Digite o email" id="emailEmployees" name="emailEmployees" maxlength="40">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Telefone" id="tellEmployees" name="tellEmployees" maxlength="15">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="tellEmployees">Telefone</label>
+                                    <input class=" form-control input-user" type="text" placeholder="EX: 48148996766" id="tellEmployees" name="tellEmployees" maxlength="15">
                                 </div>
 
-                                <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formEmployees" type="submit" name="submitEmployees" value="Cadastrar">
+                                <div class="col-10 col-sm-6 col-lg-5 mt-4 mb-2 center p-0">
+                                    <input class="btn btn-primary btn-block" form="formEmployees" type="submit" name="submitEmployees" value="Cadastrar" style="font-size: larger;">
                                 </div>
                             </form>
                         </div>

@@ -19,24 +19,28 @@
                             <form class="input-group center" id="formChangeCustomers" action="../../control/customers_update.php" method="POST">
                             <input class=" form-control input-user" type="hidden" id="idCustomerChange" name="idCustomerChange">
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome do cliente" id="changeNameCustomers" name="changeNameCustomers" maxlength="100">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="changeNameCustomers">Nome do cliente</label>
+                                    <input class=" form-control input-user" type="text" placeholder="Digite o nome" id="changeNameCustomers" name="changeNameCustomers" maxlength="100">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="CPF" id="changeCpfCustomers"  name="changeCpfCustomers" maxlength="14" autocomplete="off">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="changeCpfCustomers">CPF</label>
+                                    <input class=" form-control input-user" type="text" placeholder="EX: 60038190060" id="changeCpfCustomers" name="changeCpfCustomers" maxlength="14" autocomplete="off">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="email" placeholder="Email" id="changeEmailCustomers"  name="changeEmailCustomers" maxlength="40">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="changeEmailCustomers">Email</label>
+                                    <input class=" form-control input-user" type="email" placeholder="Digite o email" id="changeEmailCustomers" name="changeEmailCustomers" maxlength="40">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="tel" placeholder="Telefone" id="changeTellCustomers"  name="changeTellCustomers" maxlength="15">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="changeTellCustomers">Telefone</label>
+                                    <input class=" form-control input-user" type="tel" placeholder="EX: 48148996766" id="changeTellCustomers" name="changeTellCustomers" maxlength="15">
                                 </div>
 
-                                <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formChangeCustomers" type="submit" name="submitChangeCustomers" value="Atualizar">
+                                <div class="col-10 col-sm-6 col-lg-5 mt-4 mb-2 center p-0">
+                                    <input class="btn btn-primary btn-block" form="formChangeCustomers" type="submit" name="submitChangeCustomers" value="Atualizar" style="font-size:larger;">
                                 </div>
                             </form>
                         </div>
@@ -46,24 +50,28 @@
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formChangeProviders" action="../../control/providers_update.php" method="POST">
                             <input class=" form-control input-user" type="hidden" id="idProviderChange" name="idProviderChange">
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome do fornecedor" id="changeNameProviders" name="changeNameProviders" maxlength="100">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3 p-0">
+                                    <label class="ml-1" for="changeNameProviders">Nome do fornecedor</label>
+                                    <input class=" form-control input-user" type="text" placeholder="Digite o nome" id="changeNameProviders" name="changeNameProviders" maxlength="100">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="CNPJ" id="changeCnpjProviders"  name="changeCnpjProviders" maxlength="18" autocomplete="off">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="changeCnpjProviders">CNPJ</label>
+                                    <input class=" form-control input-user" type="text" placeholder="EX: 41608257000108" id="changeCnpjProviders"  name="changeCnpjProviders" maxlength="18" autocomplete="off">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="changeEmailProviders">Email</label>
                                     <input class=" form-control input-user" type="email" placeholder="Email" id="changeEmailProviders"  name="changeEmailProviders" maxlength="40">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="tel" placeholder="Telefone" id="changeTellProviders"  name="changeTellProviders" maxlength="15">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="changeTellProviders">Telefone</label>
+                                    <input class=" form-control input-user" type="tel" placeholder="EX: 48148996766" id="changeTellProviders"  name="changeTellProviders" maxlength="15">
                                 </div>
 
-                                <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formChangeProviders" type="submit" name="submitChangeProviders" value="Atualizar">
+                                <div class="col-10 col-sm-6 col-lg-5 mt-4 mb-2 center p-0">
+                                    <input class="btn btn-primary btn-block" form="formChangeProviders" type="submit" name="submitChangeProviders" value="Atualizar" style="font-size: larger;">
                                 </div>
                             </form>
                         </div>
@@ -76,9 +84,12 @@
                             <input type="hidden" id="idImage" name="idImg">
 
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
+                                <div class="col-11 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3 p-0">
                                     <div class="row center">
-                                        <label class="col-12 col-sm-10 col-md-11 col-lg-8 selectFileImgProduct center" for="changeImgProduct">
+                                        <label class="text-center">Selecione uma foto</label>
+                                    </div>
+                                    <div class="row center">
+                                        <label class="col-12 col-sm-10 col-md-11 col-lg-9 selectFileImgProduct center m-0 rounded" for="changeImgProduct">
                                             <i class="fa-solid fa-file-image fa-4x" id="changeImgSelect"></i>
                                             <img class="img-fluid w-100" src="" id="changeImgSelected" alt="image selected for change" style="display: none;">
                                         </label>
@@ -86,21 +97,23 @@
                                     <input class=" form-control input-user" type="file" accept="image/*" id="changeImgProduct" name="changeImgProd" style="display: none;">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome" id="changeNameProduct" name="changeNameProduct" maxlength="100">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="changeNameProduct">Nome do Produto</label>
+                                    <input class=" form-control input-user" type="text" placeholder="Digite o nome" id="changeNameProduct" name="changeNameProduct" maxlength="100">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Preço" id="changePriceProduct"  name="changePriceProduct" maxlength="14" autocomplete="off">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="changePriceProduct">Preço do produto</label>
+                                    <input class=" form-control input-user" type="text" placeholder="EX: 800" id="changePriceProduct"  name="changePriceProduct" maxlength="14" autocomplete="off">
                                 </div>
 
                                 <div class="row mt-3">
-                                    <div class="col-12 center">
+                                    <div class="col-11 center">
                                         <label class="text-center">Selecione os tamanhos e sua quantidade</label>
                                     </div>
 
                                     <!-- sizes and quantities to update -->
-                                    <div class="col-12">
+                                    <div class="col-11 pl-4 pr-0">
                                         <div class="row center">
                                             <div class="col-8 col-sm-10 col-md-6 col-lg-4 col-xl-4 mt-3" id="contentInputSize">
                                                 <div class="form-check form-check-inline">
@@ -203,8 +216,10 @@
                                     </div>
                                 </div>
 
-                                <div class="col-7 mt-4 mb-2 center" style="padding: 0;">
-                                    <input class="btn btn-primary" form="formChangeProd" type="submit" name="submitChangeProduct" value="Atualizar" id="inputSubmitProduct">
+
+
+                                <div class="col-10 col-sm-6 col-lg-5 mt-4 mb-2 center p-0">
+                                    <input class="btn btn-primary btn-block" form="formChangeProd" type="submit" name="submitChangeProduct" value="Atualizar" id="inputSubmitProduct" style="font-size: larger;">
                                 </div>
                             </form>
                         </div>
@@ -214,24 +229,29 @@
                         <div class="col-12 input-group">
                             <form class="input-group center" id="formChangeEmployees" action="../../control/employees_update.php" method="POST">
                             <input class=" form-control input-user" type="hidden" id="idEmployeesChange" name="idEmployeesChange">
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Nome do Funcionario" id="changeNameEmployees" name="changeNameEmployees" maxlength="100">
+
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3 p-0">
+                                    <label class="ml-1" for="changeNameEmployees">Nome do funcionario</label>
+                                    <input class=" form-control input-user" type="text" placeholder="Digite o nome" id="changeNameEmployees" name="changeNameEmployees" maxlength="100">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="CPF" id="changeCpfEmployees"  name="changeCpfEmployees" maxlength="14" autocomplete="off">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="changeCpfEmployees">CPF</label>
+                                    <input class=" form-control input-user" type="text" placeholder="EX: 60038190060" id="changeCpfEmployees"  name="changeCpfEmployees" maxlength="14" autocomplete="off">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="email" placeholder="Email" id="changeEmailEmployees"  name="changeEmailEmployees" maxlength="40">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="changeEmailEmployees">Email</label>
+                                    <input class=" form-control input-user" type="email" placeholder="Digite o email" id="changeEmailEmployees"  name="changeEmailEmployees" maxlength="40">
                                 </div>
 
-                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-3">
-                                    <input class=" form-control input-user" type="text" placeholder="Telefone" id="changeTellEmployees"  name="changeTellEmployees" maxlength="15">
+                                <div class="col-12 col-sm-10 col-md-9 col-lg-8 col-xl-8 mt-4 p-0">
+                                    <label class="ml-1" for="changeTellEmployees">Telefone</label>
+                                    <input class=" form-control input-user" type="text" placeholder="EX: 48148996766" id="changeTellEmployees"  name="changeTellEmployees" maxlength="15">
                                 </div>
 
-                                <div class="col-8 col-sm-5 col-lg-5 mt-4 mb-2 center">
-                                    <input class="btn btn-primary w-100" form="formChangeEmployees" type="submit" name="submitChangeEmployees" value="Atualizar">
+                                <div class="col-10 col-sm-6 col-lg-5 mt-4 mb-2 center p-0">
+                                    <input class="btn btn-primary btn-block" form="formChangeEmployees" type="submit" name="submitChangeEmployees" value="Atualizar" style="font-size: larger;">
                                 </div>
                             </form>
                         </div>
