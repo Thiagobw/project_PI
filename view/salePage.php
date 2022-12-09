@@ -113,7 +113,8 @@ $productsList = search_products();
                                     </div>
                                     
                                     <div class="row">
-                                        <button name="product_id" class="btn w-100" id="btn-add" value="<?php echo $prod->getId() ?>" name="selectSize">
+                                        <input type="hidden" name="product_id" value="<?php echo $prod->getId() ?>">
+                                        <button class="btn w-100" id="btn-add" name="selectSize">
                                             <i class="fa-solid fa-cart-plus"></i> Adicionar
                                         </button>
                                     </div>
